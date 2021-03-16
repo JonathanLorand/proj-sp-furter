@@ -1,0 +1,509 @@
+\documentclass[12pt]{article}
+
+
+
+\usepackage{amsmath}
+
+\usepackage{mathtools}
+
+\usepackage{amssymb}
+
+\usepackage{amsthm}
+
+\usepackage{latexsym}
+
+\usepackage{IEEEtrantools}
+
+\usepackage{eucal}
+
+\usepackage[dvipsnames]{xcolor}
+
+
+\usepackage{bussproofs}
+
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+
+\usepackage{stmaryrd}
+
+
+\usepackage{tikz}
+
+\usetikzlibrary{arrows}
+
+
+
+\usepackage{tikz-cd}
+
+
+
+%\usepackage{tikzit}
+
+%\input{sample.tikzstyles} Add styles doc here
+
+%\input{sample.tikzdefs}
+
+\usepackage[normalem]{ulem}
+
+\usepackage{hyperref}
+
+\usepackage[dvipsnames]{xcolor}
+
+\definecolor{darkgreen}{RGB}{35, 89, 52}
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=darkgreen,
+	filecolor=magenta,      
+	urlcolor=MidnightBlue,
+	pdftitle={Linear Logic and Resources Notebook},
+	bookmarks=true
+}
+
+\title{Linear Logic and Co-Design Notebook}
+
+\author{Marius Furter}
+
+\date{\today}
+
+
+
+\theoremstyle{definition}
+
+\newtheorem{definition}{Definition}[section]
+
+
+
+\theoremstyle{plain} 
+
+\newtheorem{lemma}{Lemma}[section]
+
+
+
+\theoremstyle{plain} 
+
+\newtheorem{proposition}{Proposition}[section]
+
+
+
+\theoremstyle{plain}
+
+\newtheorem{theorem}{Theorem}[section]
+
+
+\theoremstyle{plain}
+
+\newtheorem{question}{Question}[section]
+
+
+\theoremstyle{remark}
+
+\newtheorem{example}{Example}[section]
+
+\newtheorem*{excont}{Example \continuation}
+\newcommand{\continuation}{??}
+\newenvironment{continueexample}[1]
+{\renewcommand{\continuation}{\ref{#1}}\excont[continued]}
+{\endexcont}
+
+
+\theoremstyle{remark}
+
+\newtheorem{remark}{Remark}[section]
+
+\newcommand{\zuz}[1]{%
+
+	\begin{tikzpicture}[#1]%
+
+	\draw (-0.3ex,0.35ex) -- (0.5ex,0.35ex);
+
+	\draw (0.5ex,0.35ex) -- (0.5ex,-0.5ex);
+
+	\draw (0.5ex,-0.5ex) -- (1.5ex,-0.5ex);
+
+	\draw (0,0) -- (1ex,0);%
+
+	\draw (1ex,0) -- (1ex,-0.85ex);
+
+	\draw (1ex,-0.85ex) -- (1.8ex,-0.85ex);
+
+	\end{tikzpicture}%
+
+} 
+
+
+
+\renewcommand\qedsymbol{\zuz{scale=1.5}}
+
+\newcommand{\mc}[1]{\mathcal{#1}}
+
+\newcommand{\sub}{\subseteq}
+
+\newcommand{\Hom}{\text{Hom}}
+
+\newcommand{\im}{\text{im}}
+
+\newcommand{\id}{\text{id}}
+
+\makeatletter
+\def\slashedarrowfill@#1#2#3#4#5{%
+	$\m@th\thickmuskip0mu\medmuskip\thickmuskip\thinmuskip\thickmuskip
+	\relax#5#1\mkern-7mu%
+	\cleaders\hbox{$#5\mkern-2mu#2\mkern-2mu$}\hfill
+	\mathclap{#3}\mathclap{#2}%
+	\cleaders\hbox{$#5\mkern-2mu#2\mkern-2mu$}\hfill
+	\mkern-7mu#4$%
+}
+\def\rightslashedarrowfill@{%
+	\slashedarrowfill@\relbar\relbar\mapstochar\rightarrow}
+\newcommand\xslashedrightarrow[2][]{%
+	\ext@arrow 0055{\rightslashedarrowfill@}{#1}{#2}}
+\makeatother
+
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{Categories in Linear Logic}
+
+\subsection{The Category of Derivations}
+
+Given a sequent calculus $S$, we form the category of derivations in $S$, denoted $\mathbf{Der}_S$ as follows. The objects are well-formed sequents 
+$$\Gamma, A \vdash B \qquad \Gamma \vdash A \multimap B \qquad \ldots$$  
+and the morphisms are valid derivations based on the rules of $S$, for example,
+
+\begin{prooftree}
+\AxiomC{$\Gamma, A \vdash B$}
+\RightLabel{\scriptsize($\multimap$ Right)}
+\UnaryInfC{$\Gamma \vdash A \multimap B$}
+\end{prooftree}
+Composition is given by the composition of derivations. 
+\begin{center}
+	
+
+	\AxiomC{$\Gamma \vdash B$}
+	\RightLabel{\scriptsize(weakening Left)}
+	\UnaryInfC{$\Gamma, A \vdash B$}
+	\noLine
+	\UnaryInfC{}
+	\noLine
+	\UnaryInfC{$\Gamma, A \vdash B$}
+	\RightLabel{\scriptsize($\multimap$ Right)}
+	\UnaryInfC{$\Gamma \vdash A \multimap B$}
+	\DisplayProof
+\qquad $\rightsquigarrow$ \qquad
+	\AxiomC{$\Gamma \vdash B$}
+	\RightLabel{\scriptsize(weakening Left)}
+	\UnaryInfC{$\Gamma, A \vdash B$}
+	\RightLabel{\scriptsize($\multimap$ Right)}
+	\UnaryInfC{$\Gamma \vdash A \multimap B$}
+	\DisplayProof
+
+\end{center}
+It is clearly associative and has the ``do nothing'' sequent
+\begin{prooftree}
+	\AxiomC{$\Gamma \vdash \Delta$}
+	\RightLabel{\scriptsize(identity)}
+	\UnaryInfC{$\Gamma \vdash \Delta$}
+
+\end{prooftree}
+as identity.
+
+This all works fine for unary rules. To accommodate rules of higher arity, we need to allow multiple sources for our morphisms. We could then think of $\mathbf{Der}_S$ as a multicategory (colored operad) or, alternatively, replace objects by lists of objects and introduce a monoidal product $\boxplus$ that allows us to concatenate these lists. The unit for this monoidal product is the empty list $[\;]$. We shall write lists of objects $[A,B,C]$ as $A \boxplus B \boxplus C$, that is we omit the brackets for lists of length one. For now, due to a current lack a familiarity with multicategories, we shall regard $\mathbf{Der}_S$ as a monoidal category. In this setting, rules of higher arity become morphisms from lists of length greater 1 to lists of length 1. For example, the cut rule
+\begin{prooftree}
+	\AxiomC{$\Gamma, A \vdash B$}
+	\AxiomC{$\Delta, B \vdash C$}
+	\RightLabel{\scriptsize(Cut)}
+	\BinaryInfC{$\Gamma, \Delta, A \vdash C$}
+\end{prooftree}
+is a morphism $(\Gamma, A \vdash B) \boxplus (\Delta, B \vdash C) \rightarrow \Gamma, \Delta, A \vdash C$. The axiom
+\begin{prooftree}
+	\AxiomC{}
+		\RightLabel{\scriptsize(Axiom)}
+	\UnaryInfC{$A \vdash A$}
+\end{prooftree}
+is a morphism $[\;] \rightarrow A \vdash A$.
+
+We may now view the category $\mathbf{Der}_S$ as being generated by the rules of the sequent calculus $S$: We fix some set of propositions $\Gamma,\Delta,\Lambda, \ldots$ and consider all sequents that can be formed from these. We then form all finite lists of such sequents and add morphisms according to the rules of $S$. Finally $\mathbf{Der}_S$ is obtained by closing this structure under composition.
+
+\begin{question}
+	Read about operads / multicategories in Leinster's book Chapter 2. Think about the algebras of $\mathbf{Der}_S$.
+\end{question}
+
+\subsection{The Category of Propositions}
+
+The category of proposition $\mathbf{Prop}_S$ has a objects propositions $\Gamma,\Delta,\Lambda, \ldots$ and as morphisms proofs of sequents $\Gamma \vdash \Delta$. The compostion of morphisms is given by the cut rule
+\begin{prooftree}
+	\AxiomC{$A \vdash B$}
+	\AxiomC{$B \vdash C$}
+	\RightLabel{\scriptsize(Cut)}
+	\BinaryInfC{$A \vdash C$}
+\end{prooftree}
+which turn two proofs into one. We note that cut rule depends on the sequent calculus. For example, in intuitionistic linear logic it is
+\begin{prooftree}
+	\AxiomC{$\Gamma \vdash A$}
+	\AxiomC{$\gamma_1, A, \gamma_2 \vdash B$}
+	\RightLabel{\scriptsize(Cut)}
+	\BinaryInfC{$\gamma_1, \Gamma, \gamma_2 \vdash B$}
+\end{prooftree} 
+Our basic rule is obtained with empty contexts $\gamma_1,\gamma_2$.
+
+\subsection{The Relation between Der and Prop}
+
+To start with suppose that our calculus $S$ consists only of unary rules. In this case $\mathbf{Der}_S$ is simply a category with a special object for the empty sequent $[\;]$. We observe that the arrows of $\mathbf{Prop}_S$ are special derivations: An arrow $\Gamma \rightarrow \Delta$ in $\mathbf{Prop}_S$ corresponds to an arrow in $\mathbf{Der}_S$ of the form $[\;] \rightarrow \Gamma \vdash \Delta$. Therefore $\mathbf{Prop}_S(\Gamma,\Delta) \cong \mathbf{Der}_S([\;],\Gamma \vdash \Delta)$. Moreover, each element of $\mathbf{Der}_S(\Gamma \vdash \Delta, A \vdash B)$ gives a function $\mathbf{Prop}_S(\Gamma,\Delta) \rightarrow \mathbf{Prop}_S(A,B)$, obtained by composing derivations. This yields a functor $F: \mathbf{Der}_S \rightarrow \mathbf{Set}$ mapping objects $(\Gamma \vdash \Delta) \mapsto \mathbf{Prop}_S(\Gamma,\Delta)$ and derivations $\Gamma,\Delta \rightarrow A,B$ to the induced function $\mathbf{Prop}_S(\Gamma,\Delta) \rightarrow \mathbf{Prop}_S(A,B)$. Indeed, functoriality is immediate.
+
+We extend the construction above to the case where $S$ has rules of arbitrary arity. In this case the objects in $\mathbf{Der}_S$ are lists of sequents. Because $\boxplus^n [\;] \cong [\;]$ we still have the correspondence $\mathbf{Prop}_S(\Gamma,\Delta) \cong \mathbf{Der}_S([\;],\Gamma \vdash \Delta)$. Next we note that if we have an arrow $d: A_1 \boxplus \ldots \boxplus A_n \rightarrow B_1 \boxplus \ldots \boxplus B_m$ then $n \geq m$ because the rules of $S$ are many to one. Moreover, we can regard $d$ as consisting of $m$ parallel derivations $d_i: A_{i_1} \boxplus \ldots \boxplus A_{i_r} \rightarrow B_i$. Writing $A_{i_j} = \Gamma_{i_j} \vdash \Delta_{i_j}$ and $B_i = \Psi_i \vdash \Omega_i$, we see that each $d_i$ induces a function
+$$\mathbf{Prop}_S(\Gamma_{i_1},\Delta_{i_1}) \times \ldots \times  \mathbf{Prop}_S(\Gamma_{i_r},\Delta_{i_r}) \rightarrow \mathbf{Prop}_S(\Psi_i, \Omega_i).$$
+Hence $d$ induces a function
+$$\prod_i \mathbf{Prop}_S(\Gamma_{i_1},\Delta_{i_1}) \times \ldots \times  \mathbf{Prop}_S(\Gamma_{i_r},\Delta_{i_r}) \rightarrow \prod_i \mathbf{Prop}_S(\Psi_i, \Omega_i).$$
+
+We now face the problem that the decomposition of the $A_i$ is not the same for every derivation with the same source and target as $d$. However, writing $A_j = \Gamma_{j} \vdash \Delta_{j}$, we have a natural iso
+$$\prod_i \mathbf{Prop}_S(\Gamma_{i_1},\Delta_{i_1}) \times \ldots \times  \mathbf{Prop}_S(\Gamma_{i_r},\Delta_{i_r}) \cong \prod_{j=1}^n \mathbf{Prop}_S(\Gamma_{j},\Delta_{j})$$
+by reordering the big product. This suggests that we assign a list of sequents $(\Gamma_{1} \vdash \Delta_{1}) \boxplus \ldots \boxplus (\Gamma_{n} \vdash \Delta_{n})$ to the product $\prod_{j=1}^n \mathbf{Prop}_S(\Gamma_{j},\Delta_{j})$. A morphism 
+$$f: (\Gamma_{1} \vdash \Delta_{1}) \boxplus \ldots \boxplus (\Gamma_{n} \vdash \Delta_{n}) \rightarrow (\Psi_{1} \vdash \Omega_{1}) \boxplus \ldots \boxplus (\Psi_{m} \vdash \Omega_{m})$$
+is then assigned to the function
+$$\tilde f: \prod_{j=1}^n \mathbf{Prop}_S(\Gamma_{j},\Delta_{j}) \rightarrow \prod_i \mathbf{Prop}_S(\Psi_i, \Omega_i)$$
+which it induces by the procedure described above, possibly composing with the reordering isomorphism. 
+
+Explicitly, we can describe $\tilde f$ as follows: Given a tuple of proofs of sequents $$ (\Gamma_{1} \vdash \Delta_{1}, \ldots, \Gamma_{n} \vdash \Delta_{n}), $$ regard them as a derivation $$[\;] \rightarrow (\Gamma_{1} \vdash \Delta_{1}) \boxplus \ldots \boxplus (\Gamma_{n} \vdash \Delta_{n})$$ and compose with $f$ to get a derivation $$[\:] \rightarrow  (\Psi_{1} \vdash \Omega_{1}) \boxplus \ldots \boxplus (\Psi_{m} \vdash \Omega_{m})$$ which corresponds to a tuple of proofs of sequents $$(\Psi_1 \vdash \Omega_{1}, \ldots, \Psi_{m} \vdash \Omega_{m}).$$ The functoriality of this assignment is again immediate. Hence, we also get a functor $F: \mathbf{Der}_S \rightarrow \mathbf{Set}$ in the case of a general sequent calculus $S$. Furthermore, $F$ maps monoidal products in $\mathbf{Der}_S$ to cartesian products in $\mathbf{Set}$. We have $F([\;]) = \{*\}$ by definition, which aligns with the intuition that there is exactly one trivial proof of the empty sequent. Therefore $F$ is a strict monoidal functor into $(\mathbf{Set},\times,\{*\})$.
+
+\begin{question}
+	Regarding $\mathbf{Der}_S$ as an operad, can we describe the above as an operad algebra?
+\end{question}
+
+We conclude by observing that for $A_i = \Gamma_{i} \vdash \Delta_{i}$ we have 
+$$\mathbf{Der}_S([\;],A_1 \boxplus \ldots \boxplus A_n) \cong  \mathbf{Prop}_S(\Gamma_{1}, \Delta_{1}) \times \ldots \times \mathbf{Prop}_S(\Gamma_{n}, \Delta_{n}) = F(A_1 \boxplus \ldots \boxplus A_n)$$
+so in fact $F$ is represented by $[\;]$. Furthermore, we have defined the way $F$ acts on arrows in terms of this isomorphism, so the isomorphism is natural. Hence $F \cong \Hom([\;], -)$. By Yoneda we have that for any element $x \in F(A)$ there is a unique morphism $f: [\;] \rightarrow A$ such that $F(f)(*) = x$. This is saying that proofs correspond precisely to derivations starting from $[\;]$.
+
+\section{Linear Logic and Co-Design}
+
+\subsection{Basic Definitions} \label{basic defs}
+
+Let $\mc{R}$ and $\mc{F}$ be posets. $\mc{R}$ represents resources and $\mc{F}$ represents functionalities. For $a,b \in \mc{R}$, we interpret $a \leq b$ as meaning ``if I have $a$, then I also have $b$''. For example, $2\$ \leq 1\$$. This is the opposite convention that is currently in use, but better suits the Linear Logic interpretation. To avoid confusion, we write $a \rightarrow b$, or $a \vdash b$, instead of $a \leq b$. This also fits nicely with the fact that we will be regarding the posets as categories. 
+
+In Co-Design we consider what functionalities we can obtain from given resources.
+\begin{definition}[Feasibility Relation]
+	Let $\mc{R}$, $\mc{F}$ be posets. A \emph{feasibility relation} $\mc{R} \xslashedrightarrow{} \mc{F}$ is a monotone map $\mc{R}^\text{op} \times \mc{F} \rightarrow \mathbf{Bool}$, where $\mathbf{Bool}$ denotes the poset generated by $\texttt{false} \rightarrow \texttt{true}$. If we regard posets as $\mathbf{Bool}$-categories, then feasibility relations are just $\mathbf{Bool}$-profunctors.
+\end{definition}
+
+\begin{remark}
+	We can draw a feasibility relation $\mc{R} \xslashedrightarrow{} \mc{F}$ as an internal diagram:
+	\begin{center}
+		\includegraphics[width=\textwidth/2]{section2/feas_internal-1}
+	\end{center}
+	The orange and yellow arrows mean that a given pair is mapped to \texttt{true}. Absence of an arrow means the pair is mapped top \texttt{false}. Additionally, we may think of a feasibility relation as being generated by certain assignments. The solid orange arrow induces the dashed yellow arrows by composition with the arrows internal to both $\mc{R}$ and $\mc{F}$. 
+\end{remark}
+
+We can now define a category in which feasibility relations live.
+\begin{definition}
+	The category $\mathbf{DP}$ of co-design problems has posets as objects and feasibility relations as morphisms. Composition is given by profunctor compostition. Explicitly, if we have feasibility relations $\Phi: \mc{X} \xslashedrightarrow{} \mc{Y}$ and $\Psi: \mc{Y} \xslashedrightarrow{} \mc{Z}$, then
+	$$ 
+	\Phi \fatsemi \Psi (x,z) = \bigvee_{y \in \mc{Y}}(\Phi(x,y) \wedge \Psi(y,z)).
+	$$
+\end{definition}
+
+Every feasibility relation  $\mc{R} \xslashedrightarrow{\Phi} \mc{F}$ naturally gives rise to two dual optimization problems. If we fix an $f \in \mc{F}$, then we can ask what the minimal set of resources $r \in \mc{R}$ are, such that $\Phi(r,f) = \texttt{true}$, that is $(r,f)$ is feasible. In formulae:
+\begin{IEEEeqnarray*}{rCl}
+	f_\text{max} & = & \text{Max} \{r \in \mc{R} \:\: |\: \Phi(r,f) = \texttt{true} \} \\ 
+	& = &\{r \in \mc{R} \:\: |\: \Phi(r,f) = \texttt{true} \text{ and } \forall r': \Phi(r',f) = \mathtt{true} \wedge r \rightarrow r' \Rightarrow r=r' \}.
+\end{IEEEeqnarray*}
+
+Observe that the minimality condition implies that this set is an antichain in $\mc{R}$. Hence we get a function $h: \mc{F} \rightarrow \mathsf{A}\mc{R}$, $f \mapsto f_\text{max}$ where $\mathsf{A}\mc{R}$ denotes the set of antichains of $\mc{R}$. We can put a partial ordering on $\mathsf{A}\mc{R}$ by saying $A \leq B$ iff $\downarrow A \sub \: \downarrow B$, where $\downarrow$ denotes the lower closure operator. In our convention the lower closure of a set is all of the resources / functionalities that are `more expensive' than items in the set.
+
+\begin{lemma}
+	If all ascending chains in $\mc{R}$ are finite, then the map $h: \mc{F} \rightarrow \mathsf{A}\mc{R}$ is monotone. That is, if $f \rightarrow g$, then $\downarrow f_\text{max} \sub \: \downarrow g_\text{max}$.
+\end{lemma}
+\begin{proof}
+	Let $f \rightarrow g$, and $x \in \: \downarrow f_\text{max}$. This means $x \rightarrow r$ for some $r \in f_\text{max}$. Because $\Phi(r,f) = \texttt{true}$ also $\Phi(x,g) = \texttt{true}$ using monotonicity in both arguments. Consider $\{s \in \mc{R} \:\: |\: x \rightarrow s  \text{ and } \Phi(s,g) = \texttt{true} \}$. This set is non-empty because it contains x itself. Moreover it has to contain a maximal element, otherwise we could build an infinite ascending chain. This maximum $m$ will be an element of $g_\text{max}$, hence we have an arrow $x \rightarrow m$, which means $x \in \downarrow g_\text{max}$
+\end{proof}
+
+\paragraph{Warning!} The map $h$ does not have to monotone in general (even if one uses upper closure or the opposite orderings). The ascending chain condition assures that one does not have arbitrarily cheap resources. To see that it is necessary consider $\mc{R} = (\mathbb{Z},\leq)$, $\mc{F} = {a \rightarrow b}$ with feasibility relation $\Psi(r,f) = \texttt{true}$ iff $f = b$ or $r \leq 0$. Then $a_\text{max} = \text{Max}\{n \in \mathbb{Z} | \Psi(r,a) = \texttt{true}\} = 0$ and $b_\text{max} = \text{Max}\{n \in \mathbb{Z} | \Psi(r,b) = \texttt{true}\} = \text{Max }\mathbb{Z} = \emptyset$. Hence $\downarrow a_\text{max} = \mathbb{Z}_{\leq 0} \nsubseteq \emptyset = \downarrow b_\text{max}$.
+
+\subsection{Sites to Structure}
+
+The main goal of this project is to add some of the structure of Linear Logic to the co-design framework. In principle, there are several places in the theory where one could consider implementing these concepts. Here we describe four possibilities and give some thoughts on how they may be related.
+\begin{center}
+	\includegraphics[width=250pt]{section2/sites_structure-1}
+\end{center}
+
+One can imagine having Linear Logic (LL) structure:
+\begin{itemize}
+	\item[(a)] internal to the resource / functionality posets. This would involve restricting the objects of $\mathbf{DP}$ to posets that can be viewed as models for LL.
+	\item[(b)] between objects of $\mathbf{DP}$. This would involve turning $\mathbf{DP}$ into a model of LL.
+	\item[(c)] within a feasibility relation. This might involve looking at monotone maps $\mc{R}^\text{op} \times \mc{F} \rightarrow \mc{V}$, where $\mc{V}$ is a model for LL.
+	\item[(d)] on the queries. 
+\end{itemize}
+
+Having (b) might give (a) as well, since we can regard a poset $\mc{P}$ as the collage of trivial feasibility relations between singletons: If $a \rightarrow b$, then this may be seen as a feasibility relation $\Phi: \{a\} \xslashedrightarrow{} \{b\}$ with $\Phi(a,b) = \texttt{true}$. If we collage these together we can reconstruct $\mc{P}$. For this to work we would have to describe a multi-object collage operation, but this seems possible.
+
+The category $\mathbf{DP}$ is compact closed, which means it forms a degenerate *-autonomous category. Hence it is already a model for classical LL. However, the 4 classical LL connectives become pairwise identified. Thus the task would be to modify $\mathbf{DP}$ in such a way, that we get distinct connectives.
+
+Next, changing the enriching category as in (c) may also affect (b). Moreover, it will alter what type of queries are possible because there would then be more states to optimize over. On the other hand, it may be possible to complexify the types of queries that can be performed, while keeping the standard boolean feasibility relation. 
+
+\subsection{Currying Queries}
+
+There is an adjunction between the exponential and the cartesian product in $\mathbf{Cat}$:
+$$ \Hom(\mc{C} \times \mc{D}, \mc{E}) \cong \Hom(\mc{C}, \mc{E}^\mc{D}). $$
+If $\mc{P}$ and $\mc{Q}$ are posets, then so is the functor category $\mc{Q}^\mc{P}$: If $g, h:\mc{P} \rightarrow \mc{Q}$ are functors (i.e monotone maps), there is at most one natural transformation $\alpha: g \Rightarrow h$, since there is at most one morphism $\alpha_p : g(p) \rightarrow h(p)$ for each $p \in \mc{P}$. Therefore, the adjunction restricts to the subcategory $\mathbf{Pos}$ of posets. \\
+
+Let $\mc{R}, \mc{F}$ be posets, and let $\mc{R} \xslashedrightarrow{\Phi} \mc{F}$ be a feasibility relation. Denote the lower sets of $\mc{R}$ by $\mathsf{L}\mc{R}$, where $A \leq B$ iff $A \sub B$. We claim that $\mathbf{Bool}^\mc{R^\text{op}} \cong \mathsf{L}\mc{R}$. A monotone map $h: \mc{R^\text{op}} \rightarrow \mathbf{Bool}$ is the same as a monotone map $h': \mc{R} \rightarrow \mathbf{Bool}^\text{op}$. The pre-image $L_h = h'^{-1}(\mathtt{true})$ is now a lower set: If $y \in L$ and $x \rightarrow y$, then $h'(x) \rightarrow h'(y) = \mathtt{true}$, so $h'(x) = \mathtt{true}$ since $\mathtt{true}$ is the bottom in $\mathbf{Bool}^\text{op}$. Moreover, if $g,h: \mc{R^\text{op}} \rightarrow \mathbf{Bool}$ and $g \Rightarrow h$, then $g(r) \rightarrow h(r)$ in $\mathbf{Bool}^\text{op}$ for all $r \in \mc{R}$. Hence, if $h(r) = \mathtt{true}$, then also $g(r) = \mathtt{true}$, which shows $L_h \sub L_g$, i.e.~$L_h \leq L_g$ in the lower set order. Conversely, for each lower set $L \sub \mc{R}$, we can construct an monotone map $l: \mc{R^\text{op}} \rightarrow \mathbf{Bool}$ by setting $l(x) = \mathtt{true}$ iff $l(x) \in L$. The result is monotone: $y \rightarrow x$ in $\mc{R}^\text{op}$ means $x \rightarrow y$ in $\mc{R}$. If $l(x) = \mathtt{false}$, then $l(y) = \mathtt{false}$, because $x \notin L \Rightarrow y \notin L$ by the contrapositive of the lower set property. Similarly, if $l(y) = \mathtt{true}$, then also $l(x) = \mathtt{true}$. It is immediate that both operations described are inverse. Therefore, $\mathbf{Bool}^\mc{R^\text{op}} \cong \mathsf{L}\mc{R}$.
+
+Furthermore, if $\mc{R}$ has no infinite ascending chains, then each lower set corresponds uniquely to an antichain by taking its maximal elements. Since we order antichains by the order induced by their lower closures, we have $\mathsf{L}\mc{R} \cong \mathsf{A}\mc{R}$.
+
+In summary, if $\mc{R}$ has no infinite ascending chains, we have the following series of isomorphisms:
+\begin{IEEEeqnarray}{rCl}
+	\Hom(\mc{R}^\text{op} \times \mc{F}, \mathbf{Bool}) & \cong & \Hom(\mc{F} \times \mc{R}^\text{op}, \mathbf{Bool}) \\
+														& \cong & \Hom(\mc{F}, \mathbf{Bool}^\mc{R^\text{op}}) \\
+														& \cong & \Hom(\mc{F}, \mathsf{L}\mc{R}) \\
+														& \cong & \Hom(\mc{F}, \mathsf{A}\mc{R})
+\end{IEEEeqnarray}
+
+It follows that our feasibility relation $\Phi $ corresponds uniquely to a monotone function $h: \mc{F} \rightarrow \mathsf{A}\mc{R}$. To see what this function does, we follow the isos above. (1) sends $\Phi$ to its partial evaluations $f \mapsto \Phi(-,f)$. For each $f \in \mc{F}$, the function $\Phi(-,f)$ corresponds to the lower set 
+$$\Phi(-,f)^{-1}(\mathtt{true}) = \{r \in \mc{R} \:|\: \Phi(r,f) = \mathtt{true} \}.$$ 
+Taking maximal elements of this gives an antichain of resources, which are the cheapest resources which are feasible. But this is precisely the query $f_\text{max}$ described in section \ref{basic defs}. Hence we have show that querying correspond to equivalence described by the isomorphisms above, provided $\mc{R}$ fulfils the ascending chain condition.\\
+
+We can repeat the above by swapping the roles of $\mc{F}$ and $\mc{R}$. Observe that $\mathbf{Bool}^\mc{F} \cong (\mathsf{L}\mc{F})^\text{op}$ as follows: If $h: \mc{F} \rightarrow \mathbf{Bool}$, then $h^{-1}(\mathtt{false})$ is a lower set. If $h(y) = \mathtt{false}$ and $x \rightarrow y$, then by monotonicity $h(x) \rightarrow h(y)$, so $x \in h^{-1}(\mathtt{false})$. Moreover, if $g,h: \mc{F} \rightarrow \mathbf{Bool}$ with $g \Rightarrow h$, then for each $r \in \mc{F}$, we have $g(r) \rightarrow h(r)$. Hence, if $h(r) = \mathtt{false}$, then $g(r) = \mathtt{false}$, so $h^{-1}(\mathtt{false}) \sub g^{-1}(\mathtt{false})$. This is the opposite of the usual ordering on $\mathsf{L}\mc{F}$. The inverse operation is obtained by setting $l(x) = \mathtt{false}$ iff $x$ is in the lower set. Thus $\mathbf{Bool}^\mc{F} \cong (\mathsf{L}\mc{F})^\text{op}$, as claimed.
+
+We must now change up our isos slightly:. Assuming 	$\mc{F}$ has no infinite ascending chains:
+\begin{IEEEeqnarray}{rCl}
+	\Hom(\mc{R}^\text{op} \times \mc{F}, \mathbf{Bool}) & \cong & \Hom(\mc{R}^\text{op}, \mathbf{Bool}^\mc{F}) \\
+	& \cong & \Hom(\mc{R}^\text{op}, (\mathsf{L}\mc{F})^\text{op}) \\
+	& \cong & \Hom(\mc{R}, \mathsf{L}\mc{F}) \\
+	& \cong & \Hom(\mc{R}, \mathsf{A}\mc{F})
+\end{IEEEeqnarray}
+
+The composite map sends $r \in \mc{R}$ to the antichain of the `cheapest' functionalities in $\mc{F}$ that are still infeasible.  \\ 
+
+By swapping out lower sets for upper sets in the above, we should be able to get two more querying operation, provided the target poset fulfils a descending chain condition: One sends $f \in \mc{F}$ to the antichain of the most `expensive' resources that still make the functionality infeasible. The other sends a resource to the most `expensive' antichain of functionalities that makes the pairs feasible.
+
+\subsection{Bool-Posets}
+
+We have seen above that there is a tight relation between maps into $\mathbf{Bool}$ and lower sets, upper sets, and antichains. This leads up to consider such maps as the objects of a category. 
+
+\begin{definition}
+	A \emph{\textbf{Bool}-poset} is just a monotone map $\mc{P} \rightarrow \mathbf{Bool}$ from a poset $\mc{P}$ into $\mathbf{Bool}$. 
+\end{definition}
+
+Next we define feasibility relations between $\mathbf{Bool}$-posets.
+
+\begin{definition}
+	A feasibility relation between $\mathbf{Bool}$-posets $\rho: \mc{R} \rightarrow \mathbf{Bool}$ and $\varphi: \mc{F} \rightarrow \mathbf{Bool}$, is a feasibility realtion $\mc{F} \xslashedrightarrow{\Phi} \mc{R}$, where for all $r \in \mc{R}$ and $f \in \mc{F}$,
+	$$\Phi(r,f) = \mathtt{true} \Rightarrow \rho(r) \leq \varphi(f).$$
+\end{definition}
+
+We can express this condition in the following diagram which commutes up to a natural transformation:
+
+\begin{center}
+\begin{tikzcd}
+	\mc{R} \arrow[rrd, bend left=25, ""{name=R, below}] \arrow[d, "|" marking] &  &    \\
+	\mc{F} \arrow[rr, ""{name=F}]     &  & \mathbf{Bool} 
+	 \arrow[Rightarrow, from=R, to=F]
+\end{tikzcd}
+\end{center}
+
+\paragraph{Warning!} Requiring the condition $\varphi(f) \leq \rho(r)$ leads to the restriction that resources above a certain threshold must be mapped bellow a certain functionality threshold, which is the opposite of what we want.
+
+\begin{lemma}
+	$\mathbf{Bool}$-posets and their feasibility relationships form a category, denoted $\mathbf{Pos_{Bool}}$. Composition is given by the usual composition of feasibility relations. 
+\end{lemma}
+
+\begin{proof} 
+	If $\Phi: X \xslashedrightarrow{} Y$, $\Psi: Y \xslashedrightarrow{} Z$ are feasibility relations between $\mathbf{Bool}$-posets $\xi: X \rightarrow \mathbf{Bool}$, $\upsilon: Y \rightarrow \mathbf{Bool}$ and $\zeta :Z \rightarrow \mathbf{Bool}$, then if $\Phi~\fatsemi~\Psi(x,z)$, the exists $y \in Y$ such that $\Phi(x,y)$ and $\Psi(y,z)$. Hence $\xi(x) \leq \upsilon(y)$ and $\upsilon(y) \leq \zeta(z)$, whence $\xi(x) \leq \zeta(z)$. This shows that composition is well-defined. Associativity is inherited from the composition of feasibility relations. Finally, there are identities given by the unit feasibility relation $\id: X \xslashedrightarrow{} X$, with $\id(x,y) = \mathtt{true}$ iff $x \rightarrow y \in X$. These satisfy the condition for being a morphism in $\mathbf{Pos_{Bool}}$: If $\id(x,y) = \mathtt{true}$, then $x \rightarrow y$, so $\xi (x) \leq \xi(y)$. Moreover, they are the identities for usual feasibility relations (see Fong / Spivak Lemma 4.19), so they also act that way here. 
+\end{proof}
+
+The category $\mathbf{Pos_{Bool}}$ has some interesting features, which we explore below:
+
+\paragraph{Feasibility Relations are Objects} Since a feasibility relation $\Phi: \mc{R}^\text{op} \times \mc{F} \rightarrow \mathbf{Bool}$ is just a monotone map into $\mathbf{Bool}$, it is an object of $\mathbf{Pos_{Bool}}$. We can thus build feasibility relations between feasibility relations: If $\Psi: \mc{R'}^\text{op} \times \mc{F'} \rightarrow \mathbf{Bool}$ is another feasibility relation, a second order feasibility relation $\Phi \xslashedrightarrow{\Delta} \Psi$ would be a monotone map 
+$$\Delta: (\mc{R}^\text{op} \times \mc{F})^\text{op} \times \mc{R'}^\text{op} \times \mc{F'} \rightarrow \mathbf{Bool}$$
+satisfying
+$$ \Delta((r,f),(r',f')) = \mathtt{true} \Rightarrow \Phi(r,f) \leq \Psi(r',f') .$$
+Hence if $((r,f),(r',f'))$ is feasible, then $\Phi(r,f) \Rightarrow \Psi(r',f')$. Hence our association must preserve feasibility.
+
+\paragraph{Limits and Colimits}
+
+\paragraph{Inclusion of Pos}
+
+\paragraph{Inclusion of DP}
+
+\paragraph{Projection to DP}
+
+\subsection{Queries in $\mathbf{Pos_{Bool}}$}
+
+\subsubsection{Generalized Querying} \label{gen queries}
+We can generalize the notion of query within $\mathbf{Pos_{Bool}}$. We can interpret an object $\varphi: \mc{F} \rightarrow \mathbf{Bool}$ as representing a poset together with a chosen lower set (resp. upper set). This is done by considering the pre-image of \texttt{false} (resp. \texttt{true}). Conversely, choosing a lower set (resp. upper set) on a poset gives an object of $\mathbf{Pos_{Bool}}$. 
+
+Using this interpretation, let $\mc{R}, \mc{F}$ be posets representing resources and functionalities, respectively. Choose lower sets $L_\mc{R} \sub \mc{R}$ and $L_\mc{F} \sub \mc{F}$. Recall that lower sets represent resources / functionalities that closed under being more `expensive'. If the posets fulfil the ascending chain condition, we can think of the lower sets as thresholds, where we include anything more `expensive' than the elements of some antichain. 
+
+Now observe that a morphism in  $\mathbf{Pos_{Bool}}$ is a feasibility relation $\mc{R} \xslashedrightarrow{\Phi} \mc{F}$, such that if $(r,f)$ is feasible then $\rho(r) \leq \varphi(f)$, where $\varphi(f) = \mathtt{false}$ iff $f \in L_\mc{F}$, and $\rho(r) = \mathtt{false}$ iff $r \in L_\mc{R}$. Hence, if $(r,f)$ is feasible and $f \in L_\mc{F}$, then $r \in L_\mc{R}$. Conversely, if $r \in  \mc{R} \setminus L_\mc{R}$, then $f \in f \in \mc{F} \setminus L_\mc{F}$. In our threshold interpretation this means the following for a feasible pair $(r,f)$: If $f$ lies above (or on) our threshold for functionality, then $r$ must lie above our threshold for resources. Conversely, if $r$ lies below our resource threshold, then $f$ lies below the functionality threshold.
+
+Lets first think about varying $L_\mc{R}$. On one extreme if we let $L_\mc{R} = \mc{R}$, this would impose no restrictions whatsoever. On the other, if we choose $L_\mc{R} = \emptyset$, then only feasible pairs are allowed where $f$ lies below the functionality threshold. Now lets vary $L_\mc{F}$. If $L_\mc{F} = \mc{F}$, then only feasible pairs with $r$ above the resource threshold are allowed. If $L_\mc{F} = \emptyset$, we impose no restrictions. 
+
+\begin{remark}
+	It may seem like the variances are off here. However, suppose we had a condition that said, ``if you are above a certain resource threshold, then you are above a certain funcionality threshold''. This can't work, since if $(r,f)$ is feasible and $r$ is above the threshold, it may be that $f$ is also above the threshold, but because of monotonicity $(r,f')$ will also be feasible for any $f \rightarrow f'$. Such an $f'$ could then lie below the threshold. So our threshold would have to be trivial in order to have any feasible pairs.
+\end{remark}
+
+We can ask the following: Given some fixed feasibility relation and fixed lower set $L_\mc{F}$ in $\mc{F}$, i.e.~some lower threshold for functionality, how low do we need to set the threshold in $\mc{R}$, i.e.~how big do we need to make $L_\mc{R}$ until we get a feasibility relation that can satisfy the condition for a morphism in $\mathbf{Pos_{Bool}}$.
+
+To see what this amounts to, lets take some feasibility relation $\Phi$ and fix $f \in \mc{F}$. We then set $L_\mc{F} = \downarrow f$. Our optimization procedure above would then yield a minimal lower set $L_\mc{R}$ in $\mc{R}$ such that if $\Phi(r,f)$ and $g \in \downarrow f$, then $r \in L_\mc{R}$. Assuming $\mc{R}$ has no infinite ascending chains, we can associate to $L_\mc{R}$ an antichain whose elements $r$ are the `cheapest' resources making $(r,f)$ feasible: The minimality on $L_\mc{R}$ means that all elements $r$ in $L_\mc{R}$ do in fact make $(r,f)$ feasible, otherwise we could have excluded them to obtain a smaller lower set. The restriction on $L_\mc{R}$ means that we have found the cheapest resources for which $f$ is feasible. If we take any element $s$ that lies strictly below the antichain, $(s,f)$ will not be feasible. For if $(s,f)$ were feasible, then $s \in L_\mc{R}$. 
+
+In summary, we have shown that we can describe the optimization of section \ref{basic defs} in this setting. However, we can more generally query antichains of functionalities, rather than just single elements.
+
+\subsubsection{The Generalized Query Functor}
+
+Generalized querying as described in section \ref{gen queries} yields a contravariant functor $\mathbf{DP_\text{asc}} \rightarrow \mathbf{Pos}$, where $\mathbf{DP_\text{asc}}$ is the subcategory of $\mathbf{DP}$ where all posets satisfy the ascending chain condition. It sends a feasibility relation $\mc{R} \xslashedrightarrow{\Phi} \mc{F}$ to the monotone map $H_\Phi: \mathsf{A}\mc{F} \rightarrow \mathsf{A}\mc{R}$ which assigns each antichain in $\mc{F}$ the antichain of resources in $\mc{R}$ obtained by querying.
+
+\textcolor{red}{Functoriality \ldots}
+
+\subsection{Queries as Universal Objects in $\mathbf{Pos_{Bool}}$}
+
+Recall the diagram expressing the condition for morphisms in $\mathbf{Pos_{Bool}}$.
+
+\begin{center}
+	\begin{tikzcd}
+		\mc{R} \arrow[rrd, bend left=25, ""{name=R, below}] \arrow[d, "|" marking] &  &    \\
+		\mc{F} \arrow[rr, ""{name=F}]     &  & \mathbf{Bool} 
+		\arrow[Rightarrow, from=R, to=F]
+	\end{tikzcd}
+\end{center}
+
+We can ask whether for fixed $\mc{R} \xslashedrightarrow{\Phi} \mc{F}$ and fixed $\phi: \mc{F} \rightarrow \mathbf{Bool}$, there is a universal $\rho$:  For any $\rho': \mc{R} \rightarrow \mathbf{Bool}$ which makes $\Phi$ a morphism in $\mathbf{Pos_{Bool}}$, we have $\rho'(r) \leq \rho(r)$ for all $r \in \mc{R}$. This means $\rho$ is the maximal monotone map that makes $\Phi$ a morphism in $\mathbf{Pos_{Bool}}$. 
+
+\begin{center}
+	\begin{tikzcd}
+		\mc{R} \arrow[rrd, bend left=45, ""{name=R, below}] \arrow[rrd, bend right=0, "\rho" description,""{name=L, above}, ""{name=G, below}] \arrow[d, "|" marking] &  &    \\
+		\mc{F} \arrow[rr, ""{name=F}]     &  & \mathbf{Bool} 
+		\arrow[Rightarrow, from=R, to=L] \arrow[Rightarrow, from=G, to=F]
+	\end{tikzcd}
+\end{center}
+
+
+Lets see what this means. We can think about $\rho$ and $\varphi$ as a lower sets $L_\rho \sub \mc{R}$ and $L_\varphi \sub \mc{F}$ in and by taking the pre-images of \texttt{false}. Because $\rho$ makes $\Phi$ a morphism in $\mathbf{Pos_{Bool}}$, if $(r,f)$ is feasible and $f \in L_\phi$, then $r \in L_\rho$. Moreover, the universality of $\rho$ makes $L_\rho$ the smallest lower set making $\Phi$ a morphism in $\mathbf{Pos_{Bool}}$. This is exactly the result of the optimization in section \ref{gen queries}. In summary, we have given a description of the process there in terms of a universal property. 
+
+\begin{lemma}
+	We can obtain the universal $\rho$ by setting $\rho(r) = \bigwedge_{\{f \:|\: \Phi(r,f)\}} \varphi(f)$
+\end{lemma}
+\begin{proof}
+	The result is monotone: If $r \rightarrow s$ and $\rho(s) = \mathtt{false}$, then there is $f$ with $\varphi(f) = \mathtt{false}$ and $\Phi(s,f) = \mathtt{true}$. But then $\Phi(r,f) = \mathtt{true}$ by monotonicity, hence $\rho(f) = \mathtt{false}$ as well. On the other hand if $\rho(r) = \mathtt{true}$, then $\varphi(f) = \mathtt{true}$ for all $f$ satisfying $\Phi(r,f) = \mathtt{true}$. If $\rho(s)$ were \texttt{false}, then there is a $f$ with $\Phi(s,f) = \mathtt{true}$ and $\varphi(f) = \mathtt{false}$. But by monotonicity also $\Phi(r,f) = \mathtt{true}$, a contradiction. 
+	
+	Finally, we show that this $\rho$ is universal. First, suppose $\Phi(r,f) = \mathtt{true}$. If $\varphi(f) = \mathtt{false}$, then we have a \texttt{false} in the big wedge, so $\rho(r) = \text{false}$. Hence, $\rho$ makes $\Phi$ a morphism in $\mathbf{Pos_{Bool}}$. Suppose we have any other $\rho'$ making $\Phi$ a morphism. It is sufficient to show $\rho'(r) \Rightarrow \rho(r)$. Suppose $\rho'(r) = \mathtt{true}$. If $\rho(r) = \mathtt{false}$, then there would be $f$ such that $(r,f)$ is feasible and $\varphi(f)$ is \texttt{false}. But $(r,f)$ feasible implies that $\mathtt{true} = \rho'(r) \leq \varphi(r) = \mathtt{false}$, a contradiction. Therefore $\rho(r) = \mathtt{true}$ and we have proved universality.
+\end{proof}
+
+
+\subsubsection{Describing Other Queries}
+The other optimization problem we can describe in this way is shown in the following diagram
+
+\begin{center}
+	\begin{tikzcd}
+		\mc{R}  \arrow[rrd, bend right=0, ""{name=L, above}, ""{name=G, below}] \arrow[d, "|" marking] &  &    \\
+		\mc{F} \arrow[rr,"\phi" description, ""{name=F}, ""{name = A, below}] \arrow[rr, bend right = 50, ""{name=B, above}]    &  & \mathbf{Bool} 
+		 \arrow[Rightarrow, from=G, to=F] \arrow[Rightarrow, from=A, to=B]
+	\end{tikzcd}
+\end{center}
+
+The univesal $\varphi$ would satisfy: For any $\varphi'$ making $\Phi$ a morphism in $\mathbf{Pos_{Bool}}$, we have $\phi \leq \phi'$. This makes the associated lower set $L_\phi$ the largest lower set making a given antichain of resources feasible.
+
+\subsection{$\mc{V}$-Posets}
+
+\end{document}
