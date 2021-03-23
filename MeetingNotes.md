@@ -3,8 +3,8 @@ Semester Project Marius Furter - Spring 2021
 
 # Meetings
 
-[[2021-03-09]]
- - 3 ideas of where to put the linear logic in the boolean profunctor picture
+- [[2021-03-09]]
+  - 3 ideas of where to put the linear logic in the boolean profunctor picture
    -  put "in" the preorders, freely generate a linera logic picture in some sense
      - restricts class of preorders...
      - ![[Screen Shot 2021-03-09 at 15.56.12.png]]
@@ -21,11 +21,11 @@ Semester Project Marius Furter - Spring 2021
 
  Reference: poset-valued sets
 
- [[2021-03-16]]
+- [[2021-03-16]]
  coherence spaces, three element poset linearly ordered (no, maybe,  yes)
 
  - (co)presheaves -> look into
 
 
 - [[2021-03-23]]
- -
+  -
