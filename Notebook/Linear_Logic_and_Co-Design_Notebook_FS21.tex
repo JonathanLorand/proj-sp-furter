@@ -1,12 +1,15 @@
 \documentclass[12pt]{article}
 
-
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
 
 \usepackage{amsmath}
 
 \usepackage{mathtools}
 
 \usepackage{amssymb}
+
+\usepackage{stmaryrd}
 
 \usepackage{amsthm}
 
@@ -56,6 +59,7 @@
 	linkcolor=darkgreen,
 	filecolor=magenta,      
 	urlcolor=MidnightBlue,
+	citecolor=darkgreen,
 	pdftitle={Linear Logic and Resources Notebook},
 	bookmarks=true
 }
@@ -66,7 +70,11 @@
 
 \date{\today}
 
-
+\usepackage[
+backend=bibtex,
+style=alphabetic,
+citestyle=alphabetic]{biblatex}
+\addbibresource{LLCD.bib}
 
 \theoremstyle{definition}
 
@@ -378,18 +386,17 @@ The composite map sends $r \in \mc{R}$ to the antichain of the `cheapest' functi
 
 By swapping out lower sets for upper sets in the above, we should be able to get two more querying operation, provided the target poset fulfils a descending chain condition: One sends $f \in \mc{F}$ to the antichain of the most `expensive' resources that still make the functionality infeasible. The other sends a resource to the most `expensive' antichain of functionalities that makes the pairs feasible.
 
-\subsection{Bool-Posets}
-
+\subsection{Bool-Posets} \label{bool-pos}
 We have seen above that there is a tight relation between maps into $\mathbf{Bool}$ and lower sets, upper sets, and antichains. This leads up to consider such maps as the objects of a category. 
 
-\begin{definition}
+\begin{definition} 
 	A \emph{\textbf{Bool}-poset} is just a monotone map $\mc{P} \rightarrow \mathbf{Bool}$ from a poset $\mc{P}$ into $\mathbf{Bool}$. 
 \end{definition}
 
 Next we define feasibility relations between $\mathbf{Bool}$-posets.
 
-\begin{definition}
-	A feasibility relation between $\mathbf{Bool}$-posets $\rho: \mc{R} \rightarrow \mathbf{Bool}$ and $\varphi: \mc{F} \rightarrow \mathbf{Bool}$, is a feasibility realtion $\mc{F} \xslashedrightarrow{\Phi} \mc{R}$, where for all $r \in \mc{R}$ and $f \in \mc{F}$,
+\begin{definition} \label{def bool-pos morphism}
+	A feasibility relation between $\mathbf{Bool}$-posets $\rho: \mc{R} \rightarrow \mathbf{Bool}$ and $\varphi: \mc{F} \rightarrow \mathbf{Bool}$, is a feasibility realtion $\mc{R} \xslashedrightarrow{\Phi} \mc{F}$, where for all $r \in \mc{R}$ and $f \in \mc{F}$,
 	$$\Phi(r,f) = \mathtt{true} \Rightarrow \rho(r) \leq \varphi(f).$$
 \end{definition}
 
@@ -428,6 +435,8 @@ Hence if $((r,f),(r',f'))$ is feasible, then $\Phi(r,f) \Rightarrow \Psi(r',f')$
 \paragraph{Inclusion of DP}
 
 \paragraph{Projection to DP}
+
+\paragraph{The above form an adjunction}
 
 \subsection{Queries in $\mathbf{Pos_{Bool}}$}
 
@@ -504,6 +513,292 @@ The other optimization problem we can describe in this way is shown in the follo
 
 The univesal $\varphi$ would satisfy: For any $\varphi'$ making $\Phi$ a morphism in $\mathbf{Pos_{Bool}}$, we have $\phi \leq \phi'$. This makes the associated lower set $L_\phi$ the largest lower set making a given antichain of resources feasible.
 
-\subsection{$\mc{V}$-Posets}
+\section{Proslice $\mathbb{Q}$-Categories}
+
+The aim of this section is to generalize the construction given in \cite{Schalk2004}. In that paper, $\text{P}_F\text{-Sets}$ are constructed based on the category $\mathbf{Rel}$ of sets and relations. That construction seems to work in general for a compact closed category, whose morphisms into the valuation object are partially ordered. This setting is generalized to the category $\mathbf{Prof}(\mathbb{Q})$ of $\mathbb{Q}$-profunctors, where $\mathbb{Q}$ is a commutative quantale. The valuation object can then be any $\mathbb{Q}$-enriched category, including $\mathbb{Q}$ itself.
+
+\subsection{Quantales}
+The basic definitions are taken from \cite{Marsden2018}. The relation of quantales to linear logic is described in \cite{Yetter1990}.
+
+\begin{definition}[Quantale]
+	A \emph{quantale} is a complete join semilattice with a monoid structure $(\circledast, k)$ where the multiplication distributes over arbitrary joins:
+	$$
+	p \circledast \left( \bigvee_i q_i \right) = \bigvee_i p \circledast q_i \quad \text{ and } \quad \left( \bigvee_i p_i \right) \circledast q = \bigvee_i p_i \circledast q
+	$$
+	A \emph{commutative quantale} is a quantale whose underlying monoid is commutative.
+\end{definition}
+
+In the following we let $\mathbb{Q}$ denote a commutative quantale.
+
+\begin{definition}[$\mathbb{Q}$-enriched Category]
+	A $\mathbb{Q}$-enriched category $\mc{P}$ consist of:
+	\begin{itemize}
+		\item A set of \emph{objects} $\text{Ob}(\mc{P})$
+		\item For each pair of objects, there is a \emph{hom object} $\mc{P}(a,b) \in \mathbb{Q}$ satisfying:
+			\subitem{(i)} $k \leq \mc{P}(a,a)$
+			\subitem{(ii)} $\mc{P}(b,c) \circledast \mc{P}(a,b) \leq \mc{P}(a,c).$
+	\end{itemize}
+\end{definition}
+
+\begin{definition}[$\mathbb{Q}$-enriched Functor]
+	If $\mc{A}$ and $\mc{B}$ are $\mathbb{Q}$-enriched categories, then a \emph{$\mathbb{Q}$-enriched functor} $F: \mc{A} \rightarrow \mc{B}$ consists of a function $$F: \text{Ob}(\mc{A}) \rightarrow \text{Ob}(\mc{B}) $$ satisfying $$ \mc{A}(a,b) \leq \mc{B}(Fa,Fb) .$$
+\end{definition}
+
+This gives us an ordinary category $\mathbf{Cat}(\mathbb{Q})$ whose objects are $\mathbb{Q}$-enriched categories and whose morphisms are $\mathbb{Q}$-enriched functors. \\
+
+Because $\mathbb{Q}$ is thin, there can be at most one natural transformation between any two $\mathbb{Q}$-functors.
+
+\begin{definition}[$\mathbb{Q}$-enriched Natural Transformation]
+	Given parallel $\mathbb{Q}$-enriched functors $F,G: \mc{A} \rightarrow \mc{B}$, the presence of a \emph{$\mathbb{Q}$-natural transformation} $\alpha: F \rightarrow G$ simply states that for all $a \in \mc{A}$ we have
+	$$
+	k \leq \mc{B}(Fa,Ga).
+	$$
+\end{definition}
+
+Every commutative quantale is automatically closed:
+
+\begin{lemma} \label{closed quantale}
+	Let $\mathbb{Q}$ be a commutative quantale. Then $- \circledast b$ has a right adjoint $b \multimap -$ given by $$b \multimap c := \bigvee_{a \circledast b \leq c} a.$$
+\end{lemma}
+\begin{proof}
+	We regard $\mathbb{Q}$ as a thin ordinary category. Then $- \circledast b$ is a function $\mathbb{Q} \times \mathbb{Q} \rightarrow \mathbb{Q}$. Moreover, if $a \leq a'$ and $b  \leq b'$, then $a \vee a' = a'$ and $b \vee b' = b'$. Hence 
+	$$a' \circledast b' = (a \vee a') \circledast (b \vee b') = (a \circledast b) \vee (a \circledast b') \vee (a' \circledast b) \vee (a' \circledast b').$$
+	In particular, $a \circledast b \leq a' \circledast b'$, showing $- \circledast b$ is a functor. Its right adjoint need to satisfy the natural iso
+	$$\mathbb{Q}(a \circledast b, c) \cong \mathbb{Q}(a, b \multimap c),$$ which reduces to the requirement that 
+	$$a \circledast b \leq c \Leftrightarrow a \leq b \multimap c.$$
+	The left-to-right implication is immediate, as by assumption $a$ appears in the join. For the right-to-left implication, suppose $a \leq \bigvee_{x \circledast b \leq c} x$. Then $$a \circledast b \leq  \left( \bigvee_{x \circledast b \leq c} x \right) \circledast b = \bigvee_{x \circledast b \leq c} x \circledast b \leq c,$$ because the join is the least upper bound. 
+\end{proof}
+
+The previous lemma implies that we can regard $\mathbb{Q}$ as being enriched over itself by setting $\mathbb{Q}(a,b) = a \multimap b$. In particular, we can can consider $\mathbb{Q}$-functors into $\mathbb{Q}$.
+
+\begin{definition}[(Co)Presheaf]
+	Let $\mc{A}$ be a $\mathbb{Q}$-category. A \emph{copresheaf} is a $\mathbb{Q}$-functor $F: \mc{A} \rightarrow \mathbb{Q}$. This means $F$ must satisfy
+	$$
+	\mc{A}(a,b) \leq F(a) \multimap F(b), \text{   or equivalently   }  \mc{A}(a,b) \circledast F(a) \leq F(b).
+	$$
+	A \emph{presheaf} is a $\mathbb{Q}$-functor $G: \mc{A}^\text{op} \rightarrow \mathbb{Q}$. This means $G$ must satisfy
+	$$
+	\mc{A}(a,b) \leq F(b) \multimap F(a), \text{   or equivalently   } \mc{A}(a,b) \circledast F(b)  \leq F(a).
+	$$
+
+\end{definition}
+
+The monoidal structure of $\mathbb{Q}$ can be lifted to $\mathbb{Q}$-categories.
+\begin{definition}[Product Category]
+	Let $\mc{A}, \mc{B}$ be $\mathbb{Q}$-categories. Define the \emph{product category} $\mc{A} \circledast \mc{B}$ to be the $\mathbb{Q}$-category with objects $\text{Ob}(\mc{A}) \times \text{Ob}(\mc{B})$ and hom objects $$\mc{A} \circledast \mc{B}((a,b),(a',b')) := \mc{A}(a,a') \circledast \mc{B}(b,b').$$
+\end{definition}
+
+\begin{lemma}
+	The operation $- \circledast -$ defines a bifunctor on $\mathbf{Cat}(\mathbb{Q})$.
+\end{lemma}
+\begin{proof}
+	Let $\alpha: A \rightarrow B$, $\gamma: C \rightarrow D$ be $\mathbb{Q}$-functors. Define $(\alpha \circledast \gamma )(a,b) := (\alpha(a),\gamma(b))$. To see that this is again a $\mathbb{Q}$-functors, we note that 
+	$$
+	A(a,a') \leq B(\alpha(a),\alpha(a')) \quad \text{ and } \quad C(c,c') \leq D(\gamma(d),\gamma(d'))
+	$$
+	Hence, by monotonicity of $\circledast$ (see proof of Lemma \ref{closed quantale}),
+	\begin{IEEEeqnarray*}{rCl}
+		 (A \circledast C)(a,c)(a',c') & = & A(a,a') \circledast C(c,c')  \\
+		 								&\leq& B(\alpha(a),\alpha(a')) \circledast D(\gamma(d),\gamma(d')) \\
+		 								& = & (B \circledast D)(\alpha(a),\gamma(c))(\alpha(a'),\gamma(c')) \\
+		 								& = &(B \circledast D)((\alpha \circledast \gamma)(a,c))((\alpha \circledast \gamma)(a',c')).
+	\end{IEEEeqnarray*}
+	Functoriality is immediate: 
+	$$
+	(\id_A \circledast \id_C)(a,c) = (\id_A(a),\id_C(c)) = (a,c) = \id_{A \circledast C}(a,c)
+	$$
+	$$
+	((\alpha'\alpha) \circledast (\gamma'\gamma))(a,c) = (\alpha'\alpha(a),\gamma'\gamma(c)) = (\alpha' \circledast \gamma')(\alpha(a), \gamma(c)) = (\alpha' \circledast \gamma')\circ(\alpha \circledast \gamma)(a,c)
+	$$
+	Hence $- \circledast -$ defines a bifunctor on $\mathbf{Cat}(\mathbb{Q})$.
+\end{proof}
+
+
+\begin{definition}[Opposite Category]
+	If $\mc{A}$ is a $\mathbb{Q}$-category, its \emph{opposite category} $\mc{A}^\text{op}$ has the same objects and hom objects $\mc{A}^\text{op}(a,a') := \mc{A}(a',a)$
+\end{definition}
+
+\begin{definition}[Unit Category]
+	There is a \emph{unit $\mathbb{Q}$-category} $\mc{I}$ consisting of a single object and the quantale unit $k$ as its single hom object. 
+\end{definition}
+	
+\begin{definition}[Profunctor]
+	Let $\mc{A}, \mc{B}$ be $\mathbb{Q}$-categories. A \emph{profunctor} $R: \mc{A} \xslashedrightarrow{} \mc{B}$ is a $\mathbb{Q}$-functor $R: \mc{A}^\text{op} \circledast \mc{B} \rightarrow \mathbb{Q}$. Unravelling this definition shows that $R$ must satisfy
+	$$
+	\mc{A}(a',a) \circledast R(a,b) \circledast \mc{B}(b,b') \leq R(a',b').
+	$$
+	Given profunctors $R: \mc{A} \xslashedrightarrow{} \mc{B}$ and $S: \mc{B} \xslashedrightarrow{} \mc{C}$, we can define their composite $S \circ R: \mc{A} \xslashedrightarrow{} \mc{C}$ to be
+	$$
+	(S \circ R)(a,c) = \bigvee_b R(a,b) \circledast S(b,c).
+	$$
+	This composition is associative and has an identity given by $1_\mc{A}(a,a') := \mc{A}(a,a')$. Therefore $\mathbb{Q}$-profunctors form a category $\mathbf{Prof}(\mathbb{Q})$.
+\end{definition}
+
+\begin{lemma}
+	The operation $- \circledast -$ defines a bifunctor $\mathbf{Prof}(\mathbb{Q})$.
+\end{lemma}
+\begin{proof}
+	We need to specify where the tensor takes morphisms. Let $\Phi: A \xslashedrightarrow{} B$, $\Psi: C \xslashedrightarrow{} D$ be morphisms between $\mathbb{Q}$-categories $A,B,C$, and $D$. Define $\Phi \circledast \Psi: A \circledast C \xslashedrightarrow{} B \circledast D$ by
+	$$
+	\Phi \circledast \Psi ((a,c),(b,d)) := \Phi(a,b) \circledast \Psi(c,d).
+	$$
+	To see that this specifies a $\mathbb{Q}$-profunctor we write down the conditions satisfied by $\Phi$ and $\Psi$
+	$$
+	A(a',a) \circledast \Phi(a,b) \circledast B(b,b') \leq \Phi(a',b')
+	$$
+	$$
+	C(c',c) \circledast \Psi(c,d) \circledast D(d,d') \leq \Psi(c',d')
+	$$
+	Because the operation $\circledast$ is monotone (see proof of Lemma \ref{closed quantale}), this implies
+	$$
+	A(a',a) \circledast	C(c',c) \circledast \Phi(a,b) \circledast \Psi(c,d) \circledast  B(b,b') \circledast D(d,d') \leq \Phi(a',b') \circledast \Psi(c',d')
+	$$
+	Using the definition of the product, the above is equivalent to
+	\begin{IEEEeqnarray*}{r}
+		(A \circledast C)((a',c'),(a,c)) \circledast (\Phi \circledast \Psi)((a,c),(b,d)) \circledast (B \circledast D)((b,d),(b',d')) \\
+		\leq (\Phi \circledast \Psi)((a',c'),(b',d')),
+	\end{IEEEeqnarray*}
+	which is exactly the requirement we need.
+	Next we turn to the functoriality requirements. It is immediate form the definitions that
+	\begin{IEEEeqnarray*}{rCl}
+		(\id_A \circledast \id_B)((a,b),(a',b')) &=& \id_A(a,a') \circledast \id_B(b,b') \\ 
+		&=& A(a,a') \circledast B(b,b') \\
+		&= & (A \circledast B)((a,b),(a',b')) \\
+		&= & \id_{A \circledast B}((a,b),(a',b'))
+	\end{IEEEeqnarray*}
+	Moreover, if in addition $\Phi' : B \xslashedrightarrow{} X$ and $\Phi': D \xslashedrightarrow{} Y$, then
+	\begin{IEEEeqnarray*}{rCl}
+		(\Phi' \circ \Phi)\circledast(\Psi' \circ \Psi) ((a,c),(x,y)) 	& = & (\Phi' \circ \Phi)(a,x) \circledast (\Psi' \circ \Psi)(c,y) \\
+		& = & \left(\bigvee_{b \in B} \Phi(a,b) \circledast \Phi'(b,x) \right) \circledast \left(\bigvee_{d \in D} \Psi(c,d) \circledast \Psi'(d,y) \right) \\
+		& = & \bigvee_{b \in B}\bigvee_{d \in D}  \Phi(a,b) \circledast \Phi'(b,x) \circledast \Psi(c,d) \circledast \Psi'(d,y) \\
+		& = & \bigvee_{(b,d) \in B \circledast D} (\Phi \circledast \Psi)((a,c),(b,d)) \circledast (\Phi' \circledast \Psi')((b,d),(x,y)) \\
+		& = & (\Phi \circledast \Psi) \circ (\Phi' \circledast \Psi')  ((a,c),(x,y))
+	\end{IEEEeqnarray*}
+	Hence $- \circledast -$ defines a bifunctor on $\mathbf{Prof}(\mathbb{Q})$.
+\end{proof}
+
+\begin{proposition}
+	The category $\mathbf{Prof}(\mathbb{Q})$ is symmetric monoidal under $- \circledast - $ with unit $\mc{I}$. Moreover it has a compact closed where each object is its own dual.
+\end{proposition}
+\begin{proof}
+	\textcolor{red}{\ldots}
+\end{proof}
+
+
+
+\subsection{Proslice Construction}
+
+We recall that in in the case of the $\mathbf{Bool}$-posets of section \ref{bool-pos}, we defined morphisms between $\alpha: A \rightarrow \mathbf{Bool}$ and $\beta: B \rightarrow \mathbf{Bool}$ (see \ref{def bool-pos morphism}) as $\mathbf{Bool}$-profunctors $\Phi: A \xslashedrightarrow{} B$ such that if $\Phi(a,b) = \mathtt{true}$, then $\alpha(a) \leq \beta(b)$. We can make this the following condition in $\mathbf{Bool}$: 
+$$\Phi(a,b) \leq \alpha(a) \multimap \beta(b) = \mathbf{Bool}(\alpha(a), \beta(b)).$$
+This allows us to generalize the condition to any $\mathbb{Q}$-category. Furthermore, we twist the construction by an endofunctor for added flexibility. Together this yields:
+
+\begin{definition}[Proslice Category]
+	Let $\mathbb{Q}$ be a quantale, $E: \mathbf{Prof}(\mathbb{Q}) \rightarrow \mathbf{Prof}(\mathbb{Q})$ be an endofunctor, and $\mc{V}$ a $\mathbb{Q}$-category. We define the \emph{proslice category $\mathbf{Prof}(\mathbb{Q}) \wr \mc{V}$ over $\mc{V}$} to be the category with
+	\begin{itemize}
+		\item[(i)] objects are $\mathbb{Q}$-functors $EA \rightarrow \mc{V}$, where $A \in \mathbf{Prof}(\mathbb{Q})$.
+		\item[(ii)] For objects $\alpha: EA \rightarrow \mc{V}$, $\beta: EB \rightarrow \mc{V}$, morphisms are profunctors $\Phi: A \xslashedrightarrow{} B$, satisfying $$(E \Phi)(a,b) \leq \mc{V}(\alpha(a),\beta(b)).$$
+	\end{itemize}
+\end{definition}
+
+\begin{proof}
+	Since $E$ is an endofunctor and $\mathbf{Prof}(\mathbb{Q})$ a category, it suffices to check that the proslice construction is closed under identities and composition. If $\alpha(a): EA \rightarrow \mc{V}$ is a $\mathbb{Q}$-functor, then it satisfies $EA(a,b) \leq \mc{V}(\alpha(a),\beta(b))$. But $E \; \text{Id}_A(a,b) = EA(a,b)$, so the identity profunctor satisfies the condition to be a proslice morphism. Finally, if $A \xslashedrightarrow{\Phi} B$ and $B \xslashedrightarrow{\Psi} C$ are proslice morphisms, then $E \Phi (a,b) \leq \mc{V}(\alpha(a),\beta(b))$ and $E \Psi (b,c) \leq \mc{V}(\beta(b),\gamma(c))$. Therefore,
+	\begin{IEEEeqnarray*}{rCl"s}
+		 E(\Psi \circ \Phi)(a,c) & = &(E\Psi \circ E\Phi)(a,c)  & (functoriality)\\
+					    		 & = & \bigvee_b E\Phi(a,b) \circledast E\Psi(b,c)  & (definition) \\
+								 & \leq & \bigvee_b \mc{V}(\alpha(a),\beta(b)) \circledast \mc{V}(\beta(b),\gamma(c)) & (proslice morph.) \\
+								 & \leq & \bigvee_b \mc{V}(\alpha(a),\gamma(c)) & (comp. cond.) \\
+								 & = & \mc{V}(\alpha(a),\gamma(c)). &
+	\end{IEEEeqnarray*}
+	Hence the composite of two proslice morphisms is again proslice. 
+\end{proof}
+
+\subsubsection{Relation to Profunctor Collage}
+
+\subsubsection{Relation to Order on Profunctors}
+
+\subsection{Properties of $\mathbf{Prof}(\mathbb{Q}) \wr \mc{V}$}
+
+\subsubsection{Tensor product}
+
+For the following we will assume that $\mc{V}$ is a monoidal $\mathbb{Q}$-category.
+
+\begin{definition}[Monoidal $\mathbb{Q}$-category]
+	A strict symmetric \emph{monoidal $\mathbb{Q}$-category} is a $\mathbb{Q}$-category $\mc{M}$ is a monoid object in $\mathbf{Cat}(\mathbb{Q})$. That is, $\mc{M}$ comes equipped with a multiplication $\mathbb{Q}$-bifunctor $\ovee:\mc{M} \circledast \mc{M} \rightarrow \mc{M}$ and a unit $\mathbb{Q}$-functor $\mu: \mc{I} \rightarrow \mc{M}$ making the following diagrams commute:
+	\begin{center}
+	\begin{tikzcd}
+		\mc{M} \circledast \mc{M} \circledast \mc{M} \arrow[r, "\mc{M} \circledast \ovee"] \arrow[d, "\ovee \circledast \mc{M}"] & \mc{M} \circledast \mc{M} \arrow[d, "\ovee"] \\
+		\mc{M} \circledast \mc{M} \arrow[r, "\ovee"]                                                                             & \mc{M}                                      
+	\end{tikzcd}
+	\begin{tikzcd}
+		\mc{M} \circledast \mc{I} \arrow[rd, "\sim"'] \arrow[r, "\mc{M} \circledast \mu"] & \mc{M} \circledast \mc{M} & \mc{I} \circledast \mc{M} \arrow[ld, "\sim"] \arrow[l, "\mu \circledast \mc{M}"'] \\
+		& \mc{M}                    &                                                                                  
+	\end{tikzcd}
+	\end{center}	 
+\end{definition}
+
+\begin{lemma}
+	If $(\mc{V}, \ovee, \mu)$ is a monoidal $\mathbb{Q}$-category, then $\ovee$ is monotone on hom-objects: \[ \mc{V}(v,v') \circledast \mc{V}(w,w') \leq \mc{V}(v \ovee w, v' \ovee w') \]
+\end{lemma}
+\begin{proof}
+	This is simply because $\ovee$ is a $\mathbb{Q}$-functor.
+\end{proof}
+
+\begin{definition}[Oplax Functor]
+	\ldots
+\end{definition}
+
+\begin{proposition}
+	Let $(\mathbb{Q}, \circledast, k)$ be commutative quantale, and $(\mc{V}, \ovee, \mu)$ a monoidal $\mathbb{Q}$-category. Suppose $E: \mathbf{Prof}(\mathbb{Q}) \rightarrow \mathbf{Prof}(\mathbb{Q})$ is the extension of an oplax monoidal functor $\tilde E$ on $\mathbf{Cat}(\mathbb{Q})$ with natural transformation $\sigma: E(-\circledast -) \rightarrow E(-) \circledast E(-)$, such that \textcolor{BrickRed} {$E(\Phi \circledast \Psi)(x,y) \leq (E(\Phi) \circledast E(\Psi))(\sigma_{A,B}(x), \sigma_{C,D}(y))$ for all $\Phi, \Psi \in \mathbf{Prof}(\mathbb{Q})$} (looks like it would follow from naturality of $\sigma$). Then $\mathbf{Prof}(\mathbb{Q}) \wr \mc{V}$ is a symmetric monoidal category where the tensor of $\alpha: EA \rightarrow \mc{V}$ and $\beta: EB \rightarrow \mc{V}$ is given by
+	$$
+	E(A \circledast B) \overset{\sigma_{A,B}}{\rightarrow} E(A) \circledast E(B) \overset{\alpha \circledast \beta}{\rightarrow} \mc{V} \circledast \mc{V} \overset{\ovee}{\rightarrow} \mc{V}.
+	$$
+	Written out as a composition, $\alpha \ovee \beta := \alpha\pi_1\sigma_{A,B} \ovee \beta\pi_2\sigma_{A,B}$.
+	
+	The unit $\iota$ for the tensor is given by the object
+	$$
+	E\mc{I} \overset{\sigma_0}{\rightarrow} \mc{I} \overset{\mu}{\rightarrow} \mc{V},
+	$$
+	that is, $\iota = \mu\sigma_0$.
+	The forgetful functor $\mathbf{Prof}(\mathbb{Q}) \wr \mc{V} \rightarrow \mathbf{Prof}(\mathbb{Q})$ preserves this tensor strictly.
+\end{proposition}
+
+\begin{proof}[Proof in progress...]
+ 	Let $\alpha: EA \rightarrow \mc{V} , \beta: EB \rightarrow \mc{V}, \gamma: EC \rightarrow \mc{V}$, and $\delta: ED \rightarrow \mc{V}$ be objects in $\mathbf{Prof}(\mathbb{Q}) \wr \mc{V}$. Moreover, let $\Phi: A \xslashedrightarrow{} C$ and $\Psi: B \xslashedrightarrow{} D$ be proslice morphisms. We first show that the proposed tensor product is indeed a bifunctor.
+	We observe that because $\Phi$ and $\Psi$ are proslice morphisms we have
+	$$
+	E \Phi(a,c) \leq \mc{V}(\alpha(a),\gamma(c)) \quad \text{ and } \quad E \Psi(b,d) \leq \mc{V}(\beta(b),\delta(d)).
+	$$
+	Hence,
+	\begin{IEEEeqnarray*}{rCl}
+		E (\Phi \circledast \Psi)(x,y)  	&\textcolor{BrickRed}{\leq}& (E \Phi \circledast E \Psi)(\sigma_{A,B}(x),\sigma_{C,D}(y)) \\
+											& = & E\Phi(\pi_1\sigma_{A,B}(x), \pi_1\sigma_{C,D}(y)) \circledast E\Psi(\pi_2\sigma_{A,B}(x), \pi_2\sigma_{C,D}(y)) \\
+											& \leq & \mc{V}(\alpha\pi_1\sigma_{A,B}(x), \gamma\pi_1\sigma_{C,D}(y)) \circledast \mc{V}(\beta\pi_2\sigma_{A,B}(x), \delta\pi_2\sigma_{C,D}(y)) \\
+											& \leq & \mc{V}(\alpha\pi_1\sigma_{A,B}(x) \ovee \beta\pi_2\sigma_{A,B}(x), \gamma\pi_1\sigma_{C,D}(y) \ovee  \delta\pi_2\sigma_{C,D}(y)) \\
+											& = & \mc{V}(\alpha \ovee \beta(x), \gamma \ovee \delta(y))
+	\end{IEEEeqnarray*}
+	showing that the image of proslice morphisms under the tensor is again proslice.
+	
+	Functoriality of the tensor follows from the functoriality of $E$ and $- \circledast -$ of $\mathbf{Prof}(\mathbb{Q})$:
+	$$
+	E(\id_A \circledast \id_B) = E(\id_{A \circledast B}) = \id_{E(A \circledast B)}
+	$$
+	$$
+	E((f \circ f') \circledast (g \circ g')) = E((f \circledast g)\circ(f' \circledast g')) = E(f \circledast g) \circ E(f' \circledast g').
+	$$
+	It remains to define the required natural isomorphisms and check the axioms for a symmetric monoidal category. We set
+	$$
+	\textit{assoc}: E((A \circledast B) \circledast C) \cong E(A \circledast (B \circledast C)) 
+	$$
+	to be the image under $E$ of the usual natural iso for the product of categories. Similarly,
+	$$\textit{right}: E(A \circledast \mc{I}) \cong E(A),\: \textit{left}: E(\mc{I} \circledast A) \cong E(A) \: \text{ and } \: \textit{swap}: E(A \circledast B) \cong E(B \circledast A)$$
+	are also given as images of the usual natural isos in the symmetric monoidal category $\mathbf{Prof}(\mathbb{Q})$. As a consequence, the axioms are automatically fulfilled, since the requisite diagrams are the images of commuting diagrams in $\mathbf{Prof}(\mathbb{Q})$. \textcolor{red}{The final thing to check is that all the natural isos are in fact proslice morphisms}.
+	
+	 \textcolor{red}{Claim about forgetful functor}.
+	
+\end{proof}
+
+
+\printbibliography
+
 
 \end{document}

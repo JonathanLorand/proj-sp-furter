@@ -1,0 +1,68 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: Linear_Logic_and_Co-Design_Notebook_FS21.aux
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+The style file: biblatex.bst
+Reallocating 'name_of_file' (item size: 1) to 45 items.
+Reallocating 'name_of_file' (item size: 1) to 5 items.
+Reallocating 'glb_str_end' (item size: 4) to 20 items.
+Reallocating 'glb_str_ptr' (item size: 4) to 20 items.
+Reallocating 'global_strs' (item size: 1) to 4000000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'wiz_functions' (item size: 4) to 6000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Database file #1: Linear_Logic_and_Co-Design_Notebook_FS21-blx.bib
+Database file #2: LLCD.bib
+Biblatex version: 3.15
+Reallocating 'wiz_functions' (item size: 4) to 9000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+You've used 4 entries,
+            6393 wiz_defined-function locations,
+            1240 strings with 13612 characters,
+and the built_in function-call counts, 17431 in all, are:
+= -- 1013
+> -- 387
+< -- 94
++ -- 351
+- -- 170
+* -- 1332
+:= -- 1884
+add.period$ -- 0
+call.type$ -- 4
+change.case$ -- 42
+chr.to.int$ -- 44
+cite$ -- 6
+duplicate$ -- 1729
+empty$ -- 1678
+format.name$ -- 193
+if$ -- 3644
+int.to.chr$ -- 0
+int.to.str$ -- 6
+missing$ -- 0
+newline$ -- 141
+num.names$ -- 135
+pop$ -- 1032
+preamble$ -- 1
+purify$ -- 54
+quote$ -- 0
+skip$ -- 617
+stack$ -- 0
+substring$ -- 1690
+swap$ -- 526
+text.length$ -- 109
+text.prefix$ -- 4
+top$ -- 1
+type$ -- 124
+warning$ -- 0
+while$ -- 282
+width$ -- 0
+write$ -- 138

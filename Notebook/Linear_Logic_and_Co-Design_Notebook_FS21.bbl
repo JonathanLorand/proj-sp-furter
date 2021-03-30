@@ -1,0 +1,188 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{anyt/global//global/global}
+  \entry{Marsden2018}{article}{}
+    \name{author}{2}{}{%
+      {{hash=MD}{%
+         family={Marsden},
+         familyi={M\bibinitperiod},
+         given={Dan},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=ZM}{%
+         family={Zwart},
+         familyi={Z\bibinitperiod},
+         given={Maaike},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \keyw{Bimodule,Combinatorial species,Enriched
+  category,Monad,Multicategory,Operad,Profunctor,Resource theory}
+    \strng{namehash}{MDZM1}
+    \strng{fullhash}{MDZM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{MZ18}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{abstract}{%
+    Considering resource usage is a powerful insight in the analysis of many
+  phenomena in the sciences. Much of the current research on these resource
+  theories focuses on the analysis of specific resources such quantum
+  entanglement, purity, randomness or asymmetry. However, the mathematical
+  foundations of resource theories are at a much earlier stage, and there has
+  been no satisfactory account of quantitative aspects such as costs, rates or
+  probabilities. We present a categorical foundation for quantitative resource
+  theories, derived from enriched category theory. Our approach is
+  compositional, with rich algebraic structure facilitating calculations. The
+  resulting theory is parameterized, both in the quantities under
+  consideration, for example costs or probabilities, and in the structural
+  features of the resources such as whether they can be freely copied or
+  deleted. We also achieve a clear separation of concerns between the resource
+  conversions that are freely available, and the costly resources that are
+  typically the object of study. By using an abstract categorical approach, our
+  framework is naturally open to extension. We provide many examples
+  throughout, emphasising the resource theoretic intuitions for each of the
+  mathematical objects under consideration.%
+    }
+    \verb{doi}
+    \verb 10.4230/LIPIcs.CSL.2018.32
+    \endverb
+    \field{isbn}{9783959770880}
+    \field{issn}{18688969}
+    \field{number}{32}
+    \field{pages}{1\bibrangedash 17}
+    \field{title}{{Quantitative foundations for resource theories}}
+    \field{volume}{119}
+    \verb{file}
+    \verb :C\:/Users/mariu/OneDrive/Documents/FS21/ACT Project/Essential Readin
+    \verb g/Marsden - Quantitative Foundations for Resource Theories.pdf:pdf
+    \endverb
+    \field{journaltitle}{Leibniz International Proceedings in Informatics,
+  LIPIcs}
+    \field{year}{2018}
+  \endentry
+
+  \entry{Schalk2004}{article}{}
+    \name{author}{2}{}{%
+      {{hash=SA}{%
+         family={Schalk},
+         familyi={S\bibinitperiod},
+         given={Andrea},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=DV}{%
+         family={{De Paiva}},
+         familyi={D\bibinitperiod},
+         given={Valeria},
+         giveni={V\bibinitperiod},
+      }}%
+    }
+    \keyw{Categorical models,Linear logic}
+    \strng{namehash}{SADV1}
+    \strng{fullhash}{SADV1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{SD04}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{abstract}{%
+    We describe a method for constructing models of linear logic based on the
+  category of sets and relations. The resulting categories are non-degenerate
+  in general; in particular they are not compact closed nor do they have
+  biproducts. The construction is simple, lifting the structure of a poset to
+  the new category. The underlying poset thus controls the structure of this
+  category, and different posets give rise to differently-flavoured models. As
+  a result, this technique allows the construction of models for both,
+  intuitionistic or classical linear logic as desired. A number of well-known
+  models, for example coherence spaces and hypercoherences, are instances of
+  this method. {\textcopyright} 2003 Elsevier B.V. All rights reserved.%
+    }
+    \verb{doi}
+    \verb 10.1016/j.tcs.2003.11.014
+    \endverb
+    \field{issn}{03043975}
+    \field{number}{1}
+    \field{pages}{83\bibrangedash 107}
+    \field{title}{{Poset-valued sets or how to build models for linear logics}}
+    \field{volume}{315}
+    \verb{file}
+    \verb :C\:/Users/mariu/OneDrive/Documents/FS21/ACT Project/Essential Readin
+    \verb g/Schalk de Paiva - Poset-valued sets or how to build models for line
+    \verb ar logic.pdf:pdf
+    \endverb
+    \field{journaltitle}{Theoretical Computer Science}
+    \field{year}{2004}
+  \endentry
+
+  \entry{Yetter1990}{article}{}
+    \name{author}{1}{}{%
+      {{hash=YDN}{%
+         family={Yetter},
+         familyi={Y\bibinitperiod},
+         given={David\bibnamedelima N.},
+         giveni={D\bibinitperiod\bibinitdelim N\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{YDN1}
+    \strng{fullhash}{YDN1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Yet90}
+    \field{sortinit}{Y}
+    \field{sortinithash}{Y}
+    \field{abstract}{%
+    It is the purpose of this paper to make explicit the connection between
+  J.-Y. Girard's “linear logic” [4], and certain models for the logic of
+  quantum mechanics, namely Mulvey's “quantales” [9]. This will be done not
+  only in the case of commutative linear logic, but also in the case of a
+  version of noncommutative linear logic suggested, but not fully formalized,
+  by Girard in lectures given at McGill University in the fall of 1987 [5], and
+  which for reasons which will become clear later we call “cyclic linear
+  logic”.For many of our results on quantales, we rely on the work of
+  Niefield and Rosenthal [10]. The reader should note that by “the logic of
+  quantum mechanics” we do not mean the lattice theoretic “quantum
+  logics” of Birkhoff and von Neumann [1], but rather a logic involving an
+  associative (in general noncommutative) operation “and then”. Logical
+  validity is intended to embody empirical verification (whether a physical
+  experiment, or running a program), and the validity of A & B (in Mulvey's
+  notation) is to be regarded as “we have verified A , and then we have
+  verified B ”. (See M. D. Srinivas [11] for another exposition of this
+  idea.) This of course is precisely the view of the “multiplicative
+  conjunction”, ⊗, in the phase semantics for Girard's linear logic [4],
+  [5]. Indeed the quantale semantics for linear logic may be regarded as an
+  element-free version of the phase semantics.%
+    }
+    \verb{doi}
+    \verb 10.2307/2274953
+    \endverb
+    \field{issn}{0022-4812}
+    \field{number}{1}
+    \field{pages}{41\bibrangedash 64}
+    \field{title}{{Quantales and (noncommutative) linear logic}}
+    \field{volume}{55}
+    \verb{file}
+    \verb :C\:/Users/mariu/OneDrive/Documents/FS21/ACT Project/Essential Readin
+    \verb g/yetter - quantales-and-noncommutative-linear-logic.pdf:pdf
+    \endverb
+    \field{journaltitle}{Journal of Symbolic Logic}
+    \field{year}{1990}
+  \endentry
+\enddatalist
+\endinput

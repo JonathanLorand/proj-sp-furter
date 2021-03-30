@@ -12,4 +12,10 @@
 \BOOKMARK [3][-]{subsubsection.2.5.2}{The Generalized Query Functor}{subsection.2.5}% 12
 \BOOKMARK [2][-]{subsection.2.6}{Queries as Universal Objects in PosBool}{section.2}% 13
 \BOOKMARK [3][-]{subsubsection.2.6.1}{Describing Other Queries}{subsection.2.6}% 14
-\BOOKMARK [2][-]{subsection.2.7}{V-Posets}{section.2}% 15
+\BOOKMARK [1][-]{section.3}{Proslice Q-Categories}{}% 15
+\BOOKMARK [2][-]{subsection.3.1}{Quantales}{section.3}% 16
+\BOOKMARK [2][-]{subsection.3.2}{Proslice Construction}{section.3}% 17
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Relation to Profunctor Collage}{subsection.3.2}% 18
+\BOOKMARK [3][-]{subsubsection.3.2.2}{Relation to Order on Profunctors}{subsection.3.2}% 19
+\BOOKMARK [2][-]{subsection.3.3}{Properties of Prof\(Q\) V}{section.3}% 20
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Tensor product}{subsection.3.3}% 21
