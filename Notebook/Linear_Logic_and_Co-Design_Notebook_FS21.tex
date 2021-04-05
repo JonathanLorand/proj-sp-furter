@@ -123,17 +123,17 @@ citestyle=alphabetic]{biblatex}
 
 	\begin{tikzpicture}[#1]%
 
-	\draw (-0.3ex,0.35ex) -- (0.5ex,0.35ex);
+	\draw[semithick, line cap = round, line join = round] (-0.3ex,0.35ex) -- (0.5ex,0.35ex);
 
-	\draw (0.5ex,0.35ex) -- (0.5ex,-0.5ex);
+	\draw[semithick, line cap = round, line join = round] (0.5ex,0.35ex) -- (0.5ex,-0.5ex);
 
-	\draw (0.5ex,-0.5ex) -- (1.5ex,-0.5ex);
+	\draw[semithick, line cap = round, line join = round] (0.5ex,-0.5ex) -- (1.5ex,-0.5ex);
 
-	\draw (0,0) -- (1ex,0);%
+	\draw[semithick, line cap = round, line join = round] (0,0) -- (1ex,0);%
 
-	\draw (1ex,0) -- (1ex,-0.85ex);
+	\draw[semithick, line cap = round, line join = round] (1ex,0) -- (1ex,-0.85ex);
 
-	\draw (1ex,-0.85ex) -- (1.8ex,-0.85ex);
+	\draw[semithick, line cap = round, line join = round] (1ex,-0.85ex) -- (1.8ex,-0.85ex);
 
 	\end{tikzpicture}%
 
@@ -797,6 +797,115 @@ For the following we will assume that $\mc{V}$ is a monoidal $\mathbb{Q}$-catego
 	
 \end{proof}
 
+
+\subsection{Proslice \textbf{Bool}-Categories}
+
+We attempt to first develop the theory in the simplified setting of $\mathbf{Bool}$-enriched categories. For the following denote $\mathbf{Bool} =: \mathbb{B}$.
+
+\begin{definition}[Proslice \textbf{Bool}-categories]
+	Let $\mathbb{Q}$ be a commutative quantale, and $E: \mathbf{Prof}(\mathbb{B}) \rightarrow \mathbf{Prof}(\mathbb{B})$ an endofunctor. The \emph{proslice category} $\mathbf{Prof}(\mathbb{B}) \wr_E \mathbb{Q}$ consists of:
+	\begin{itemize}
+		\item[(i)] objects are monotone maps $\varphi: EP \rightarrow \mathbb{Q}$ 
+		\item[(ii)] morphisms between $\varphi: EP \rightarrow \mathbb{Q}$ and $\rho: ER \rightarrow \mathbb{Q}$ are feasibility relations $\Phi: P \xslashedrightarrow{} R$ satisfying the \emph{proslice condition}:
+		\[E\Phi(a,b) = \mathtt{true} \Rightarrow \varphi(a) \leq \rho(b). \]
+	\end{itemize}
+	Diagrammatically:
+	\begin{center}
+		\begin{tikzcd}
+			EP \arrow[rrd, bend left=25, ""{name=R, below}] \arrow[d, "|" marking] &  &    \\
+			ER \arrow[rr, ""{name=F}]     &  & \mathbb{Q} 
+			\arrow[Rightarrow, from=R, to=F]
+		\end{tikzcd}
+	\end{center}
+\end{definition}
+
+We can define an order structure on the objects of the proslice category as follows:
+
+\begin{definition}
+	Let $\Phi: A \xslashedrightarrow{} B$ and $\Psi: A \xslashedrightarrow{} B$ be feasibility relations. Set $\Phi \leq \Psi$ iff for all $a \in A$ and $b,b' \in B$ we have that $\Phi(a,b) = \mathtt{true}$ and $\Psi(a,b') = \mathtt{true}$ imply $b \leq b'$. In particular, this order restricts to the pointwise order on monotone maps and hence on objects of the proslice category.
+\end{definition}
+
+We can characterize the proslice condition in terms of the aforementioned order.
+
+\begin{lemma}
+	Let $\varphi: EP \rightarrow \mathbb{Q}$ and $\rho: ER \rightarrow \mathbb{Q}$ be proslice objects. A feasibility relation $\Phi: P \xslashedrightarrow{} R$ satisfies the proslice condition if and only if $\varphi \leq \rho \circ E\Phi$.
+\end{lemma}
+\begin{proof}
+	Suppose $\Phi$ is proslice. If $\varphi(a,b) = \mathtt{true}$ and $\rho \circ E\Phi (a,b') = \mathtt{true}$, then $\varphi(a) = b$ and there is $r \in ER$ such that $\rho(r) = b'$ and $\Phi(a,r) = \mathtt{true}$. By the proslice condition $b = \varphi(a) \leq \rho(r) = b'$.
+	
+	Conversely, suppose that $\varphi \leq \rho \circ E\Phi$ and $E\Phi(a,b) = \mathtt{true}$. Because $\rho$ is a function, we have $\rho(b,c) = \mathtt{true}$ for $c := \rho(b)$. Then $\rho \circ E\Phi(a,c) = \mathtt{true}$. Now for $\varphi(a) = c'$ we have $\phi(a,c') = \mathtt{true}$, so $\phi(a) = c' \leq c = \rho(b)$ by assumption. Hence $\Phi$ is proslice.
+\end{proof}
+
+This characterization can be used to obtain some lemmas for diagram pasting. In short, pre- and post-composing with monotone maps preserved the order.
+
+\begin{lemma}\label{pasting lemma}
+	Let $S, S': B \xslashedrightarrow{} C$ be feasibility relations and $R: A \rightarrow B$ $T: C \rightarrow D$ monotone maps. If $S \leq S'$, then
+	\begin{itemize}
+		\item[(i)] $S \circ R \leq S' \circ R$,
+		\item[(ii)] $T \circ S \leq T \circ S'$. 
+	\end{itemize}
+ 
+\end{lemma} 
+\begin{proof}
+	Suppose $S \leq S'$. For \textit{(i)} assume that $S \circ R (a,c) = \mathtt{true}$ and $S' \circ R (a,c') = \mathtt{true}$. There are $b,b' \in B$ satisfying $R(a) = b$, $S(b,c) = \mathtt{true}$ and $R(a) = b'$, $S'(b',c') = \mathtt{true}$. But because $R$ is a function $b = b'$, so we in fact have $S(b,c) = \mathtt{true}$ and $S'(b,c') = \mathtt{true}$, which implies $c \leq c'$ since $S \leq S'$. 
+	
+	For \textit{(ii)} we assume that $T \circ S (b,d) = \mathtt{true}$ and $T \circ S' (b,d') = \mathtt{true}$. There are $c,c' \in C$ such that $T(c) = d$, $T(c') = d'$ and $S(b,c) = \mathtt{true}$, $S'(b,c') = \mathtt{true}$. Since $S \leq S'$, we know $c \leq c'$. Therefore by monotonicity of $T$ we have $d = T(c) \leq T(c') = d'$.
+\end{proof}
+
+The order also behaves well with respect to the cartesian product on $\mathbf{Prof}(\mathbb{B})$.
+
+\begin{lemma} \label{product lemma}
+	Let $\alpha, \alpha': A \xslashedrightarrow{} A'$, $\beta, \beta': B \xslashedrightarrow{} B'$ be feasibility relations. If $\alpha \leq \alpha'$ and $\beta \leq \beta'$, then $\alpha \times \beta \leq \alpha' \times \beta'$.
+\end{lemma}
+\begin{proof}
+	Assume $\alpha \times \beta((a,b),(x,y)) = \mathtt{true}$ and $\alpha' \times \beta'((a,b),(x',y')) = \mathtt{true}$. By definition of the cartesian product of profunctors this means $\alpha(a,x) = \beta(b,y) = \alpha'(a,x') = \beta'(b,y') = \mathtt{true}$. Using our hypotheses that  $\alpha \leq \alpha'$ and $\beta \leq \beta'$, we obtain $x \leq x'$ and $y \leq y'$. Hence $(x,y) \leq (x',y')$, as desired.
+\end{proof}
+
+\begin{theorem}
+	Suppose $E$ is oplax monoidal where the components of $\sigma: E(- \times -) \rightarrow E(-) \times E(-)$ are monotone maps. Then any monotone n-ary operation on $\mathbb{Q}$ induces a functor $\bullet: (\mathbf{Prof}(\mathbb{B}) \wr_E \mathbb{Q})^{\times n} \rightarrow \mathbf{Prof}(\mathbb{B}) \wr_E \mathbb{Q}$ as follows:
+	\begin{description}
+		\item[Objects] $\alpha_i : EA_i \rightarrow \mathbb{Q}$ are mapped to the composite
+		\begin{center}
+			\begin{tikzcd}
+				E(A_1 \times \ldots \times A_n) \arrow[r, "{\sigma_{A_1,\ldots,A_n}}"] & E(A_1) \times \ldots \times E(A_n) \arrow[r, "\alpha_1 \times \ldots \times \alpha_n"] & \mathbb{Q}^{\times n} \arrow[r, "\bullet"] & \mathbb{Q}
+			\end{tikzcd}
+		\end{center}
+		where $\sigma_{A_1,\ldots,A_n}$ denotes the iterated application of the appropriate components of the natural transformation $\sigma$.
+			
+		\item[Morphisms] $E\Phi_i: EA_i \xslashedrightarrow{} EB_i$ are mapped to $E(\Phi_1 \times \ldots \times \Phi_n)$.
+	\end{description}
+\end{theorem}
+
+\begin{proof}
+	Let $\bullet: \mathbb{Q}^{\times n} \rightarrow \mathbb{Q}$ be the monotone n-ary operation in question. Suppose $\alpha_i: EA_i \rightarrow \mathbb{Q}$,  $\beta_i: EB_i \rightarrow \mathbb{Q}$ are proslice objects, and $\Phi_i: A_i \xslashedrightarrow{} B_i$ proslice morphisms, for $1 \leq i \leq n$. The proslice condition, $\alpha_i \leq \beta_i \circ E\Phi_i$ implies $\alpha_1 \times \ldots \times \alpha_n \leq \beta_1 \circ E \Phi_1 \times \ldots \times \beta_n \circ E \Phi_n$ by lemma \ref{product lemma}. Because $\times$ is a functor, \[ \beta_1 \circ E \Phi_1 \times \ldots \times \beta_n \circ E \Phi_n =  (\beta_1 \times \ldots \times \beta_n) \circ (E\Phi_1 \times \ldots \times E\Phi_n). \] 
+	
+	By appending the relevant iterated components of the natural transformation $\sigma$, we get the following diagram, where the left square commutes by naturality.
+	\begin{center}
+		\begin{tikzcd}
+			E(A_1 \times \ldots \times A_n) \arrow[r, "{\sigma_{A_1,\ldots,A_n}}"] \arrow[dd, "E(\Phi_1 \times \ldots \times \Phi_n)"] & E(A_1) \times \ldots \times E(A_n) \arrow[rd, "\alpha_1 \times \ldots \times \alpha_n"] \arrow[dd, "E\Phi_1 \times \ldots \times E\Phi_n"] &                                            &            \\
+			&                                                                                                                                            & \mathbb{Q}^{\times n} \arrow[r, "\bullet"] & \mathbb{Q} \\
+			E(B_1 \times \ldots \times B_n) \arrow[r, "{\sigma_{B_1,\ldots,B_n}}"]                                                     & E(B_1) \times \ldots \times E(B_n) \arrow[ru, "\beta_1 \times \ldots \times \beta_n"']                                                     &                                            &           
+		\end{tikzcd}
+	\end{center}
+	By using pre-composition lemma \ref{pasting lemma} and the commutativity of the square, we obtain
+	\begin{IEEEeqnarray*}{rCl}
+		(\alpha_1 \times \ldots \times \alpha_n) \circ \sigma_{A_1,\ldots,A_n} &\leq& (\beta_1 \times \ldots \times \beta_n) \circ (E\Phi_1 \times \ldots \times E\Phi_n) \circ \sigma_{A_1,\ldots,A_n} \\
+			& = & (\beta_1 \times \ldots \times \beta_n) \circ \sigma_{B_1,\ldots,B_n} \circ E(\Phi_1 \times \ldots \times \Phi_n).
+	\end{IEEEeqnarray*}
+	By post-composition, again using lemma \ref{pasting lemma},
+	\[\bullet [(\alpha_1 \times \ldots \times \alpha_n) \circ \sigma_{A_1,\ldots,A_n}]  \leq \bullet [(\beta_1 \times \ldots \times \beta_n) \circ \sigma_{B_1,\ldots,B_n} \circ E(\Phi_1 \times \ldots \times \Phi_n)]. \]
+	Therefore, $E(\Phi_1 \times \ldots \times \Phi_n)$ is proslice with respect to the induced operation. Finally, functoriality follows from that of $\times$ and $E$: 
+	\begin{IEEEeqnarray*}{rCl}
+	E(\Psi_1 \Phi_1 \times \ldots \times \Psi_n\Phi_n) &= &E((\Psi_1 \times \ldots \times \Psi_n)\circ(\Phi_1 \times \ldots \times \Phi_n)) \\ & =&  E(\Psi_1 \times \ldots \times \Psi_n) \circ E(\Phi_1 \times \ldots \times \Phi_n)	
+	\end{IEEEeqnarray*}
+	and
+	\[E(\id_{A_1} \times \ldots \times \id_{A_n}) = E(\id_{A_1 \times \ldots \times A_n}) = \id_E(A_1 \times \ldots \times A_n).\]
+	
+\end{proof}
+
+\begin{remark}
+	Observe that the above proof also works for any monoidal product $\otimes$ on $\mathbf{Prof}(\mathbb{B})$ and operation $\mathbb{Q}^{\otimes n} \rightarrow \mathbb{Q}$.
+\end{remark}
 
 \printbibliography
 

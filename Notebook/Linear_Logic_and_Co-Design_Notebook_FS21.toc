@@ -58,3 +58,5 @@
 \contentsline {subsection}{\numberline {3.3}Properties of $\mathbf {Prof}(\mathbb {Q}) \wr \EuScript {V}$}{21}{subsection.3.3}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {3.3.1}Tensor product}{21}{subsubsection.3.3.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.4}Proslice \textbf {Bool}-Categories}{24}{subsection.3.4}%
