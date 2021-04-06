@@ -19,6 +19,8 @@
 
 \usepackage{eucal}
 
+\usepackage{bbm}
+
 \usepackage[dvipsnames]{xcolor}
 
 
@@ -819,15 +821,15 @@ We attempt to first develop the theory in the simplified setting of $\mathbf{Boo
 	\end{center}
 \end{definition}
 
-We can define an order structure on the objects of the proslice category as follows:
+We can define an order structure on the objects of the proslice category. Since we want the definition to cover both boolean profunctors and monotone maps, we regard both as special types of relations, and identify a relation $A \xslashedrightarrow{} B$ with an arbitrary function $A \times B \rightarrow \mathbb{B}$.
 
 \begin{definition}
-	Let $\Phi: A \xslashedrightarrow{} B$ and $\Psi: A \xslashedrightarrow{} B$ be feasibility relations. Set $\Phi \leq \Psi$ iff for all $a \in A$ and $b,b' \in B$ we have that $\Phi(a,b) = \mathtt{true}$ and $\Psi(a,b') = \mathtt{true}$ imply $b \leq b'$. In particular, this order restricts to the pointwise order on monotone maps and hence on objects of the proslice category.
+	Let $\Phi: A \xslashedrightarrow{} B$ and $\Psi: A \xslashedrightarrow{} B$ be arbitrary relations. Set $\Phi \leq \Psi$ iff for all $a \in A$ and $b,b' \in B$ we have that $\Phi(a,b) = \mathtt{true}$ and $\Psi(a,b') = \mathtt{true}$ imply $b \leq b'$. In particular, this order restricts to the pointwise order on monotone maps and hence on objects of the proslice category.
 \end{definition}
 
 We can characterize the proslice condition in terms of the aforementioned order.
 
-\begin{lemma}
+\begin{lemma}\label{proslice char}
 	Let $\varphi: EP \rightarrow \mathbb{Q}$ and $\rho: ER \rightarrow \mathbb{Q}$ be proslice objects. A feasibility relation $\Phi: P \xslashedrightarrow{} R$ satisfies the proslice condition if and only if $\varphi \leq \rho \circ E\Phi$.
 \end{lemma}
 \begin{proof}
@@ -838,7 +840,7 @@ We can characterize the proslice condition in terms of the aforementioned order.
 
 This characterization can be used to obtain some lemmas for diagram pasting. In short, pre- and post-composing with monotone maps preserved the order.
 
-\begin{lemma}\label{pasting lemma}
+\begin{lemma}[Pre-/Post-composition]\label{pasting lemma}
 	Let $S, S': B \xslashedrightarrow{} C$ be feasibility relations and $R: A \rightarrow B$ $T: C \rightarrow D$ monotone maps. If $S \leq S'$, then
 	\begin{itemize}
 		\item[(i)] $S \circ R \leq S' \circ R$,
@@ -854,15 +856,31 @@ This characterization can be used to obtain some lemmas for diagram pasting. In 
 
 The order also behaves well with respect to the cartesian product on $\mathbf{Prof}(\mathbb{B})$.
 
-\begin{lemma} \label{product lemma}
+\begin{lemma}[Product] \label{product lemma}
 	Let $\alpha, \alpha': A \xslashedrightarrow{} A'$, $\beta, \beta': B \xslashedrightarrow{} B'$ be feasibility relations. If $\alpha \leq \alpha'$ and $\beta \leq \beta'$, then $\alpha \times \beta \leq \alpha' \times \beta'$.
 \end{lemma}
 \begin{proof}
 	Assume $\alpha \times \beta((a,b),(x,y)) = \mathtt{true}$ and $\alpha' \times \beta'((a,b),(x',y')) = \mathtt{true}$. By definition of the cartesian product of profunctors this means $\alpha(a,x) = \beta(b,y) = \alpha'(a,x') = \beta'(b,y') = \mathtt{true}$. Using our hypotheses that  $\alpha \leq \alpha'$ and $\beta \leq \beta'$, we obtain $x \leq x'$ and $y \leq y'$. Hence $(x,y) \leq (x',y')$, as desired.
 \end{proof}
 
-\begin{theorem}
-	Suppose $E$ is oplax monoidal where the components of $\sigma: E(- \times -) \rightarrow E(-) \times E(-)$ are monotone maps. Then any monotone n-ary operation on $\mathbb{Q}$ induces a functor $\bullet: (\mathbf{Prof}(\mathbb{B}) \wr_E \mathbb{Q})^{\times n} \rightarrow \mathbf{Prof}(\mathbb{B}) \wr_E \mathbb{Q}$ as follows:
+In the following we will need to choose the endofunctor on the proslice category to have a special form. We want there to be natural transformations  $\sigma: E(- \times -) \rightarrow E(-) \times E(-)$ and $E\mathbbm{1} \rightarrow \mathbbm{1}$ whose components are monotone maps. To make the definition we observe that both $\mathbf{Cat}(\mathbb{Q})$ and $\mathbf{Prof}(\mathbb{Q})$ embed into $\mathbf{Rel_{Pos}}$, the category whose objects are posets and whose morphisms are arbitrary relations. Hence, we can formulate a mixed naturality condition there.
+
+\begin{definition}
+	An endofunctor $E$ on $\mathbf{Prof}(\mathbb{B})$ is called \emph{slicing}, if it is oplax symmetric monoidal with respect to the cartesian product, and the components of the natural transformations are monotone functions. More precisely, for any two posets $A,B \in \mathbf{Prof}(\mathbb{B})$ we want a monotone map $\sigma_{A,B}: E(A \times B) \rightarrow E(A) \times E(B)$ in $\mathbf{Cat}(\mathbb{B}) = \mathbf{Pos}$ that makes the following diagram commute in $\mathbf{Rel_{Pos}}$:
+	\begin{center}
+		\begin{tikzcd}
+			E(A \times B) \arrow[r, "{\sigma_{A,B}}"] \arrow[d, "E(\Phi \times \Psi)"] & E(A)\times E(B) \arrow[d, "E\Phi \times E\Psi"] \\
+			E(A' \times B') \arrow[r, "{\sigma_{A',B'}}"]                              & E(A')\times E(B')                              
+		\end{tikzcd}
+	\end{center}
+	We also require a monotone map $\sigma_0 :E\mathbbm{1} \rightarrow \mathbbm{1}$.
+	
+	
+	
+\end{definition}  
+
+\begin{theorem}[Transfer] \label{transfer theorem}
+	Suppose $E$ is slicing. Then any monotone n-ary operation on $\mathbb{Q}$ induces a functor $\bullet: (\mathbf{Prof}(\mathbb{B}) \wr_E \mathbb{Q})^{\times n} \rightarrow \mathbf{Prof}(\mathbb{B}) \wr_E \mathbb{Q}$ as follows:
 	\begin{description}
 		\item[Objects] $\alpha_i : EA_i \rightarrow \mathbb{Q}$ are mapped to the composite
 		\begin{center}
@@ -899,13 +917,56 @@ The order also behaves well with respect to the cartesian product on $\mathbf{Pr
 	E(\Psi_1 \Phi_1 \times \ldots \times \Psi_n\Phi_n) &= &E((\Psi_1 \times \ldots \times \Psi_n)\circ(\Phi_1 \times \ldots \times \Phi_n)) \\ & =&  E(\Psi_1 \times \ldots \times \Psi_n) \circ E(\Phi_1 \times \ldots \times \Phi_n)	
 	\end{IEEEeqnarray*}
 	and
-	\[E(\id_{A_1} \times \ldots \times \id_{A_n}) = E(\id_{A_1 \times \ldots \times A_n}) = \id_E(A_1 \times \ldots \times A_n).\]
+	\[E(\id_{A_1} \times \ldots \times \id_{A_n}) = E(\id_{A_1 \times \ldots \times A_n}) = \id_{E(A_1 \times \ldots \times A_n)}.\]
 	
 \end{proof}
 
 \begin{remark}
 	Observe that the above proof also works for any monoidal product $\otimes$ on $\mathbf{Prof}(\mathbb{B})$ and operation $\mathbb{Q}^{\otimes n} \rightarrow \mathbb{Q}$.
 \end{remark}
+
+Our goal is now to transfer the structure of the quantale $\mathbb{Q}$ (which we will eventually choose to be *-autonomous) to the proslice category $\mathbf{Prof}(\mathbb{B}) \wr_E \mathbb{Q}$. The transfer theorem \ref{transfer theorem} tells us that we will get appropriate functors on the proslice category for each operation on $\mathbb{Q}$. However, we will need to check that the induced operations also satisfy the requisite properties. We start with the monoidal product. 
+
+\subsubsection{Symmetric Monoidal Structure}
+
+\begin{proposition}
+	Let $(\mathbb{Q},\otimes, k)$ be a commutative quantale and $E$ slicing. Then $\mathbf{Prof}(\mathbb{B}) \wr_E \mathbb{Q}$ is a symmetric monoidal category with respect to the bifunctor induced by $\otimes$.
+\end{proposition} 
+\begin{proof}
+	By the transfer theorem \ref{transfer theorem}, we know that we have a bifunctor $\otimes$ on $\mathbf{Prof}(\mathbb{B}) \wr_E \mathbb{Q}$. We need to show that this satisfies the axioms for a SMC. The required natural isomorphisms will be inherited from those that turn the cartesian product into a symmetric monoial structure on $\mathbf{Prof}(\mathbb{B})$. These are 
+	\[\mathit{assoc}: (A \times B) \times C \rightarrow  A \times (B \times C), \]
+	\[\mathit{left}: \mathbbm{1} \times A \rightarrow A, \]
+	\[\mathit{right}: A \times \mathbbm{1} \rightarrow A, \]
+	\[\mathit{swap}: A \times B \rightarrow B \times A. \]
+	which are the appropriate profunctors induced by the corresponding functions in $\mathbf{Set}$. For the proslice category, we take the images of the above natural isomorphisms under the functor $E$. This process preserves naturality and the commutativity of the requisite diagrams, since morphisms in the proslice category are just special morphisms in $\mathbf{Prof}(\mathbb{B})$. The only thing to check is that the compoents of our natural transformations actually lie in the proslice category, that is that they fulfil the proslice condition. This can be seen from the following commutative diagrams, where the top and bottom paths are the proslice objects obtained by the induced operation. The fact that they commute means that we in particular have the inequality of relations that characterizes proslice morphisms (see lemma \ref{proslice char}).
+	
+	We start with associativity:
+	\begin{center}
+		\begin{tikzcd}
+			E((A \times B) \times C) \arrow[d, "E(\mathit{assoc})"] \arrow[r, "{\sigma_{A,B}\sigma_{(A \times B),C}}"] & (E(A) \times E(B)) \times E(C) \arrow[r, "(\alpha \times \beta) \times \gamma"] \arrow[d, "\mathit{assoc}"] & (\mathbb{Q} \times \mathbb{Q}) \times \mathbb{Q}  \arrow[d, "\mathit{assoc}"] \arrow[rd, "\otimes \text{ twice}"] &            \\
+			E(A \times (B \times C)) \arrow[r, "{\sigma_{B,C} \sigma_{A,(B \times C)}}"']                             & E(A) \times (E(B) \times E(C)) \arrow[r, "\alpha \times (\beta \times \gamma)"']                            & \mathbb{Q} \times (\mathbb{Q} \times \mathbb{Q} ) \arrow[r, "\otimes \text{ twice}"']                             & \mathbb{Q}
+		\end{tikzcd}
+	\end{center}
+	The leftmost square commutes by the associativity requirement for the oplax monoidal functor $E$, the middle square commutes by the naturality of $\mathit{assoc}$, and the rightmost triangle commutes because it is the image of the associativity diagram for $\mathbb{Q}$ in $\mathbf{Pos}$.
+	
+	The diagram for the left unitor is:
+	\begin{center}
+		\begin{tikzcd}
+			E(\mathbbm{1} \times A) \arrow[rd, "E(\mathit{left})"'] \arrow[r, "{\sigma_0 \sigma_{\mathbbm{1},A}}"] & \mathbbm{1} \times E(A) \arrow[r, "\mathbbm{1} \times \alpha"] \arrow[d, "\mathit{left}"] & \mathbbm{1} \times \mathbb{Q} \arrow[r, "k \times \mathbb{Q}"] \arrow[d, "\mathit{left}"] & \mathbb{Q} \times \mathbb{Q} \arrow[ld, "\otimes"] \\
+			& E(A) \arrow[r, "\alpha"]                                                                  & \mathbb{Q}                                                                                &                                                   
+		\end{tikzcd}
+	\end{center}
+	The left triangle communtes by the axioms for an oplax monoidal functor, the middle square by naturality of $\mathit{left}$, and the right triangle because of the unit law for $\mathbb{Q}$. The diagram for the right unitor is analogous.
+	
+	Finally, for commutativity we have
+	\begin{center}
+			\begin{tikzcd}
+			E(A \times B) \arrow[d, "E(\mathit{swap})"] \arrow[r] & E(A) \times E(B) \arrow[d, "\mathit{swap}"] \arrow[r] & \mathbb{Q} \times \mathbb{Q} \arrow[d, "\mathit{swap}"] \arrow[rd, "\otimes"] &            \\
+			E(B \times A) \arrow[r]                               & E(B) \times E(A) \arrow[r]                            & \mathbb{Q} \times \mathbb{Q} \arrow[r, "\otimes"]                             & \mathbb{Q}
+		\end{tikzcd}
+	\end{center}
+	where the left square commutes because $E$ is symmetric oplax monoidal, the middle by naturality of $\mathit{swap}$, and the right triangle by commutativity of $\mathbb{Q}$.
+\end{proof}
 
 \printbibliography
 

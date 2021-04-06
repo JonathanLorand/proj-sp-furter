@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.12) (preloaded format=pdflatex 2020.12.25)  5 APR 2021 19:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.12) (preloaded format=pdflatex 2020.12.25)  6 APR 2021 09:21
 entering extended mode
 **./Linear_Logic_and_Co-Design_Notebook_FS21.tex
 (Linear_Logic_and_Co-Design_Notebook_FS21.tex
@@ -221,6 +221,13 @@ Package: IEEEtrantools 2015/08/26 V1.5 by Michael Shell
 Package: eucal 2009/06/22 v3.00 Euler Script fonts
 LaTeX Font Info:    Overwriting math alphabet `\EuScript' in version `bold'
 (Font)                  U/eus/m/n --> U/eus/b/n on input line 33.
+)
+(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/bbm\bbm.sty
+Package: bbm 1999/03/15 V 1.2 provides fonts for set symbols - TH
+LaTeX Font Info:    Overwriting math alphabet `\mathbbm' in version `bold'
+(Font)                  U/bbm/m/n --> U/bbm/bx/n on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathbbmss' in version `bold'
+(Font)                  U/bbmss/m/n --> U/bbmss/bx/n on input line 35.
 )
 (C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
@@ -769,11 +776,11 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip61
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 65.
+Package hyperref Info: Option `colorlinks' set `true' on input line 67.
 
 
 Package hyperref Warning: Option `bookmarks' has already been used,
-(hyperref)                setting the option has no effect on input line 65.
+(hyperref)                setting the option has no effect on input line 67.
 
 (C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.sty
 Package: biblatex 2020/08/23 v3.15a programmable bibliographies (PK/MW)
@@ -1053,22 +1060,22 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (Linear_Logic_and_Co-Design_Notebook_FS21.aux)
 \openout1 = `Linear_Logic_and_Co-Design_Notebook_FS21.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 172.
-LaTeX Font Info:    ... okay on input line 172.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 172.
-LaTeX Font Info:    ... okay on input line 172.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 172.
-LaTeX Font Info:    ... okay on input line 172.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 172.
-LaTeX Font Info:    ... okay on input line 172.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 172.
-LaTeX Font Info:    ... okay on input line 172.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 172.
-LaTeX Font Info:    ... okay on input line 172.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 172.
-LaTeX Font Info:    ... okay on input line 172.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 172.
-LaTeX Font Info:    ... okay on input line 172.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
 
 (C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
@@ -1091,7 +1098,7 @@ Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
 )
-Package hyperref Info: Link coloring ON on input line 172.
+Package hyperref Info: Link coloring ON on input line 174.
 
 (C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -1105,9 +1112,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count452
 )
-LaTeX Info: Redefining \ref on input line 172.
-LaTeX Info: Redefining \pageref on input line 172.
-LaTeX Info: Redefining \nameref on input line 172.
+LaTeX Info: Redefining \ref on input line 174.
+LaTeX Info: Redefining \pageref on input line 174.
+LaTeX Info: Redefining \nameref on input line 174.
  (Linear_Logic_and_Co-Design_Notebook_FS21.out)
 (Linear_Logic_and_Co-Design_Notebook_FS21.out)
 \@outlinefile=\write5
@@ -1132,26 +1139,26 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Linear_Logic_and_Co-Design_Notebook_FS21.bbl' 
 found.
  (Linear_Logic_and_Co-Design_Notebook_FS21.bbl)
-Package biblatex Info: Reference section=0 on input line 172.
-Package biblatex Info: Reference segment=0 on input line 172.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 175
+Package biblatex Info: Reference section=0 on input line 174.
+Package biblatex Info: Reference segment=0 on input line 174.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 177
 .
 
 (C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 175
+LaTeX Font Info:    Trying to load font information for U+msb on input line 177
 .
 
 (C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+stmry on input line 1
-75.
+77.
 
 (C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/stmaryrd\ustmry.fd)
 LaTeX Font Info:    Trying to load font information for U+lasy on input line 17
-5.
+7.
 
 (C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/base\ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
@@ -1180,7 +1187,7 @@ File: ueus.fd 2013/01/14 v3.01 Euler Script
 \myScoreEnd2=\dimen318
  [2] [3]
 [4]
-Overfull \hbox (20.09843pt too wide) detected at line 285
+Overfull \hbox (20.09843pt too wide) detected at line 287
 [][]\OT1/cmr/m/n/12 ([ ]\OML/cmm/m/it/12 ; A[] \U/msa/m/n/12  []  \OML/cmm/m/
 it/12 A[]\OT1/cmr/m/n/12 ) [] [][]( []\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 []) \
 OMS/cmsy/m/n/12  []  [][]\OT1/cmr/m/n/12 ( []\OML/cmm/m/it/12 ; \OT1/cmr/m/n/
@@ -1189,81 +1196,81 @@ OMS/cmsy/m/n/12  []  [][]\OT1/cmr/m/n/12 ( []\OML/cmm/m/it/12 ; \OT1/cmr/m/n/
  []
 
 [5]
-<./images//section2/feas_internal-1.jpg, id=155, 2394.9475pt x 1496.59125pt>
+<./images//section2/feas_internal-1.jpg, id=160, 2394.9475pt x 1496.59125pt>
 File: ./images//section2/feas_internal-1.jpg Graphic file (type jpg)
 <use ./images//section2/feas_internal-1.jpg>
 Package pdftex.def Info: ./images//section2/feas_internal-1.jpg  used on input 
-line 302.
+line 304.
 (pdftex.def)             Requested size: 195.0pt x 121.8535pt.
 
-Overfull \hbox (4.1607pt too wide) in alignment at lines 316--319
+Overfull \hbox (4.1607pt too wide) in alignment at lines 318--321
  [] [] [] [][]
  []
 
 [6 <./images//section2/feas_internal-1.jpg>]
-<./images//section2/sites_structure-1.jpg, id=166, 2394.9475pt x 1496.59125pt>
+<./images//section2/sites_structure-1.jpg, id=171, 2394.9475pt x 1496.59125pt>
 File: ./images//section2/sites_structure-1.jpg Graphic file (type jpg)
 <use ./images//section2/sites_structure-1.jpg>
 Package pdftex.def Info: ./images//section2/sites_structure-1.jpg  used on inpu
-t line 336.
+t line 338.
 (pdftex.def)             Requested size: 250.0pt x 156.22185pt.
  [7] [8 <./images//section2/sites_structure-1.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 356--358
+Underfull \hbox (badness 10000) in paragraph at lines 358--360
 
  []
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 372--374
+Underfull \hbox (badness 10000) in paragraph at lines 374--376
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 385--386
+Underfull \hbox (badness 10000) in paragraph at lines 387--388
 
  []
 
 [10] [11]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 441.
+(hyperref)                removing `math shift' on input line 443.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 441.
+(hyperref)                removing `subscript' on input line 443.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 441.
+(hyperref)                removing `math shift' on input line 443.
 
 [12] [13]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 468.
+(hyperref)                removing `math shift' on input line 470.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 468.
+(hyperref)                removing `subscript' on input line 470.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 468.
+(hyperref)                removing `math shift' on input line 470.
 
 [14]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 516.
+(hyperref)                removing `math shift' on input line 518.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 516.
+(hyperref)                removing `math shift' on input line 518.
 
 [15]
-Underfull \hbox (badness 10000) in paragraph at lines 547--548
+Underfull \hbox (badness 10000) in paragraph at lines 549--550
 
  []
 
 [16] [17]
-Overfull \hbox (31.47072pt too wide) detected at line 612
+Overfull \hbox (31.47072pt too wide) detected at line 614
 \OT1/cmr/m/n/12 ((\OML/cmm/m/it/12 []\OT1/cmr/m/n/12 ) \U/msa/m/n/12 ~ \OT1/c
 mr/m/n/12 (\OML/cmm/m/it/12 []\OT1/cmr/m/n/12 ))(\OML/cmm/m/it/12 a; c\OT1/cm
 r/m/n/12 ) = (\OML/cmm/m/it/12 []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 a\OT1/cmr/
@@ -1277,25 +1284,25 @@ m/n/12  \OT1/cmr/m/n/12 (\OML/cmm/m/it/12  \U/msa/m/n/12 ~ \OML/cmm/m/it/12
  []
 
 [18] [19]
-Overfull \hbox (68.2505pt too wide) in alignment at lines 670--676
+Overfull \hbox (68.2505pt too wide) in alignment at lines 672--678
  [] [] [] [][]
  []
 
 [20]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 719.
+(hyperref)                removing `math shift' on input line 721.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\wr' on input line 719.
+(hyperref)                removing `\wr' on input line 721.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 719.
+(hyperref)                removing `math shift' on input line 721.
 
 [21] [22]
-Overfull \hbox (14.99498pt too wide) detected at line 793
+Overfull \hbox (14.99498pt too wide) detected at line 795
 [] \OT1/cmr/m/n/12 : \OML/cmm/m/it/12 E\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 A \U/m
 sa/m/n/12 ~ \U/eus/m/n/12 I\OT1/cmr/m/n/12 ) [] \OML/cmm/m/it/12 E\OT1/cmr/m/n/
 12 (\OML/cmm/m/it/12 A\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ;  [] \OT1/cmr/m/n/12 :
@@ -1307,55 +1314,71 @@ it/12 A\OT1/cmr/m/n/12 ) [] \OML/cmm/m/it/12 E\OT1/cmr/m/n/12 (\OML/cmm/m/it/12
 /12 )
  []
 
-[23] [24] [25] [26] [27] (Linear_Logic_and_Co-Design_Notebook_FS21.aux)
+[23] [24]
+LaTeX Font Info:    Trying to load font information for U+bbm on input line 866
+.
+ (C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/bbm\ubbm.fd
+File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
+)
+[25] [26] [27]
+Overfull \hbox (18.05878pt too wide) in paragraph at lines 948--949
+ [] 
+ []
+
+[28] [29] [30] (Linear_Logic_and_Co-Design_Notebook_FS21.aux)
 Package rerunfilecheck Info: File `Linear_Logic_and_Co-Design_Notebook_FS21.out
 ' has not changed.
-(rerunfilecheck)             Checksum: B356F53BD7CEDAE4103A9AC9AB6403F9;1617.
+(rerunfilecheck)             Checksum: 12343874C9C422133739AC42BBF01196;1705.
 Package logreq Info: Writing requests to 'Linear_Logic_and_Co-Design_Notebook_F
 S21.run.xml'.
 \openout1 = `Linear_Logic_and_Co-Design_Notebook_FS21.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 28478 strings out of 479697
- 560842 string characters out of 2867132
- 1058695 words of memory out of 3000000
- 44952 multiletter control sequences out of 15000+200000
- 425062 words of font info for 118 fonts, out of 3000000 for 9000
+ 28777 strings out of 479697
+ 568388 string characters out of 2867132
+ 1065959 words of memory out of 3000000
+ 45235 multiletter control sequences out of 15000+200000
+ 425457 words of font info for 121 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  80i,15n,85p,1881b,1768s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\mariu\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
-1200.pk><C:/Users/mariu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
-ts/cm/cmbx10.pfb><C:/Users/mariu/AppData/Local/Programs/MiKTeX/fonts/type1/publ
-ic/amsfonts/cm/cmbx12.pfb><C:/Users/mariu/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmbx8.pfb><C:/Users/mariu/AppData/Local/Programs/MiKTeX
-/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/mariu/AppData/Local/Prog
-rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/mariu/AppData/
-Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/mariu
-/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Us
-ers/mariu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pf
-b><C:/Users/mariu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
-cmmi8.pfb><C:/Users/mariu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
-onts/cm/cmr12.pfb><C:/Users/mariu/AppData/Local/Programs/MiKTeX/fonts/type1/pub
-lic/amsfonts/cm/cmr17.pfb><C:/Users/mariu/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmr6.pfb><C:/Users/mariu/AppData/Local/Programs/MiKTeX/
-fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/mariu/AppData/Local/Programs/
-MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Users/mariu/AppData/Local/
-Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/mariu/AppDa
-ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/mar
-iu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/
-Users/mariu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.
-pfb><C:/Users/mariu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
-m/cmtt12.pfb><C:/Users/mariu/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
-msfonts/euler/eusm10.pfb><C:/Users/mariu/AppData/Local/Programs/MiKTeX/fonts/ty
-pe1/public/amsfonts/symbols/msam10.pfb><C:/Users/mariu/AppData/Local/Programs/M
-iKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/mariu/AppData/Lo
-cal/Programs/MiKTeX/fonts/type1/public/hoekwater/stmary10.pfb><C:/Users/mariu/A
-ppData/Local/Programs/MiKTeX/fonts/type1/public/hoekwater/stmary8.pfb>
-Output written on Linear_Logic_and_Co-Design_Notebook_FS21.pdf (27 pages, 71917
-8 bytes).
+ <C:\Users\mariu\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbm/dpi600\bbm8.
+pk> <C:\Users\mariu\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbm/dpi600\bbm6
+.pk> <C:\Users\mariu\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbm/dpi600\bbm
+12.pk> <C:\Users\mariu\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\
+tcrm1200.pk><C:/Users/mariu/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
+sfonts/cm/cmbx10.pfb><C:/Users/mariu/AppData/Local/Programs/MiKTeX/fonts/type1/
+public/amsfonts/cm/cmbx12.pfb><C:/Users/mariu/AppData/Local/Programs/MiKTeX/fon
+ts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/mariu/AppData/Local/Programs/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/mariu/AppData/Local/
+Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/mariu/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/m
+ariu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C
+:/Users/mariu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi
+6.pfb><C:/Users/mariu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
+/cm/cmmi8.pfb><C:/Users/mariu/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+amsfonts/cm/cmr12.pfb><C:/Users/mariu/AppData/Local/Programs/MiKTeX/fonts/type1
+/public/amsfonts/cm/cmr17.pfb><C:/Users/mariu/AppData/Local/Programs/MiKTeX/fon
+ts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/mariu/AppData/Local/Programs/MiK
+TeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/mariu/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Users/mariu/AppData/Lo
+cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/mariu/A
+ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users
+/mariu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><
+C:/Users/mariu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmt
+i12.pfb><C:/Users/mariu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
+ts/cm/cmti8.pfb><C:/Users/mariu/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+c/amsfonts/cm/cmtt12.pfb><C:/Users/mariu/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/amsfonts/euler/eusm10.pfb><C:/Users/mariu/AppData/Local/Programs/MiK
+TeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/mariu/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/mari
+u/AppData/Local/Programs/MiKTeX/fonts/type1/public/hoekwater/stmary10.pfb><C:/U
+sers/mariu/AppData/Local/Programs/MiKTeX/fonts/type1/public/hoekwater/stmary8.p
+fb>
+Output written on Linear_Logic_and_Co-Design_Notebook_FS21.pdf (30 pages, 74408
+1 bytes).
 PDF statistics:
- 434 PDF objects out of 1000 (max. 8388607)
- 107 named destinations out of 1000 (max. 500000)
- 199 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 477 PDF objects out of 1000 (max. 8388607)
+ 113 named destinations out of 1000 (max. 500000)
+ 207 words of extra memory for PDF output out of 10000 (max. 10000000)
 
