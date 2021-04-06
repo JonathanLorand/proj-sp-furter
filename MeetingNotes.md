@@ -4,10 +4,17 @@ Semester Project Marius Furter - Spring 2021
 # Meetings
 
 
+## [[2021-04-06]]
+
+- Birkhoff representation theory for distributed lattices - every distributive lattice is isomorphic to the lattice of upper sets on some poset.
+- was working with Shalk - da Paiva, poset-valued sets
+
+- for next time: examples with interpretations 
+
 ## [[2021-03-30]]
 
 - Paper by Yetter
-  - Quantale with a duality is the pre-order version of a *-automnomous category
+  - Quantale with a duality is the pre-order version of a *-autonomous category
 
 - Marsden paper
   - Quantitative resource theories, look at quantale enriched profunctors
@@ -20,7 +27,7 @@ Semester Project Marius Furter - Spring 2021
   - look at the special case where V = Q = Bool
   - look at the case where V = Q is any commutative unital quantale
   - look at the case where V \neq Q = Bool.
-  - throughout: let's try to spell out examples and keep an eye on applications and interpretation. In the end of the day, we want some sort of 'linear logic way' to reason in the context of design problems. 
+  - throughout: let's try to spell out examples and keep an eye on applications and interpretation. In the end of the day, we want some sort of 'linear logic way' to reason in the context of design problems.
 
 ## [[2021-03-23]]
 
