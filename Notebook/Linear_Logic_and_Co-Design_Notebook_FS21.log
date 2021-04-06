@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.12) (preloaded format=pdflatex 2020.12.25)  6 APR 2021 09:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.12) (preloaded format=pdflatex 2020.12.25)  6 APR 2021 09:26
 entering extended mode
 **./Linear_Logic_and_Co-Design_Notebook_FS21.tex
 (Linear_Logic_and_Co-Design_Notebook_FS21.tex
@@ -1337,7 +1337,7 @@ S21.run.xml'.
 Here is how much of TeX's memory you used:
  28777 strings out of 479697
  568388 string characters out of 2867132
- 1065959 words of memory out of 3000000
+ 1064959 words of memory out of 3000000
  45235 multiletter control sequences out of 15000+200000
  425457 words of font info for 121 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1375,8 +1375,8 @@ l/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/mari
 u/AppData/Local/Programs/MiKTeX/fonts/type1/public/hoekwater/stmary10.pfb><C:/U
 sers/mariu/AppData/Local/Programs/MiKTeX/fonts/type1/public/hoekwater/stmary8.p
 fb>
-Output written on Linear_Logic_and_Co-Design_Notebook_FS21.pdf (30 pages, 74408
-1 bytes).
+Output written on Linear_Logic_and_Co-Design_Notebook_FS21.pdf (30 pages, 74397
+4 bytes).
 PDF statistics:
  477 PDF objects out of 1000 (max. 8388607)
  113 named destinations out of 1000 (max. 500000)
