@@ -1081,6 +1081,20 @@ In a similar manner, finite meets are given by $\mathsf{Either}$.
 \end{proof}
 
 \paragraph{Warning} It is important that this compact closed preorder not have all finite meets and joins, as otherwise they would coincide by the paper of Robin Houston \cite{Houston2006}.  For example, if you had top $\top$ and bottom $\bot$, then $\mathsf{Both}(\top,\bot) \cong \bot$, because having an additional copy of $\top$ doesn't make any difference if you have the universal resource $\bot$. On the other hand, by negation and symmetry, $\top = \neg \bot \cong \neg \mathsf{Both}(\top,\bot) = \mathsf{Both}(\neg \top, \neg \bot) = \mathsf{Both}(\top,\bot)$. Hence $\top = \bot$, which in particular has the consequence that $a \cong b$ for any $a,b$, meaning any $a$ would be obtainable from any $b$. 
+
+
+\subsubsection{Relation to Queries}
+Suppose we are given preorders $\mc{R}$ and $\mc{F}$, with a feasibility relation $\Phi: \mc{R} \xslashedrightarrow{} \mc{F}$. We may then extend $\Phi$ to a feasibility relation $\bar\Phi: \mathbf{Bundle}(\mc{R}) \xslashedrightarrow{} \mathbf{Bundle}(\mc{F})$ as follows: Set $\bar\Phi$ to be the smallest feasibility relation satisfying
+$$\neg \Phi(r,f) \Rightarrow \bar\Phi(\neg r,\neg f)$$
+$$\Phi(r_1,f_1) \wedge \Phi(r_2,f_2) \Rightarrow \bar\Phi(\mathsf{Both}(r_1,r_2),\mathsf{Both}(f_1,f_2)) $$
+$$\Phi(r_1,f_1) \vee \Phi(r_2,f_2) \Rightarrow \bar\Phi(\mathsf{Either}(r_1,r_2),\mathsf{Maybe}(f_1,f_2)) $$
+$$\Phi(r_1,f_1) \wedge \Phi(r_2,f_2) \Rightarrow \bar\Phi(\mathsf{Maybe}(r_1,r_2),\mathsf{Either}(f_1,f_2)) $$
+
+Suppose that $\bar\Phi(\mathsf{Maybe}(r_1,r_2),\mathsf{Either}(f_1,f_2))$. Then since $r_i \rightarrow \mathsf{Maybe}(r_1,r_2)$ and $\mathsf{Either}(f_1,f_2) \rightarrow f_i$, we in fact have $$\Phi(r_1,f_1) \wedge \Phi(r_2,f_2) \Leftrightarrow \bar\Phi(\mathsf{Maybe}(r_1,r_2),\mathsf{Either}(f_1,f_2)).$$
+
+It is less clear how to prove equivalence in the other points.
+
+
 \newpage
 \printbibliography
 
