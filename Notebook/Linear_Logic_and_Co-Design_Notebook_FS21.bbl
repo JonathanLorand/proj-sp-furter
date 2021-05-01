@@ -17,6 +17,53 @@
 \endgroup
 
 \datalist[entry]{anyt/global//global/global}
+  \entry{Houston2006}{article}{}
+    \name{author}{1}{}{%
+      {{hash=HR}{%
+         family={Houston},
+         familyi={H\bibinitperiod},
+         given={Robin},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HR1}
+    \strng{fullhash}{HR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Hou06}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{abstract}{%
+    If a compact closed category has finite products or finite coproducts then
+  it in fact has finite biproducts, and so is semi-additive.%
+    }
+    \verb{doi}
+    \verb 10.1016/j.jpaa.2007.05.021
+    \endverb
+    \verb{eprint}
+    \verb 0604542
+    \endverb
+    \field{number}{2}
+    \field{pages}{394\bibrangedash 400}
+    \field{title}{{Finite Products are Biproducts in a Compact Closed
+  Category}}
+    \verb{url}
+    \verb http://arxiv.org/abs/math/0604542 http://dx.doi.org/10.1016/j.jpaa.20
+    \verb 07.05.021
+    \endverb
+    \field{volume}{212}
+    \verb{file}
+    \verb :C\:/Users/mariu/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloa
+    \verb ded/Houston - 2006 - Finite Products are Biproducts in a Compact Clos
+    \verb ed Category.pdf:pdf
+    \endverb
+    \field{journaltitle}{Journal of Pure and Applied Algebra}
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{math}
+    \field{year}{2006}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
   \entry{Marsden2018}{article}{}
     \name{author}{2}{}{%
       {{hash=MD}{%

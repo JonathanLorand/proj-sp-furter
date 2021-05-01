@@ -515,9 +515,9 @@ The other optimization problem we can describe in this way is shown in the follo
 
 The univesal $\varphi$ would satisfy: For any $\varphi'$ making $\Phi$ a morphism in $\mathbf{Pos_{Bool}}$, we have $\phi \leq \phi'$. This makes the associated lower set $L_\phi$ the largest lower set making a given antichain of resources feasible.
 
-\section{Proslice $\mathbb{Q}$-Categories}
+\section{Proslice $\mc{Q}$-Categories}
 
-The aim of this section is to generalize the construction given in \cite{Schalk2004}. In that paper, $\text{P}_F\text{-Sets}$ are constructed based on the category $\mathbf{Rel}$ of sets and relations. That construction seems to work in general for a compact closed category, whose morphisms into the valuation object are partially ordered. This setting is generalized to the category $\mathbf{Prof}(\mathbb{Q})$ of $\mathbb{Q}$-profunctors, where $\mathbb{Q}$ is a commutative quantale. The valuation object can then be any $\mathbb{Q}$-enriched category, including $\mathbb{Q}$ itself.
+The aim of this section is to generalize the construction given in \cite{Schalk2004}. In that paper, $\text{P}_F\text{-Sets}$ are constructed based on the category $\mathbf{Rel}$ of sets and relations. That construction seems to work in general for a compact closed category, whose morphisms into the valuation object are partially ordered. This setting is generalized to the category $\mathbf{Prof}(\mc{Q})$ of $\mc{Q}$-profunctors, where $\mc{Q}$ is a commutative quantale. The valuation object can then be any $\mc{Q}$-enriched category, including $\mc{Q}$ itself.
 
 \subsection{Quantales}
 The basic definitions are taken from \cite{Marsden2018}. The relation of quantales to linear logic is described in \cite{Yetter1990}.
@@ -530,28 +530,28 @@ The basic definitions are taken from \cite{Marsden2018}. The relation of quantal
 	A \emph{commutative quantale} is a quantale whose underlying monoid is commutative.
 \end{definition}
 
-In the following we let $\mathbb{Q}$ denote a commutative quantale.
+In the following we let $\mc{Q}$ denote a commutative quantale.
 
-\begin{definition}[$\mathbb{Q}$-enriched Category]
-	A $\mathbb{Q}$-enriched category $\mc{P}$ consist of:
+\begin{definition}[$\mc{Q}$-enriched Category]
+	A $\mc{Q}$-enriched category $\mc{P}$ consist of:
 	\begin{itemize}
 		\item A set of \emph{objects} $\text{Ob}(\mc{P})$
-		\item For each pair of objects, there is a \emph{hom object} $\mc{P}(a,b) \in \mathbb{Q}$ satisfying:
+		\item For each pair of objects, there is a \emph{hom object} $\mc{P}(a,b) \in \mc{Q}$ satisfying:
 			\subitem{(i)} $k \leq \mc{P}(a,a)$
 			\subitem{(ii)} $\mc{P}(b,c) \circledast \mc{P}(a,b) \leq \mc{P}(a,c).$
 	\end{itemize}
 \end{definition}
 
-\begin{definition}[$\mathbb{Q}$-enriched Functor]
-	If $\mc{A}$ and $\mc{B}$ are $\mathbb{Q}$-enriched categories, then a \emph{$\mathbb{Q}$-enriched functor} $F: \mc{A} \rightarrow \mc{B}$ consists of a function $$F: \text{Ob}(\mc{A}) \rightarrow \text{Ob}(\mc{B}) $$ satisfying $$ \mc{A}(a,b) \leq \mc{B}(Fa,Fb) .$$
+\begin{definition}[$\mc{Q}$-enriched Functor]
+	If $\mc{A}$ and $\mc{B}$ are $\mc{Q}$-enriched categories, then a \emph{$\mc{Q}$-enriched functor} $F: \mc{A} \rightarrow \mc{B}$ consists of a function $$F: \text{Ob}(\mc{A}) \rightarrow \text{Ob}(\mc{B}) $$ satisfying $$ \mc{A}(a,b) \leq \mc{B}(Fa,Fb) .$$
 \end{definition}
 
-This gives us an ordinary category $\mathbf{Cat}(\mathbb{Q})$ whose objects are $\mathbb{Q}$-enriched categories and whose morphisms are $\mathbb{Q}$-enriched functors. \\
+This gives us an ordinary category $\mathbf{Cat}(\mc{Q})$ whose objects are $\mc{Q}$-enriched categories and whose morphisms are $\mc{Q}$-enriched functors. \\
 
-Because $\mathbb{Q}$ is thin, there can be at most one natural transformation between any two $\mathbb{Q}$-functors.
+Because $\mc{Q}$ is thin, there can be at most one natural transformation between any two $\mc{Q}$-functors.
 
-\begin{definition}[$\mathbb{Q}$-enriched Natural Transformation]
-	Given parallel $\mathbb{Q}$-enriched functors $F,G: \mc{A} \rightarrow \mc{B}$, the presence of a \emph{$\mathbb{Q}$-natural transformation} $\alpha: F \rightarrow G$ simply states that for all $a \in \mc{A}$ we have
+\begin{definition}[$\mc{Q}$-enriched Natural Transformation]
+	Given parallel $\mc{Q}$-enriched functors $F,G: \mc{A} \rightarrow \mc{B}$, the presence of a \emph{$\mc{Q}$-natural transformation} $\alpha: F \rightarrow G$ simply states that for all $a \in \mc{A}$ we have
 	$$
 	k \leq \mc{B}(Fa,Ga).
 	$$
@@ -560,41 +560,41 @@ Because $\mathbb{Q}$ is thin, there can be at most one natural transformation be
 Every commutative quantale is automatically closed:
 
 \begin{lemma} \label{closed quantale}
-	Let $\mathbb{Q}$ be a commutative quantale. Then $- \circledast b$ has a right adjoint $b \multimap -$ given by $$b \multimap c := \bigvee_{a \circledast b \leq c} a.$$
+	Let $\mc{Q}$ be a commutative quantale. Then $- \circledast b$ has a right adjoint $b \multimap -$ given by $$b \multimap c := \bigvee_{a \circledast b \leq c} a.$$
 \end{lemma}
 \begin{proof}
-	We regard $\mathbb{Q}$ as a thin ordinary category. Then $- \circledast b$ is a function $\mathbb{Q} \times \mathbb{Q} \rightarrow \mathbb{Q}$. Moreover, if $a \leq a'$ and $b  \leq b'$, then $a \vee a' = a'$ and $b \vee b' = b'$. Hence 
+	We regard $\mc{Q}$ as a thin ordinary category. Then $- \circledast b$ is a function $\mc{Q} \times \mc{Q} \rightarrow \mc{Q}$. Moreover, if $a \leq a'$ and $b  \leq b'$, then $a \vee a' = a'$ and $b \vee b' = b'$. Hence 
 	$$a' \circledast b' = (a \vee a') \circledast (b \vee b') = (a \circledast b) \vee (a \circledast b') \vee (a' \circledast b) \vee (a' \circledast b').$$
 	In particular, $a \circledast b \leq a' \circledast b'$, showing $- \circledast b$ is a functor. Its right adjoint need to satisfy the natural iso
-	$$\mathbb{Q}(a \circledast b, c) \cong \mathbb{Q}(a, b \multimap c),$$ which reduces to the requirement that 
+	$$\mc{Q}(a \circledast b, c) \cong \mc{Q}(a, b \multimap c),$$ which reduces to the requirement that 
 	$$a \circledast b \leq c \Leftrightarrow a \leq b \multimap c.$$
 	The left-to-right implication is immediate, as by assumption $a$ appears in the join. For the right-to-left implication, suppose $a \leq \bigvee_{x \circledast b \leq c} x$. Then $$a \circledast b \leq  \left( \bigvee_{x \circledast b \leq c} x \right) \circledast b = \bigvee_{x \circledast b \leq c} x \circledast b \leq c,$$ because the join is the least upper bound. 
 \end{proof}
 
-The previous lemma implies that we can regard $\mathbb{Q}$ as being enriched over itself by setting $\mathbb{Q}(a,b) = a \multimap b$. In particular, we can can consider $\mathbb{Q}$-functors into $\mathbb{Q}$.
+The previous lemma implies that we can regard $\mc{Q}$ as being enriched over itself by setting $\mc{Q}(a,b) = a \multimap b$. In particular, we can can consider $\mc{Q}$-functors into $\mc{Q}$.
 
 \begin{definition}[(Co)Presheaf]
-	Let $\mc{A}$ be a $\mathbb{Q}$-category. A \emph{copresheaf} is a $\mathbb{Q}$-functor $F: \mc{A} \rightarrow \mathbb{Q}$. This means $F$ must satisfy
+	Let $\mc{A}$ be a $\mc{Q}$-category. A \emph{copresheaf} is a $\mc{Q}$-functor $F: \mc{A} \rightarrow \mc{Q}$. This means $F$ must satisfy
 	$$
 	\mc{A}(a,b) \leq F(a) \multimap F(b), \text{   or equivalently   }  \mc{A}(a,b) \circledast F(a) \leq F(b).
 	$$
-	A \emph{presheaf} is a $\mathbb{Q}$-functor $G: \mc{A}^\text{op} \rightarrow \mathbb{Q}$. This means $G$ must satisfy
+	A \emph{presheaf} is a $\mc{Q}$-functor $G: \mc{A}^\text{op} \rightarrow \mc{Q}$. This means $G$ must satisfy
 	$$
 	\mc{A}(a,b) \leq F(b) \multimap F(a), \text{   or equivalently   } \mc{A}(a,b) \circledast F(b)  \leq F(a).
 	$$
 
 \end{definition}
 
-The monoidal structure of $\mathbb{Q}$ can be lifted to $\mathbb{Q}$-categories.
+The monoidal structure of $\mc{Q}$ can be lifted to $\mc{Q}$-categories.
 \begin{definition}[Product Category]
-	Let $\mc{A}, \mc{B}$ be $\mathbb{Q}$-categories. Define the \emph{product category} $\mc{A} \circledast \mc{B}$ to be the $\mathbb{Q}$-category with objects $\text{Ob}(\mc{A}) \times \text{Ob}(\mc{B})$ and hom objects $$\mc{A} \circledast \mc{B}((a,b),(a',b')) := \mc{A}(a,a') \circledast \mc{B}(b,b').$$
+	Let $\mc{A}, \mc{B}$ be $\mc{Q}$-categories. Define the \emph{product category} $\mc{A} \circledast \mc{B}$ to be the $\mc{Q}$-category with objects $\text{Ob}(\mc{A}) \times \text{Ob}(\mc{B})$ and hom objects $$\mc{A} \circledast \mc{B}((a,b),(a',b')) := \mc{A}(a,a') \circledast \mc{B}(b,b').$$
 \end{definition}
 
 \begin{lemma}
-	The operation $- \circledast -$ defines a bifunctor on $\mathbf{Cat}(\mathbb{Q})$.
+	The operation $- \circledast -$ defines a bifunctor on $\mathbf{Cat}(\mc{Q})$.
 \end{lemma}
 \begin{proof}
-	Let $\alpha: A \rightarrow B$, $\gamma: C \rightarrow D$ be $\mathbb{Q}$-functors. Define $(\alpha \circledast \gamma )(a,b) := (\alpha(a),\gamma(b))$. To see that this is again a $\mathbb{Q}$-functors, we note that 
+	Let $\alpha: A \rightarrow B$, $\gamma: C \rightarrow D$ be $\mc{Q}$-functors. Define $(\alpha \circledast \gamma )(a,b) := (\alpha(a),\gamma(b))$. To see that this is again a $\mc{Q}$-functors, we note that 
 	$$
 	A(a,a') \leq B(\alpha(a),\alpha(a')) \quad \text{ and } \quad C(c,c') \leq D(\gamma(d),\gamma(d'))
 	$$
@@ -612,20 +612,20 @@ The monoidal structure of $\mathbb{Q}$ can be lifted to $\mathbb{Q}$-categories.
 	$$
 	((\alpha'\alpha) \circledast (\gamma'\gamma))(a,c) = (\alpha'\alpha(a),\gamma'\gamma(c)) = (\alpha' \circledast \gamma')(\alpha(a), \gamma(c)) = (\alpha' \circledast \gamma')\circ(\alpha \circledast \gamma)(a,c)
 	$$
-	Hence $- \circledast -$ defines a bifunctor on $\mathbf{Cat}(\mathbb{Q})$.
+	Hence $- \circledast -$ defines a bifunctor on $\mathbf{Cat}(\mc{Q})$.
 \end{proof}
 
 
 \begin{definition}[Opposite Category]
-	If $\mc{A}$ is a $\mathbb{Q}$-category, its \emph{opposite category} $\mc{A}^\text{op}$ has the same objects and hom objects $\mc{A}^\text{op}(a,a') := \mc{A}(a',a)$
+	If $\mc{A}$ is a $\mc{Q}$-category, its \emph{opposite category} $\mc{A}^\text{op}$ has the same objects and hom objects $\mc{A}^\text{op}(a,a') := \mc{A}(a',a)$
 \end{definition}
 
 \begin{definition}[Unit Category]
-	There is a \emph{unit $\mathbb{Q}$-category} $\mc{I}$ consisting of a single object and the quantale unit $k$ as its single hom object. 
+	There is a \emph{unit $\mc{Q}$-category} $\mc{I}$ consisting of a single object and the quantale unit $k$ as its single hom object. 
 \end{definition}
 	
 \begin{definition}[Profunctor]
-	Let $\mc{A}, \mc{B}$ be $\mathbb{Q}$-categories. A \emph{profunctor} $R: \mc{A} \xslashedrightarrow{} \mc{B}$ is a $\mathbb{Q}$-functor $R: \mc{A}^\text{op} \circledast \mc{B} \rightarrow \mathbb{Q}$. Unravelling this definition shows that $R$ must satisfy
+	Let $\mc{A}, \mc{B}$ be $\mc{Q}$-categories. A \emph{profunctor} $R: \mc{A} \xslashedrightarrow{} \mc{B}$ is a $\mc{Q}$-functor $R: \mc{A}^\text{op} \circledast \mc{B} \rightarrow \mc{Q}$. Unravelling this definition shows that $R$ must satisfy
 	$$
 	\mc{A}(a',a) \circledast R(a,b) \circledast \mc{B}(b,b') \leq R(a',b').
 	$$
@@ -633,18 +633,18 @@ The monoidal structure of $\mathbb{Q}$ can be lifted to $\mathbb{Q}$-categories.
 	$$
 	(S \circ R)(a,c) = \bigvee_b R(a,b) \circledast S(b,c).
 	$$
-	This composition is associative and has an identity given by $1_\mc{A}(a,a') := \mc{A}(a,a')$. Therefore $\mathbb{Q}$-profunctors form a category $\mathbf{Prof}(\mathbb{Q})$.
+	This composition is associative and has an identity given by $1_\mc{A}(a,a') := \mc{A}(a,a')$. Therefore $\mc{Q}$-profunctors form a category $\mathbf{Prof}(\mc{Q})$.
 \end{definition}
 
 \begin{lemma}
-	The operation $- \circledast -$ defines a bifunctor $\mathbf{Prof}(\mathbb{Q})$.
+	The operation $- \circledast -$ defines a bifunctor $\mathbf{Prof}(\mc{Q})$.
 \end{lemma}
 \begin{proof}
-	We need to specify where the tensor takes morphisms. Let $\Phi: A \xslashedrightarrow{} B$, $\Psi: C \xslashedrightarrow{} D$ be morphisms between $\mathbb{Q}$-categories $A,B,C$, and $D$. Define $\Phi \circledast \Psi: A \circledast C \xslashedrightarrow{} B \circledast D$ by
+	We need to specify where the tensor takes morphisms. Let $\Phi: A \xslashedrightarrow{} B$, $\Psi: C \xslashedrightarrow{} D$ be morphisms between $\mc{Q}$-categories $A,B,C$, and $D$. Define $\Phi \circledast \Psi: A \circledast C \xslashedrightarrow{} B \circledast D$ by
 	$$
 	\Phi \circledast \Psi ((a,c),(b,d)) := \Phi(a,b) \circledast \Psi(c,d).
 	$$
-	To see that this specifies a $\mathbb{Q}$-profunctor we write down the conditions satisfied by $\Phi$ and $\Psi$
+	To see that this specifies a $\mc{Q}$-profunctor we write down the conditions satisfied by $\Phi$ and $\Psi$
 	$$
 	A(a',a) \circledast \Phi(a,b) \circledast B(b,b') \leq \Phi(a',b')
 	$$
@@ -676,11 +676,11 @@ The monoidal structure of $\mathbb{Q}$ can be lifted to $\mathbb{Q}$-categories.
 		& = & \bigvee_{(b,d) \in B \circledast D} (\Phi \circledast \Psi)((a,c),(b,d)) \circledast (\Phi' \circledast \Psi')((b,d),(x,y)) \\
 		& = & (\Phi \circledast \Psi) \circ (\Phi' \circledast \Psi')  ((a,c),(x,y))
 	\end{IEEEeqnarray*}
-	Hence $- \circledast -$ defines a bifunctor on $\mathbf{Prof}(\mathbb{Q})$.
+	Hence $- \circledast -$ defines a bifunctor on $\mathbf{Prof}(\mc{Q})$.
 \end{proof}
 
 \begin{proposition}
-	The category $\mathbf{Prof}(\mathbb{Q})$ is symmetric monoidal under $- \circledast - $ with unit $\mc{I}$. Moreover it has a compact closed where each object is its own dual.
+	The category $\mathbf{Prof}(\mc{Q})$ is symmetric monoidal under $- \circledast - $ with unit $\mc{I}$. Moreover it has a compact closed where each object is its own dual.
 \end{proposition}
 \begin{proof}
 	\textcolor{red}{\ldots}
@@ -692,18 +692,18 @@ The monoidal structure of $\mathbb{Q}$ can be lifted to $\mathbb{Q}$-categories.
 
 We recall that in in the case of the $\mathbf{Bool}$-posets of section \ref{bool-pos}, we defined morphisms between $\alpha: A \rightarrow \mathbf{Bool}$ and $\beta: B \rightarrow \mathbf{Bool}$ (see \ref{def bool-pos morphism}) as $\mathbf{Bool}$-profunctors $\Phi: A \xslashedrightarrow{} B$ such that if $\Phi(a,b) = \mathtt{true}$, then $\alpha(a) \leq \beta(b)$. We can make this the following condition in $\mathbf{Bool}$: 
 $$\Phi(a,b) \leq \alpha(a) \multimap \beta(b) = \mathbf{Bool}(\alpha(a), \beta(b)).$$
-This allows us to generalize the condition to any $\mathbb{Q}$-category. Furthermore, we twist the construction by an endofunctor for added flexibility. Together this yields:
+This allows us to generalize the condition to any $\mc{Q}$-category. Furthermore, we twist the construction by an endofunctor for added flexibility. Together this yields:
 
 \begin{definition}[Proslice Category]
-	Let $\mathbb{Q}$ be a quantale, $E: \mathbf{Prof}(\mathbb{Q}) \rightarrow \mathbf{Prof}(\mathbb{Q})$ be an endofunctor, and $\mc{V}$ a $\mathbb{Q}$-category. We define the \emph{proslice category $\mathbf{Prof}(\mathbb{Q}) \wr \mc{V}$ over $\mc{V}$} to be the category with
+	Let $\mc{Q}$ be a quantale, $E: \mathbf{Prof}(\mc{Q}) \rightarrow \mathbf{Prof}(\mc{Q})$ be an endofunctor, and $\mc{V}$ a $\mc{Q}$-category. We define the \emph{proslice category $\mathbf{Prof}(\mc{Q}) \wr \mc{V}$ over $\mc{V}$} to be the category with
 	\begin{itemize}
-		\item[(i)] objects are $\mathbb{Q}$-functors $EA \rightarrow \mc{V}$, where $A \in \mathbf{Prof}(\mathbb{Q})$.
+		\item[(i)] objects are $\mc{Q}$-functors $EA \rightarrow \mc{V}$, where $A \in \mathbf{Prof}(\mc{Q})$.
 		\item[(ii)] For objects $\alpha: EA \rightarrow \mc{V}$, $\beta: EB \rightarrow \mc{V}$, morphisms are profunctors $\Phi: A \xslashedrightarrow{} B$, satisfying $$(E \Phi)(a,b) \leq \mc{V}(\alpha(a),\beta(b)).$$
 	\end{itemize}
 \end{definition}
 
 \begin{proof}
-	Since $E$ is an endofunctor and $\mathbf{Prof}(\mathbb{Q})$ a category, it suffices to check that the proslice construction is closed under identities and composition. If $\alpha(a): EA \rightarrow \mc{V}$ is a $\mathbb{Q}$-functor, then it satisfies $EA(a,b) \leq \mc{V}(\alpha(a),\beta(b))$. But $E \; \text{Id}_A(a,b) = EA(a,b)$, so the identity profunctor satisfies the condition to be a proslice morphism. Finally, if $A \xslashedrightarrow{\Phi} B$ and $B \xslashedrightarrow{\Psi} C$ are proslice morphisms, then $E \Phi (a,b) \leq \mc{V}(\alpha(a),\beta(b))$ and $E \Psi (b,c) \leq \mc{V}(\beta(b),\gamma(c))$. Therefore,
+	Since $E$ is an endofunctor and $\mathbf{Prof}(\mc{Q})$ a category, it suffices to check that the proslice construction is closed under identities and composition. If $\alpha(a): EA \rightarrow \mc{V}$ is a $\mc{Q}$-functor, then it satisfies $EA(a,b) \leq \mc{V}(\alpha(a),\beta(b))$. But $E \; \text{Id}_A(a,b) = EA(a,b)$, so the identity profunctor satisfies the condition to be a proslice morphism. Finally, if $A \xslashedrightarrow{\Phi} B$ and $B \xslashedrightarrow{\Psi} C$ are proslice morphisms, then $E \Phi (a,b) \leq \mc{V}(\alpha(a),\beta(b))$ and $E \Psi (b,c) \leq \mc{V}(\beta(b),\gamma(c))$. Therefore,
 	\begin{IEEEeqnarray*}{rCl"s}
 		 E(\Psi \circ \Phi)(a,c) & = &(E\Psi \circ E\Phi)(a,c)  & (functoriality)\\
 					    		 & = & \bigvee_b E\Phi(a,b) \circledast E\Psi(b,c)  & (definition) \\
@@ -718,14 +718,14 @@ This allows us to generalize the condition to any $\mathbb{Q}$-category. Further
 
 \subsubsection{Relation to Order on Profunctors}
 
-\subsection{Properties of $\mathbf{Prof}(\mathbb{Q}) \wr \mc{V}$}
+\subsection{Properties of $\mathbf{Prof}(\mc{Q}) \wr \mc{V}$}
 
 \subsubsection{Tensor product}
 
-For the following we will assume that $\mc{V}$ is a monoidal $\mathbb{Q}$-category.
+For the following we will assume that $\mc{V}$ is a monoidal $\mc{Q}$-category.
 
-\begin{definition}[Monoidal $\mathbb{Q}$-category]
-	A strict symmetric \emph{monoidal $\mathbb{Q}$-category} is a $\mathbb{Q}$-category $\mc{M}$ is a monoid object in $\mathbf{Cat}(\mathbb{Q})$. That is, $\mc{M}$ comes equipped with a multiplication $\mathbb{Q}$-bifunctor $\ovee:\mc{M} \circledast \mc{M} \rightarrow \mc{M}$ and a unit $\mathbb{Q}$-functor $\mu: \mc{I} \rightarrow \mc{M}$ making the following diagrams commute:
+\begin{definition}[Monoidal $\mc{Q}$-category]
+	A strict symmetric \emph{monoidal $\mc{Q}$-category} is a $\mc{Q}$-category $\mc{M}$ is a monoid object in $\mathbf{Cat}(\mc{Q})$. That is, $\mc{M}$ comes equipped with a multiplication $\mc{Q}$-bifunctor $\ovee:\mc{M} \circledast \mc{M} \rightarrow \mc{M}$ and a unit $\mc{Q}$-functor $\mu: \mc{I} \rightarrow \mc{M}$ making the following diagrams commute:
 	\begin{center}
 	\begin{tikzcd}
 		\mc{M} \circledast \mc{M} \circledast \mc{M} \arrow[r, "\mc{M} \circledast \ovee"] \arrow[d, "\ovee \circledast \mc{M}"] & \mc{M} \circledast \mc{M} \arrow[d, "\ovee"] \\
@@ -739,10 +739,10 @@ For the following we will assume that $\mc{V}$ is a monoidal $\mathbb{Q}$-catego
 \end{definition}
 
 \begin{lemma}
-	If $(\mc{V}, \ovee, \mu)$ is a monoidal $\mathbb{Q}$-category, then $\ovee$ is monotone on hom-objects: \[ \mc{V}(v,v') \circledast \mc{V}(w,w') \leq \mc{V}(v \ovee w, v' \ovee w') \]
+	If $(\mc{V}, \ovee, \mu)$ is a monoidal $\mc{Q}$-category, then $\ovee$ is monotone on hom-objects: \[ \mc{V}(v,v') \circledast \mc{V}(w,w') \leq \mc{V}(v \ovee w, v' \ovee w') \]
 \end{lemma}
 \begin{proof}
-	This is simply because $\ovee$ is a $\mathbb{Q}$-functor.
+	This is simply because $\ovee$ is a $\mc{Q}$-functor.
 \end{proof}
 
 \begin{definition}[Oplax Functor]
@@ -750,37 +750,37 @@ For the following we will assume that $\mc{V}$ is a monoidal $\mathbb{Q}$-catego
 \end{definition}
 
 \begin{proposition}
-	Let $(\mathbb{Q}, \circledast, k)$ be commutative quantale, and $(\mc{V}, \ovee, \mu)$ a monoidal $\mathbb{Q}$-category. Suppose $E: \mathbf{Prof}(\mathbb{Q}) \rightarrow \mathbf{Prof}(\mathbb{Q})$ is the extension of an oplax monoidal functor $\tilde E$ on $\mathbf{Cat}(\mathbb{Q})$ with natural transformation $\sigma: E(-\circledast -) \rightarrow E(-) \circledast E(-)$, such that \textcolor{BrickRed} {$E(\Phi \circledast \Psi)(x,y) \leq (E(\Phi) \circledast E(\Psi))(\sigma_{A,B}(x), \sigma_{C,D}(y))$ for all $\Phi, \Psi \in \mathbf{Prof}(\mathbb{Q})$} (looks like it would follow from naturality of $\sigma$). Then $\mathbf{Prof}(\mathbb{Q}) \wr \mc{V}$ is a symmetric monoidal category where the tensor of $\alpha: EA \rightarrow \mc{V}$ and $\beta: EB \rightarrow \mc{V}$ is given by
+	Let $(\mc{Q}, \circledast, k)$ be commutative quantale, and $(\mc{V}, \ovee, \mu)$ a monoidal $\mc{Q}$-category. Suppose $E: \mathbf{Prof}(\mc{Q}) \rightarrow \mathbf{Prof}(\mc{Q})$ is the extension of an oplax monoidal functor $\tilde E$ on $\mathbf{Cat}(\mc{Q})$ with natural transformation $\vartheta: E(-\circledast -) \rightarrow E(-) \circledast E(-)$, such that \textcolor{BrickRed} {$E(\Phi \circledast \Psi)(x,y) \leq (E(\Phi) \circledast E(\Psi))(\vartheta_{A,B}(x), \vartheta_{C,D}(y))$ for all $\Phi, \Psi \in \mathbf{Prof}(\mc{Q})$} (looks like it would follow from naturality of $\vartheta$). Then $\mathbf{Prof}(\mc{Q}) \wr \mc{V}$ is a symmetric monoidal category where the tensor of $\alpha: EA \rightarrow \mc{V}$ and $\beta: EB \rightarrow \mc{V}$ is given by
 	$$
-	E(A \circledast B) \overset{\sigma_{A,B}}{\rightarrow} E(A) \circledast E(B) \overset{\alpha \circledast \beta}{\rightarrow} \mc{V} \circledast \mc{V} \overset{\ovee}{\rightarrow} \mc{V}.
+	E(A \circledast B) \overset{\vartheta_{A,B}}{\rightarrow} E(A) \circledast E(B) \overset{\alpha \circledast \beta}{\rightarrow} \mc{V} \circledast \mc{V} \overset{\ovee}{\rightarrow} \mc{V}.
 	$$
-	Written out as a composition, $\alpha \ovee \beta := \alpha\pi_1\sigma_{A,B} \ovee \beta\pi_2\sigma_{A,B}$.
+	Written out as a composition, $\alpha \ovee \beta := \alpha\pi_1\vartheta_{A,B} \ovee \beta\pi_2\vartheta_{A,B}$.
 	
 	The unit $\iota$ for the tensor is given by the object
 	$$
-	E\mc{I} \overset{\sigma_0}{\rightarrow} \mc{I} \overset{\mu}{\rightarrow} \mc{V},
+	E\mc{I} \overset{\vartheta_0}{\rightarrow} \mc{I} \overset{\mu}{\rightarrow} \mc{V},
 	$$
-	that is, $\iota = \mu\sigma_0$.
-	The forgetful functor $\mathbf{Prof}(\mathbb{Q}) \wr \mc{V} \rightarrow \mathbf{Prof}(\mathbb{Q})$ preserves this tensor strictly.
+	that is, $\iota = \mu\vartheta_0$.
+	The forgetful functor $\mathbf{Prof}(\mc{Q}) \wr \mc{V} \rightarrow \mathbf{Prof}(\mc{Q})$ preserves this tensor strictly.
 \end{proposition}
 
 \begin{proof}[Proof in progress...]
- 	Let $\alpha: EA \rightarrow \mc{V} , \beta: EB \rightarrow \mc{V}, \gamma: EC \rightarrow \mc{V}$, and $\delta: ED \rightarrow \mc{V}$ be objects in $\mathbf{Prof}(\mathbb{Q}) \wr \mc{V}$. Moreover, let $\Phi: A \xslashedrightarrow{} C$ and $\Psi: B \xslashedrightarrow{} D$ be proslice morphisms. We first show that the proposed tensor product is indeed a bifunctor.
+ 	Let $\alpha: EA \rightarrow \mc{V} , \beta: EB \rightarrow \mc{V}, \gamma: EC \rightarrow \mc{V}$, and $\delta: ED \rightarrow \mc{V}$ be objects in $\mathbf{Prof}(\mc{Q}) \wr \mc{V}$. Moreover, let $\Phi: A \xslashedrightarrow{} C$ and $\Psi: B \xslashedrightarrow{} D$ be proslice morphisms. We first show that the proposed tensor product is indeed a bifunctor.
 	We observe that because $\Phi$ and $\Psi$ are proslice morphisms we have
 	$$
 	E \Phi(a,c) \leq \mc{V}(\alpha(a),\gamma(c)) \quad \text{ and } \quad E \Psi(b,d) \leq \mc{V}(\beta(b),\delta(d)).
 	$$
 	Hence,
 	\begin{IEEEeqnarray*}{rCl}
-		E (\Phi \circledast \Psi)(x,y)  	&\textcolor{BrickRed}{\leq}& (E \Phi \circledast E \Psi)(\sigma_{A,B}(x),\sigma_{C,D}(y)) \\
-											& = & E\Phi(\pi_1\sigma_{A,B}(x), \pi_1\sigma_{C,D}(y)) \circledast E\Psi(\pi_2\sigma_{A,B}(x), \pi_2\sigma_{C,D}(y)) \\
-											& \leq & \mc{V}(\alpha\pi_1\sigma_{A,B}(x), \gamma\pi_1\sigma_{C,D}(y)) \circledast \mc{V}(\beta\pi_2\sigma_{A,B}(x), \delta\pi_2\sigma_{C,D}(y)) \\
-											& \leq & \mc{V}(\alpha\pi_1\sigma_{A,B}(x) \ovee \beta\pi_2\sigma_{A,B}(x), \gamma\pi_1\sigma_{C,D}(y) \ovee  \delta\pi_2\sigma_{C,D}(y)) \\
+		E (\Phi \circledast \Psi)(x,y)  	&\textcolor{BrickRed}{\leq}& (E \Phi \circledast E \Psi)(\vartheta_{A,B}(x),\vartheta_{C,D}(y)) \\
+											& = & E\Phi(\pi_1\vartheta_{A,B}(x), \pi_1\vartheta_{C,D}(y)) \circledast E\Psi(\pi_2\vartheta_{A,B}(x), \pi_2\vartheta_{C,D}(y)) \\
+											& \leq & \mc{V}(\alpha\pi_1\vartheta_{A,B}(x), \gamma\pi_1\vartheta_{C,D}(y)) \circledast \mc{V}(\beta\pi_2\vartheta_{A,B}(x), \delta\pi_2\vartheta_{C,D}(y)) \\
+											& \leq & \mc{V}(\alpha\pi_1\vartheta_{A,B}(x) \ovee \beta\pi_2\vartheta_{A,B}(x), \gamma\pi_1\vartheta_{C,D}(y) \ovee  \delta\pi_2\vartheta_{C,D}(y)) \\
 											& = & \mc{V}(\alpha \ovee \beta(x), \gamma \ovee \delta(y))
 	\end{IEEEeqnarray*}
 	showing that the image of proslice morphisms under the tensor is again proslice.
 	
-	Functoriality of the tensor follows from the functoriality of $E$ and $- \circledast -$ of $\mathbf{Prof}(\mathbb{Q})$:
+	Functoriality of the tensor follows from the functoriality of $E$ and $- \circledast -$ of $\mathbf{Prof}(\mc{Q})$:
 	$$
 	E(\id_A \circledast \id_B) = E(\id_{A \circledast B}) = \id_{E(A \circledast B)}
 	$$
@@ -793,7 +793,7 @@ For the following we will assume that $\mc{V}$ is a monoidal $\mathbb{Q}$-catego
 	$$
 	to be the image under $E$ of the usual natural iso for the product of categories. Similarly,
 	$$\textit{right}: E(A \circledast \mc{I}) \cong E(A),\: \textit{left}: E(\mc{I} \circledast A) \cong E(A) \: \text{ and } \: \textit{swap}: E(A \circledast B) \cong E(B \circledast A)$$
-	are also given as images of the usual natural isos in the symmetric monoidal category $\mathbf{Prof}(\mathbb{Q})$. As a consequence, the axioms are automatically fulfilled, since the requisite diagrams are the images of commuting diagrams in $\mathbf{Prof}(\mathbb{Q})$. \textcolor{red}{The final thing to check is that all the natural isos are in fact proslice morphisms}.
+	are also given as images of the usual natural isos in the symmetric monoidal category $\mathbf{Prof}(\mc{Q})$. As a consequence, the axioms are automatically fulfilled, since the requisite diagrams are the images of commuting diagrams in $\mathbf{Prof}(\mc{Q})$. \textcolor{red}{The final thing to check is that all the natural isos are in fact proslice morphisms}.
 	
 	 \textcolor{red}{Claim about forgetful functor}.
 	
@@ -805,17 +805,17 @@ For the following we will assume that $\mc{V}$ is a monoidal $\mathbb{Q}$-catego
 We attempt to first develop the theory in the simplified setting of $\mathbf{Bool}$-enriched categories. For the following denote $\mathbf{Bool} =: \mathbb{B}$.
 
 \begin{definition}[Proslice \textbf{Bool}-categories]
-	Let $\mathbb{Q}$ be a commutative quantale, and $E: \mathbf{Prof}(\mathbb{B}) \rightarrow \mathbf{Prof}(\mathbb{B})$ an endofunctor. The \emph{proslice category} $\mathbf{Prof}(\mathbb{B}) \wr_E \mathbb{Q}$ consists of:
+	Let $\mc{Q}$ be a commutative quantale, and $E: \mathbf{Prof}(\mathbb{B}) \rightarrow \mathbf{Prof}(\mathbb{B})$ an endofunctor. The \emph{proslice category} $\mathbf{Prof}(\mathbb{B}) \wr_E \mc{Q}$ consists of:
 	\begin{itemize}
-		\item[(i)] objects are monotone maps $\varphi: EP \rightarrow \mathbb{Q}$ 
-		\item[(ii)] morphisms between $\varphi: EP \rightarrow \mathbb{Q}$ and $\rho: ER \rightarrow \mathbb{Q}$ are feasibility relations $\Phi: P \xslashedrightarrow{} R$ satisfying the \emph{proslice condition}:
+		\item[(i)] objects are monotone maps $\varphi: EP \rightarrow \mc{Q}$ 
+		\item[(ii)] morphisms between $\varphi: EP \rightarrow \mc{Q}$ and $\rho: ER \rightarrow \mc{Q}$ are feasibility relations $\Phi: P \xslashedrightarrow{} R$ satisfying the \emph{proslice condition}:
 		\[E\Phi(a,b) = \mathtt{true} \Rightarrow \varphi(a) \leq \rho(b). \]
 	\end{itemize}
 	Diagrammatically:
 	\begin{center}
 		\begin{tikzcd}
 			EP \arrow[rrd, bend left=25, ""{name=R, below}] \arrow[d, "|" marking] &  &    \\
-			ER \arrow[rr, ""{name=F}]     &  & \mathbb{Q} 
+			ER \arrow[rr, ""{name=F}]     &  & \mc{Q} 
 			\arrow[Rightarrow, from=R, to=F]
 		\end{tikzcd}
 	\end{center}
@@ -830,7 +830,7 @@ We can define an order structure on the objects of the proslice category. Since 
 We can characterize the proslice condition in terms of the aforementioned order.
 
 \begin{lemma}\label{proslice char}
-	Let $\varphi: EP \rightarrow \mathbb{Q}$ and $\rho: ER \rightarrow \mathbb{Q}$ be proslice objects. A feasibility relation $\Phi: P \xslashedrightarrow{} R$ satisfies the proslice condition if and only if $\varphi \leq \rho \circ E\Phi$.
+	Let $\varphi: EP \rightarrow \mc{Q}$ and $\rho: ER \rightarrow \mc{Q}$ be proslice objects. A feasibility relation $\Phi: P \xslashedrightarrow{} R$ satisfies the proslice condition if and only if $\varphi \leq \rho \circ E\Phi$.
 \end{lemma}
 \begin{proof}
 	Suppose $\Phi$ is proslice. If $\varphi(a,b) = \mathtt{true}$ and $\rho \circ E\Phi (a,b') = \mathtt{true}$, then $\varphi(a) = b$ and there is $r \in ER$ such that $\rho(r) = b'$ and $\Phi(a,r) = \mathtt{true}$. By the proslice condition $b = \varphi(a) \leq \rho(r) = b'$.
@@ -863,55 +863,55 @@ The order also behaves well with respect to the cartesian product on $\mathbf{Pr
 	Assume $\alpha \times \beta((a,b),(x,y)) = \mathtt{true}$ and $\alpha' \times \beta'((a,b),(x',y')) = \mathtt{true}$. By definition of the cartesian product of profunctors this means $\alpha(a,x) = \beta(b,y) = \alpha'(a,x') = \beta'(b,y') = \mathtt{true}$. Using our hypotheses that  $\alpha \leq \alpha'$ and $\beta \leq \beta'$, we obtain $x \leq x'$ and $y \leq y'$. Hence $(x,y) \leq (x',y')$, as desired.
 \end{proof}
 
-In the following we will need to choose the endofunctor on the proslice category to have a special form. We want there to be natural transformations  $\sigma: E(- \times -) \rightarrow E(-) \times E(-)$ and $E\mathbbm{1} \rightarrow \mathbbm{1}$ whose components are monotone maps. To make the definition we observe that both $\mathbf{Cat}(\mathbb{Q})$ and $\mathbf{Prof}(\mathbb{Q})$ embed into $\mathbf{Rel_{Pos}}$, the category whose objects are posets and whose morphisms are arbitrary relations. Hence, we can formulate a mixed naturality condition there.
+In the following we will need to choose the endofunctor on the proslice category to have a special form. We want there to be natural transformations  $\vartheta: E(- \times -) \rightarrow E(-) \times E(-)$ and $E\mathbbm{1} \rightarrow \mathbbm{1}$ whose components are monotone maps. To make the definition we observe that both $\mathbf{Cat}(\mc{Q})$ and $\mathbf{Prof}(\mc{Q})$ embed into $\mathbf{Rel_{Pos}}$, the category whose objects are posets and whose morphisms are arbitrary relations. Hence, we can formulate a mixed naturality condition there.
 
 \begin{definition}
-	An endofunctor $E$ on $\mathbf{Prof}(\mathbb{B})$ is called \emph{slicing}, if it is oplax symmetric monoidal with respect to the cartesian product, and the components of the natural transformations are monotone functions. More precisely, for any two posets $A,B \in \mathbf{Prof}(\mathbb{B})$ we want a monotone map $\sigma_{A,B}: E(A \times B) \rightarrow E(A) \times E(B)$ in $\mathbf{Cat}(\mathbb{B}) = \mathbf{Pos}$ that makes the following diagram commute in $\mathbf{Rel_{Pos}}$:
+	An endofunctor $E$ on $\mathbf{Prof}(\mathbb{B})$ is called \emph{slicing}, if it is oplax symmetric monoidal with respect to the cartesian product, and the components of the natural transformations are monotone functions. More precisely, for any two posets $A,B \in \mathbf{Prof}(\mathbb{B})$ we want a monotone map $\vartheta_{A,B}: E(A \times B) \rightarrow E(A) \times E(B)$ in $\mathbf{Cat}(\mathbb{B}) = \mathbf{Pos}$ that makes the following diagram commute in $\mathbf{Rel_{Pos}}$:
 	\begin{center}
 		\begin{tikzcd}
-			E(A \times B) \arrow[r, "{\sigma_{A,B}}"] \arrow[d, "E(\Phi \times \Psi)"] & E(A)\times E(B) \arrow[d, "E\Phi \times E\Psi"] \\
-			E(A' \times B') \arrow[r, "{\sigma_{A',B'}}"]                              & E(A')\times E(B')                              
+			E(A \times B) \arrow[r, "{\vartheta_{A,B}}"] \arrow[d, "E(\Phi \times \Psi)"] & E(A)\times E(B) \arrow[d, "E\Phi \times E\Psi"] \\
+			E(A' \times B') \arrow[r, "{\vartheta_{A',B'}}"]                              & E(A')\times E(B')                              
 		\end{tikzcd}
 	\end{center}
-	We also require a monotone map $\sigma_0 :E\mathbbm{1} \rightarrow \mathbbm{1}$.
+	We also require a monotone map $\vartheta_0 :E\mathbbm{1} \rightarrow \mathbbm{1}$.
 	
 	
 	
 \end{definition}  
 
 \begin{theorem}[Transfer] \label{transfer theorem}
-	Suppose $E$ is slicing. Then any monotone n-ary operation on $\mathbb{Q}$ induces a functor $\bullet: (\mathbf{Prof}(\mathbb{B}) \wr_E \mathbb{Q})^{\times n} \rightarrow \mathbf{Prof}(\mathbb{B}) \wr_E \mathbb{Q}$ as follows:
+	Suppose $E$ is slicing. Then any monotone n-ary operation on $\mc{Q}$ induces a functor $\bullet: (\mathbf{Prof}(\mathbb{B}) \wr_E \mc{Q})^{\times n} \rightarrow \mathbf{Prof}(\mathbb{B}) \wr_E \mc{Q}$ as follows:
 	\begin{description}
-		\item[Objects] $\alpha_i : EA_i \rightarrow \mathbb{Q}$ are mapped to the composite
+		\item[Objects] $\alpha_i : EA_i \rightarrow \mc{Q}$ are mapped to the composite
 		\begin{center}
 			\begin{tikzcd}
-				E(A_1 \times \ldots \times A_n) \arrow[r, "{\sigma_{A_1,\ldots,A_n}}"] & E(A_1) \times \ldots \times E(A_n) \arrow[r, "\alpha_1 \times \ldots \times \alpha_n"] & \mathbb{Q}^{\times n} \arrow[r, "\bullet"] & \mathbb{Q}
+				E(A_1 \times \ldots \times A_n) \arrow[r, "{\vartheta_{A_1,\ldots,A_n}}"] & E(A_1) \times \ldots \times E(A_n) \arrow[r, "\alpha_1 \times \ldots \times \alpha_n"] & \mc{Q}^{\times n} \arrow[r, "\bullet"] & \mc{Q}
 			\end{tikzcd}
 		\end{center}
-		where $\sigma_{A_1,\ldots,A_n}$ denotes the iterated application of the appropriate components of the natural transformation $\sigma$.
+		where $\vartheta_{A_1,\ldots,A_n}$ denotes the iterated application of the appropriate components of the natural transformation $\vartheta$.
 			
 		\item[Morphisms] $E\Phi_i: EA_i \xslashedrightarrow{} EB_i$ are mapped to $E(\Phi_1 \times \ldots \times \Phi_n)$.
 	\end{description}
 \end{theorem}
 
 \begin{proof}
-	Let $\bullet: \mathbb{Q}^{\times n} \rightarrow \mathbb{Q}$ be the monotone n-ary operation in question. Suppose $\alpha_i: EA_i \rightarrow \mathbb{Q}$,  $\beta_i: EB_i \rightarrow \mathbb{Q}$ are proslice objects, and $\Phi_i: A_i \xslashedrightarrow{} B_i$ proslice morphisms, for $1 \leq i \leq n$. The proslice condition, $\alpha_i \leq \beta_i \circ E\Phi_i$ implies $\alpha_1 \times \ldots \times \alpha_n \leq \beta_1 \circ E \Phi_1 \times \ldots \times \beta_n \circ E \Phi_n$ by lemma \ref{product lemma}. Because $\times$ is a functor, \[ \beta_1 \circ E \Phi_1 \times \ldots \times \beta_n \circ E \Phi_n =  (\beta_1 \times \ldots \times \beta_n) \circ (E\Phi_1 \times \ldots \times E\Phi_n). \] 
+	Let $\bullet: \mc{Q}^{\times n} \rightarrow \mc{Q}$ be the monotone n-ary operation in question. Suppose $\alpha_i: EA_i \rightarrow \mc{Q}$,  $\beta_i: EB_i \rightarrow \mc{Q}$ are proslice objects, and $\Phi_i: A_i \xslashedrightarrow{} B_i$ proslice morphisms, for $1 \leq i \leq n$. The proslice condition, $\alpha_i \leq \beta_i \circ E\Phi_i$ implies $\alpha_1 \times \ldots \times \alpha_n \leq \beta_1 \circ E \Phi_1 \times \ldots \times \beta_n \circ E \Phi_n$ by lemma \ref{product lemma}. Because $\times$ is a functor, \[ \beta_1 \circ E \Phi_1 \times \ldots \times \beta_n \circ E \Phi_n =  (\beta_1 \times \ldots \times \beta_n) \circ (E\Phi_1 \times \ldots \times E\Phi_n). \] 
 	
-	By appending the relevant iterated components of the natural transformation $\sigma$, we get the following diagram, where the left square commutes by naturality.
+	By appending the relevant iterated components of the natural transformation $\vartheta$, we get the following diagram, where the left square commutes by naturality.
 	\begin{center}
 		\begin{tikzcd}
-			E(A_1 \times \ldots \times A_n) \arrow[r, "{\sigma_{A_1,\ldots,A_n}}"] \arrow[dd, "E(\Phi_1 \times \ldots \times \Phi_n)"] & E(A_1) \times \ldots \times E(A_n) \arrow[rd, "\alpha_1 \times \ldots \times \alpha_n"] \arrow[dd, "E\Phi_1 \times \ldots \times E\Phi_n"] &                                            &            \\
-			&                                                                                                                                            & \mathbb{Q}^{\times n} \arrow[r, "\bullet"] & \mathbb{Q} \\
-			E(B_1 \times \ldots \times B_n) \arrow[r, "{\sigma_{B_1,\ldots,B_n}}"]                                                     & E(B_1) \times \ldots \times E(B_n) \arrow[ru, "\beta_1 \times \ldots \times \beta_n"']                                                     &                                            &           
+			E(A_1 \times \ldots \times A_n) \arrow[r, "{\vartheta_{A_1,\ldots,A_n}}"] \arrow[dd, "E(\Phi_1 \times \ldots \times \Phi_n)"] & E(A_1) \times \ldots \times E(A_n) \arrow[rd, "\alpha_1 \times \ldots \times \alpha_n"] \arrow[dd, "E\Phi_1 \times \ldots \times E\Phi_n"] &                                            &            \\
+			&                                                                                                                                            & \mc{Q}^{\times n} \arrow[r, "\bullet"] & \mc{Q} \\
+			E(B_1 \times \ldots \times B_n) \arrow[r, "{\vartheta_{B_1,\ldots,B_n}}"]                                                     & E(B_1) \times \ldots \times E(B_n) \arrow[ru, "\beta_1 \times \ldots \times \beta_n"']                                                     &                                            &           
 		\end{tikzcd}
 	\end{center}
 	By using pre-composition lemma \ref{pasting lemma} and the commutativity of the square, we obtain
 	\begin{IEEEeqnarray*}{rCl}
-		(\alpha_1 \times \ldots \times \alpha_n) \circ \sigma_{A_1,\ldots,A_n} &\leq& (\beta_1 \times \ldots \times \beta_n) \circ (E\Phi_1 \times \ldots \times E\Phi_n) \circ \sigma_{A_1,\ldots,A_n} \\
-			& = & (\beta_1 \times \ldots \times \beta_n) \circ \sigma_{B_1,\ldots,B_n} \circ E(\Phi_1 \times \ldots \times \Phi_n).
+		(\alpha_1 \times \ldots \times \alpha_n) \circ \vartheta_{A_1,\ldots,A_n} &\leq& (\beta_1 \times \ldots \times \beta_n) \circ (E\Phi_1 \times \ldots \times E\Phi_n) \circ \vartheta_{A_1,\ldots,A_n} \\
+			& = & (\beta_1 \times \ldots \times \beta_n) \circ \vartheta_{B_1,\ldots,B_n} \circ E(\Phi_1 \times \ldots \times \Phi_n).
 	\end{IEEEeqnarray*}
 	By post-composition, again using lemma \ref{pasting lemma},
-	\[\bullet [(\alpha_1 \times \ldots \times \alpha_n) \circ \sigma_{A_1,\ldots,A_n}]  \leq \bullet [(\beta_1 \times \ldots \times \beta_n) \circ \sigma_{B_1,\ldots,B_n} \circ E(\Phi_1 \times \ldots \times \Phi_n)]. \]
+	\[\bullet [(\alpha_1 \times \ldots \times \alpha_n) \circ \vartheta_{A_1,\ldots,A_n}]  \leq \bullet [(\beta_1 \times \ldots \times \beta_n) \circ \vartheta_{B_1,\ldots,B_n} \circ E(\Phi_1 \times \ldots \times \Phi_n)]. \]
 	Therefore, $E(\Phi_1 \times \ldots \times \Phi_n)$ is proslice with respect to the induced operation. Finally, functoriality follows from that of $\times$ and $E$: 
 	\begin{IEEEeqnarray*}{rCl}
 	E(\Psi_1 \Phi_1 \times \ldots \times \Psi_n\Phi_n) &= &E((\Psi_1 \times \ldots \times \Psi_n)\circ(\Phi_1 \times \ldots \times \Phi_n)) \\ & =&  E(\Psi_1 \times \ldots \times \Psi_n) \circ E(\Phi_1 \times \ldots \times \Phi_n)	
@@ -922,18 +922,18 @@ In the following we will need to choose the endofunctor on the proslice category
 \end{proof}
 
 \begin{remark}
-	Observe that the above proof also works for any monoidal product $\otimes$ on $\mathbf{Prof}(\mathbb{B})$ and operation $\mathbb{Q}^{\otimes n} \rightarrow \mathbb{Q}$.
+	Observe that the above proof also works for any monoidal product $\otimes$ on $\mathbf{Prof}(\mathbb{B})$ and operation $\mc{Q}^{\otimes n} \rightarrow \mc{Q}$.
 \end{remark}
 
-Our goal is now to transfer the structure of the quantale $\mathbb{Q}$ (which we will eventually choose to be *-autonomous) to the proslice category $\mathbf{Prof}(\mathbb{B}) \wr_E \mathbb{Q}$. The transfer theorem \ref{transfer theorem} tells us that we will get appropriate functors on the proslice category for each operation on $\mathbb{Q}$. However, we will need to check that the induced operations also satisfy the requisite properties. We start with the monoidal product. 
+Our goal is now to transfer the structure of the quantale $\mc{Q}$ (which we will eventually choose to be *-autonomous) to the proslice category $\mathbf{Prof}(\mathbb{B}) \wr_E \mc{Q}$. The transfer theorem \ref{transfer theorem} tells us that we will get appropriate functors on the proslice category for each operation on $\mc{Q}$. However, we will need to check that the induced operations also satisfy the requisite properties. We start with the monoidal product. 
 
 \subsubsection{Symmetric Monoidal Structure}
 
 \begin{proposition}
-	Let $(\mathbb{Q},\otimes, k)$ be a commutative quantale and $E$ slicing. Then $\mathbf{Prof}(\mathbb{B}) \wr_E \mathbb{Q}$ is a symmetric monoidal category with respect to the bifunctor induced by $\otimes$.
+	Let $(\mc{Q},\otimes, k)$ be a commutative quantale and $E$ slicing. Then $\mathbf{Prof}(\mathbb{B}) \wr_E \mc{Q}$ is a symmetric monoidal category with respect to the bifunctor induced by $\otimes$.
 \end{proposition} 
 \begin{proof}
-	By the transfer theorem \ref{transfer theorem}, we know that we have a bifunctor $\otimes$ on $\mathbf{Prof}(\mathbb{B}) \wr_E \mathbb{Q}$. We need to show that this satisfies the axioms for a SMC. The required natural isomorphisms will be inherited from those that turn the cartesian product into a symmetric monoial structure on $\mathbf{Prof}(\mathbb{B})$. These are 
+	By the transfer theorem \ref{transfer theorem}, we know that we have a bifunctor $\otimes$ on $\mathbf{Prof}(\mathbb{B}) \wr_E \mc{Q}$. We need to show that this satisfies the axioms for a SMC. The required natural isomorphisms will be inherited from those that turn the cartesian product into a symmetric monoial structure on $\mathbf{Prof}(\mathbb{B})$. These are 
 	\[\mathit{assoc}: (A \times B) \times C \rightarrow  A \times (B \times C), \]
 	\[\mathit{left}: \mathbbm{1} \times A \rightarrow A, \]
 	\[\mathit{right}: A \times \mathbbm{1} \rightarrow A, \]
@@ -943,33 +943,144 @@ Our goal is now to transfer the structure of the quantale $\mathbb{Q}$ (which we
 	We start with associativity:
 	\begin{center}
 		\begin{tikzcd}
-			E((A \times B) \times C) \arrow[d, "E(\mathit{assoc})"] \arrow[r, "{\sigma_{A,B}\sigma_{(A \times B),C}}"] & (E(A) \times E(B)) \times E(C) \arrow[r, "(\alpha \times \beta) \times \gamma"] \arrow[d, "\mathit{assoc}"] & (\mathbb{Q} \times \mathbb{Q}) \times \mathbb{Q}  \arrow[d, "\mathit{assoc}"] \arrow[rd, "\otimes \text{ twice}"] &            \\
-			E(A \times (B \times C)) \arrow[r, "{\sigma_{B,C} \sigma_{A,(B \times C)}}"']                             & E(A) \times (E(B) \times E(C)) \arrow[r, "\alpha \times (\beta \times \gamma)"']                            & \mathbb{Q} \times (\mathbb{Q} \times \mathbb{Q} ) \arrow[r, "\otimes \text{ twice}"']                             & \mathbb{Q}
+			E((A \times B) \times C) \arrow[d, "E(\mathit{assoc})"] \arrow[r, "{\vartheta_{A,B}\vartheta_{(A \times B),C}}"] & (E(A) \times E(B)) \times E(C) \arrow[r, "(\alpha \times \beta) \times \gamma"] \arrow[d, "\mathit{assoc}"] & (\mc{Q} \times \mc{Q}) \times \mc{Q}  \arrow[d, "\mathit{assoc}"] \arrow[rd, "\otimes \text{ twice}"] &            \\
+			E(A \times (B \times C)) \arrow[r, "{\vartheta_{B,C} \vartheta_{A,(B \times C)}}"']                             & E(A) \times (E(B) \times E(C)) \arrow[r, "\alpha \times (\beta \times \gamma)"']                            & \mc{Q} \times (\mc{Q} \times \mc{Q} ) \arrow[r, "\otimes \text{ twice}"']                             & \mc{Q}
 		\end{tikzcd}
 	\end{center}
-	The leftmost square commutes by the associativity requirement for the oplax monoidal functor $E$, the middle square commutes by the naturality of $\mathit{assoc}$, and the rightmost triangle commutes because it is the image of the associativity diagram for $\mathbb{Q}$ in $\mathbf{Pos}$.
+	The leftmost square commutes by the associativity requirement for the oplax monoidal functor $E$, the middle square commutes by the naturality of $\mathit{assoc}$, and the rightmost triangle commutes because it is the image of the associativity diagram for $\mc{Q}$ in $\mathbf{Pos}$.
 	
 	The diagram for the left unitor is:
 	\begin{center}
 		\begin{tikzcd}
-			E(\mathbbm{1} \times A) \arrow[rd, "E(\mathit{left})"'] \arrow[r, "{\sigma_0 \sigma_{\mathbbm{1},A}}"] & \mathbbm{1} \times E(A) \arrow[r, "\mathbbm{1} \times \alpha"] \arrow[d, "\mathit{left}"] & \mathbbm{1} \times \mathbb{Q} \arrow[r, "k \times \mathbb{Q}"] \arrow[d, "\mathit{left}"] & \mathbb{Q} \times \mathbb{Q} \arrow[ld, "\otimes"] \\
-			& E(A) \arrow[r, "\alpha"]                                                                  & \mathbb{Q}                                                                                &                                                   
+			E(\mathbbm{1} \times A) \arrow[rd, "E(\mathit{left})"'] \arrow[r, "{\vartheta_0 \vartheta_{\mathbbm{1},A}}"] & \mathbbm{1} \times E(A) \arrow[r, "\mathbbm{1} \times \alpha"] \arrow[d, "\mathit{left}"] & \mathbbm{1} \times \mc{Q} \arrow[r, "k \times \mc{Q}"] \arrow[d, "\mathit{left}"] & \mc{Q} \times \mc{Q} \arrow[ld, "\otimes"] \\
+			& E(A) \arrow[r, "\alpha"]                                                                  & \mc{Q}                                                                                &                                                   
 		\end{tikzcd}
 	\end{center}
-	The left triangle communtes by the axioms for an oplax monoidal functor, the middle square by naturality of $\mathit{left}$, and the right triangle because of the unit law for $\mathbb{Q}$. The diagram for the right unitor is analogous.
+	The left triangle communtes by the axioms for an oplax monoidal functor, the middle square by naturality of $\mathit{left}$, and the right triangle because of the unit law for $\mc{Q}$. The diagram for the right unitor is analogous.
 	
 	Finally, for commutativity we have
 	\begin{center}
 			\begin{tikzcd}
-			E(A \times B) \arrow[d, "E(\mathit{swap})"] \arrow[r] & E(A) \times E(B) \arrow[d, "\mathit{swap}"] \arrow[r] & \mathbb{Q} \times \mathbb{Q} \arrow[d, "\mathit{swap}"] \arrow[rd, "\otimes"] &            \\
-			E(B \times A) \arrow[r]                               & E(B) \times E(A) \arrow[r]                            & \mathbb{Q} \times \mathbb{Q} \arrow[r, "\otimes"]                             & \mathbb{Q}
+			E(A \times B) \arrow[d, "E(\mathit{swap})"] \arrow[r] & E(A) \times E(B) \arrow[d, "\mathit{swap}"] \arrow[r] & \mc{Q} \times \mc{Q} \arrow[d, "\mathit{swap}"] \arrow[rd, "\otimes"] &            \\
+			E(B \times A) \arrow[r]                               & E(B) \times E(A) \arrow[r]                            & \mc{Q} \times \mc{Q} \arrow[r, "\otimes"]                             & \mc{Q}
 		\end{tikzcd}
 	\end{center}
-	where the left square commutes because $E$ is symmetric oplax monoidal, the middle by naturality of $\mathit{swap}$, and the right triangle by commutativity of $\mathbb{Q}$.
+	where the left square commutes because $E$ is symmetric oplax monoidal, the middle by naturality of $\mathit{swap}$, and the right triangle by commutativity of $\mc{Q}$.
 \end{proof}
 
 
+\section{Bundles}
 
+\subsection{The Setting}
+
+For the moment we will forget about resources and functionalities and instead just consider a preorder of things. An arrow $a \rightarrow b$ expresses the fact that if I have $a$, then I can obtain $b$ from it. We imagine this as a process of instant conversion. 
+
+In this setting we can imagine bundling things together. Such a bundle unites a collection of things to a whole. The type of bundle dictates how we are able to interact with the things therein. These interactions are characterized by what things we can obtain using the bundles and from what things we can obtain a given bundle.
+
+We will enforce resource conservation on the bundles, meaning that we can obtain each item occurring in the bundle at most once. Conversely, if the bundle make some resources available, we are stuck with them and can't just throw them away.
+
+\subsection{Agnostic Choice}
+To start with we will assume our bundles only track availability and unavailability of things. They will be agnostic to temporal, causal, spacial, or similar features. The bundles can nonetheless create some forms of dependency between the things. 
+
+\subsubsection{2-Bundles}
+Here are all the bundles of two things $a,b$ I can think of in this case:
+\begin{description}
+	\item[Both(a,b)] You have both $a,b$ at the same time and can use both freely in any order.
+	\item[Either(a,b)] You can choose between either having $a$ or having $b$.
+	\item[Maybe(a,b)] You have either $a$ or $b$, but you don't know in advance which one. When using the bundle, it will give you either $a$ or $b$.
+	\item[BombL(a,b)] Using $a$ will destroy $b$, but not vice versa. This is equivalent to $\mathsf{Either}(a,\mathsf{Both}(a,b))$.
+\end{description}
+
+We could be tempted to also introduce an ordered pair $\mathsf{Before}(a,b)$ expressing the fact that we have both $a,b$, but in a set order (temporal, spacial, causal). Our assumption that the bundles are agnostic to these features implies $\mathsf{Before}(a,b) = \mathsf{Before}(b,a)$, regardless of how we interpret the ordering. Note that in any case \[\mathsf{Both}(a,b) = \mathsf{Either}(\mathsf{Before}(a,b), \mathsf{Before}(b,a))). \]
+
+Observe also that asymmetric dependence with respect to availability is expressed by $\mathsf{BombL}(a,b)$ and can be expressed in terms of $\mathsf{Both}$ and $\mathsf{Either}$.
+
+Finally, note we distinguish two modes of choice, free and forced. This corresponds to two agents. In principle, we could establish more complex forms of choice by considering agents with (possibly interrelated) knowledge pools. Our situation corresponds to two agents (me and my opponent) with no shared knowledge. Specifically, $\mathsf{Either}(a,b) \rightarrow \mathsf{Maybe}(a,b)$, from my perspective, but not the other way around. From my opponents perspective, the situation is reversed.   
+
+\subsubsection{n-Bundles}
+Lets turn to bundles of higher arity. For example there could be a general bundle containing $n$ things, some of which you can choose freely, and some of which will be chosen for you. We can express this using the elementary n-bundles $\mathsf{Either}(a_1,\ldots,a_n)$, expressing a single free choice from $n$ elements and $\mathsf{Maybe}(a_1,\ldots,a_n)$, expressing a single forced choice from $n$ elements. 
+
+For example, a bundle of 3 things with a forced choice followed by a free choice is given by 
+\[\mathsf{Maybe}( \mathsf{Either}(\mathsf{Both}(a,b), \mathsf{Both}(a,c)), \mathsf{Either}(\mathsf{Both}(b,a), \mathsf{Both}(b,c)), \mathsf{Either}(\mathsf{Both}(c,a), \mathsf{Both}(c,b)))\]
+This can be seen by drawing a tree of possibilities.
+
+On the other hand if we have a free choice followed by a forced choice then we get the expression
+\[\mathsf{Either}( 
+\mathsf{Maybe}(\mathsf{Both}(a,b), \mathsf{Both}(a,c)), 
+\mathsf{Maybe}(\mathsf{Both}(b,a), \mathsf{Both}(b,c)),
+\mathsf{Maybe}(\mathsf{Both}(c,a), \mathsf{Both}(c,b))
+)
+\]
+
+This begs the question of whether
+
+\[\mathsf{Maybe}( \mathsf{Either}(X), \ldots, \mathsf{Either}(Y)) \stackrel{?}{=} \mathsf{Either}( \mathsf{Maybe}(X), \ldots, \mathsf{Maybe}(Y)). 
+\]
+
+In words, this is asking whether it matters if I can freely choose between uncertain outcomes or whether it is uncertain which free choice I will be able to make.  
+
+Observe that in any case
+
+\[\mathsf{Either}(\mathsf{Both}(a,b), \mathsf{Both}(a,c)) 
+= \mathsf{Both}(a,\mathsf{Either}(b,c))
+\]
+
+\[ \mathsf{Maybe}(\mathsf{Both}(a,b), \mathsf{Both}(a,c)) 
+= \mathsf{Both}(a,\mathsf{Maybe}(b,c)) \]
+
+So we can reduce the first expression to
+
+\[
+\mathsf{Maybe}( \mathsf{Both}(a,\mathsf{Either}(b,c)), \mathsf{Both}(b,\mathsf{Either}(a,c)), \mathsf{Both}(c,\mathsf{Either}(a,b)))
+\]
+
+The second expression reduces to
+
+\[
+\mathsf{Either}( \mathsf{Both}(a,\mathsf{Maybe}(b,c)), \mathsf{Both}(b,\mathsf{Maybe}(a,c)), \mathsf{Both}(c,\mathsf{Maybe}(a,b)))
+\]
+
+In the example of choosing from $[a,b,c]$ it seems like the distinction is immaterial, as long as there is no dependency between $a,b,c$. In both cases I can guarantee only one resource. If there is some dependency, things may be more complicated. Suppose $\mathsf{Both}(a,b)$ is highly desirable, but $\mathsf{Both}(a,c)$ is catastrophic. All other outcomes are neutral. If you had a free choice first, you wouldn't want to choose $a$, because, then the catastrophic outcome might be realized by the forced choice. So in this case, you would always end up with a neutral outcome, if you want to avoid catastophe at all costs. On the other hand, if the forced choice was first, there is a chance you get $a$ and are able to realize the desirable outcome. Moreover, you can always avoid catastrophe.   
+
+This could be visualized by two agents each attempting to satisfy a list of preferences by adding items to a common pool. Depending on what types of items appear on the list, it might make a difference in what order they proceed. However, it seems that a difference only manifests if they have compound items on their lists. 
+
+\subsubsection{Substitution Rules}
+We want to extend the obtaining relation $a \rightarrow b$ to bundles. We do this via the following substitution rules:
+\begin{itemize}
+	\item If $a \rightarrow x$ and you have $\mathsf{Both}(a,b)$, then you can get $\mathsf{Both}(x,b)$
+	\item If $a \rightarrow x$ and you have $\mathsf{Either}(a,b)$, then you can get $\mathsf{Either}(x,b)$.
+	\item If I have $\mathsf{Either}(a,b)$, I can obtain $a$
+	\item If  $a \rightarrow x$, and you have $\mathsf{Maybe}(a,b)$, then you can get $\mathsf{Maybe}(x,b) $.
+	\item If I have $a$, I can obtain $\mathsf{Maybe}(a,b)$
+\end{itemize}
+
+Moreover, we have the following simplification rules:
+\begin{itemize}
+	\item $\mathsf{Either}(a,a) = a = \mathsf{Maybe}(a,a)$
+\end{itemize}
+
+\subsubsection{Debt}
+We can introduce a notion of debt by saying that for a resource $a$, $\neg a$ signifies that I owe an $a$. If $a \rightarrow b$, then $\neg b \rightarrow \neg a$. Assuming two parties, $\neg\neg a=a$. If $\mathsf{Maybe}$ is uncertain because it is the choice of my opponent, then $\neg \mathsf{Either}(a,b) = \mathsf{Maybe}(\neg a, \neg b)$. Equivalently, thinking in terms of unknowns, if I owe a $\mathsf{Maybe}(a,b)$, then I can choose to provide either $a$, or $b$. That is $\neg \mathsf{Maybe}(a,b) = \mathsf{Either}(\neg a, \neg b)$.
+
+Finally, lets think about how debt interacts with $\mathsf{Both}$. It seems that owing both $a$ and $b$ independently can be expressed as $\mathsf{Both}(\neg a, \neg b)$. On the other hand $\neg \mathsf{Both}(a, b)$ would mean owing independent $a$ and $b$. It is hard to find a difference between these two formulations. Furthermore we should have $\mathsf{Both}(a, \neg a) \rightarrow [ \phantom{n}]$ and $[ \phantom{n}] \rightarrow \mathsf{Both}(a, \neg a)$.
+
+\subsubsection{Free Bundles}
+
+Let $\mathcal{P}$ be a countable preorder expressing obtainability. Form $\mathbf{Bundle}(\mathcal{P})$ by adding all finite expressions obtainable by $\neg$, $\mathsf{Both}$, $\mathsf{Either}$, and $\mathsf{Maybe}$, along with all arrows obtainable from the substitution rules. We wish to include also the empty expression $[ \phantom{n} ]$, which acts as the unit for $\mathsf{Both}$.
+
+\begin{proposition} $\mathbf{Bundle}(\mathcal{P})$ is compact closed with all finite non-empty meets and joins.
+\end{proposition}
+
+\begin{proof} Multiplication is given by $\mathsf{Both}$, which is an endofunctor because of the substitution rules. Moreover, we noted above that have $\mathsf{Both}(a, \neg a) \rightarrow [ \phantom{n}]$ and $[ \phantom{n}] \rightarrow \mathsf{Both}(a, \neg a)$. The yanking equations are trivially satisfied because we are dealing with a preorder. 
+
+Finite joins are given by $\mathsf{Maybe}$:
+\[a_1 \vee a_2 = \mathsf{Maybe}(a_1,a_2)\]
+We have injections $a_i \rightarrow \mathsf{Maybe}(a_1,a_2)$. Suppose $a_i \rightarrow t$ for $i=1,2$. Assume I have $\mathsf{Maybe}(a_1,a_2)$ then by two substitutions I can get $\mathsf{Maybe}(t,t) = t$. Hence $\mathsf{Maybe}(a_1,a_2) \rightarrow t$.
+
+In a similar manner, finite meets are given by $\mathsf{Either}$.
+\end{proof}
+
+\paragraph{Warning} It is important that this compact closed preorder not have all finite meets and joins, as otherwise they would coincide by the paper of Robin Houston \cite{Houston2006}.  For example, if you had top $\top$ and bottom $\bot$, then $\mathsf{Both}(\top,\bot) \cong \bot$, because having an additional copy of $\top$ doesn't make any difference if you have the universal resource $\bot$. On the other hand, by negation and symmetry, $\top = \neg \bot \cong \neg \mathsf{Both}(\top,\bot) = \mathsf{Both}(\neg \top, \neg \bot) = \mathsf{Both}(\top,\bot)$. Hence $\top = \bot$, which in particular has the consequence that $a \cong b$ for any $a,b$, meaning any $a$ would be obtainable from any $b$. 
 \newpage
 \printbibliography
 
