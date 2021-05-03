@@ -82,3 +82,9 @@
 \contentsline {paragraph}{Warning}{34}{section*.10}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {4.2.6}Relation to Queries}{34}{subsubsection.4.2.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.3}A General Scheme to Extend Co-Design}{35}{subsection.4.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.4}Dependent Choice}{35}{subsection.4.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.5}Valued Resources}{35}{subsection.4.5}%

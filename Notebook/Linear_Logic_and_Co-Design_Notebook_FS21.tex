@@ -1092,7 +1092,43 @@ $$\Phi(r_1,f_1) \wedge \Phi(r_2,f_2) \Rightarrow \bar\Phi(\mathsf{Maybe}(r_1,r_2
 
 Suppose that $\bar\Phi(\mathsf{Maybe}(r_1,r_2),\mathsf{Either}(f_1,f_2))$. Then since $r_i \rightarrow \mathsf{Maybe}(r_1,r_2)$ and $\mathsf{Either}(f_1,f_2) \rightarrow f_i$, we in fact have $$\Phi(r_1,f_1) \wedge \Phi(r_2,f_2) \Leftrightarrow \bar\Phi(\mathsf{Maybe}(r_1,r_2),\mathsf{Either}(f_1,f_2)).$$
 
-It is less clear how to prove equivalence in the other points.
+It is less clear how to prove equivalence in the other points. Top prove such a result, I need to look at the bundle construction in more detail. In particular, it would be useful to have some results on term simplification. For example, we can always manipulate terms so that the negations occur only on atomic terms.
+
+\subsection{A General Scheme to Extend Co-Design}
+
+The above suggests the following recipe for extending Co-Design:
+\begin{itemize}
+	\item Introduce new resource/functionality objects derived from some original resources/functionalities. 
+	\item Select some subset of these that cohere with the obtainability structure that is already in place.
+	\item Specify how the obtainability relation extends to derived objects
+	\item Generate a derived resource/functionality preorder containing the derived objects together with the new relations
+	\item Characterize this structure algebraically and check correspondence to logical structures
+	\item Extend feasibility relations between original structures to the derived structures
+\end{itemize}
+
+\subsection{Dependent Choice}
+
+
+\subsection{Valued Resources}
+Here we will assign the things in our preorder $P$ values in some commutative quantale $\mathcal{Q}$. Thus the derived objects are functions $v_p:\{p\} \rightarrow \mathcal{Q}$, for $p \in \mathcal{Q}$. Assigning these values in a coherent way with respect to obtainability means that if $p \rightarrow q$ then $v_p(p) \leq v_q(q)$. Hence a coherent assignment is just a monotone map $v: P \rightarrow \mathcal{Q}$.
+
+Suppose we have fixed such a coherent valuation $v$. We can then introduce derived valuations on bundles. For each operation in $\mathcal{Q}$, we get a distinct type of bundle. Formally obtain these by the composition
+$$P \times P \rightarrow \mc{Q} \times \mc{Q} \stackrel{\star}{\rightarrow} \mc{Q},$$
+where $\star$ is some monotone operation on $\mc{Q}$. This means that between bundles of the same type we have a coherent substitution rule: If $p \rightarrow q$ and you have $\star(p,r)$, then you can get $\star(q,r)$. This could also be formulated $p \rightarrow q$ and $p' \rightarrow q'$ imply $\star(p,q) \rightarrow \star(p',q')$.
+
+We now need to specify the remaining introduction / elimination rules. For this we name the operations in $(\mc{Q},\otimes, \wedge, \vee)$. We set
+\begin{itemize}
+	\item $\wedge(p,q) \rightarrow  p$
+	\item $r \rightarrow p$ and $r \rightarrow q$ imply $r \rightarrow \wedge(p,q)$
+	\item $p \rightarrow \vee(p,q)$
+	\item $p \rightarrow r$ and $q \rightarrow r$ imply $\vee(p,q) \rightarrow r$	
+\end{itemize}
+
+These rules are coherent because $\wedge$ and $\vee$ are meet and join in $\mc{Q}$.
+
+Now form all finite expressions using $\otimes$, $\wedge$, and $\vee$ and add all arrows induced by the substitution, introduction and elimination rules to yield $\mathbf{Val}(P)$. 
+
+Next show that we actually have a monotone map $\mathbf{Val}(P) \rightarrow \mc{Q}$ and that $\mathbf{Val}(P)$ has finite meets and joins. 
 
 
 \newpage
