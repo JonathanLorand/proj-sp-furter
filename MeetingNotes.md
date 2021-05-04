@@ -4,6 +4,10 @@ Semester Project Marius Furter - Spring 2021
 # Meetings
 
 
+## [[2021-05-04]]
+
+
+
 ## [[2021-04-06]]
 
 - Birkhoff representation theory for distributed lattices - every distributive lattice is isomorphic to the lattice of upper sets on some poset.
