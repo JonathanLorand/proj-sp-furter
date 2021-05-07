@@ -81,10 +81,30 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{Warning}{34}{section*.10}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.2.6}Relation to Queries}{34}{subsubsection.4.2.6}%
+\contentsline {subsubsection}{\numberline {4.2.6}Extending Feasibility Relations to Bundles}{34}{subsubsection.4.2.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3}A General Scheme to Extend Co-Design}{35}{subsection.4.3}%
+\contentsline {paragraph}{($\neg $)}{35}{section*.11}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4}Dependent Choice}{35}{subsection.4.4}%
+\contentsline {paragraph}{($\mathsf {Both}$)}{35}{section*.12}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.5}Valued Resources}{35}{subsection.4.5}%
+\contentsline {paragraph}{($\mathsf {Maybe}$ right)}{35}{section*.13}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{($\mathsf {Maybe}$ left)}{36}{section*.14}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {4.2.7}Relation to Queries}{36}{subsubsection.4.2.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {4.2.8}Induced Operations on Feasibility Relations}{36}{subsubsection.4.2.8}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{($\neg $)}{36}{section*.15}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{($\mathsf {Both}$)}{37}{section*.16}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{($\mathsf {Maybe}$)}{37}{section*.17}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{($\mathsf {Either}$)}{37}{section*.18}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.3}A General Scheme to Extend Co-Design}{37}{subsection.4.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.4}Dependent Choice}{38}{subsection.4.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.5}Valued Resources}{38}{subsection.4.5}%
