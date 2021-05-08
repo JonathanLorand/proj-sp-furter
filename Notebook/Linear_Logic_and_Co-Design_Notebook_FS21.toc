@@ -83,28 +83,38 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {4.2.6}Extending Feasibility Relations to Bundles}{34}{subsubsection.4.2.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{($\neg $)}{35}{section*.11}%
+\contentsline {paragraph}{($\Phi _{i+1}(r,f) \Leftrightarrow \Phi _i(r,f)$)}{35}{section*.11}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{($\mathsf {Both}$)}{35}{section*.12}%
+\contentsline {paragraph}{($\neg $)}{35}{section*.12}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{($\mathsf {Maybe}$ right)}{35}{section*.13}%
+\contentsline {paragraph}{($\mathsf {Both}$)}{35}{section*.13}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{($\mathsf {Maybe}$ left)}{36}{section*.14}%
+\contentsline {paragraph}{($\mathsf {Maybe}$ right)}{36}{section*.14}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.2.7}Relation to Queries}{36}{subsubsection.4.2.7}%
+\contentsline {paragraph}{($\mathsf {Maybe}$ left)}{36}{section*.15}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.2.8}Induced Operations on Feasibility Relations}{36}{subsubsection.4.2.8}%
+\contentsline {subsubsection}{\numberline {4.2.7}Functoriality}{36}{subsubsection.4.2.7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{($\neg $)}{36}{section*.15}%
+\contentsline {subsubsection}{\numberline {4.2.8}Relation to Queries}{36}{subsubsection.4.2.8}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{($\mathsf {Both}$)}{37}{section*.16}%
+\contentsline {subsubsection}{\numberline {4.2.9}Induced Operations on Feasibility Relations}{37}{subsubsection.4.2.9}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{($\mathsf {Maybe}$)}{37}{section*.17}%
+\contentsline {paragraph}{($\neg $)}{37}{section*.16}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{($\mathsf {Either}$)}{37}{section*.18}%
+\contentsline {paragraph}{($\mathsf {Both}$)}{37}{section*.17}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3}A General Scheme to Extend Co-Design}{37}{subsection.4.3}%
+\contentsline {paragraph}{($\mathsf {Maybe}$)}{38}{section*.18}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4}Dependent Choice}{38}{subsection.4.4}%
+\contentsline {paragraph}{($\mathsf {Either}$)}{38}{section*.19}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.5}Valued Resources}{38}{subsection.4.5}%
+\contentsline {paragraph}{($\mathsf {Maybe}$)}{38}{section*.20}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{($\mathsf {Either}$)}{38}{section*.21}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {4.2.10}Queries on the Induced Operations}{38}{subsubsection.4.2.10}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.3}A General Scheme to Extend Co-Design}{38}{subsection.4.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.4}Dependent Choice}{39}{subsection.4.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.5}Valued Resources}{39}{subsection.4.5}%
