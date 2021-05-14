@@ -161,6 +161,10 @@ citestyle=alphabetic]{biblatex}
 
 \newcommand{\id}{\text{id}}
 
+\newcommand{\low}{\mathsf{L}}
+
+\newcommand{\upper}{\mathsf{U}}
+
 \makeatletter
 \def\slashedarrowfill@#1#2#3#4#5{%
 	$\m@th\thickmuskip0mu\medmuskip\thickmuskip\thinmuskip\thickmuskip
@@ -1222,6 +1226,128 @@ These rules are coherent because $\wedge$ and $\vee$ are meet and join in $\mc{Q
 Now form all finite expressions using $\otimes$, $\wedge$, and $\vee$ and add all arrows induced by the substitution, introduction and elimination rules to yield $\mathbf{Val}(P)$. 
 
 Next show that we actually have a monotone map $\mathbf{Val}(P) \rightarrow \mc{Q}$ and that $\mathbf{Val}(P)$ has finite meets and joins. 
+
+\newpage
+
+\section{Guarantees}
+
+We find that free and forced choice is discussed in the computer science literature under the names ``angelic'' and ``demonic'' choice. The following draws from \cite{Martin2007} and \cite{Morris2004}. \\
+
+The previous section on bundles showed the difficulty with attempting to introduce choice at a term level. In particular, the extension of feasibility relations to this new structure presented problems. The following approach avoids this issue by working with upper and lower set functors. The key idea will be to move from feasibility relations between preorders of resources and functionalities to feasibility relations between lower sets. This is analogous to the move from relations to multirelations (relations on $A \times \mathsf{P}(B)$).
+
+\subsection{Fixing Interpretation}
+Since the following construction is quite flexible with respect to its interpretation it will be helpful to fix a rigid interpretation that we will stick to during theory development. Alternatives in interpretation will be highlighted when they arise.
+
+\subsubsection{Resources, Functionalities, and Processes}
+As always, we consider preordered sets of resources and functionalities as our basic entities. The preordering will be interpreted as expressing ``free transformations'' that are available to all agents involved. Specifically, $a \rightarrow b$ means that given $a$, I can get $b$ instantly and for free. Alternatively, we can also interpret an arrow $a \rightarrow b$ as meaning that having $a$ implies having $b$. 
+
+We note that what are considered resources and functionalities depends on what process we are considering. For example, if we have a process $\Phi: \mc{R} \rightsquigarrow \mc{F}$, we think of the resources $\mc{R}$ as being something we need to provide to $\Phi$ to obtain the functionalities $\mc{F}$.
+
+We will think of $\Phi$ as being operated by an external agent. In practice this could be a company offering some service. On the other hand, we will think of ourselves as being in control of what resources we provide $\Phi$ and which specific service we choose. However, we may not know in advance which resources we will have available at the time we need to use $\Phi$. Our control stems from the fact that we can choose amongst the resources available to us.
+
+Observe that even if we control a process ourselves, there may be limitations as to its exact outcome. So the assumption that the process is in control of an external agent isn't necessary. However, it will help keep separate what is in our control and what is not.
+
+\subsection{Certain Processes}
+Under the interpretation above we can view traditional feasibility relations as those processes possessing certain outcomes. Let $\Phi: \mc{R} \xslashedrightarrow{} \mc{F}$ be a feasibility relation. We think of $\Phi$ as specifying a contract between the operator of $\Phi$ and ourselves. The values $\Phi$ takes specify the transformations that are contractually available. Whenever $\Phi(r,f)$ is true, the service provider guarantees that if we deliver them an $r$, they will provide us with an $f$. The monotonicity condition just expresses that the service provider exploits all the transformations that are induced by the free transformations in $\mc{R}$ and $\mc{F}$: If they can guarantee an $f$ given an $r$, they should also be able to guarantee an $f$ given a resource that freely transforms into $r$. Similarly, if given $r$ they can guarantee an $f$, and $f$ freely transforms into $g$, they should also be able to guarantee $\Phi(r,g)$.
+
+\subsubsection{Composition for Certain Processes}
+We now consider a sequence of processes $\mc{A} \xslashedrightarrow{\Phi} \mc{B} \xslashedrightarrow{\Psi} \mc{C}$. For clarity we think of $\Phi$ and $\Psi$ as being operated by distinct agents. Suppose we are in possession of some $a \in \mc{A}$. We want to think about our options for transforming $a$ into some $c \in \mc{C}$. This is possible iff there is some $b \in \mc{B}$ such that $\Phi(a,b)$ and $\Psi(b,c)$. In this case the operator of $\Phi$ guarantees that $b$ given our $a$, and the operator of $\Psi$ guarantees a $c$ given the intermediary $b$. We could go as far as imagining a third agent as offering us the composite and then outsourcing the individual tasks to $\Phi$ and $\Psi$ respectively.
+
+We can also think about composing processes in parallel: Given $\Phi,\Psi :\mc{R} \xslashedrightarrow{} \mc{F}$, we can form $\Phi \cup \Psi :\mc{R} \xslashedrightarrow{} \mc{F}$ and $\Phi \cap \Psi :\mc{R} \xslashedrightarrow{} \mc{F}$. The former combines all the guarantees of $\Phi$ and $\Psi$, while the latter only takes those that are shared by between them. We may interpret $\Phi \cup \Psi$ as being able to access both the services of $\Phi$ and $\Psi$ simultaneously. $\Phi \cap \Psi$ can be interpreted as not knowing in advance which provider will be available to us, so we can only guarantee the transformations that both provide.
+
+\subsection{Uncertain Processes}
+We will now generalize the above considerations to the case where the requirements for and outcomes of a transformation are no longer certain. In this case, a provider $\Phi$ offers a more general type of contract: Given a resource $r \in A \sub \mc{R}$, $\Phi$ guarantees to provide a functionality $f \in B \sub \mc{F}$. In other words, $\Phi$ is willing to accept more than just a specific resource for a transformation, but also only guarantees that the outcome will be amongst some set. 
+
+We loose nothing by assuming that the sets in question are be lower sets in $\mc{R}$ and $\mc{F}$. If $\Phi$ can guarantee $f \in B$ given some $r \in  A$, and moreover $s$ freely transforms into $r$, then they should also be able to guarantee $f \in B$ given $s$ by first transforming $s$ into $r$. Hence from both the point of view of the consumer and the provider, offering $\Phi(A,B)$ is equivalent to $\Phi(A \cup \{s\}, B)$. Conversely, suppose $f \in B$ and $g \rightarrow f$. If $\Phi$ were to produce $g$ rather than a promised $h \in B$, they could freely transform $g$ into $f \in B$ to satisfy the contract. So again the offer of $\Phi(A,B)$ is equivalent to $\Phi(A,B \cup \{g\})$ from both perspectives.
+
+The possible options for transformations offered by $\Phi$ assemble into a relation $\low(\mc{R}) \xslashedrightarrow{\Phi} \low(\mc{F})$, where $(\low(P), \sub)$ is the preorder of lower sets ordered by inclusion. In fact, this is a feasibility relation: If $\Phi$ can guarantee $f \in B$ given $r \in A$ and $B \sub B'$, then certainly $\Phi$ should also be able to guarantee $f \in B'$ given $r \in A$. Similarly if $A' \sub A$, then given $r \in A'$, $\Phi$ should be able to guarantee $r \in B$.
+
+\subsubsection{Relation to Certain Processes}
+Observe that using the embeddings $\mc{R} \rightarrow \low(\mc{R})$ which send $r \mapsto \downarrow r$, we can obtain a traditional feasibility relation by composing $\mc{R}^{op} \times \mc{F} \rightarrow \low(\mc{R})^{op} \times \low(\mc{F}) \rightarrow \mathbf{Bool}$. This describes exactly those transformations available in $\Phi$ which are certain.
+
+Conversely, given a traditional feasibility relation $\Phi: \mc{R} \xslashedrightarrow{} \mc{F}$, we can lift it to a feasibility relation $\hat \Phi: \low(\mc{R}) \xslashedrightarrow{} \low(\mc{F})$ by setting 
+$$\hat\Phi(A,B) = \mathtt{true} \Leftrightarrow \forall a \in A \: \exists b \in B: \Phi(a,b).$$
+Monotonicity follows immediately from the choice of quantifiers.
+
+\subsubsection{Composition for Uncertain Processes}
+Again consider a sequence of processes $\low(\mc{A}) \xslashedrightarrow{\Phi} \low(\mc{B}) \xslashedrightarrow{\Psi} \low(\mc{C})$. An external provider can guarantee that $f \in C \sub \mc{C}$ provided $r \in A \sub \mc{A}$ iff there is a $B \sub{B}$ such that $\Phi(A,B)$ and $\Psi(B,C)$. To implement the contract they would accept some $r \in A$ and use $\Phi$ to guarantee an outcome in $B$. They can then use $\Psi$ to guarantee some $f \in C$.
+
+We are again able to compose processes in parallel: Given $\Phi,\Psi :\mc{R} \xslashedrightarrow{} \mc{F}$, we can form $\Phi \cup \Psi :\mc{R} \xslashedrightarrow{} \mc{F}$ and $\Phi \cap \Psi :\mc{R} \xslashedrightarrow{} \mc{F}$. The interpretation remains the same as above.
+
+\subsubsection{Operations on $\low(-)$}
+For any $\mc{R}$, the preorder $\low(\mc{R})$ comes equipped with the operations of union and intersection. Consider $\Phi: \low(\mc{R}) \xslashedrightarrow{} \low(\mc{F})$. The provider could say that they accept either $r \in A$ or $r \in A'$ (our choice), and guarantee $f \in B$. This means we can provide any $r \in A \cup A'$. They could also say that they will accept $r \in A$ or $r' \in A'$ but they will specify which. In this case we must be prepared to provide $r \in A \cap A'$. On the output side, the provider could say that they guarantee $f \in B$ or $f \in B'$, and they choose which. This is the same as them guaranteeing $f \in B \cup B'$. On the other hand, if we get to choose whether $f \in B$ or $f \in B'$, the provider must be prepared to provide $f \in B \cap B'$.
+
+We will think of the provider $\Phi$ controlling $\low(\mc{F})$ and us as controlling $\low(\mc{R})$. Denote the free choice of the controller by $\either$ and choice be an external agent by $\maybe$. Then $\either(A,A')= A \cup A'$ and $\maybe(A,A') = B \cap B'$. 
+
+There are some requirements that a provider should be able fulfil. If $\Phi(A,B)$ and $\Phi(A',B)$, then also $\Phi(A \cup A', B)$ since the provider doesn't know in advance which transformation we will choose to use. In this case also $\Phi(A \cap A', B)$ by monotonicity. On the other hand, if $\Phi(A,B)$ and $\Phi(A,B')$, then $\Phi(A, B \cap B')$, again because the provider doesn't know in advance which transformation we will pick. Again by monotonicity $\Phi(A, B \cup B')$. This shows that $\Phi$ is closed under $\either$ and $\maybe$ in the sense that 
+$$  \Phi(A,B) \text{ and } \Phi(A',B) \Rightarrow \Phi(\maybe(A,A'),B) $$
+and similar for the other connectives and positions. The converse implications don't always hold. For example, from $\Phi(A \cap A', B)$, we can't necessarily deduce that $\Phi(A,B)$.
+
+\subsubsection{A Optimization Procedure}
+The results from the above section provide a way to optimize over feasibility relations. For each $B \in \low(\mc{F})$ consider $L_B := \{A : \Phi(A,B)\}$. By our reasoning above, we should also have $\Phi(\cup L_B, B)$ and this deal is in fact preferable to us as the consumer. In a similar fashion, for a fixed $A \in \low(\mc{R}$, set $L_A :=  \{B : \Phi(A,B)\}$ and deduce that $\Phi(A, \cap L_A)$. In particular, $\Phi(\cup L_B , \cap L_{\cup L_B})$ and $\Phi(\cup L_{\cap L_A} , \cap L_A)$ provide the optimal deals for a desired lower set of functionalities or available set of resources, respectively. 
+
+\subsection{Uncertainty for Choice of Transformation}
+So far we have been considering a process $\Phi: \low(\mc{R}) \xslashedrightarrow{} \low(\mc{F})$ and assuming that we can freely choose amongst the transformations $\Phi$ provides. It may however be the case that the provider can only guarantee such choice up to a set. Such a contract would look as follows: If you guarantee the provider that your choice of transformations will start at $L_R \in  A \sub \low(\mc{R})$, they guarantee that you will be able to freely choose a guaranteed set amongst $L_F \in B \sub \low(\mc{F})$. If the provider can make such an offer, they should equivalently be able to offer $\Phi(\cup L_R, \cap L_F)$, since they don't know in advance which choice we will make. It therefore seems that such uncertainty is already captured in the framework we are considering. 
+Formally, such higher order guarantees would be expressed as a feasibility relation $\Psi: \low(\low(\mc{R})) \xslashedrightarrow{} \low(\low(\mc{F}))$, by similar considerations as we saw before. As we have argued, if $\Psi(L_R,L_F)$ is feasible, where $L_R,L_F$ are a lower sets of lower sets, then the provider should also offer $\Psi(\cup L_R, \cap L_F)$. Hence any feasibility between sets can be reduced to that between singletons which is the same as a feasibility relation $\Phi: \low(\mc{R}) \xslashedrightarrow{} \low(\mc{F})$.
+
+\subsection{Lifting to a Functor}
+We lift $\Phi: \low(\mc{R}) \xslashedrightarrow{} \low(\mc{F})$ to a functor $\hat \Phi: \upper(\low(\mc{R})) \rightarrow \upper(\low(\mc{F}))$ by sending 
+$$U_R \mapsto \{l_F : \exists l_R \in U_R \: \Phi(l_R,l_F) \}.$$
+The result is indeed an upper set since if $l_F \sub l'_F$, then for any $l_R \in U_R$, $\Phi(l_R,l_F)$ implies $\Phi(l_R,l'_F)$ by monotonicity. Moreover, $\hat \Phi$ is a functor because if $U_R \supseteq U'_R$ and $l_F \in \hat\Phi(U'_R)$, then the same $l_R$ also witnesses that $l_F \in \hat\Phi(U_R)$.
+
+We interpret the induced functor as follows: If we can guarantee that our resources lie in one of the $l_R \in U_R$, then we can guarantee that we can obtain a functionality in any of the $l_F \in \hat\Phi(U_R)$.
+
+Note that $\hat\Phi$ is just an extension of the curried $\check\Phi: \low(\mc{R}) \rightarrow \upper(\low(\mc{F}))$ to upper sets in the domain via an existential quantifier. We could also work directly with the $\check\Phi$, but the quantifier would then come into play when we try to compose.
+
+Also the operation of mapping $\Phi \mapsto \hat\Phi$ is itself a functor since for $\low(\mc{R}) \xslashedrightarrow{\Phi} \low(\mc{F}) \xslashedrightarrow{\Psi} \low(\mc{G})$ we have
+\begin{IEEEeqnarray*}{rCl}
+\hat{(\Psi\Phi)}(U_R) &=& \{l_G :  \exists l_R \in U_R \: \Psi\Phi(l_R,l_G)\} \\
+&= & \{l_G :  \exists l_R \in U_R \: \exists l_F : \Psi(l_R,l_F) \wedge \Phi(l_F,l_G)\}\\
+& =&  \{l_G :  \exists l_F : (\exists l_R \in U_R \: \Psi(l_R,l_F)) \wedge \Phi(l_F,l_G)\}\\
+& = & \hat\Psi \{l_F: \exists l_R \in U_R: \Phi(l_R,l_f) \} \\
+ &= &\hat\Psi \hat\Phi
+\end{IEEEeqnarray*}
+and $\hat\id(U_F) = \{l_F: \exists l'_F \in U_F : \id(l'_F, l_F) \} = \{l_F: \exists l'_F \in U_F : l'_F \sub l_F \} = U_F$, because $U_F$ is an upper set. \\
+
+\textcolor{blue}{There should also be a contravariant functor that is induced, which could be useful.}
+
+\subsubsection{Partial Equivalence of Formulations}
+We have seen that any feasibility relation $\Phi: \low(\mc{R}) \xslashedrightarrow{} \low(\mc{F})$ lifts to a functor $\hat \Phi: \upper(\low(\mc{R})) \rightarrow \upper(\low(\mc{F}))$. Conversely, given some $\Theta: \upper(\low(\mc{R})) \rightarrow \upper(\low(\mc{F}))$ we first get a functor $\low(\mc{R}) \rightarrow \upper(\low(\mc{F}))$ by composing with the inclusion $\low(\mc{R}) \rightarrow \upper(\low(\mc{R}))$, and then uncurry the result to get a profunctor $\check\Theta: \low(\mc{R}) \xslashedrightarrow{} \low(\mc{F})$. 
+
+If we start with $\Phi: \low(\mc{R}) \xslashedrightarrow{} \low(\mc{F})$, lift to $\hat \Phi: \upper(\low(\mc{R})) \rightarrow \upper(\low(\mc{F}))$, and compose $\low(\mc{R}) \rightarrow \upper(\low(\mc{R})) \rightarrow \upper(\low(\mc{F}))$, we map $l_R \mapsto \{l_F : \exists l'_R \in \: \uparrow \! l_R : \Phi(l'_R,l_F)\} = \{l_F: \Phi(l_R,l_F)\}$, by monotonicity. This is just the curried version of $\Phi$, so we recover the original feasibility relation by uncurrying. 
+
+However, not every functor $\upper(\low(\mc{R})) \rightarrow \upper(\low(\mc{F}))$ is induced by some feasibility relation. For example, any functor mapping the empty upper set to a non-empty value cannot be induced.  
+
+\subsubsection{Interpretation on the Upper Set Level}
+Fix $\Theta: \upper(\low(\mc{R})) \rightarrow \upper(\low(\mc{F}))$. Then $\Theta(U_R) = U_F$ expresses that if we can provide some $r$ (our choice) in any of the $l_R \in U_R$ (not out choice which), then we can guarantee some $f$ (not our choice) in the $l_F \in U_F$ of our choice. 
+
+Formulated as a transaction between us an a provider $\Theta$ this becomes the following: For each upper set $U_R$, the provider has a single deal. If you choose to accept the deal corresponding to $U_R$, the provider selects a $l_R \in U_R$. You must the give the provider any $r \in l_R$. In return you get to choose freely a $l_F \in \Theta(U_R)$. The provider then gives you some $f \in l_F$ according to his discretion. 
+
+If your resources are obtained from some previous transaction $\Omega$, then your choice of deal $U_R=\Omega(X)$ is forced by whatever $X$ is.
+
+Notice that it make a difference what $U_R$ looks like internally. On one extreme, if $U_R=\{l_R\}$ is a singleton, you know you will just have to provide any $r \in l_R$. But if $U_R = \{\{r_i\}\}$ is a union of singletons, then you would have to be able to provide any $r_i$, even if $\cup\{r_i\}=l_R$. \\
+
+Observe also that there is a general theme going on regarding free and forced choices. Whenever you are allowed to choose freely in the codomain, the corresponding choice is forced in the domain and vice versa. This is necessary for composition to make sense.  
+
+Along these lines we can also think of the transaction as a competition with ourselves. Suppose that we choose $U_A$ to start with and choose $l_F \in \Theta(U_A)$. If we now want to do another transformation we are stuck with $l_F \in \Theta(U_A)$ by our previous decision, so that choice is forced. Now we can still choose a free $\l_G \in \Omega\Theta(U_A)$, but this again forces our hand for the next step.
+
+\subsubsection{Operations on the Upper Set Level}
+Fix a map $\Theta: \upper(\low(\mc{R})) \rightarrow \upper(\low(\mc{F}))$ and upper set $U_R \in  \upper(\low(\mc{R}))$. If the provider offers you a choice between some of the $l_R \in U_R$, this corresponds to the union of the $l_R$. In formulae: $U_A = \{\either\{l_i\}, l_j, \ldots\} = \{\cup\{l_i\}, l_j, \ldots\}$. Being distinct elements of $U_R$ already expresses that the provider has the choice. So $\{\maybe\{l_i\},l_j,\ldots\} = \{l_i\} \cup \{l_j,\ldots\}$. 
+
+If we would offer up an additional choices $U'_R$ to the provider, his options would then be $U_R \cup U'_R$. 
+
+If he offers us the choice between $U_R$ and $U'_R$, he would have a free choice between $\{l_R \cup l'_R : l_R \in U_R, l'_R \in U'_R\}$. This is because both of us would be happy if I allowed the provider to chose any $\either(l_R,l'_R)$: If I can provide a resource for each $\l_R \in U_R$, or alternatively, for each $l'_R \in U'_R$, then I am also guaranteed to satisfy any $l_R \cup l'_R$ with my resources. Conversely, if the provider can guarantee us a free choice of some $l_F$ no matter whether he gets the choice between the set of $l_R$ or the set of $l_R'$, then there is a specific $l_R$ and $l_R'$ that will allow him to guarantee a specific $l_F$. Hence the union will also allow him to guarantee that $l_F$.
+
+On the target side the operations are the same with the roles reversed. \\
+
+In the source, we can think of an upper set $U_A$ as being a big $\maybe$ over all its elements $l_R$, which are in turn $\either$s over their elements $r_i$. The laws above then follow if we grant that $\maybe$ and $\either$ distribute over one another.
+
+\subsection{Process Chains}
+We should consider a chain of processes 
+$$\cdots \xslashedrightarrow{\Phi_i} \low(\mc{R}_i) \xslashedrightarrow{\Phi_{i+1}} \low(\mc{R}_{i+1}) \xslashedrightarrow{\Phi_{i+2}} \cdots.$$
+The resources we can guarantee at $\low(\mc{R}_i)$ depends on what choice of transformation we make for $\Phi_i$.  We can lift this chain to a chain of functors
+$$\cdots \stackrel{\hat\Phi_i}{\rightarrow} \upper(\low(\mc{R}_i)) \stackrel{\hat\Phi_{i+1}}{\rightarrow} \upper(\low(\mc{R}_{i+1})) \stackrel{\hat\Phi_{i+2}}{\rightarrow} \cdots.$$
+
 
 
 \newpage

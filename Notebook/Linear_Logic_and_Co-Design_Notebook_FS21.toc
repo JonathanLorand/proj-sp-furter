@@ -1,11 +1,11 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \babel@toc {english}{}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1}Categories in Linear Logic}{2}{section.1}%
+\contentsline {section}{\numberline {1}Categories in Linear Logic}{3}{section.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.1}The Category of Derivations}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.1}The Category of Derivations}{3}{subsection.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.2}The Category of Propositions}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.2}The Category of Propositions}{4}{subsection.1.2}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.3}The Relation between Der and Prop}{4}{subsection.1.3}%
 \defcounter {refsection}{0}\relax 
@@ -13,41 +13,41 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.1}Basic Definitions}{6}{subsection.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Warning!}{7}{section*.2}%
+\contentsline {paragraph}{Warning!}{8}{section*.2}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.2}Sites to Structure}{8}{subsection.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3}Currying Queries}{9}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.3}Currying Queries}{10}{subsection.2.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4}Bool-Posets}{11}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.4}Bool-Posets}{12}{subsection.2.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Warning!}{11}{section*.3}%
+\contentsline {paragraph}{Warning!}{12}{section*.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Feasibility Relations are Objects}{12}{section*.4}%
+\contentsline {paragraph}{Feasibility Relations are Objects}{13}{section*.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Limits and Colimits}{12}{section*.5}%
+\contentsline {paragraph}{Limits and Colimits}{13}{section*.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Inclusion of Pos}{12}{section*.6}%
+\contentsline {paragraph}{Inclusion of Pos}{13}{section*.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Inclusion of DP}{12}{section*.7}%
+\contentsline {paragraph}{Inclusion of DP}{13}{section*.7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Projection to DP}{12}{section*.8}%
+\contentsline {paragraph}{Projection to DP}{13}{section*.8}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{The above form an adjunction}{12}{section*.9}%
+\contentsline {paragraph}{The above form an adjunction}{13}{section*.9}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.5}Queries in $\mathbf {Pos_{Bool}}$}{13}{subsection.2.5}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {2.5.1}Generalized Querying}{13}{subsubsection.2.5.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.5.2}The Generalized Query Functor}{14}{subsubsection.2.5.2}%
+\contentsline {subsubsection}{\numberline {2.5.2}The Generalized Query Functor}{15}{subsubsection.2.5.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.6}Queries as Universal Objects in $\mathbf {Pos_{Bool}}$}{14}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.6}Queries as Universal Objects in $\mathbf {Pos_{Bool}}$}{15}{subsection.2.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.6.1}Describing Other Queries}{15}{subsubsection.2.6.1}%
+\contentsline {subsubsection}{\numberline {2.6.1}Describing Other Queries}{16}{subsubsection.2.6.1}%
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3}Proslice $\EuScript {Q}$-Categories}{16}{section.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1}Quantales}{16}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.1}Quantales}{17}{subsection.3.1}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2}Proslice Construction}{21}{subsection.3.2}%
 \defcounter {refsection}{0}\relax 
@@ -59,62 +59,94 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {3.3.1}Tensor product}{22}{subsubsection.3.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4}Proslice \textbf {Bool}-Categories}{24}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.4}Proslice \textbf {Bool}-Categories}{25}{subsection.3.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.4.1}Symmetric Monoidal Structure}{28}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.1}Symmetric Monoidal Structure}{29}{subsubsection.3.4.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4}Bundles}{29}{section.4}%
+\contentsline {section}{\numberline {4}Bundles}{30}{section.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1}The Setting}{29}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.1}The Setting}{30}{subsection.4.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2}Agnostic Choice}{30}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.2}Agnostic Choice}{31}{subsection.4.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.2.1}2-Bundles}{30}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.1}2-Bundles}{31}{subsubsection.4.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.2.2}n-Bundles}{31}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2}n-Bundles}{32}{subsubsection.4.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.2.3}Substitution Rules}{32}{subsubsection.4.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.3}Substitution Rules}{33}{subsubsection.4.2.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.2.4}Debt}{33}{subsubsection.4.2.4}%
+\contentsline {subsubsection}{\numberline {4.2.4}Debt}{34}{subsubsection.4.2.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.2.5}Free Bundles}{33}{subsubsection.4.2.5}%
+\contentsline {subsubsection}{\numberline {4.2.5}Free Bundles}{34}{subsubsection.4.2.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Warning}{34}{section*.10}%
+\contentsline {paragraph}{Warning}{35}{section*.10}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.2.6}Extending Feasibility Relations to Bundles}{34}{subsubsection.4.2.6}%
+\contentsline {subsubsection}{\numberline {4.2.6}Extending Feasibility Relations to Bundles}{35}{subsubsection.4.2.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{($\Phi _{i+1}(r,f) \Leftrightarrow \Phi _i(r,f)$)}{35}{section*.11}%
+\contentsline {paragraph}{($\Phi _{i+1}(r,f) \Leftrightarrow \Phi _i(r,f)$)}{36}{section*.11}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{($\neg $)}{35}{section*.12}%
+\contentsline {paragraph}{($\neg $)}{36}{section*.12}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{($\mathsf {Both}$)}{35}{section*.13}%
+\contentsline {paragraph}{($\mathsf {Both}$)}{36}{section*.13}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{($\mathsf {Maybe}$ right)}{36}{section*.14}%
+\contentsline {paragraph}{($\mathsf {Maybe}$ right)}{37}{section*.14}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{($\mathsf {Maybe}$ left)}{36}{section*.15}%
+\contentsline {paragraph}{($\mathsf {Maybe}$ left)}{37}{section*.15}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.2.7}Functoriality}{36}{subsubsection.4.2.7}%
+\contentsline {subsubsection}{\numberline {4.2.7}Functoriality}{37}{subsubsection.4.2.7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.2.8}Relation to Queries}{36}{subsubsection.4.2.8}%
+\contentsline {subsubsection}{\numberline {4.2.8}Relation to Queries}{37}{subsubsection.4.2.8}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.2.9}Induced Operations on Feasibility Relations}{37}{subsubsection.4.2.9}%
+\contentsline {subsubsection}{\numberline {4.2.9}Induced Operations on Feasibility Relations}{38}{subsubsection.4.2.9}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{($\neg $)}{37}{section*.16}%
+\contentsline {paragraph}{($\neg $)}{38}{section*.16}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{($\mathsf {Both}$)}{37}{section*.17}%
+\contentsline {paragraph}{($\mathsf {Both}$)}{38}{section*.17}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{($\mathsf {Maybe}$)}{38}{section*.18}%
+\contentsline {paragraph}{($\mathsf {Maybe}$)}{39}{section*.18}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{($\mathsf {Either}$)}{38}{section*.19}%
+\contentsline {paragraph}{($\mathsf {Either}$)}{39}{section*.19}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{($\mathsf {Maybe}$)}{38}{section*.20}%
+\contentsline {paragraph}{($\mathsf {Maybe}$)}{39}{section*.20}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{($\mathsf {Either}$)}{38}{section*.21}%
+\contentsline {paragraph}{($\mathsf {Either}$)}{39}{section*.21}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.2.10}Queries on the Induced Operations}{38}{subsubsection.4.2.10}%
+\contentsline {subsubsection}{\numberline {4.2.10}Queries on the Induced Operations}{39}{subsubsection.4.2.10}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3}A General Scheme to Extend Co-Design}{38}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.3}A General Scheme to Extend Co-Design}{39}{subsection.4.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4}Dependent Choice}{39}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.4}Dependent Choice}{40}{subsection.4.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.5}Valued Resources}{39}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.5}Valued Resources}{40}{subsection.4.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5}Guarantees}{42}{section.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1}Fixing Interpretation}{42}{subsection.5.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {5.1.1}Resources, Functionalities, and Processes}{42}{subsubsection.5.1.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2}Certain Processes}{43}{subsection.5.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {5.2.1}Composition for Certain Processes}{43}{subsubsection.5.2.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.3}Uncertain Processes}{44}{subsection.5.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {5.3.1}Relation to Certain Processes}{44}{subsubsection.5.3.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {5.3.2}Composition for Uncertain Processes}{45}{subsubsection.5.3.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {5.3.3}Operations on $\mathsf {L}(-)$}{45}{subsubsection.5.3.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {5.3.4}A Optimization Procedure}{46}{subsubsection.5.3.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.4}Uncertainty for Choice of Transformation}{46}{subsection.5.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.5}Lifting to a Functor}{46}{subsection.5.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {5.5.1}Partial Equivalence of Formulations}{47}{subsubsection.5.5.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {5.5.2}Interpretation on the Upper Set Level}{48}{subsubsection.5.5.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {5.5.3}Operations on the Upper Set Level}{48}{subsubsection.5.5.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.6}Process Chains}{49}{subsection.5.6}%

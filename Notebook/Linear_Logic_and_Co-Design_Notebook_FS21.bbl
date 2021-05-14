@@ -64,6 +64,130 @@
     \warn{\item Invalid format of field 'month'}
   \endentry
 
+  \entry{Martin2007}{article}{}
+    \name{author}{3}{}{%
+      {{hash=MCE}{%
+         family={Martin},
+         familyi={M\bibinitperiod},
+         given={C.\bibnamedelima E.},
+         giveni={C\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+      {{hash=CSA}{%
+         family={Curtis},
+         familyi={C\bibinitperiod},
+         given={S.\bibnamedelima A.},
+         giveni={S\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=RI}{%
+         family={Rewitzky},
+         familyi={R\bibinitperiod},
+         given={I.},
+         giveni={I\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \keyw{Agent,Angelic nondeterminism,Demonic
+  nondeterminism,Multirelation,Predicate transformer,Resource sharing,Strongest
+  postcondition}
+    \strng{namehash}{MCECSARI1}
+    \strng{fullhash}{MCECSARI1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{MCR07}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{abstract}{%
+    This paper presents an introduction to a calculus of binary multirelations,
+  which can model both angelic and demonic kinds of non-determinism. The
+  isomorphism between up-closed multirelations and monotonic predicate
+  transformers allows a different view of program transformation, and program
+  transformation calculations using multirelations are easier to perform in
+  some circumstances. Multirelations are illustrated by modelling both kinds of
+  nondeterministic behaviour in games and resource-sharing protocols.
+  {\textcopyright} 2006 Elsevier B.V. All rights reserved.%
+    }
+    \verb{doi}
+    \verb 10.1016/j.scico.2006.01.007
+    \endverb
+    \field{issn}{01676423}
+    \field{number}{2}
+    \field{pages}{140\bibrangedash 158}
+    \field{title}{{Modelling angelic and demonic nondeterminism with
+  multirelations}}
+    \field{volume}{65}
+    \verb{file}
+    \verb :C\:/Users/mariu/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloa
+    \verb ded/Martin, Curtis, Rewitzky - 2007 - Modelling angelic and demonic n
+    \verb ondeterminism with multirelations.pdf:pdf
+    \endverb
+    \field{journaltitle}{Science of Computer Programming}
+    \field{year}{2007}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{Morris2004}{article}{}
+    \name{author}{1}{}{%
+      {{hash=MJM}{%
+         family={Morris},
+         familyi={M\bibinitperiod},
+         given={Joseph\bibnamedelima M.},
+         giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer Verlag}%
+    }
+    \keyw{Angelic nondeterminacy,Demonic nondeterminacy,Free completely
+  distributive lattice}
+    \strng{namehash}{MJM1}
+    \strng{fullhash}{MJM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Mor04}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{abstract}{%
+    We show how to introduce demonic and angelic nondeterminacy into the term
+  language of each type in typical programming or specification language. For
+  each type we introduce (binary infix) operators ∏ and ∐ on terms of the
+  type, corresponding to demonic and angelic nondeterminacy, respectively. We
+  generalise these operators to accommodate unbounded nondeterminacy. We
+  axiomatise the operators and derive their important properties. We show that
+  a suitable model for nondeterminacy is the free completely distributive
+  complete lattice over a poset, and we use this to show that our
+  axiomatisation is sound. In the process, we exhibit a strong relationship
+  between nondeterminacy and free lattices that has not hitherto been evident.
+  Although nondeterminacy arises naturally in specification and programming
+  languages, we speculate that it combines fruitfully with function theory to
+  the extent that it can play an important role in facilitating proofs of
+  programs that have no apparent connection with nondeterminacy.
+  {\textcopyright} Springer-Verlag 2004.%
+    }
+    \verb{doi}
+    \verb 10.1007/978-3-540-27764-4_15
+    \endverb
+    \field{isbn}{3540223800}
+    \field{issn}{16113349}
+    \field{pages}{274\bibrangedash 288}
+    \field{title}{{Augmenting types with unbounded demonic and angelic
+  nondeterminacy}}
+    \verb{url}
+    \verb https://link.springer.com/chapter/10.1007/978-3-540-27764-4_15
+    \endverb
+    \field{volume}{3125}
+    \verb{file}
+    \verb :C\:/Users/mariu/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloa
+    \verb ded/Morris - 2004 - Augmenting types with unbounded demonic and angel
+    \verb ic nondeterminacy.pdf:pdf
+    \endverb
+    \field{journaltitle}{Lecture Notes in Computer Science (including subseries
+  Lecture Notes in Artificial Intelligence and Lecture Notes in
+  Bioinformatics)}
+    \field{year}{2004}
+  \endentry
+
   \entry{Marsden2018}{article}{}
     \name{author}{2}{}{%
       {{hash=MD}{%

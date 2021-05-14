@@ -22,47 +22,47 @@ Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Database file #1: Linear_Logic_and_Co-Design_Notebook_FS21-blx.bib
 Database file #2: LLCD.bib
-Biblatex version: 3.15
+Biblatex version: 3.16
 Reallocating 'wiz_functions' (item size: 4) to 9000 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
-You've used 5 entries,
+You've used 7 entries,
             6393 wiz_defined-function locations,
-            1255 strings with 14169 characters,
-and the built_in function-call counts, 21724 in all, are:
-= -- 1226
-> -- 472
-< -- 122
-+ -- 410
-- -- 210
-* -- 1681
-:= -- 2234
+            1284 strings with 16943 characters,
+and the built_in function-call counts, 35808 in all, are:
+= -- 2198
+> -- 730
+< -- 210
++ -- 676
+- -- 321
+* -- 2847
+:= -- 3588
 add.period$ -- 0
-call.type$ -- 5
-change.case$ -- 56
-chr.to.int$ -- 45
-cite$ -- 8
-duplicate$ -- 2222
-empty$ -- 2143
-format.name$ -- 244
-if$ -- 4554
+call.type$ -- 7
+change.case$ -- 109
+chr.to.int$ -- 46
+cite$ -- 12
+duplicate$ -- 3557
+empty$ -- 3495
+format.name$ -- 389
+if$ -- 7528
 int.to.chr$ -- 0
-int.to.str$ -- 8
+int.to.str$ -- 14
 missing$ -- 0
-newline$ -- 186
-num.names$ -- 180
-pop$ -- 1346
+newline$ -- 282
+num.names$ -- 299
+pop$ -- 2015
 preamble$ -- 1
-purify$ -- 70
+purify$ -- 133
 quote$ -- 0
-skip$ -- 783
+skip$ -- 1221
 stack$ -- 0
-substring$ -- 1991
-swap$ -- 708
-text.length$ -- 134
-text.prefix$ -- 6
+substring$ -- 3803
+swap$ -- 1114
+text.length$ -- 196
+text.prefix$ -- 9
 top$ -- 1
-type$ -- 158
+type$ -- 226
 warning$ -- 0
-while$ -- 338
+while$ -- 505
 width$ -- 0
-write$ -- 182
+write$ -- 276
