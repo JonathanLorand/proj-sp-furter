@@ -4,6 +4,21 @@ Semester Project Marius Furter - Spring 2021
 # Meetings
 
 
+## [[2021-05-18]]
+
+Angelic and demonic choice
+
+predicate transformers
+  - what is difference with relations?
+
+how do union and intersection of profunctors on the 'first level' translate to the 'profunctors between lower sets' level?
+
+what about bringing parallel/monoidal operation and internal hom operations into the picture?
+
+what are the relationships conceptually and mathematically between "feasibility" and "deals/guarantees"? in the end, is co-design about feasibility and "proofs" or "instantiations" of feasibility?
+
+i realized that the functor on the "third level" (between uppersets of lower setss) is just a manifestation of querying using a profunctor on the second level
+
 ## [[2021-05-11]]
 
 ...
