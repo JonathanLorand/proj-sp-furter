@@ -1498,10 +1498,30 @@ Let's see what types of questions we can ask at the managerial level. Let $\Psi:
 $$\Phi(\mathtt{hybrid},\mathtt{(good\ torque, good\ range)}),$$
 $$\Phi(\mathtt{gas},\mathtt{(bad\ torque, good\ range)}),$$
 $$\Phi(\mathtt{electric},\mathtt{(good\ torque, bad\ range)}).$$
-The induced feasibility $\hat\Phi: \ac(R) \rightarrow \ac(F)$ on the team level is
+\begin{center}
+	\includegraphics[height=200pt]{section6/6.1/resource_level.jpeg}.
+\end{center}
 
+The induced feasibility $\hat\Phi: \ac(R) \rightarrow \ac(F)$ on the team level is
+\begin{center}
+	\includegraphics[height=200pt]{section6/6.1/team_level.jpeg}.
+\end{center}
 
 The induced feasibility relation $\tilde\hat\Phi: \ac(\ac(R)) \rightarrow \ac(\ac(F))$ on the managerial level is
+\begin{center}
+	\includegraphics[height=200pt]{section6/6.1/manager_level.jpeg}.
+\end{center}
+
+At the managerial level we can see that if we as managers want to choose between either $\mathtt{(bad\ torque, good\ range)}$ or $\mathtt{(good\ torque, bad\ range)}$, we can do so if we can force our team to produce either $\mathtt{electric}$ or better, or $\mathtt{gas}$ or better. We could also do so if we were able to force our team to produce $\mathtt{hybrid}$.
+
+On the other hand, if we leave the choice of $\mathtt{(bad\ torque, good\ range)}$ or $\mathtt{(good\ torque, bad\ range)}$ to the teams, (corresponds to $((\mathtt{(bad\ torque, good\ range)},\mathtt{(good\ torque, bad\ range)}))$), then it is sufficient for the team to be able to produce $\mathtt{(gas,electric)}$ or better.
+
+In our example in extending $\Phi$ we observe that the generators of $\Phi$ get extended along meets and joins to produce generators of the $\tilde\hat\Phi$. A such there is an optimality present in the induced feasibility relation not present in an arbitrary feasibility relation at the managerial level.
+
+\subsection{Experimental Hybrid Motor 2}
+\paragraph{Situation} The team is still uncertain whether they can produce the hybrid motor. In addition, they don't know if the motor will deliver $\mathtt{(good torque, good range)}$ or something weaker.
+
+\paragraph{Model} We express the uncertainty in the results that the hybrid motor may provide by modifying the feasibility relation. For this we observe that the set of feasibility relations $R \xslashedrightarrow{} F$ is preorded by containment. This ordering expresses that if $\Phi \rightarrow \Psi$, then $\Phi$ can freely be transformed into $\Psi$ in the sense that if $(a,b)$ is feasible in $\Psi$, the same transformation can be achieved using $\Phi$. Therefore, we can put the choice structure presented above on the set of feasibility relations.
 
 
 

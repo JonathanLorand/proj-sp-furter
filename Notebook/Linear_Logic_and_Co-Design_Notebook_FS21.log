@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.5.17)  22 MAY 2021 16:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.5.17)  22 MAY 2021 17:51
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1181,7 +1181,7 @@ m/m/it/12 A[]\OT1/cmr/m/n/12 ) [] [][](^^@[]\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12
  []
 
 [6]
-<./images//section2/feas_internal-1.jpg, id=362, 2394.9475pt x 1496.59125pt>
+<./images//section2/feas_internal-1.jpg, id=367, 2394.9475pt x 1496.59125pt>
 File: ./images//section2/feas_internal-1.jpg Graphic file (type jpg)
 <use ./images//section2/feas_internal-1.jpg>
 Package pdftex.def Info: ./images//section2/feas_internal-1.jpg  used on input 
@@ -1193,7 +1193,7 @@ Overfull \hbox (4.1607pt too wide) in alignment at lines 330--333
  []
 
 [7 <./images//section2/feas_internal-1.jpg>]
-<./images//section2/sites_structure-1.jpg, id=374, 2394.9475pt x 1496.59125pt>
+<./images//section2/sites_structure-1.jpg, id=379, 2394.9475pt x 1496.59125pt>
 File: ./images//section2/sites_structure-1.jpg Graphic file (type jpg)
 <use ./images//section2/sites_structure-1.jpg>
 Package pdftex.def Info: ./images//section2/sites_structure-1.jpg  used on inpu
@@ -1520,27 +1520,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 1371--1372
  []
 
 [51]
-<./images//section6/6.1/motors.png, id=658, 182.6825pt x 129.48375pt>
+<./images//section6/6.1/motors.png, id=663, 182.6825pt x 129.48375pt>
 File: ./images//section6/6.1/motors.png Graphic file (type png)
 <use ./images//section6/6.1/motors.png>
 Package pdftex.def Info: ./images//section6/6.1/motors.png  used on input line 
 1414.
 (pdftex.def)             Requested size: 112.87172pt x 80.0pt.
-<./images//section6/6.1/outputs.png, id=660, 575.14874pt x 260.975pt>
+<./images//section6/6.1/outputs.png, id=665, 575.14874pt x 260.975pt>
 File: ./images//section6/6.1/outputs.png Graphic file (type png)
 <use ./images//section6/6.1/outputs.png>
 Package pdftex.def Info: ./images//section6/6.1/outputs.png  used on input line
  1418.
 (pdftex.def)             Requested size: 330.57631pt x 150.0pt.
  [52 <./images//section6/6.1/motors.png>]
-<./images//section6/6.1/anti_motors.png, id=668, 214.8025pt x 380.42125pt>
+<./images//section6/6.1/anti_motors.png, id=673, 214.8025pt x 380.42125pt>
 File: ./images//section6/6.1/anti_motors.png Graphic file (type png)
 <use ./images//section6/6.1/anti_motors.png>
 Package pdftex.def Info: ./images//section6/6.1/anti_motors.png  used on input 
 line 1431.
 (pdftex.def)             Requested size: 120.0pt x 212.52362pt.
  [53 <./images//section6/6.1/outputs.png>]
-<./images//section6/6.1/anti_outputs.png, id=674, 610.28pt x 498.86375pt>
+<./images//section6/6.1/anti_outputs.png, id=680, 610.28pt x 498.86375pt>
 File: ./images//section6/6.1/anti_outputs.png Graphic file (type png)
 <use ./images//section6/6.1/anti_outputs.png>
 Package pdftex.def Info: ./images//section6/6.1/anti_outputs.png  used on input
@@ -1571,7 +1571,7 @@ Package pdftex.def Info: ./images//section6/6.1/anti_motors.png  used on input
 line 1463.
 (pdftex.def)             Requested size: 120.0pt x 212.52362pt.
  [56]
-<./images//section6/6.1/anti_anti_motors.png, id=691, 249.93375pt x 618.31pt>
+<./images//section6/6.1/anti_anti_motors.png, id=696, 249.93375pt x 618.31pt>
 File: ./images//section6/6.1/anti_anti_motors.png Graphic file (type png)
 <use ./images//section6/6.1/anti_anti_motors.png>
 Package pdftex.def Info: ./images//section6/6.1/anti_anti_motors.png  used on i
@@ -1592,20 +1592,55 @@ Underfull \hbox (badness 10000) in paragraph at lines 1495--1496
 
  []
 
-[59] [60] (./Linear_Logic_and_Co-Design_Notebook_FS21.aux)
+<./images//section6/6.1/resource_level.jpeg, id=706, 2394.9475pt x 1496.59125pt
+>
+File: ./images//section6/6.1/resource_level.jpeg Graphic file (type jpg)
+<use ./images//section6/6.1/resource_level.jpeg>
+Package pdftex.def Info: ./images//section6/6.1/resource_level.jpeg  used on in
+put line 1502.
+(pdftex.def)             Requested size: 320.05156pt x 200.0pt.
+[59]
+<./images//section6/6.1/team_level.jpeg, id=711, 2394.9475pt x 1496.59125pt>
+File: ./images//section6/6.1/team_level.jpeg Graphic file (type jpg)
+<use ./images//section6/6.1/team_level.jpeg>
+Package pdftex.def Info: ./images//section6/6.1/team_level.jpeg  used on input 
+line 1507.
+(pdftex.def)             Requested size: 320.05156pt x 200.0pt.
+<./images//section6/6.1/manager_level.jpeg, id=712, 2394.9475pt x 1496.59125pt>
+
+File: ./images//section6/6.1/manager_level.jpeg Graphic file (type jpg)
+<use ./images//section6/6.1/manager_level.jpeg>
+Package pdftex.def Info: ./images//section6/6.1/manager_level.jpeg  used on inp
+ut line 1512.
+(pdftex.def)             Requested size: 320.05156pt x 200.0pt.
+ [60 <./images//section6/6.1/resource_level.jpeg> <./images//section6/6.1/team_
+level.jpeg>]
+Overfull \hbox (193.10587pt too wide) in paragraph at lines 1517--1518
+[]$ \OT1/cmr/m/n/12 to the teams, (cor-re-sponds to $(([]\OML/cmm/m/it/12 ; []\
+OT1/cmr/m/n/12 ))$),
+ []
+
+
+Overfull \hbox (45.41434pt too wide) in paragraph at lines 1522--1523
+\OT1/cmr/m/n/12 mo-tor. In ad-di-tion, they don't know if the mo-tor will de-li
+ver $[]$
+ []
+
+[61 <./images//section6/6.1/manager_level.jpeg>] [62] [63]
+(./Linear_Logic_and_Co-Design_Notebook_FS21.aux)
 Package rerunfilecheck Info: File `Linear_Logic_and_Co-Design_Notebook_FS21.out
 ' has not changed.
-(rerunfilecheck)             Checksum: C791582A352B2C333D9521B5E12C8CD4;11347.
+(rerunfilecheck)             Checksum: 1080BFEE6D06C9CDE6CCD97EDF44ED13;11549.
 Package logreq Info: Writing requests to 'Linear_Logic_and_Co-Design_Notebook_F
 S21.run.xml'.
 \openout1 = `Linear_Logic_and_Co-Design_Notebook_FS21.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 31912 strings out of 478846
- 610732 string characters out of 5855774
+ 31944 strings out of 478846
+ 611805 string characters out of 5855774
  1107542 words of memory out of 5000000
- 48802 multiletter control sequences out of 15000+600000
+ 48824 multiletter control sequences out of 15000+600000
  425757 words of font info for 122 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,15n,84p,1879b,2007s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1639,11 +1674,11 @@ t/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2021/texmf
 exmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></home/marius/texmf/fonts/ty
 pe1/public/stmaryrd/stmary10.pfb></home/marius/texmf/fonts/type1/public/stmaryr
 d/stmary8.pfb>
-Output written on Linear_Logic_and_Co-Design_Notebook_FS21.pdf (60 pages, 82559
-5 bytes).
+Output written on Linear_Logic_and_Co-Design_Notebook_FS21.pdf (63 pages, 13941
+84 bytes).
 PDF statistics:
- 864 PDF objects out of 1000 (max. 8388607)
- 753 compressed objects within 8 object streams
- 200 named destinations out of 1000 (max. 500000)
- 544 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 888 PDF objects out of 1000 (max. 8388607)
+ 771 compressed objects within 8 object streams
+ 206 named destinations out of 1000 (max. 500000)
+ 567 words of extra memory for PDF output out of 10000 (max. 10000000)
 
