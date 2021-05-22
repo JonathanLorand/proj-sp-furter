@@ -1,12 +1,14 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.11)  16 MAY 2021 11:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.5.17)  22 MAY 2021 16:57
 entering extended mode
-**./Linear_Logic_and_Co-Design_Notebook_FS21.tex
-(Linear_Logic_and_Co-Design_Notebook_FS21.tex
+ \write18 enabled.
+ %&-line parsing enabled.
+**Linear_Logic_and_Co-Design_Notebook_FS21.tex
+(./Linear_Logic_and_Co-Design_Notebook_FS21.tex
 LaTeX2e <2020-10-01> patch level 4
 L3 programming layer <2021-05-07>
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
+(/usr/local/texlive/2021/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/base\size12.clo
+(/usr/local/texlive/2021/texmf-dist/tex/latex/base/size12.clo
 File: size12.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
 )
 \c@part=\count179
@@ -21,60 +23,52 @@ File: size12.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
 \belowcaptionskip=\skip48
 \bibindent=\dimen138
 )
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2020/08/01 v1.3d Input encoding file
 \inpenc@prehook=\toks15
 \inpenc@posthook=\toks16
 )
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
+(/usr/local/texlive/2021/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2021/04/26 3.58 The Babel package
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def
+(/usr/local/texlive/2021/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2021/04/26 3.58 Babel common definitions
 \babel@savecnt=\count187
 \U@D=\dimen139
-\l@unhyphenated=\language79
+\l@unhyphenated=\language87
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read2
 )
 \bbl@dirlevel=\count188
 
-*************************************
-* Local config file bblopts.cfg used
-*
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
-File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
- babel
-)
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/babel-english\english.l
-df
+(/usr/local/texlive/2021/texmf-dist/tex/generic/babel-english/english.ldf
 Language: english 2017/06/06 v3.3r English support from the babel system
 Package babel Info: Hyphen rules for 'canadian' set to \l@english
 (babel)             (\language0). Reported on input line 102.
 Package babel Info: Hyphen rules for 'australian' set to \l@ukenglish
-(babel)             (\language73). Reported on input line 105.
+(babel)             (\language21). Reported on input line 105.
 Package babel Info: Hyphen rules for 'newzealand' set to \l@ukenglish
-(babel)             (\language73). Reported on input line 108.
+(babel)             (\language21). Reported on input line 108.
 ))
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2020/09/23 v2.17i AMS math features
 \@mathmargin=\skip49
 
 For additional information on amsmath, use the `?' option.
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01 AMS text
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks17
 \ex@=\dimen140
 ))
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen141
 )
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count189
@@ -115,13 +109,14 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
 LaTeX Info: Redefining \[ on input line 2923.
 LaTeX Info: Redefining \] on input line 2924.
 )
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mathtools.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/mathtools/mathtools.sty
 Package: mathtools 2021/04/12 v1.27 mathematical typesetting tools
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks22
 )
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/latex-tools\calc.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count267
 \calc@Bcount=\count268
@@ -134,7 +129,7 @@ LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count269
 \calc@Cskip=\skip54
 )
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mhsetup.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/mathtools/mhsetup.sty
 Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 )
 LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 130.
@@ -152,23 +147,25 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 130.
 \l_MT_below_shortintertext_sep=\dimen157
 \xmathstrut@box=\box49
 \xmathstrut@dim=\dimen158
-) (C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
+)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/stmaryrd\stmaryrd.st
-y
+))
+(/home/marius/texmf/tex/latex/stmaryrd/stmaryrd.sty
 Package: stmaryrd 1994/03/03 St Mary's Road symbol package
 \symstmry=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `stmry' in version `bold'
 (Font)                  U/stmry/m/n --> U/stmry/b/n on input line 89.
-) (C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/amscls\amsthm.sty
+)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2020/05/29 v2.20.6
 \thm@style=\toks23
 \thm@bodyfont=\toks24
@@ -180,14 +177,13 @@ Package: amsthm 2020/05/29 v2.20.6
 \thm@headsep=\skip58
 \dth@everypar=\toks28
 )
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/base\latexsym.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/base/latexsym.sty
 Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
 \symlasy=\mathgroup7
 LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
 (Font)                  U/lasy/m/n --> U/lasy/b/n on input line 52.
 )
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/ieeetrantools\IEEEtrant
-ools.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/IEEEtran/IEEEtrantools.sty
 Package: IEEEtrantools 2015/08/26 V1.5 by Michael Shell
 
 -- See the "IEEEtrantools_doc.txt" manual for usage information.
@@ -217,27 +213,27 @@ Package: IEEEtrantools 2015/08/26 V1.5 by Michael Shell
 \@IEEEeqncolcnt=\count276
 \@IEEEsubeqnnumrollback=\count277
 \IEEEPARstartletwidth=\dimen174
-) (C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\eucal.sty
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/eucal.sty
 Package: eucal 2009/06/22 v3.00 Euler Script fonts
 LaTeX Font Info:    Overwriting math alphabet `\EuScript' in version `bold'
 (Font)                  U/eus/m/n --> U/eus/b/n on input line 33.
 )
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/bbm\bbm.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/bbm-macros/bbm.sty
 Package: bbm 1999/03/15 V 1.2 provides fonts for set symbols - TH
 LaTeX Font Info:    Overwriting math alphabet `\mathbbm' in version `bold'
 (Font)                  U/bbm/m/n --> U/bbm/bx/n on input line 33.
 LaTeX Font Info:    Overwriting math alphabet `\mathbbmss' in version `bold'
 (Font)                  U/bbmss/m/n --> U/bbmss/bx/n on input line 35.
 )
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+(/usr/local/texlive/2021/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+(/usr/local/texlive/2021/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 )
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
@@ -249,11 +245,11 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
- (C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/graphics\dvipsnam.def
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/graphics/dvipsnam.def
 File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
 ))
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/bussproofs\bussproofs.s
-ty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/bussproofs/bussproofs.sty
 Proof Tree (bussproofs) style macros. Version 1.1.
 \theLevel=\count278
 \myMaxLevel=\count279
@@ -279,16 +275,16 @@ Proof Tree (bussproofs) style macros. Version 1.1.
 \htRRRbox=\dimen188
 \htAbox=\dimen189
 \htCbox=\dimen190
-) (C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.c
-fg
+(/usr/local/texlive/2021/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 105.
@@ -296,45 +292,35 @@ Package graphics Info: Driver file: pdftex.def on input line 105.
 \Gin@req@height=\dimen191
 \Gin@req@width=\dimen192
 )
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tikz.
-sty
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.sty
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs.st
-y
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil
--common.tex
+(/usr/local/texlive/2021/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
+x
 \pgfutil@everybye=\toks30
 \pgfutil@tempdima=\dimen193
 \pgfutil@tempdimb=\dimen194
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil
--common-lists.tex))
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil
--latex.def
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-li
+sts.tex))
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
 \pgfutil@abb=\box56
-)
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfrcs.
-code.tex
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revision.tex)
-Package: pgfrcs 2020/12/27 v3.1.8b (3.1.8b)
+) (/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2021/05/15 v3.1.9a (3.1.9a)
 ))
-Package: pgf 2020/12/27 v3.1.8b (3.1.8b)
+Package: pgf 2021/05/15 v3.1.9a (3.1.9a)
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgfcore.
-sty
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfsys.
-sty
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
-s.code.tex
-Package: pgfsys 2020/12/27 v3.1.8b (3.1.8b)
-
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
-.code.tex
+(/usr/local/texlive/2021/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2021/05/15 v3.1.9a (3.1.9a)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
 \pgfkeys@pathtoks=\toks31
 \pgfkeys@temptoks=\toks32
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
-filtered.code.tex
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.c
+ode.tex
 \pgfkeys@tmptoks=\toks33
 ))
 \pgf@x=\dimen195
@@ -358,42 +344,35 @@ filtered.code.tex
 \t@pgf@tokc=\toks36
 \pgf@sys@id@count=\count284
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf.c
-fg
-File: pgf.cfg 2020/12/27 v3.1.8b (3.1.8b)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2021/05/15 v3.1.9a (3.1.9a)
 )
 Driver file for pgf: pgfsys-pdftex.def
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
-s-pdftex.def
-File: pgfsys-pdftex.def 2020/12/27 v3.1.8b (3.1.8b)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.d
+ef
+File: pgfsys-pdftex.def 2021/05/15 v3.1.9a (3.1.9a)
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
-s-common-pdf.def
-File: pgfsys-common-pdf.def 2020/12/27 v3.1.8b (3.1.8b)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
+df.def
+File: pgfsys-common-pdf.def 2021/05/15 v3.1.9a (3.1.9a)
 )))
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
-ssoftpath.code.tex
-File: pgfsyssoftpath.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
+code.tex
+File: pgfsyssoftpath.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgfsyssoftpath@smallbuffer@items=\count285
 \pgfsyssoftpath@bigbuffer@items=\count286
 )
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
-sprotocol.code.tex
-File: pgfsysprotocol.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-))
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
-e.code.tex
-Package: pgfcore 2020/12/27 v3.1.8b (3.1.8b)
-
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code
-.tex
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathcalc.
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
 code.tex
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathutil.
-code.tex)
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathparse
-r.code.tex
+File: pgfsysprotocol.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+))
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2021/05/15 v3.1.9a (3.1.9a)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen261
 \pgfmath@count=\count287
 \pgfmath@box=\box57
@@ -401,33 +380,30 @@ r.code.tex
 \pgfmath@stack@operand=\toks38
 \pgfmath@stack@operation=\toks39
 )
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
-ions.code.tex
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
-ions.basic.code.tex)
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
-ions.trigonometric.code.tex)
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
-ions.random.code.tex)
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
-ions.comparison.code.tex)
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
-ions.base.code.tex)
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
-ions.round.code.tex)
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
-ions.misc.code.tex)
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
-ions.integerarithmetics.code.tex)))
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfloat
-.code.tex
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
+tex
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic
+.code.tex)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigo
+nometric.code.tex)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rando
+m.code.tex)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.compa
+rison.code.tex)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.
+code.tex)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round
+.code.tex)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
+code.tex)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
+erarithmetics.code.tex)))
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
 \c@pgfmathroundto@lastzeros=\count288
-))
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.code.
-tex)
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
-epoints.code.tex
-File: pgfcorepoints.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+)) (/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
+de.tex
+File: pgfcorepoints.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgf@picminx=\dimen262
 \pgf@picmaxx=\dimen263
 \pgf@picminy=\dimen264
@@ -443,133 +419,127 @@ File: pgfcorepoints.code.tex 2020/12/27 v3.1.8b (3.1.8b)
 \pgf@zx=\dimen274
 \pgf@zy=\dimen275
 )
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
-epathconstruct.code.tex
-File: pgfcorepathconstruct.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
+ruct.code.tex
+File: pgfcorepathconstruct.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgf@path@lastx=\dimen276
 \pgf@path@lasty=\dimen277
 )
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
-epathusage.code.tex
-File: pgfcorepathusage.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
+.code.tex
+File: pgfcorepathusage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgf@shorten@end@additional=\dimen278
 \pgf@shorten@start@additional=\dimen279
 )
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
-escopes.code.tex
-File: pgfcorescopes.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
+de.tex
+File: pgfcorescopes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgfpic=\box58
 \pgf@hbox=\box59
 \pgf@layerbox@main=\box60
 \pgf@picture@serial@count=\count289
 )
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
-egraphicstate.code.tex
-File: pgfcoregraphicstate.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
+ate.code.tex
+File: pgfcoregraphicstate.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgflinewidth=\dimen280
 )
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
-etransformations.code.tex
-File: pgfcoretransformations.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
+ations.code.tex
+File: pgfcoretransformations.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgf@pt@x=\dimen281
 \pgf@pt@y=\dimen282
 \pgf@pt@temp=\dimen283
 )
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
-equick.code.tex
-File: pgfcorequick.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
+e.tex
+File: pgfcorequick.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 )
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
-eobjects.code.tex
-File: pgfcoreobjects.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.c
+ode.tex
+File: pgfcoreobjects.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 )
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
-epathprocessing.code.tex
-File: pgfcorepathprocessing.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathproce
+ssing.code.tex
+File: pgfcorepathprocessing.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 )
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
-earrows.code.tex
-File: pgfcorearrows.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
+de.tex
+File: pgfcorearrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgfarrowsep=\dimen284
 )
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
-eshade.code.tex
-File: pgfcoreshade.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
+e.tex
+File: pgfcoreshade.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgf@max=\dimen285
 \pgf@sys@shading@range@num=\count290
 \pgf@shadingcount=\count291
 )
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
-eimage.code.tex
-File: pgfcoreimage.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
+e.tex
+File: pgfcoreimage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
-eexternal.code.tex
-File: pgfcoreexternal.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
+code.tex
+File: pgfcoreexternal.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgfexternal@startupbox=\box61
 ))
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
-elayers.code.tex
-File: pgfcorelayers.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
+de.tex
+File: pgfcorelayers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 )
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
-etransparency.code.tex
-File: pgfcoretransparency.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretranspare
+ncy.code.tex
+File: pgfcoretransparency.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 )
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
-epatterns.code.tex
-File: pgfcorepatterns.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.
+code.tex
+File: pgfcorepatterns.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 )
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
-erdf.code.tex
-File: pgfcorerdf.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.
+tex
+File: pgfcorerdf.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 )))
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
-shapes.code.tex
-File: pgfmoduleshapes.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
+e.tex
+File: pgfmoduleshapes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgfnodeparttextbox=\box62
 )
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
-plot.code.tex
-File: pgfmoduleplot.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
+tex
+File: pgfmoduleplot.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 )
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfco
-mp-version-0-65.sty
-Package: pgfcomp-version-0-65 2020/12/27 v3.1.8b (3.1.8b)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-0-65.sty
+Package: pgfcomp-version-0-65 2021/05/15 v3.1.9a (3.1.9a)
 \pgf@nodesepstart=\dimen286
 \pgf@nodesepend=\dimen287
 )
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfco
-mp-version-1-18.sty
-Package: pgfcomp-version-1-18 2020/12/27 v3.1.8b (3.1.8b)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-1-18.sty
+Package: pgfcomp-version-1-18 2021/05/15 v3.1.9a (3.1.9a)
 ))
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgffor.st
-y
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys.s
-ty
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
-.code.tex))
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.sty
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code
-.tex))
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgffor.
-code.tex
-Package: pgffor 2020/12/27 v3.1.8b (3.1.8b)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2021/05/15 v3.1.9a (3.1.9a)
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code
-.tex)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
 \pgffor@iter=\dimen288
 \pgffor@skip=\dimen289
 \pgffor@stack=\toks40
 \pgffor@toks=\toks41
 ))
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
-z\tikz.code.tex
-Package: tikz 2020/12/27 v3.1.8b (3.1.8b)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.cod
+e.tex
+Package: tikz 2021/05/15 v3.1.9a (3.1.9a)
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
-aryplothandlers.code.tex
-File: pgflibraryplothandlers.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothan
+dlers.code.tex
+File: pgflibraryplothandlers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgf@plot@mark@count=\count292
 \pgfplotmarksize=\dimen290
 )
@@ -590,50 +560,47 @@ File: pgflibraryplothandlers.code.tex 2020/12/27 v3.1.8b (3.1.8b)
 \tikznumberofcurrentchild=\count295
 \tikz@fig@count=\count296
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
-matrix.code.tex
-File: pgfmodulematrix.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.cod
+e.tex
+File: pgfmodulematrix.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgfmatrixcurrentrow=\count297
 \pgfmatrixcurrentcolumn=\count298
 \pgf@matrix@numberofcolumns=\count299
 )
 \tikz@expandcount=\count300
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
-z/libraries\tikzlibrarytopaths.code.tex
-File: tikzlibrarytopaths.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 )))
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
-z/libraries\tikzlibraryarrows.code.tex
-File: tikzlibraryarrows.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryarrows.code.tex
+File: tikzlibraryarrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
-aryarrows.code.tex
-File: pgflibraryarrows.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.
+code.tex
+File: pgflibraryarrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \arrowsize=\dimen299
-))
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/tikz-cd\tikz-cd.sty
-Package: tikz-cd 2018/11/19 v0.9f Commutative diagrams with TikZ
+)) (/usr/local/texlive/2021/texmf-dist/tex/latex/tikz-cd/tikz-cd.sty
+Package: tikz-cd 2021/05/04 v1.0 Commutative diagrams with TikZ
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/tikz-cd\tikzlibrarycd.c
-ode.tex
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
-z/libraries\tikzlibrarymatrix.code.tex
-File: tikzlibrarymatrix.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/tikz-cd/tikzlibrarycd.code.tex
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarymatrix.code.tex
+File: tikzlibrarymatrix.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 )
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
-z/libraries\tikzlibraryquotes.code.tex
-File: tikzlibraryquotes.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryquotes.code.tex
+File: tikzlibraryquotes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 )
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
-aryarrows.meta.code.tex
-File: pgflibraryarrows.meta.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.
+meta.code.tex
+File: pgflibraryarrows.meta.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgfarrowinset=\dimen300
 \pgfarrowlength=\dimen301
 \pgfarrowwidth=\dimen302
 \pgfarrowlinewidth=\dimen303
-)))
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/ulem\ulem.sty
+))) (/usr/local/texlive/2021/texmf-dist/tex/generic/ulem/ulem.sty
 \UL@box=\box67
 \UL@hyphenbox=\box68
 \UL@skip=\skip60
@@ -644,74 +611,68 @@ File: pgflibraryarrows.meta.code.tex 2020/12/27 v3.1.8b (3.1.8b)
 \ULC@box=\box69
 Package: ulem 2019/11/18
 \ULdepth=\dimen306
-)
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2021-02-27 v7.00k Hypertext links for LaTeX
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+(/usr/local/texlive/2021/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
 Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
 )
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+(/usr/local/texlive/2021/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2020/03/06 v1.0d TeX engine tests
 )
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds
-.sty
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.s
-ty
+(/usr/local/texlive/2021/texmf-dist/tex/generic/infwarerr/infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/kvsetkeys\kvsetkeys.s
-ty
+(/usr/local/texlive/2021/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
 Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
 )
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefine
-keys.sty
+(/usr/local/texlive/2021/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
 )
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.s
-ty
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pdfescape/pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
-) (C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
+)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/hycolor/hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 )
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/letltxmacro\letltxmacro
-.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
 Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 )
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/auxhook/auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 )
 \@linkdim=\dimen307
 \Hy@linkcounter=\count302
 \Hy@pagecounter=\count303
- (C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2021-02-27 v7.00k Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref-langp
-atches.def
+(/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/hyperref-langpatches.def
 File: hyperref-langpatches.def 2021-02-27 v7.00k Hyperref: patches for babel la
 nguages
-)
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
+) (/usr/local/texlive/2021/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.sty
+(/usr/local/texlive/2021/texmf-dist/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
 \Hy@SavedSpaceFactor=\count304
- (C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2021-02-27 v7.00k Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
@@ -725,18 +686,17 @@ Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4445.
 \c@Hy@tempcnt=\count305
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4804.
 \XeTeXLinkMargin=\dimen308
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+(/usr/local/texlive/2021/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc
-.sty
+(/usr/local/texlive/2021/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
@@ -753,7 +713,7 @@ Package hyperref Info: PDF/A mode OFF on input line 6105.
 LaTeX Info: Redefining \ref on input line 6145.
 LaTeX Info: Redefining \pageref on input line 6149.
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-ltx.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/base/atbegshi-ltx.sty
 Package: atbegshi-ltx 2020/08/17 v1.0a Emulation of the original atbegshi packa
 ge
 with kernel methods
@@ -763,10 +723,11 @@ with kernel methods
 \c@Hfootnote=\count309
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2021-02-27 v7.00k Hyperref driver for pdfTeX
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/base\atveryend-ltx.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/base/atveryend-ltx.sty
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery packag
 e
 with kernel methods
@@ -774,12 +735,10 @@ with kernel methods
 \Fld@listcount=\count310
 \c@bookmark@seq@number=\count311
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfil
-echeck.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniquec
-ounter.sty
+(/usr/local/texlive/2021/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
@@ -793,21 +752,21 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 67.
 Package hyperref Warning: Option `bookmarks' has already been used,
 (hyperref)                setting the option has no effect on input line 67.
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/biblatex/biblatex.sty
 Package: biblatex 2020/12/31 v3.16 programmable bibliographies (PK/MW)
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count312
 )
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/logreq/logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
 \lrq@indent=\count313
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.def
+(/usr/local/texlive/2021/texmf-dist/tex/latex/logreq/logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 ))
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \c@tabx@nest=\count314
@@ -862,14 +821,14 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 \bibhang=\skip69
 \blx@bcfin=\read4
 \blx@bcfout=\write4
-\blx@langwohyphens=\language80
+\blx@langwohyphens=\language88
 \c@mincomprange=\count356
 \c@maxcomprange=\count357
 \c@mincompwidth=\count358
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-dm.def
+(/usr/local/texlive/2021/texmf-dist/tex/latex/biblatex/blx-dm.def
 File: blx-dm.def 2020/12/31 v3.16 biblatex localization (PK/MW)
 )
 Package biblatex Info: Trying to load biblatex style data model...
@@ -961,14 +920,15 @@ Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-compat.def
+(/usr/local/texlive/2021/texmf-dist/tex/latex/biblatex/blx-compat.def
 File: blx-compat.def 2020/12/31 v3.16 biblatex compatibility (PK/MW)
 )
 Package biblatex Info: Trying to load BibTeX backend compatibility...
 Package biblatex Info: ... file 'blx-bibtex.def' found.
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-bibtex.def
+(/usr/local/texlive/2021/texmf-dist/tex/latex/biblatex/blx-bibtex.def
 File: blx-bibtex.def 2020/12/31 v3.16 biblatex compatibility (PK/MW)
+
 
 Package biblatex Warning: Using fall-back BibTeX(8) backend:
 (biblatex)                functionality may be reduced/unavailable.
@@ -976,7 +936,7 @@ Package biblatex Warning: Using fall-back BibTeX(8) backend:
 )
 Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
- (C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.def
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/biblatex/biblatex.def
 File: biblatex.def 2020/12/31 v3.16 biblatex compatibility (PK/MW)
 \c@textcitecount=\count427
 \c@textcitetotal=\count428
@@ -995,14 +955,12 @@ File: biblatex.def 2020/12/31 v3.16 biblatex compatibility (PK/MW)
 Package biblatex Info: Trying to load bibliography style 'alphabetic'...
 Package biblatex Info: ... file 'alphabetic.bbx' found.
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\alphabetic
-.bbx
+(/usr/local/texlive/2021/texmf-dist/tex/latex/biblatex/bbx/alphabetic.bbx
 File: alphabetic.bbx 2020/12/31 v3.16 biblatex bibliography style (PK/MW)
 Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\standard.b
-bx
+(/usr/local/texlive/2021/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
 File: standard.bbx 2020/12/31 v3.16 biblatex bibliography style (PK/MW)
 \c@bbx:relatedcount=\count436
 \c@bbx:relatedtotal=\count437
@@ -1010,8 +968,7 @@ File: standard.bbx 2020/12/31 v3.16 biblatex bibliography style (PK/MW)
 Package biblatex Info: Trying to load citation style 'alphabetic'...
 Package biblatex Info: ... file 'alphabetic.cbx' found.
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/cbx\alphabetic
-.cbx
+(/usr/local/texlive/2021/texmf-dist/tex/latex/biblatex/cbx/alphabetic.cbx
 File: alphabetic.cbx 2020/12/31 v3.16 biblatex citation style (PK/MW)
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\parencite'.
@@ -1027,7 +984,7 @@ Package biblatex Info: Redefining '\smartcites'.
 Package biblatex Info: Trying to load configuration file...
 Package biblatex Info: ... file 'biblatex.cfg' found.
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.cfg
+(/usr/local/texlive/2021/texmf-dist/tex/latex/biblatex/biblatex.cfg
 File: biblatex.cfg 
 ))
 \c@definition=\count438
@@ -1038,18 +995,18 @@ File: biblatex.cfg
 \c@example=\count443
 \c@remark=\count444
 
+
 Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (biblatex)                Loading 'csquotes' recommended.
 
 \@quotelevel=\count445
 \@quotereset=\count446
-
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
-tex.def
+(/usr/local/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2021-05-07 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count447
 \l__pdf_internal_box=\box70
-) (Linear_Logic_and_Co-Design_Notebook_FS21.aux)
+)
+(./Linear_Logic_and_Co-Design_Notebook_FS21.aux)
 \openout1 = `Linear_Logic_and_Co-Design_Notebook_FS21.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 186.
@@ -1071,8 +1028,7 @@ LaTeX Font Info:    ... okay on input line 186.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 186.
 LaTeX Font Info:    ... okay on input line 186.
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
-ii
+(/usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count448
 \scratchdimen=\dimen311
@@ -1085,12 +1041,10 @@ ii
 \MPnumerator=\count452
 \makeMPintoPDFobject=\count453
 \everyMPtoPDFconversion=\toks44
-)
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
-ase.sty
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/grfext\grfext.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/grfext/grfext.sty
 Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
 )
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -1100,20 +1054,20 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 504.
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.c
-fg
-File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+(/usr/local/texlive/2021/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
 ))
 Package hyperref Info: Link coloring ON on input line 186.
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/refcount/refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 )
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettit
-lestring.sty
+(/usr/local/texlive/2021/texmf-dist/tex/generic/gettitlestring/gettitlestring.s
+ty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count454
@@ -1121,16 +1075,15 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 186.
 LaTeX Info: Redefining \pageref on input line 186.
 LaTeX Info: Redefining \nameref on input line 186.
- (Linear_Logic_and_Co-Design_Notebook_FS21.out)
-(Linear_Logic_and_Co-Design_Notebook_FS21.out)
+ (./Linear_Logic_and_Co-Design_Notebook_FS21.out)
+(./Linear_Logic_and_Co-Design_Notebook_FS21.out)
 \@outlinefile=\write5
 \openout5 = `Linear_Logic_and_Co-Design_Notebook_FS21.out'.
 
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\english.lb
-x
+(/usr/local/texlive/2021/texmf-dist/tex/latex/biblatex/lbx/english.lbx
 File: english.lbx 2020/12/31 v3.16 biblatex localization (PK/MW)
 )
 Package biblatex Info: Input encoding 'utf8' detected.
@@ -1140,7 +1093,8 @@ Package biblatex Info: Input encoding 'utf8' specified.
 Package biblatex Info: Data encoding 'utf8' specified.
 (biblatex)             No need to reencode data.
 Package biblatex Info: Document encoding is UTF8 ....
- (C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2021-05-07 L3 programming layer (loader) 
 )
 Package biblatex Info: ... and expl3
@@ -1148,14 +1102,12 @@ Package biblatex Info: ... and expl3
 (biblatex)             is new enough (at least 2020/04/06),
 (biblatex)             setting 'casechanger=expl3'.
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-case-expl3
-.sty
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xpars
-e.sty
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xpars
-e-2020-10-01.sty
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xpars
-e-generic.tex)))
+(/usr/local/texlive/2021/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/l3packages/xparse/xparse-2020-10-
+01.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/l3packages/xparse/xparse-generic.
+tex)))
 Package: blx-case-expl3 2020/12/31 v3.16 expl3 case changing code for biblatex
 )
 \openout4 = `Linear_Logic_and_Co-Design_Notebook_FS21-blx.bib'.
@@ -1163,7 +1115,7 @@ Package: blx-case-expl3 2020/12/31 v3.16 expl3 case changing code for biblatex
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Linear_Logic_and_Co-Design_Notebook_FS21.bbl' 
 found.
- (Linear_Logic_and_Co-Design_Notebook_FS21.bbl
+ (./Linear_Logic_and_Co-Design_Notebook_FS21.bbl
 
 Package biblatex Warning: BibTeX reported the following issues
 (biblatex)                with 'Houston2006':
@@ -1179,39 +1131,37 @@ Package biblatex Info: Reference section=0 on input line 186.
 Package biblatex Info: Reference segment=0 on input line 186.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 189
 .
- (C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 189
 .
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+stmry on input line 1
 89.
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/stmaryrd\ustmry.fd)
+(/home/marius/texmf/tex/latex/stmaryrd/Ustmry.fd)
 LaTeX Font Info:    Trying to load font information for U+lasy on input line 18
 9.
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/base\ulasy.fd
+(/usr/local/texlive/2021/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-(Linear_Logic_and_Co-Design_Notebook_FS21.toc
+(./Linear_Logic_and_Co-Design_Notebook_FS21.toc
 LaTeX Font Info:    Trying to load font information for U+eus on input line 48.
 
 
-(C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\ueus.fd
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/ueus.fd
 File: ueus.fd 2013/01/14 v3.01 Euler Script
-)
-[1
+) [1
 
-{C:/Users/mariu/AppData/Local/MiKTeX/pdftex/config/pdftex.map}])
+{/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2])
 \tf@toc=\write6
 \openout6 = `Linear_Logic_and_Co-Design_Notebook_FS21.toc'.
 
- [2]
 \myBox1=\box72
 \myScoreStart1=\dimen313
 \myCenter1=\dimen314
@@ -1220,18 +1170,18 @@ File: ueus.fd 2013/01/14 v3.01 Euler Script
 \myScoreStart2=\dimen316
 \myCenter2=\dimen317
 \myScoreEnd2=\dimen318
- [3]
-[4] [5]
+ [3] [4]
+[5]
 Overfull \hbox (20.09843pt too wide) detected at line 299
-[][]\OT1/cmr/m/n/12 ([ ]\OML/cmm/m/it/12 ; A[] \U/msa/m/n/12  []  \OML/cmm/m/
-it/12 A[]\OT1/cmr/m/n/12 ) [] [][]( []\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 []) \
-OMS/cmsy/m/n/12  []  [][]\OT1/cmr/m/n/12 ( []\OML/cmm/m/it/12 ; \OT1/cmr/m/n/
-12 []) = \OML/cmm/m/it/12 F\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 A[] \U/msa/m/n/12
-  []  \OML/cmm/m/it/12 A[]\OT1/cmr/m/n/12 )
+[][]\OT1/cmr/m/n/12 ([ ]\OML/cmm/m/it/12 ; A[] \U/msa/m/n/12 ^^A [] ^^A \OML/cm
+m/m/it/12 A[]\OT1/cmr/m/n/12 ) [] [][](^^@[]\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 
+^^A[]) \OMS/cmsy/m/n/12 ^^B [] ^^B [][]\OT1/cmr/m/n/12 (^^@[]\OML/cmm/m/it/12 ;
+ \OT1/cmr/m/n/12 ^^A[]) = \OML/cmm/m/it/12 F\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 A
+[] \U/msa/m/n/12 ^^A [] ^^A \OML/cmm/m/it/12 A[]\OT1/cmr/m/n/12 )
  []
 
 [6]
-<./images//section2/feas_internal-1.jpg, id=349, 2394.9475pt x 1496.59125pt>
+<./images//section2/feas_internal-1.jpg, id=362, 2394.9475pt x 1496.59125pt>
 File: ./images//section2/feas_internal-1.jpg Graphic file (type jpg)
 <use ./images//section2/feas_internal-1.jpg>
 Package pdftex.def Info: ./images//section2/feas_internal-1.jpg  used on input 
@@ -1243,7 +1193,7 @@ Overfull \hbox (4.1607pt too wide) in alignment at lines 330--333
  []
 
 [7 <./images//section2/feas_internal-1.jpg>]
-<./images//section2/sites_structure-1.jpg, id=361, 2394.9475pt x 1496.59125pt>
+<./images//section2/sites_structure-1.jpg, id=374, 2394.9475pt x 1496.59125pt>
 File: ./images//section2/sites_structure-1.jpg Graphic file (type jpg)
 <use ./images//section2/sites_structure-1.jpg>
 Package pdftex.def Info: ./images//section2/sites_structure-1.jpg  used on inpu
@@ -1314,15 +1264,15 @@ m/n/12 -enriched Nat-u-ral Trans-for-ma-tion)\OT1/cmr/bx/n/12 . []\OT1/cmr/m/n/
 [17] [18]
 Overfull \hbox (31.47072pt too wide) detected at line 626
 \OT1/cmr/m/n/12 ((\OML/cmm/m/it/12 []\OT1/cmr/m/n/12 ) \U/msa/m/n/12 ~ \OT1/c
-mr/m/n/12 (\OML/cmm/m/it/12 []\OT1/cmr/m/n/12 ))(\OML/cmm/m/it/12 a; c\OT1/cm
-r/m/n/12 ) = (\OML/cmm/m/it/12 []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 a\OT1/cmr/
-m/n/12 )\OML/cmm/m/it/12 ; []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 c\OT1/cmr/m/n/
-12 )) = (\OML/cmm/m/it/12 [] \U/msa/m/n/12 ~ \OML/cmm/m/it/12 []\OT1/cmr/m/n/
-12 )(\OML/cmm/m/it/12 \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 a\OT1/cmr/m/n/12 )\OML
-/cmm/m/it/12 ; \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 c\OT1/cmr/m/n/12 )) = (\OML/c
-mm/m/it/12 [] \U/msa/m/n/12 ~ \OML/cmm/m/it/12 []\OT1/cmr/m/n/12 ) \OMS/cmsy/
-m/n/12  \OT1/cmr/m/n/12 (\OML/cmm/m/it/12  \U/msa/m/n/12 ~ \OML/cmm/m/it/12 
-\OT1/cmr/m/n/12 )(\OML/cmm/m/it/12 a; c\OT1/cmr/m/n/12 )
+mr/m/n/12 (\OML/cmm/m/it/12 ^^M[]^^M\OT1/cmr/m/n/12 ))(\OML/cmm/m/it/12 a; c\OT
+1/cmr/m/n/12 ) = (\OML/cmm/m/it/12 []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 a\OT1/
+cmr/m/n/12 )\OML/cmm/m/it/12 ; ^^M[]^^M\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 c\OT1/
+cmr/m/n/12 )) = (\OML/cmm/m/it/12 [] \U/msa/m/n/12 ~ \OML/cmm/m/it/12 ^^M[]\OT
+1/cmr/m/n/12 )(\OML/cmm/m/it/12 \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 a\OT1/cmr/m/
+n/12 )\OML/cmm/m/it/12 ; ^^M\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 c\OT1/cmr/m/n/12 
+)) = (\OML/cmm/m/it/12 [] \U/msa/m/n/12 ~ \OML/cmm/m/it/12 ^^M[]\OT1/cmr/m/n/1
+2 ) \OMS/cmsy/m/n/12 ^^N \OT1/cmr/m/n/12 (\OML/cmm/m/it/12  \U/msa/m/n/12 ~ \O
+ML/cmm/m/it/12 ^^M\OT1/cmr/m/n/12 )(\OML/cmm/m/it/12 a; c\OT1/cmr/m/n/12 )
  []
 
 [19] [20]
@@ -1359,7 +1309,7 @@ it/12 A\OT1/cmr/m/n/12 ) [] \OML/cmm/m/it/12 E\OT1/cmr/m/n/12 (\OML/cmm/m/it/12
 [24] [25]
 LaTeX Font Info:    Trying to load font information for U+bbm on input line 878
 .
- (C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/bbm\ubbm.fd
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 )
 [26] [27] [28]
@@ -1396,38 +1346,38 @@ r/m/n/12 ) = [](\OML/cmm/m/it/12 b; a\OT1/cmr/m/n/12 )$ for $[] \OMS/cmsy/m/n/1
 
 [35]
 Overfull \hbox (13.43303pt too wide) detected at line 1113
-\OT1/cmr/m/n/12 []([](\OML/cmm/m/it/12 r[]; r[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/
-12 ; []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 f[]; f[]\OT1/cmr/m/n/12 )) \OMS/cmsy/m
-/n/12 , \OT1/cmr/m/n/12 ([](\OML/cmm/m/it/12 r[]; f[]\OT1/cmr/m/n/12 ) \OMS/cm
-sy/m/n/12 ^ \OT1/cmr/m/n/12 [](\OML/cmm/m/it/12 r[]; f[]\OT1/cmr/m/n/12 )) \OM
-S/cmsy/m/n/12 _ \OT1/cmr/m/n/12 ([](\OML/cmm/m/it/12 r[]; f[]\OT1/cmr/m/n/12 )
- \OMS/cmsy/m/n/12 ^ \OT1/cmr/m/n/12 [](\OML/cmm/m/it/12 r[]; f[]\OT1/cmr/m/n/1
-2 ))
+\OT1/cmr/m/n/12 ^^H[]([](\OML/cmm/m/it/12 r[]; r[]\OT1/cmr/m/n/12 )\OML/cmm/m/i
+t/12 ; []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 f[]; f[]\OT1/cmr/m/n/12 )) \OMS/cmsy
+/m/n/12 , \OT1/cmr/m/n/12 (^^H[](\OML/cmm/m/it/12 r[]; f[]\OT1/cmr/m/n/12 ) \OM
+S/cmsy/m/n/12 ^ \OT1/cmr/m/n/12 ^^H[](\OML/cmm/m/it/12 r[]; f[]\OT1/cmr/m/n/12 
+)) \OMS/cmsy/m/n/12 _ \OT1/cmr/m/n/12 (^^H[](\OML/cmm/m/it/12 r[]; f[]\OT1/cmr/
+m/n/12 ) \OMS/cmsy/m/n/12 ^ \OT1/cmr/m/n/12 ^^H[](\OML/cmm/m/it/12 r[]; f[]\OT1
+/cmr/m/n/12 ))
  []
 
 
 Overfull \hbox (44.81793pt too wide) in paragraph at lines 1125--1126
- []\OT1/cmr/bx/n/12 ($[]$)[] \OT1/cmr/m/n/12 Sup-pose $[]([](\OML/cmm/m/it/12 
-r[]; r[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12
- f[]; f[]\OT1/cmr/m/n/12 ))$ and $\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 ! []\OT1/
-cmr/m/n/12 (\OML/cmm/m/it/12 r[]; r[]\OT1/cmr/m/n/12 )$, $[](\OML/cmm/m/it/12 f
-[]; f[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 !
+ []\OT1/cmr/bx/n/12 ($[]$)[] \OT1/cmr/m/n/12 Sup-pose $^^H[]([](\OML/cmm/m/it/1
+2 r[]; r[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; []\OT1/cmr/m/n/12 (\OML/cmm/m/it/
+12 f[]; f[]\OT1/cmr/m/n/12 ))$ and $\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 ! []\OT
+1/cmr/m/n/12 (\OML/cmm/m/it/12 r[]; r[]\OT1/cmr/m/n/12 )$, $[](\OML/cmm/m/it/12
+ f[]; f[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 !
  []
 
 
 Overfull \hbox (1.65192pt too wide) in paragraph at lines 1125--1126
-\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 r[]; f[]\OT1/cmr/m/n/12 ))$. Hence by mono-t
-onic-ity we get $([](\OML/cmm/m/it/12 s[]; g[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/
-12 ^ \OT1/cmr/m/n/12 [](\OML/cmm/m/it/12 s[]; g[]\OT1/cmr/m/n/12 ))$ or $((\O
-ML/cmm/m/it/12 s[]; g[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^
+\OT1/cmr/m/n/12 ^^H(\OML/cmm/m/it/12 r[]; f[]\OT1/cmr/m/n/12 ))$. Hence by mono
+-tonic-ity we get $(^^H[](\OML/cmm/m/it/12 s[]; g[]\OT1/cmr/m/n/12 ) \OMS/cmsy/
+m/n/12 ^ \OT1/cmr/m/n/12 ^^H[](\OML/cmm/m/it/12 s[]; g[]\OT1/cmr/m/n/12 ))$ or 
+$(^^H(\OML/cmm/m/it/12 s[]; g[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^
  []
 
 
 Overfull \hbox (26.50832pt too wide) in paragraph at lines 1127--1128
- []\OT1/cmr/bx/n/12 ($[]$ right)[] \OT1/cmr/m/n/12 Sup-pose $[]([](\OML/cmm/m/
-it/12 r[]; r[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; []\OT1/cmr/m/n/12 (\OML/cmm/m
-/it/12 f[]; f[]\OT1/cmr/m/n/12 ))$ and $\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 ! [
-]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 r[]; r[]\OT1/cmr/m/n/12 )$,
+ []\OT1/cmr/bx/n/12 ($[]$ right)[] \OT1/cmr/m/n/12 Sup-pose $^^H[]([](\OML/cmm/
+m/it/12 r[]; r[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; []\OT1/cmr/m/n/12 (\OML/cmm
+/m/it/12 f[]; f[]\OT1/cmr/m/n/12 ))$ and $\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 !
+ []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 r[]; r[]\OT1/cmr/m/n/12 )$,
  []
 
 
@@ -1435,26 +1385,26 @@ Overfull \hbox (27.01126pt too wide) in paragraph at lines 1127--1128
 \OT1/cmr/m/n/12 some $\OML/cmm/m/it/12 l; k \OMS/cmsy/m/n/12 2 f\OT1/cmr/m/n/12
  1\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 2\OMS/cmsy/m/n/12 g$ \OT1/cmr/m/n/12 with 
 $\OML/cmm/m/it/12 l \OMS/cmsy/m/n/12 6\OT1/cmr/m/n/12 = \OML/cmm/m/it/12 k$ \OT
-1/cmr/m/n/12 so $[](\OML/cmm/m/it/12 s[]; g[]\OT1/cmr/m/n/12 )$. Hence $[]([]
-(\OML/cmm/m/it/12 s[]; s[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; []\OT1/cmr/m/n/12
- (\OML/cmm/m/it/12 g[]; g[]\OT1/cmr/m/n/12 ))$. 
+1/cmr/m/n/12 so $^^H[](\OML/cmm/m/it/12 s[]; g[]\OT1/cmr/m/n/12 )$. Hence $^^H[
+]([](\OML/cmm/m/it/12 s[]; s[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; []\OT1/cmr/m/
+n/12 (\OML/cmm/m/it/12 g[]; g[]\OT1/cmr/m/n/12 ))$. 
  []
 
 [36]
 Overfull \hbox (20.43538pt too wide) in paragraph at lines 1129--1130
- []\OT1/cmr/bx/n/12 ($[]$ left)[] \OT1/cmr/m/n/12 Sup-pose $[]([](\OML/cmm/m/i
-t/12 r[]; r[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; []\OT1/cmr/m/n/12 (\OML/cmm/m/
-it/12 f[]; f[]\OT1/cmr/m/n/12 ))$ and $\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 ! []
-\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 r[]; r[]\OT1/cmr/m/n/12 )$,
+ []\OT1/cmr/bx/n/12 ($[]$ left)[] \OT1/cmr/m/n/12 Sup-pose $^^H[]([](\OML/cmm/m
+/it/12 r[]; r[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; []\OT1/cmr/m/n/12 (\OML/cmm/
+m/it/12 f[]; f[]\OT1/cmr/m/n/12 ))$ and $\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 ! 
+[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 r[]; r[]\OT1/cmr/m/n/12 )$,
  []
 
 
 Overfull \hbox (1.26762pt too wide) in paragraph at lines 1129--1130
-\OT1/cmr/m/n/12 sump-tion $[](\OML/cmm/m/it/12 r[]; f[]\OT1/cmr/m/n/12 )$ for 
-all $\OML/cmm/m/it/12 l; k \OMS/cmsy/m/n/12 2 f\OT1/cmr/m/n/12 1\OML/cmm/m/it/1
-2 ; \OT1/cmr/m/n/12 2\OMS/cmsy/m/n/12 g$ \OT1/cmr/m/n/12 with $\OML/cmm/m/it/12
- l \OMS/cmsy/m/n/12 6\OT1/cmr/m/n/12 = \OML/cmm/m/it/12 k$\OT1/cmr/m/n/12 . So 
-in all cases $[](\OML/cmm/m/it/12 r[]; f[]\OT1/cmr/m/n/12 ) =
+\OT1/cmr/m/n/12 sump-tion $^^H[](\OML/cmm/m/it/12 r[]; f[]\OT1/cmr/m/n/12 )$ fo
+r all $\OML/cmm/m/it/12 l; k \OMS/cmsy/m/n/12 2 f\OT1/cmr/m/n/12 1\OML/cmm/m/it
+/12 ; \OT1/cmr/m/n/12 2\OMS/cmsy/m/n/12 g$ \OT1/cmr/m/n/12 with $\OML/cmm/m/it/
+12 l \OMS/cmsy/m/n/12 6\OT1/cmr/m/n/12 = \OML/cmm/m/it/12 k$\OT1/cmr/m/n/12 . S
+o in all cases $^^H[](\OML/cmm/m/it/12 r[]; f[]\OT1/cmr/m/n/12 ) =
  []
 
 
@@ -1463,26 +1413,26 @@ Overfull \hbox (32.21758pt too wide) in paragraph at lines 1138--1139
 []\OT1/cmr/m/n/12 (\U/eus/m/n/12 R\OT1/cmr/m/n/12 )$ and con-sider $\OML/cmm/m/
 it/12 h\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 r\OT1/cmr/m/n/12 ) = \OMS/cmsy/m/n/12 
 f\OML/cmm/m/it/12 f \OMS/cmsy/m/n/12 2 []\OT1/cmr/m/n/12 (\U/eus/m/n/12 F\OT1/c
-mr/m/n/12 ) \OMS/cmsy/m/n/12 j \OT1/cmr/m/n/12 [](\OML/cmm/m/it/12 r; f\OT1/cm
-r/m/n/12 )\OMS/cmsy/m/n/12 g$\OT1/cmr/m/n/12 . 
+mr/m/n/12 ) \OMS/cmsy/m/n/12 j \OT1/cmr/m/n/12 ^^H[](\OML/cmm/m/it/12 r; f\OT1/
+cmr/m/n/12 )\OMS/cmsy/m/n/12 g$\OT1/cmr/m/n/12 . 
  []
 
 
 Overfull \hbox (12.74991pt too wide) in paragraph at lines 1142--1142
-\OT1/cmr/m/n/12 As-sum-ing $\OML/cmm/m/it/12 i \OMS/cmsy/m/n/12  \OML/cmm/m/it
-/12 j$ \OT1/cmr/m/n/12 this means $[](\OML/cmm/m/it/12 r[]; f\OT1/cmr/m/n/12 )
-$ and $(\OML/cmm/m/it/12 r[]; f\OT1/cmr/m/n/12 )$. Hence $[]([](\OML/cmm/m/it
-/12 r[]; r[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; f\OT1/cmr/m/n/12 )$.
+\OT1/cmr/m/n/12 As-sum-ing $\OML/cmm/m/it/12 i \OMS/cmsy/m/n/12 ^^T \OML/cmm/m/
+it/12 j$ \OT1/cmr/m/n/12 this means $^^H[](\OML/cmm/m/it/12 r[]; f\OT1/cmr/m/n/
+12 )$ and $^^H(\OML/cmm/m/it/12 r[]; f\OT1/cmr/m/n/12 )$. Hence $^^H[]([](\OML/
+cmm/m/it/12 r[]; r[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; f\OT1/cmr/m/n/12 )$.
  []
 
 
 Overfull \hbox (9.5039pt too wide) in paragraph at lines 1142--1142
 \OT1/cmr/m/n/12 This shows $\OML/cmm/m/it/12 h\OT1/cmr/m/n/12 (\OML/cmm/m/it/12
  r[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 \ \OML/cmm/m/it/12 h\OT1/cmr/m/n/12 (\OM
-L/cmm/m/it/12 r[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12  \OML/cmm/m/it/12 h\OT1/cm
-r/m/n/12 ([](\OML/cmm/m/it/12 r[]; r[]\OT1/cmr/m/n/12 ))$. Con-versely, if $\OM
-L/cmm/m/it/12 f \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 h\OT1/cmr/m/n/12 ([](\OML/c
-mm/m/it/12 r[]; r[]\OT1/cmr/m/n/12 ))$
+L/cmm/m/it/12 r[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^R \OML/cmm/m/it/12 h\OT1/
+cmr/m/n/12 ([](\OML/cmm/m/it/12 r[]; r[]\OT1/cmr/m/n/12 ))$. Con-versely, if $\
+OML/cmm/m/it/12 f \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 h\OT1/cmr/m/n/12 ([](\OML
+/cmm/m/it/12 r[]; r[]\OT1/cmr/m/n/12 ))$
  []
 
 [37]
@@ -1501,27 +1451,27 @@ mm/m/it/12 r[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^ \OML/cmm/m/it/12 y \OMS/cmsy
 
 
 Overfull \hbox (49.47906pt too wide) in paragraph at lines 1164--1165
-[]\OT1/cmr/m/n/12 Suppose $[](\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 	)([](\OML/cm
-m/m/it/12 r[]; r[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; []\OT1/cmr/m/n/12 (\OML/c
-mm/m/it/12 f[]; f[]\OT1/cmr/m/n/12 ))$ and $\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12
- ! []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 r[]; r[]\OT1/cmr/m/n/12 )$, $[](\OML/cmm
-/m/it/12 f[]; f[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 !
+[]\OT1/cmr/m/n/12 Suppose $[](^^H\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 	)([](\OML/
+cmm/m/it/12 r[]; r[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; []\OT1/cmr/m/n/12 (\OML
+/cmm/m/it/12 f[]; f[]\OT1/cmr/m/n/12 ))$ and $\OML/cmm/m/it/12 x \OMS/cmsy/m/n/
+12 ! []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 r[]; r[]\OT1/cmr/m/n/12 )$, $[](\OML/c
+mm/m/it/12 f[]; f[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 !
  []
 
 [38]
 Overfull \hbox (111.14542pt too wide) in paragraph at lines 1178--1180
-\OT1/cmr/m/n/12 On the other hand if $[](\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 	)
-([](\OML/cmm/m/it/12 r[]; r[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; []\OT1/cmr/m/n
-/12 (\OML/cmm/m/it/12 f[]; f[]\OT1/cmr/m/n/12 ))$, then $([](\OML/cmm/m/it/12 
-r[]; r[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12
- f[]; f[]\OT1/cmr/m/n/12 ))$
+\OT1/cmr/m/n/12 On the other hand if $[](^^H\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 
+	)([](\OML/cmm/m/it/12 r[]; r[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; []\OT1/cmr/m
+/n/12 (\OML/cmm/m/it/12 f[]; f[]\OT1/cmr/m/n/12 ))$, then $^^H([](\OML/cmm/m/it
+/12 r[]; r[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; []\OT1/cmr/m/n/12 (\OML/cmm/m/i
+t/12 f[]; f[]\OT1/cmr/m/n/12 ))$
  []
 
 
 Overfull \hbox (64.17493pt too wide) in paragraph at lines 1178--1180
-\OT1/cmr/m/n/12 that $[][] [](\OML/cmm/m/it/12 r[]; f[]\OT1/cmr/m/n/12 )$ and 
-$[][] 	[](\OML/cmm/m/it/12 r[]; f[]\OT1/cmr/m/n/12 )$. This is equiv-a-lent to 
-$[][] (\OML/cmm/m/it/12 r[]; f[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^
+\OT1/cmr/m/n/12 that $[][] ^^H[](\OML/cmm/m/it/12 r[]; f[]\OT1/cmr/m/n/12 )$ an
+d $[][] 	[](\OML/cmm/m/it/12 r[]; f[]\OT1/cmr/m/n/12 )$. This is equiv-a-lent t
+o $[][] ^^H(\OML/cmm/m/it/12 r[]; f[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^
  []
 
 [39] [40] [41]
@@ -1569,60 +1519,131 @@ Underfull \hbox (badness 10000) in paragraph at lines 1371--1372
 
  []
 
-[51] [52] [53] (Linear_Logic_and_Co-Design_Notebook_FS21.aux)
+[51]
+<./images//section6/6.1/motors.png, id=658, 182.6825pt x 129.48375pt>
+File: ./images//section6/6.1/motors.png Graphic file (type png)
+<use ./images//section6/6.1/motors.png>
+Package pdftex.def Info: ./images//section6/6.1/motors.png  used on input line 
+1414.
+(pdftex.def)             Requested size: 112.87172pt x 80.0pt.
+<./images//section6/6.1/outputs.png, id=660, 575.14874pt x 260.975pt>
+File: ./images//section6/6.1/outputs.png Graphic file (type png)
+<use ./images//section6/6.1/outputs.png>
+Package pdftex.def Info: ./images//section6/6.1/outputs.png  used on input line
+ 1418.
+(pdftex.def)             Requested size: 330.57631pt x 150.0pt.
+ [52 <./images//section6/6.1/motors.png>]
+<./images//section6/6.1/anti_motors.png, id=668, 214.8025pt x 380.42125pt>
+File: ./images//section6/6.1/anti_motors.png Graphic file (type png)
+<use ./images//section6/6.1/anti_motors.png>
+Package pdftex.def Info: ./images//section6/6.1/anti_motors.png  used on input 
+line 1431.
+(pdftex.def)             Requested size: 120.0pt x 212.52362pt.
+ [53 <./images//section6/6.1/outputs.png>]
+<./images//section6/6.1/anti_outputs.png, id=674, 610.28pt x 498.86375pt>
+File: ./images//section6/6.1/anti_outputs.png Graphic file (type png)
+<use ./images//section6/6.1/anti_outputs.png>
+Package pdftex.def Info: ./images//section6/6.1/anti_outputs.png  used on input
+ line 1437.
+(pdftex.def)             Requested size: 260.0pt x 212.5357pt.
+
+Overfull \hbox (32.9941pt too wide) in paragraph at lines 1439--1440
+\OT1/cmr/m/n/12 other teams also don't know whether the com-bi-na-tion of $[]$
+ []
+
+[54 <./images//section6/6.1/anti_motors.png> <./images//section6/6.1/anti_outpu
+ts.png>]
+Overfull \hbox (31.0212pt too wide) detected at line 1455
+\OT1/cmr/m/n/12 
+(([]\OML/cmm/m/it/12 ; []\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; []\OT1/cmr/m/n/12 
+) = []\OML/cmm/m/it/12 :
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1459--1460
+
+ []
+
+[55]
+File: ./images//section6/6.1/anti_motors.png Graphic file (type png)
+<use ./images//section6/6.1/anti_motors.png>
+Package pdftex.def Info: ./images//section6/6.1/anti_motors.png  used on input 
+line 1463.
+(pdftex.def)             Requested size: 120.0pt x 212.52362pt.
+ [56]
+<./images//section6/6.1/anti_anti_motors.png, id=691, 249.93375pt x 618.31pt>
+File: ./images//section6/6.1/anti_anti_motors.png Graphic file (type png)
+<use ./images//section6/6.1/anti_anti_motors.png>
+Package pdftex.def Info: ./images//section6/6.1/anti_anti_motors.png  used on i
+nput line 1471.
+(pdftex.def)             Requested size: 120.0pt x 296.87033pt.
+ [57 <./images//section6/6.1/anti_anti_motors.png>]
+Overfull \hbox (52.9636pt too wide) in alignment at lines 1478--1481
+ [] [] [] [][]
+ []
+
+File: ./images//section6/6.1/anti_anti_motors.png Graphic file (type png)
+<use ./images//section6/6.1/anti_anti_motors.png>
+Package pdftex.def Info: ./images//section6/6.1/anti_anti_motors.png  used on i
+nput line 1486.
+(pdftex.def)             Requested size: 120.0pt x 296.87033pt.
+[58]
+Underfull \hbox (badness 10000) in paragraph at lines 1495--1496
+
+ []
+
+[59] [60] (./Linear_Logic_and_Co-Design_Notebook_FS21.aux)
 Package rerunfilecheck Info: File `Linear_Logic_and_Co-Design_Notebook_FS21.out
 ' has not changed.
-(rerunfilecheck)             Checksum: 8DCCDCD59955A950F02EEB69F8AC6711;11026.
+(rerunfilecheck)             Checksum: C791582A352B2C333D9521B5E12C8CD4;11347.
 Package logreq Info: Writing requests to 'Linear_Logic_and_Co-Design_Notebook_F
 S21.run.xml'.
 \openout1 = `Linear_Logic_and_Co-Design_Notebook_FS21.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 31853 strings out of 479173
- 613676 string characters out of 2854167
- 1107049 words of memory out of 3000000
- 48736 multiletter control sequences out of 15000+600000
+ 31912 strings out of 478846
+ 610732 string characters out of 5855774
+ 1107542 words of memory out of 5000000
+ 48802 multiletter control sequences out of 15000+600000
  425757 words of font info for 122 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,15n,84p,1881b,2006s stack positions out of 5000i,500n,10000p,200000b,80000s
- <C:\Users\mariu\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbm/dpi600\bbm8.
-pk> <C:\Users\mariu\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbm/dpi600\bbm6
-.pk> <C:\Users\mariu\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbm/dpi600\bbm
-12.pk> <C:\Users\mariu\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\
-tcrm1200.pk><C:/Users/mariu/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
-sfonts/cm/cmbx10.pfb><C:/Users/mariu/AppData/Local/Programs/MiKTeX/fonts/type1/
-public/amsfonts/cm/cmbx12.pfb><C:/Users/mariu/AppData/Local/Programs/MiKTeX/fon
-ts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/mariu/AppData/Local/Programs/Mi
-KTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/mariu/AppData/Local/
-Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/mariu/AppD
-ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/m
-ariu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C
-:/Users/mariu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi
-6.pfb><C:/Users/mariu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
-/cm/cmmi8.pfb><C:/Users/mariu/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-amsfonts/cm/cmr12.pfb><C:/Users/mariu/AppData/Local/Programs/MiKTeX/fonts/type1
-/public/amsfonts/cm/cmr17.pfb><C:/Users/mariu/AppData/Local/Programs/MiKTeX/fon
-ts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/mariu/AppData/Local/Programs/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/mariu/AppData/Local/Progr
-ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Users/mariu/AppData/Lo
-cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/mariu/A
-ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users
-/mariu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><
-C:/Users/mariu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmt
-i12.pfb><C:/Users/mariu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
-ts/cm/cmti8.pfb><C:/Users/mariu/AppData/Local/Programs/MiKTeX/fonts/type1/publi
-c/amsfonts/cm/cmtt12.pfb><C:/Users/mariu/AppData/Local/Programs/MiKTeX/fonts/ty
-pe1/public/amsfonts/euler/eusm10.pfb><C:/Users/mariu/AppData/Local/Programs/MiK
-TeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/mariu/AppData/Loca
-l/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/mari
-u/AppData/Local/Programs/MiKTeX/fonts/type1/public/hoekwater/stmary10.pfb><C:/U
-sers/mariu/AppData/Local/Programs/MiKTeX/fonts/type1/public/hoekwater/stmary8.p
-fb>
-Output written on Linear_Logic_and_Co-Design_Notebook_FS21.pdf (53 pages, 86155
-7 bytes).
+ 84i,15n,84p,1879b,2007s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/marius/.texlive2021/texmf-var/fonts/pk/ljfour/public/bbm/bbm8.600pk> 
+</home/marius/.texlive2021/texmf-var/fonts/pk/ljfour/public/bbm/bbm6.600pk> </h
+ome/marius/.texlive2021/texmf-var/fonts/pk/ljfour/public/bbm/bbm12.600pk>{/usr/
+local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/l
+ocal/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/lo
+cal/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/loc
+al/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local
+/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/loca
+l/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/loca
+l/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local
+/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/
+texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/te
+xlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texl
+ive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texliv
+e/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/
+2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/202
+1/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2021/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2021/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2021/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2021/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2021/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2021/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2021/texmf-dist/
+fonts/type1/public/amsfonts/euler/eusm10.pfb></usr/local/texlive/2021/texmf-dis
+t/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2021/texmf
+-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2021/t
+exmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></home/marius/texmf/fonts/ty
+pe1/public/stmaryrd/stmary10.pfb></home/marius/texmf/fonts/type1/public/stmaryr
+d/stmary8.pfb>
+Output written on Linear_Logic_and_Co-Design_Notebook_FS21.pdf (60 pages, 82559
+5 bytes).
 PDF statistics:
- 801 PDF objects out of 1000 (max. 8388607)
- 189 named destinations out of 1000 (max. 500000)
- 503 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 864 PDF objects out of 1000 (max. 8388607)
+ 753 compressed objects within 8 object streams
+ 200 named destinations out of 1000 (max. 500000)
+ 544 words of extra memory for PDF output out of 10000 (max. 10000000)
 
