@@ -165,6 +165,8 @@ citestyle=alphabetic]{biblatex}
 
 \newcommand{\upper}{\mathsf{U}}
 
+\newcommand{\ac}{\mathsf{A}}
+
 \makeatletter
 \def\slashedarrowfill@#1#2#3#4#5{%
 	$\m@th\thickmuskip0mu\medmuskip\thickmuskip\thinmuskip\thickmuskip
@@ -1283,7 +1285,7 @@ There are some requirements that a provider should be able fulfil. If $\Phi(A,B)
 $$  \Phi(A,B) \text{ and } \Phi(A',B) \Rightarrow \Phi(\maybe(A,A'),B) $$
 and similar for the other connectives and positions. The converse implications don't always hold. For example, from $\Phi(A \cap A', B)$, we can't necessarily deduce that $\Phi(A,B)$.
 
-\subsubsection{A Optimization Procedure}
+\subsubsection{An Optimization Procedure}
 The results from the above section provide a way to optimize over feasibility relations. For each $B \in \low(\mc{F})$ consider $L_B := \{A : \Phi(A,B)\}$. By our reasoning above, we should also have $\Phi(\cup L_B, B)$ and this deal is in fact preferable to us as the consumer. In a similar fashion, for a fixed $A \in \low(\mc{R}$, set $L_A :=  \{B : \Phi(A,B)\}$ and deduce that $\Phi(A, \cap L_A)$. In particular, $\Phi(\cup L_B , \cap L_{\cup L_B})$ and $\Phi(\cup L_{\cap L_A} , \cap L_A)$ provide the optimal deals for a desired lower set of functionalities or available set of resources, respectively. 
 
 \subsection{Uncertainty for Choice of Transformation}
@@ -1321,7 +1323,7 @@ However, not every functor $\upper(\low(\mc{R})) \rightarrow \upper(\low(\mc{F})
 \subsubsection{Interpretation on the Upper Set Level}
 Fix $\Theta: \upper(\low(\mc{R})) \rightarrow \upper(\low(\mc{F}))$. Then $\Theta(U_R) = U_F$ expresses that if we can provide some $r$ (our choice) in any of the $l_R \in U_R$ (not out choice which), then we can guarantee some $f$ (not our choice) in the $l_F \in U_F$ of our choice. 
 
-Formulated as a transaction between us an a provider $\Theta$ this becomes the following: For each upper set $U_R$, the provider has a single deal. If you choose to accept the deal corresponding to $U_R$, the provider selects a $l_R \in U_R$. You must the give the provider any $r \in l_R$. In return you get to choose freely a $l_F \in \Theta(U_R)$. The provider then gives you some $f \in l_F$ according to his discretion. 
+Formulated as a transaction between us an a provider $\Theta$ this becomes the following: For each upper set $U_R$, the provider has a single deal. If you choose to accept the deal corresponding to $U_R$, the provider lets you choose amongst any $l_F \in \Theta(U_R)$. He then informs you of the $l_R \in U_R$ for which you must provide him with an $r \in l_R$ of your choice. The provider then gives you some $f \in l_F$ according to his discretion. 
 
 If your resources are obtained from some previous transaction $\Omega$, then your choice of deal $U_R=\Omega(X)$ is forced by whatever $X$ is.
 
@@ -1342,14 +1344,64 @@ On the target side the operations are the same with the roles reversed. \\
 
 In the source, we can think of an upper set $U_A$ as being a big $\maybe$ over all its elements $l_R$, which are in turn $\either$s over their elements $r_i$. The laws above then follow if we grant that $\maybe$ and $\either$ distribute over one another.
 
-\subsection{Process Chains}
-We should consider a chain of processes 
-$$\cdots \xslashedrightarrow{\Phi_i} \low(\mc{R}_i) \xslashedrightarrow{\Phi_{i+1}} \low(\mc{R}_{i+1}) \xslashedrightarrow{\Phi_{i+2}} \cdots.$$
-The resources we can guarantee at $\low(\mc{R}_i)$ depends on what choice of transformation we make for $\Phi_i$.  We can lift this chain to a chain of functors
-$$\cdots \stackrel{\hat\Phi_i}{\rightarrow} \upper(\low(\mc{R}_i)) \stackrel{\hat\Phi_{i+1}}{\rightarrow} \upper(\low(\mc{R}_{i+1})) \stackrel{\hat\Phi_{i+2}}{\rightarrow} \cdots.$$
+\subsection{Antichain Model}
+The upper-lower set model contains quite a lot of redundancy. On the lower set level, if there are both $a \rightarrow b$ in a given lower set, then $a$ is redundant. On the source side this is because the provider needs to be able to produce a guaranteed functionality even if he is given $b$, and we as the consumer can always convert our $a$ to a $b$. On the target side, if the provider guarantees a set containing $a$ and $b$, then we must expect the worst, that is $b$. If we instead got an $a$, we could always convert it to our worst case expectation. Hence, we can consider worst case estimates rather than lower sets, which also contain the more optimistic options. This amounts to looking at antichains of resources and functionalities, because any for any pair $a \rightarrow b$ in our set, one of the options is redundant.
+
+On the upper set level we have a similar form of redundancy. Whenever we have $l_R \sub l'_R$ in $U_R$, we can safely ignore $l'_R$. On the source side this is due to fact that we must be prepared to deliver $r \in l_R$, which automatically means we can provide $l'_R$. On the target side the provider must be prepared to provide an $f \in  l_F$, which entails that he can also provide a $f \in l'_F \supseteq l_F$. Hence we are again led to consider antichains.
+
+\subsubsection{Profunctor Level}
+The antichain analogue of the lower set level considers profunctors $\Phi: \ac(R) \xslashedrightarrow{} \ac(F)$, where the antichains are ordered as follows: $A \rightarrow A'$ iff $\downarrow A \sub \downarrow A'$. If I can guarantee $r \in A$ (or better) then $r \in \downarrow A$. If $ \downarrow A' \sub \downarrow A'$, then  guaranteeing $r \in A$ (or better) implies guaranteeing $r \in A'$ (or better).
+
+The interpretation is almost the same: $\Phi(A,B)$ expresses that given a resource of our choice $r \in A$ (or better), the provider guarantees to produce a $f \in B$ (or better) of his choice. The (or better) clauses may be ignored if we are thinking in terms of guarantees. We must just be careful not to draw the conclusion that if we are guaranteed $f \in B$, that this means the provider will directly produce an $f$. The set that will satisfy the contract is actually $\downarrow B$ Conversely, if we have guarantee $r \in A$, the set of viable resources is $\downarrow A$.
 
 
+\subsubsection{Functor Level}
+As before we lift $\Phi: \ac(R) \xslashedrightarrow{} \ac(F)$ to a functor $\hat\Phi: \ac(\ac(R)) \rightarrow \ac(\ac(F))$ where the anitchains are ordered by $A \rightarrow A'$ iff $\uparrow A \sub \uparrow A'$. We assign
+$$A \mapsto \min\{a_F : \exists a_R \in A : \Phi(a_R,a_F)\},$$
+This function is monotone if for all $A$ in $\ac(\ac(R))$ we have $$\uparrow \min \{a_F : \exists a_R \in A : \Phi(a_R,a_F)\} = \{a_F : \exists a_R \in A : \Phi(a_R,a_F)\}.$$ Note that $\{a_F : \exists a_R \in A : \Phi(a_R,a_F)\} = \{a_F : \exists a_R \in \uparrow A : \Phi(a_R,a_F)\}$ by monotonicity of $\Phi$. So $\uparrow A \sub \uparrow A'$ implies $\{a_F : \exists a_R \in A : \Phi(a_R,a_F)\} \sub \{a_F : \exists a_R \in A' : \Phi(a_R,a_F)\}$. By the hypothesis this means $\hat\Phi(A) \rightarrow \hat\Phi(A')$.
 
+\subsubsection{Joins and Meets on the Profunctor Level}
+For the next part we assume that $R$ satisfies the ascending chain condition. \\
+
+Given two antichains $A,B \in \ac(R)$ we can form $\max(A \cup B)$. We have $\downarrow A \sub \downarrow A \cup \downarrow B= \downarrow(A \cup B) = \downarrow \max(A \cup B)  $, so  $A \rightarrow \max(A \cup B)$ and similarly $B \rightarrow \max(A \cup B)$. Suppose that an antichain $T$ satisfies $A \rightarrow T$ and $B \rightarrow T$. Then $\downarrow A \sub \downarrow T$ and $\downarrow B  \sub \downarrow T$, whence $\downarrow A \cup \downarrow B \sub \downarrow T$. Since $\downarrow A \cup \downarrow B = \downarrow \max(A \cup B)$, we have shown $\max(A \cup B) \rightarrow T$. Therefore  $\max(A \cup B)$ is the join of $A$ and $B$.
+
+Now consider $\max(\downarrow A \cap \downarrow B)$. We have $\downarrow A \sub \downarrow A \cap \downarrow B =\downarrow (\downarrow A \cap \downarrow B) = \downarrow\max(\downarrow A \cap \downarrow B) $, so $A \rightarrow \max(\downarrow A \cap \downarrow B)$. Similarly $B \rightarrow \max(\downarrow A \cap \downarrow B)$. Suppose $T \rightarrow A$ and $T \rightarrow B$. Then $\downarrow T \sub \downarrow A \cap \downarrow B = \downarrow\max(\downarrow A \cap \downarrow B) $, whence $T \rightarrow \max(\downarrow A \cap \downarrow B)$, showing that $\max(\downarrow A \cap \downarrow B)$ is the meet of $A$ and $B$.
+
+\subsubsection{Joins and Meets on the Functor Level}
+For this part we must assume that $R$ satisfies the ascending chain condition and $\ac(R)$ satisfies the descending chain condition. \\
+
+Given two antichains $A,B \in \ac(\ac(R))$ we can form $\min(A \cup B)$. In this case $A \rightarrow \min(A \cup B)$ since $\uparrow A \sub \uparrow A \cup \uparrow B=\uparrow(A \cup B) = \uparrow \min (\uparrow (A \cup B))= \uparrow \min(A \cup B)$, and similarly $B \rightarrow \min(A \cup B)$. If $A \rightarrow T$ and $B \rightarrow T$, then $\uparrow A \cup \uparrow B \sub T$. Since $\uparrow A \cup \uparrow B = \uparrow \min(A \cup B)$, we see that $\uparrow \min(A \cup B)$ is the join of $A$ and $B$.
+
+Consider $\min(\uparrow A \cap \uparrow B)$. We have $\uparrow A \cap \uparrow B = \uparrow(\uparrow A \cap \uparrow B) = \uparrow \min(\uparrow A \cap \uparrow B)$. Using the fact that the intersection is the meet in the ordering of the induced upper sets, this shows that $\min(\uparrow A \cap \uparrow B)$ is the meet of $A$ and $B$.
+
+\subsubsection{Distributivity}
+For  $A,B,C \in \ac(\ac(R))$ we have 
+\begin{IEEEeqnarray*}{rCl}
+	A \wedge (B \vee C) & = & \min(\uparrow A \cap \uparrow(\min(B \cup C))) \\
+						& = & \min(\uparrow A \cap \uparrow(B \cup C)) \\
+						& = & \min(\uparrow A \cap (\uparrow B \cup \uparrow C)) \\
+						& = & \min((\uparrow A \cap \uparrow B) \cup (\uparrow A \cap \uparrow C))) \\
+						& = & \min(\uparrow(\uparrow A \cap \uparrow B) \cup \uparrow(\uparrow A \cap \uparrow C))) \\
+						& = & \min(\uparrow \min(\uparrow A \cap \uparrow B) \cup \uparrow \min(\uparrow A \cap \uparrow C))) \\
+						& = & \min(\uparrow (\min(\uparrow A \cap \uparrow B) \cup \min(\uparrow A \cap \uparrow C))) \\
+						& = & \min(\min(\uparrow A \cap \uparrow B) \cup \min(\uparrow A \cap \uparrow C)) \\
+						& = & (A \wedge B) \vee (A \wedge C).	
+\end{IEEEeqnarray*}
+and 
+\begin{IEEEeqnarray*}{rCl}
+	A \vee (B \wedge C) & = & \min(A \cup \min(\uparrow B \cap \uparrow C)) \\
+						& = & \min(\uparrow (A \cup \min(\uparrow B \cap \uparrow C))) \\
+						& = & \min(\uparrow A \cup \uparrow \min(\uparrow B \cap \uparrow C)) \\
+						& = & \min(\uparrow A \cup \uparrow (\uparrow B \cap \uparrow C)) \\
+						& = & \min(\uparrow A \cup  (\uparrow B \cap \uparrow C)) \\
+						& = & \min((\uparrow A \cup \uparrow B) \cap (\uparrow A \cup \uparrow C)) \\
+						& = & \min(\uparrow (A \cup B) \cap \uparrow(A \cup C)) \\
+						& = & \min(\uparrow \min (A \cup B) \cap \uparrow \min(A \cup C)) \\
+						& = & (A \vee B) \wedge (A \vee C).
+\end{IEEEeqnarray*}
+Therefore the meet and join operations distribute over one another. The analogous result should also hold for the profunctor level.
+
+Consider $\min(\{\max (a \cup b) : a \in A, b \in B \}) \stackrel{?}{=} \min(\uparrow A \cap \uparrow B)$. 
 \newpage
 \printbibliography
 

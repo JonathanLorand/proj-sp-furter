@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.11)  14 MAY 2021 15:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.11)  16 MAY 2021 11:25
 entering extended mode
 **./Linear_Logic_and_Co-Design_Notebook_FS21.tex
 (Linear_Logic_and_Co-Design_Notebook_FS21.tex
@@ -1052,24 +1052,24 @@ File: l3backend-pdftex.def 2021-05-07 L3 backend support: PDF output (pdfTeX)
 ) (Linear_Logic_and_Co-Design_Notebook_FS21.aux)
 \openout1 = `Linear_Logic_and_Co-Design_Notebook_FS21.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 184.
-LaTeX Font Info:    ... okay on input line 184.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 184.
-LaTeX Font Info:    ... okay on input line 184.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 184.
-LaTeX Font Info:    ... okay on input line 184.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 184.
-LaTeX Font Info:    ... okay on input line 184.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 184.
-LaTeX Font Info:    ... okay on input line 184.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 184.
-LaTeX Font Info:    ... okay on input line 184.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 184.
-LaTeX Font Info:    ... okay on input line 184.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 184.
-LaTeX Font Info:    ... okay on input line 184.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 184.
-LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 186.
+LaTeX Font Info:    ... okay on input line 186.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 186.
+LaTeX Font Info:    ... okay on input line 186.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 186.
+LaTeX Font Info:    ... okay on input line 186.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 186.
+LaTeX Font Info:    ... okay on input line 186.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 186.
+LaTeX Font Info:    ... okay on input line 186.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 186.
+LaTeX Font Info:    ... okay on input line 186.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 186.
+LaTeX Font Info:    ... okay on input line 186.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 186.
+LaTeX Font Info:    ... okay on input line 186.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 186.
+LaTeX Font Info:    ... okay on input line 186.
 
 (C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
@@ -1104,7 +1104,7 @@ G,.JBIG2,.JB2,.eps]
 fg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring ON on input line 184.
+Package hyperref Info: Link coloring ON on input line 186.
 
 (C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -1118,9 +1118,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count454
 )
-LaTeX Info: Redefining \ref on input line 184.
-LaTeX Info: Redefining \pageref on input line 184.
-LaTeX Info: Redefining \nameref on input line 184.
+LaTeX Info: Redefining \ref on input line 186.
+LaTeX Info: Redefining \pageref on input line 186.
+LaTeX Info: Redefining \nameref on input line 186.
  (Linear_Logic_and_Co-Design_Notebook_FS21.out)
 (Linear_Logic_and_Co-Design_Notebook_FS21.out)
 \@outlinefile=\write5
@@ -1175,25 +1175,25 @@ Package biblatex Warning: BibTeX reported the following issues
 (biblatex)                - Invalid format of field 'month'.
 
 )
-Package biblatex Info: Reference section=0 on input line 184.
-Package biblatex Info: Reference segment=0 on input line 184.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 187
+Package biblatex Info: Reference section=0 on input line 186.
+Package biblatex Info: Reference segment=0 on input line 186.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 189
 .
  (C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 187
+LaTeX Font Info:    Trying to load font information for U+msb on input line 189
 .
 
 (C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+stmry on input line 1
-87.
+89.
 
 (C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/stmaryrd\ustmry.fd)
 LaTeX Font Info:    Trying to load font information for U+lasy on input line 18
-7.
+9.
 
 (C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/base\ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
@@ -1222,7 +1222,7 @@ File: ueus.fd 2013/01/14 v3.01 Euler Script
 \myScoreEnd2=\dimen318
  [3]
 [4] [5]
-Overfull \hbox (20.09843pt too wide) detected at line 297
+Overfull \hbox (20.09843pt too wide) detected at line 299
 [][]\OT1/cmr/m/n/12 ([ ]\OML/cmm/m/it/12 ; A[] \U/msa/m/n/12  []  \OML/cmm/m/
 it/12 A[]\OT1/cmr/m/n/12 ) [] [][]( []\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 []) \
 OMS/cmsy/m/n/12  []  [][]\OT1/cmr/m/n/12 ( []\OML/cmm/m/it/12 ; \OT1/cmr/m/n/
@@ -1231,88 +1231,88 @@ OMS/cmsy/m/n/12  []  [][]\OT1/cmr/m/n/12 ( []\OML/cmm/m/it/12 ; \OT1/cmr/m/n/
  []
 
 [6]
-<./images//section2/feas_internal-1.jpg, id=324, 2394.9475pt x 1496.59125pt>
+<./images//section2/feas_internal-1.jpg, id=349, 2394.9475pt x 1496.59125pt>
 File: ./images//section2/feas_internal-1.jpg Graphic file (type jpg)
 <use ./images//section2/feas_internal-1.jpg>
 Package pdftex.def Info: ./images//section2/feas_internal-1.jpg  used on input 
-line 314.
+line 316.
 (pdftex.def)             Requested size: 195.0pt x 121.8535pt.
 
-Overfull \hbox (4.1607pt too wide) in alignment at lines 328--331
+Overfull \hbox (4.1607pt too wide) in alignment at lines 330--333
  [] [] [] [][]
  []
 
 [7 <./images//section2/feas_internal-1.jpg>]
-<./images//section2/sites_structure-1.jpg, id=336, 2394.9475pt x 1496.59125pt>
+<./images//section2/sites_structure-1.jpg, id=361, 2394.9475pt x 1496.59125pt>
 File: ./images//section2/sites_structure-1.jpg Graphic file (type jpg)
 <use ./images//section2/sites_structure-1.jpg>
 Package pdftex.def Info: ./images//section2/sites_structure-1.jpg  used on inpu
-t line 348.
+t line 350.
 (pdftex.def)             Requested size: 250.0pt x 156.22185pt.
  [8] [9 <./images//section2/sites_structure-1.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 368--370
+Underfull \hbox (badness 10000) in paragraph at lines 370--372
 
  []
 
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 384--386
+Underfull \hbox (badness 10000) in paragraph at lines 386--388
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 397--398
+Underfull \hbox (badness 10000) in paragraph at lines 399--400
 
  []
 
 [11] [12]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 453.
+(hyperref)                removing `math shift' on input line 455.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 453.
+(hyperref)                removing `subscript' on input line 455.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 453.
+(hyperref)                removing `math shift' on input line 455.
 
 [13] [14]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 480.
+(hyperref)                removing `math shift' on input line 482.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 480.
+(hyperref)                removing `subscript' on input line 482.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 480.
+(hyperref)                removing `math shift' on input line 482.
 
 [15]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 528.
+(hyperref)                removing `math shift' on input line 530.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 528.
+(hyperref)                removing `math shift' on input line 530.
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 559--560
+Underfull \hbox (badness 10000) in paragraph at lines 561--562
 
  []
 
 
-Overfull \hbox (14.8443pt too wide) in paragraph at lines 564--565
+Overfull \hbox (14.8443pt too wide) in paragraph at lines 566--567
 [][]\OT1/cmr/bx/n/12 Definition 3.4 \OT1/cmr/m/n/12 ($\U/eus/m/n/12 Q$\OT1/cmr/
 m/n/12 -enriched Nat-u-ral Trans-for-ma-tion)\OT1/cmr/bx/n/12 . []\OT1/cmr/m/n/
 12 Given par-al-lel $\U/eus/m/n/12 Q$\OT1/cmr/m/n/12 -enriched
  []
 
 [17] [18]
-Overfull \hbox (31.47072pt too wide) detected at line 624
+Overfull \hbox (31.47072pt too wide) detected at line 626
 \OT1/cmr/m/n/12 ((\OML/cmm/m/it/12 []\OT1/cmr/m/n/12 ) \U/msa/m/n/12 ~ \OT1/c
 mr/m/n/12 (\OML/cmm/m/it/12 []\OT1/cmr/m/n/12 ))(\OML/cmm/m/it/12 a; c\OT1/cm
 r/m/n/12 ) = (\OML/cmm/m/it/12 []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 a\OT1/cmr/
@@ -1326,25 +1326,25 @@ m/n/12  \OT1/cmr/m/n/12 (\OML/cmm/m/it/12  \U/msa/m/n/12 ~ \OML/cmm/m/it/12
  []
 
 [19] [20]
-Overfull \hbox (68.2505pt too wide) in alignment at lines 682--688
+Overfull \hbox (68.2505pt too wide) in alignment at lines 684--690
  [] [] [] [][]
  []
 
 [21]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 731.
+(hyperref)                removing `math shift' on input line 733.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\wr' on input line 731.
+(hyperref)                removing `\wr' on input line 733.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 731.
+(hyperref)                removing `math shift' on input line 733.
 
 [22] [23]
-Overfull \hbox (14.99498pt too wide) detected at line 805
+Overfull \hbox (14.99498pt too wide) detected at line 807
 [] \OT1/cmr/m/n/12 : \OML/cmm/m/it/12 E\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 A \U/m
 sa/m/n/12 ~ \U/eus/m/n/12 I\OT1/cmr/m/n/12 ) [] \OML/cmm/m/it/12 E\OT1/cmr/m/n/
 12 (\OML/cmm/m/it/12 A\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ;  [] \OT1/cmr/m/n/12 :
@@ -1357,18 +1357,18 @@ it/12 A\OT1/cmr/m/n/12 ) [] \OML/cmm/m/it/12 E\OT1/cmr/m/n/12 (\OML/cmm/m/it/12
  []
 
 [24] [25]
-LaTeX Font Info:    Trying to load font information for U+bbm on input line 876
+LaTeX Font Info:    Trying to load font information for U+bbm on input line 878
 .
  (C:\Users\mariu\AppData\Local\Programs\MiKTeX\tex/latex/bbm\ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 )
 [26] [27] [28]
-Overfull \hbox (12.5257pt too wide) in paragraph at lines 958--959
+Overfull \hbox (12.5257pt too wide) in paragraph at lines 960--961
  [] 
  []
 
 [29] [30] [31]
-Overfull \hbox (88.51987pt too wide) detected at line 1014
+Overfull \hbox (88.51987pt too wide) detected at line 1016
 []\OT1/cmr/m/n/12 ([]([](\OML/cmm/m/it/12 a; b\OT1/cmr/m/n/12 )\OML/cmm/m/it/12
  ; []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 a; c\OT1/cmr/m/n/12 ))\OML/cmm/m/it/12 ;
  []\OT1/cmr/m/n/12 ([](\OML/cmm/m/it/12 b; a\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ;
@@ -1378,7 +1378,7 @@ Overfull \hbox (88.51987pt too wide) detected at line 1014
  []
 
 
-Overfull \hbox (94.58237pt too wide) detected at line 1023
+Overfull \hbox (94.58237pt too wide) detected at line 1025
 []\OT1/cmr/m/n/12 ([]([](\OML/cmm/m/it/12 a; b\OT1/cmr/m/n/12 )\OML/cmm/m/it/12
  ; []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 a; c\OT1/cmr/m/n/12 ))\OML/cmm/m/it/12 ;
  []\OT1/cmr/m/n/12 ([](\OML/cmm/m/it/12 b; a\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ;
@@ -1388,14 +1388,14 @@ Overfull \hbox (94.58237pt too wide) detected at line 1023
  []
 
 [32] [33] [34]
-Overfull \hbox (15.10742pt too wide) in paragraph at lines 1102--1104
+Overfull \hbox (15.10742pt too wide) in paragraph at lines 1104--1106
 \OT1/cmr/m/n/12 where in each case we en-force $[](\OML/cmm/m/it/12 a; b\OT1/cm
 r/m/n/12 ) = [](\OML/cmm/m/it/12 b; a\OT1/cmr/m/n/12 )$ for $[] \OMS/cmsy/m/n/1
 2 2 f[]\OML/cmm/m/it/12 ; []; []\OMS/cmsy/m/n/12 g$\OT1/cmr/m/n/12 . 
  []
 
 [35]
-Overfull \hbox (13.43303pt too wide) detected at line 1111
+Overfull \hbox (13.43303pt too wide) detected at line 1113
 \OT1/cmr/m/n/12 []([](\OML/cmm/m/it/12 r[]; r[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/
 12 ; []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 f[]; f[]\OT1/cmr/m/n/12 )) \OMS/cmsy/m
 /n/12 , \OT1/cmr/m/n/12 ([](\OML/cmm/m/it/12 r[]; f[]\OT1/cmr/m/n/12 ) \OMS/cm
@@ -1406,7 +1406,7 @@ S/cmsy/m/n/12 _ \OT1/cmr/m/n/12 ([](\OML/cmm/m/it/12 r[]; f[]\OT1/cmr/m/n/12 )
  []
 
 
-Overfull \hbox (44.81793pt too wide) in paragraph at lines 1123--1124
+Overfull \hbox (44.81793pt too wide) in paragraph at lines 1125--1126
  []\OT1/cmr/bx/n/12 ($[]$)[] \OT1/cmr/m/n/12 Sup-pose $[]([](\OML/cmm/m/it/12 
 r[]; r[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12
  f[]; f[]\OT1/cmr/m/n/12 ))$ and $\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 ! []\OT1/
@@ -1415,7 +1415,7 @@ cmr/m/n/12 (\OML/cmm/m/it/12 r[]; r[]\OT1/cmr/m/n/12 )$, $[](\OML/cmm/m/it/12 f
  []
 
 
-Overfull \hbox (1.65192pt too wide) in paragraph at lines 1123--1124
+Overfull \hbox (1.65192pt too wide) in paragraph at lines 1125--1126
 \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 r[]; f[]\OT1/cmr/m/n/12 ))$. Hence by mono-t
 onic-ity we get $([](\OML/cmm/m/it/12 s[]; g[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/
 12 ^ \OT1/cmr/m/n/12 [](\OML/cmm/m/it/12 s[]; g[]\OT1/cmr/m/n/12 ))$ or $((\O
@@ -1423,7 +1423,7 @@ ML/cmm/m/it/12 s[]; g[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^
  []
 
 
-Overfull \hbox (26.50832pt too wide) in paragraph at lines 1125--1126
+Overfull \hbox (26.50832pt too wide) in paragraph at lines 1127--1128
  []\OT1/cmr/bx/n/12 ($[]$ right)[] \OT1/cmr/m/n/12 Sup-pose $[]([](\OML/cmm/m/
 it/12 r[]; r[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; []\OT1/cmr/m/n/12 (\OML/cmm/m
 /it/12 f[]; f[]\OT1/cmr/m/n/12 ))$ and $\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 ! [
@@ -1431,7 +1431,7 @@ it/12 r[]; r[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; []\OT1/cmr/m/n/12 (\OML/cmm/m
  []
 
 
-Overfull \hbox (27.01126pt too wide) in paragraph at lines 1125--1126
+Overfull \hbox (27.01126pt too wide) in paragraph at lines 1127--1128
 \OT1/cmr/m/n/12 some $\OML/cmm/m/it/12 l; k \OMS/cmsy/m/n/12 2 f\OT1/cmr/m/n/12
  1\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 2\OMS/cmsy/m/n/12 g$ \OT1/cmr/m/n/12 with 
 $\OML/cmm/m/it/12 l \OMS/cmsy/m/n/12 6\OT1/cmr/m/n/12 = \OML/cmm/m/it/12 k$ \OT
@@ -1441,7 +1441,7 @@ $\OML/cmm/m/it/12 l \OMS/cmsy/m/n/12 6\OT1/cmr/m/n/12 = \OML/cmm/m/it/12 k$ \OT
  []
 
 [36]
-Overfull \hbox (20.43538pt too wide) in paragraph at lines 1127--1128
+Overfull \hbox (20.43538pt too wide) in paragraph at lines 1129--1130
  []\OT1/cmr/bx/n/12 ($[]$ left)[] \OT1/cmr/m/n/12 Sup-pose $[]([](\OML/cmm/m/i
 t/12 r[]; r[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; []\OT1/cmr/m/n/12 (\OML/cmm/m/
 it/12 f[]; f[]\OT1/cmr/m/n/12 ))$ and $\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 ! []
@@ -1449,7 +1449,7 @@ it/12 f[]; f[]\OT1/cmr/m/n/12 ))$ and $\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 ! []
  []
 
 
-Overfull \hbox (1.26762pt too wide) in paragraph at lines 1127--1128
+Overfull \hbox (1.26762pt too wide) in paragraph at lines 1129--1130
 \OT1/cmr/m/n/12 sump-tion $[](\OML/cmm/m/it/12 r[]; f[]\OT1/cmr/m/n/12 )$ for 
 all $\OML/cmm/m/it/12 l; k \OMS/cmsy/m/n/12 2 f\OT1/cmr/m/n/12 1\OML/cmm/m/it/1
 2 ; \OT1/cmr/m/n/12 2\OMS/cmsy/m/n/12 g$ \OT1/cmr/m/n/12 with $\OML/cmm/m/it/12
@@ -1458,7 +1458,7 @@ in all cases $[](\OML/cmm/m/it/12 r[]; f[]\OT1/cmr/m/n/12 ) =
  []
 
 
-Overfull \hbox (32.21758pt too wide) in paragraph at lines 1136--1137
+Overfull \hbox (32.21758pt too wide) in paragraph at lines 1138--1139
 \OT1/cmr/m/n/12 fix a re-sources $\OML/cmm/m/it/12 r[]; r[] \OMS/cmsy/m/n/12 2 
 []\OT1/cmr/m/n/12 (\U/eus/m/n/12 R\OT1/cmr/m/n/12 )$ and con-sider $\OML/cmm/m/
 it/12 h\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 r\OT1/cmr/m/n/12 ) = \OMS/cmsy/m/n/12 
@@ -1468,7 +1468,7 @@ r/m/n/12 )\OMS/cmsy/m/n/12 g$\OT1/cmr/m/n/12 .
  []
 
 
-Overfull \hbox (12.74991pt too wide) in paragraph at lines 1140--1140
+Overfull \hbox (12.74991pt too wide) in paragraph at lines 1142--1142
 \OT1/cmr/m/n/12 As-sum-ing $\OML/cmm/m/it/12 i \OMS/cmsy/m/n/12  \OML/cmm/m/it
 /12 j$ \OT1/cmr/m/n/12 this means $[](\OML/cmm/m/it/12 r[]; f\OT1/cmr/m/n/12 )
 $ and $(\OML/cmm/m/it/12 r[]; f\OT1/cmr/m/n/12 )$. Hence $[]([](\OML/cmm/m/it
@@ -1476,7 +1476,7 @@ $ and $(\OML/cmm/m/it/12 r[]; f\OT1/cmr/m/n/12 )$. Hence $[]([](\OML/cmm/m/it
  []
 
 
-Overfull \hbox (9.5039pt too wide) in paragraph at lines 1140--1140
+Overfull \hbox (9.5039pt too wide) in paragraph at lines 1142--1142
 \OT1/cmr/m/n/12 This shows $\OML/cmm/m/it/12 h\OT1/cmr/m/n/12 (\OML/cmm/m/it/12
  r[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 \ \OML/cmm/m/it/12 h\OT1/cmr/m/n/12 (\OM
 L/cmm/m/it/12 r[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12  \OML/cmm/m/it/12 h\OT1/cm
@@ -1486,7 +1486,7 @@ mm/m/it/12 r[]; r[]\OT1/cmr/m/n/12 ))$
  []
 
 [37]
-Overfull \hbox (0.33414pt too wide) detected at line 1145
+Overfull \hbox (0.33414pt too wide) detected at line 1147
 \OML/cmm/m/it/12 h\OT1/cmr/m/n/12 ([](\OML/cmm/m/it/12 r[]; r[]\OT1/cmr/m/n/12 
 )) = \OMS/cmsy/m/n/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x; y\OT1/cmr/m/n/12 
 ) \OMS/cmsy/m/n/12 j \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 2 \OM
@@ -1500,7 +1500,7 @@ mm/m/it/12 r[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^ \OML/cmm/m/it/12 y \OMS/cmsy
  []
 
 
-Overfull \hbox (49.47906pt too wide) in paragraph at lines 1162--1163
+Overfull \hbox (49.47906pt too wide) in paragraph at lines 1164--1165
 []\OT1/cmr/m/n/12 Suppose $[](\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 	)([](\OML/cm
 m/m/it/12 r[]; r[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; []\OT1/cmr/m/n/12 (\OML/c
 mm/m/it/12 f[]; f[]\OT1/cmr/m/n/12 ))$ and $\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12
@@ -1509,7 +1509,7 @@ mm/m/it/12 f[]; f[]\OT1/cmr/m/n/12 ))$ and $\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12
  []
 
 [38]
-Overfull \hbox (111.14542pt too wide) in paragraph at lines 1176--1178
+Overfull \hbox (111.14542pt too wide) in paragraph at lines 1178--1180
 \OT1/cmr/m/n/12 On the other hand if $[](\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 	)
 ([](\OML/cmm/m/it/12 r[]; r[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; []\OT1/cmr/m/n
 /12 (\OML/cmm/m/it/12 f[]; f[]\OT1/cmr/m/n/12 ))$, then $([](\OML/cmm/m/it/12 
@@ -1518,61 +1518,71 @@ r[]; r[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12
  []
 
 
-Overfull \hbox (64.17493pt too wide) in paragraph at lines 1176--1178
+Overfull \hbox (64.17493pt too wide) in paragraph at lines 1178--1180
 \OT1/cmr/m/n/12 that $[][] [](\OML/cmm/m/it/12 r[]; f[]\OT1/cmr/m/n/12 )$ and 
 $[][] 	[](\OML/cmm/m/it/12 r[]; f[]\OT1/cmr/m/n/12 )$. This is equiv-a-lent to 
 $[][] (\OML/cmm/m/it/12 r[]; f[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^
  []
 
 [39] [40] [41]
-Underfull \hbox (badness 10000) in paragraph at lines 1234--1235
+Underfull \hbox (badness 10000) in paragraph at lines 1236--1237
 
  []
 
 [42] [43] [44]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1277.
+(hyperref)                removing `math shift' on input line 1279.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1277.
+(hyperref)                removing `math shift' on input line 1279.
 
 [45] [46]
-Underfull \hbox (badness 10000) in paragraph at lines 1309--1311
+Underfull \hbox (badness 10000) in paragraph at lines 1311--1313
 
  []
 
 [47]
-Underfull \hbox (badness 10000) in paragraph at lines 1328--1329
+Underfull \hbox (badness 10000) in paragraph at lines 1330--1331
 
  []
 
 
-LaTeX Warning: Command \l invalid in math mode on input line 1332.
+LaTeX Warning: Command \l invalid in math mode on input line 1334.
 
 
-LaTeX Warning: Command \l invalid in math mode on input line 1339.
+LaTeX Warning: Command \l invalid in math mode on input line 1341.
 
 [48]
-Underfull \hbox (badness 10000) in paragraph at lines 1341--1342
+Underfull \hbox (badness 10000) in paragraph at lines 1343--1344
 
  []
 
-[49] [50] (Linear_Logic_and_Co-Design_Notebook_FS21.aux)
+[49]
+Underfull \hbox (badness 10000) in paragraph at lines 1364--1365
+
+ []
+
+[50]
+Underfull \hbox (badness 10000) in paragraph at lines 1371--1372
+
+ []
+
+[51] [52] [53] (Linear_Logic_and_Co-Design_Notebook_FS21.aux)
 Package rerunfilecheck Info: File `Linear_Logic_and_Co-Design_Notebook_FS21.out
 ' has not changed.
-(rerunfilecheck)             Checksum: 35179848A95BC6394FE631D6AB1168E5;10044.
+(rerunfilecheck)             Checksum: 8DCCDCD59955A950F02EEB69F8AC6711;11026.
 Package logreq Info: Writing requests to 'Linear_Logic_and_Co-Design_Notebook_F
 S21.run.xml'.
 \openout1 = `Linear_Logic_and_Co-Design_Notebook_FS21.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 31839 strings out of 479173
- 613453 string characters out of 2854167
- 1107040 words of memory out of 3000000
- 48730 multiletter control sequences out of 15000+600000
+ 31853 strings out of 479173
+ 613676 string characters out of 2854167
+ 1107049 words of memory out of 3000000
+ 48736 multiletter control sequences out of 15000+600000
  425757 words of font info for 122 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,15n,84p,1881b,2006s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1609,10 +1619,10 @@ l/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/mari
 u/AppData/Local/Programs/MiKTeX/fonts/type1/public/hoekwater/stmary10.pfb><C:/U
 sers/mariu/AppData/Local/Programs/MiKTeX/fonts/type1/public/hoekwater/stmary8.p
 fb>
-Output written on Linear_Logic_and_Co-Design_Notebook_FS21.pdf (50 pages, 85004
-4 bytes).
+Output written on Linear_Logic_and_Co-Design_Notebook_FS21.pdf (53 pages, 86155
+7 bytes).
 PDF statistics:
- 763 PDF objects out of 1000 (max. 8388607)
- 181 named destinations out of 1000 (max. 500000)
- 463 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 801 PDF objects out of 1000 (max. 8388607)
+ 189 named destinations out of 1000 (max. 500000)
+ 503 words of extra memory for PDF output out of 10000 (max. 10000000)
 
