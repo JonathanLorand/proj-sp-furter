@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.5.17)  22 MAY 2021 17:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.5.17)  23 MAY 2021 16:05
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1626,8 +1626,41 @@ Overfull \hbox (45.41434pt too wide) in paragraph at lines 1522--1523
 ver $[]$
  []
 
-[61 <./images//section6/6.1/manager_level.jpeg>] [62] [63]
-(./Linear_Logic_and_Co-Design_Notebook_FS21.aux)
+
+Underfull \hbox (badness 10000) in paragraph at lines 1524--1525
+
+ []
+
+[61 <./images//section6/6.1/manager_level.jpeg>]
+Overfull \hbox (136.12024pt too wide) in paragraph at lines 1535--1536
+[]\OT1/cmr/m/n/12 For ex-am-ple, if $	[]([]\OML/cmm/m/it/12 ; []\OT1/cmr/m/n/12
+ )$ and $	[]([]\OML/cmm/m/it/12 ; []\OT1/cmr/m/n/12 )$,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1537--1538
+
+ []
+
+[62]
+Underfull \hbox (badness 10000) in paragraph at lines 1546--1547
+
+ []
+
+
+Overfull \hbox (2.24748pt too wide) in paragraph at lines 1554--1555
+[]\OT1/cmr/m/n/12 Since the $^^H[]$ are fea-si-bil-ity re-la-tions $^^H[](\OML/
+cmm/m/it/12 X; Y\OT1/cmr/m/n/12 )$ and $\OML/cmm/m/it/12 Y \OMS/cmsy/m/n/12 ^^R
+ \OML/cmm/m/it/12 B$ \OT1/cmr/m/n/12 im-plies $^^H[](\OML/cmm/m/it/12 X; B\OT1/
+cmr/m/n/12 )$.
+ []
+
+[63]
+Underfull \hbox (badness 10000) in paragraph at lines 1558--1559
+
+ []
+
+[64] [65] (./Linear_Logic_and_Co-Design_Notebook_FS21.aux)
 Package rerunfilecheck Info: File `Linear_Logic_and_Co-Design_Notebook_FS21.out
 ' has not changed.
 (rerunfilecheck)             Checksum: 1080BFEE6D06C9CDE6CCD97EDF44ED13;11549.
@@ -1637,8 +1670,8 @@ S21.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 31944 strings out of 478846
- 611805 string characters out of 5855774
+ 31946 strings out of 478846
+ 611819 string characters out of 5855774
  1107542 words of memory out of 5000000
  48824 multiletter control sequences out of 15000+600000
  425757 words of font info for 122 fonts, out of 8000000 for 9000
@@ -1674,11 +1707,11 @@ t/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2021/texmf
 exmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></home/marius/texmf/fonts/ty
 pe1/public/stmaryrd/stmary10.pfb></home/marius/texmf/fonts/type1/public/stmaryr
 d/stmary8.pfb>
-Output written on Linear_Logic_and_Co-Design_Notebook_FS21.pdf (63 pages, 13941
-84 bytes).
+Output written on Linear_Logic_and_Co-Design_Notebook_FS21.pdf (65 pages, 14021
+81 bytes).
 PDF statistics:
- 888 PDF objects out of 1000 (max. 8388607)
- 771 compressed objects within 8 object streams
- 206 named destinations out of 1000 (max. 500000)
+ 896 PDF objects out of 1000 (max. 8388607)
+ 777 compressed objects within 8 object streams
+ 208 named destinations out of 1000 (max. 500000)
  567 words of extra memory for PDF output out of 10000 (max. 10000000)
 
