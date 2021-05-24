@@ -1551,26 +1551,26 @@ Let $P =\{\Phi_i\}$ be a collection of profunctors $\low(R) \xslashedrightarrow{
 
 $$ \Phi(A,B) \iff \forall a \in A \exists \Phi_i \in P \exists a \in X \in \low(R) \exists Y \sub B \in \low(F) : \Phi_i(X,Y).$$
 
-Since the $\Phi_i$ are feasibility relations $\Phi_i(X,Y)$ and $Y \sub B$ implies $\Phi_i(X,B)$. Moreover, $a \in X$ is equivalent to $\{a\} \sub X$. Hence if $a \in X$ and $\Phi_i(X,B)$, then $\Phi_i(\{a\},B)$. So the above definition is in fact equivalent to the much simpler
+Since the $\Phi_i$ are feasibility relations $\Phi_i(X,Y)$ and $Y \sub B$ implies $\Phi_i(X,B)$. Moreover, $a \in X$ is equivalent to $\uparrow a \sub X$. Hence if $a \in X$ and $\Phi_i(X,B)$, then $\Phi_i(\uparrow a,B)$. So the above definition is in fact equivalent to the much simpler
 
-$$ \Phi(A,B) \iff \forall a \in A \exists \Phi_i \in P: \Phi_i(\{a\},B).$$
+$$ \Phi(A,B) \iff \forall a \in A \exists \Phi_i \in P: \Phi_i(\uparrow a,B).$$
 
-$\Phi$ is a profunctor because `for all' is preserved by restriction to subsets and if $B \sup B'$ and $\Phi_i(\{a\},B)$ then also  $\Phi_i(\{a\},B')$ by profunctoriality of $\Phi_i$. \\
+$\Phi$ is a profunctor because `for all' is preserved by restriction to subsets and if $B \sup B'$ and $\Phi_i(\uparrow a,B)$ then also  $\Phi_i(\uparrow a,B')$ by profunctoriality of $\Phi_i$. \\
 
 We now do the same thing at the managerial level. Let $P =\{\Phi_i\}$ be a collection of profunctors $\upper(\low(R)) \xslashedrightarrow{} \upper(\low(F))$ at the managerial level. These represent choices we get to make as managers. We flatten these to a single profunctor $\Phi: \upper(\low(R)) \xslashedrightarrow{} \upper(\low(F))$ as follows. A pair $A,B$ should be feasible iff for every $b \in B$ there is $\Phi_i$, $b \in Y \in \upper(\low(F))$, and $X \sub A$ such that $\Phi_i(X,Y)$. That is, for any choice we make in the target, there is a profunctor $\Phi_i$ that allows us to find $x \in X \sub A$, that transforms into $b$ via $\Phi_i$. Formally,
 
 $$ \Phi(A,B) \iff \forall b \in B \exists \Phi_i \in P \exists b \in Y \in \upper(\low(F)) \exists X \sub A : \Phi_i(X,Y).$$
 
-As above, we note that $b \in Y \iff \{b\} \sub Y$. Thus if $\Phi_i(X,Y)$, then also $\Phi_i(X,\{b\})$ since $\Phi_i$ is a profunctor and the upper sets are ordered by containment. Moreover, if $X \sub A$ and $\Phi_i(X,Y)$, then $\Phi_i(A,Y)$. Hence the above definition is equivalent to 
+As above, we note that $b \in Y \iff \uparrow b \sub Y$. Thus if $\Phi_i(X,Y)$, then also $\Phi_i(X,\uparrow b)$ since $\Phi_i$ is a profunctor and the upper sets are ordered by containment. Moreover, if $X \sub A$ and $\Phi_i(X,Y)$, then $\Phi_i(A,Y)$. Hence the above definition is equivalent to 
 
-$$ \Phi(A,B) \iff \forall b \in B \exists \Phi_i \in P : \Phi_i(A,\{b\}).$$
+$$ \Phi(A,B) \iff \forall b \in B \exists \Phi_i \in P : \Phi_i(A,\uparrow b).$$
 
 We have managed to reduce team choice at the team level and managerial choice at the managerial level. It remains to see how team choice looks at the managerial level.
 
 Let $C \{\{\Phi_i\}_j\}$ be a collection of profunctors representing a managerial choice of team choices. Following the above definitions it seems we should set
 
 $$ \Phi(A,B) \iff \forall b \in B \exists \{\Phi_i\}_j \in C : \forall \Phi_i \in \{\Phi_i\}_j \exists b \in  Y \exists A \sub X : \Phi_i(X,Y)$$
-$$ \iff \forall b \in B \exists \{\Phi_i\}_j \in C : \forall \Phi_i \in \{\Phi_i\}_j : \Phi_i(A,\{b\}).$$ 
+$$ \iff \forall b \in B \exists \{\Phi_i\}_j \in C : \forall \Phi_i \in \{\Phi_i\}_j : \Phi_i(A,\uparrow b).$$ 
 
 We should now check that given a choice structure on profunctors $R  \xslashedrightarrow{} F$, it is the same if we first lift them individually to the managerial level and then flatten, or perform the flattening lifts to each subsequent level.
 
