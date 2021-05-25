@@ -3,6 +3,10 @@ Semester Project Marius Furter - Spring 2021
 
 # Meetings
 
+## [[2021-05-25]]
+
+
+
 
 ## [[2021-05-18]]
 
@@ -17,7 +21,7 @@ what about bringing parallel/monoidal operation and internal hom operations into
 
 what are the relationships conceptually and mathematically between "feasibility" and "deals/guarantees"? in the end, is co-design about feasibility and "proofs" or "instantiations" of feasibility?
 
-i realized that the functor on the "third level" (between uppersets of lower setss) is just a manifestation of querying using a profunctor on the second level
+i realized that the functor on the "third level" (between uppersets of lower sets) is just a manifestation of querying using a profunctor on the second level
 
 ## [[2021-05-11]]
 
