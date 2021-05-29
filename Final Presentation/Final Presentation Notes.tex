@@ -1,0 +1,469 @@
+\documentclass[12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+\usepackage{amsmath}
+
+\usepackage{mathtools}
+
+\usepackage{amssymb}
+
+\usepackage{stmaryrd}
+
+\usepackage{amsthm}
+
+\usepackage{latexsym}
+
+\usepackage{IEEEtrantools}
+
+\usepackage{eucal}
+
+\usepackage{bbm}
+
+\usepackage[dvipsnames]{xcolor}
+
+\usepackage{tcolorbox}
+
+
+\usepackage{bussproofs}
+
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+
+\usepackage{stmaryrd}
+
+
+\usepackage{tikz}
+
+\usetikzlibrary{arrows}
+
+
+
+\usepackage{tikz-cd}
+
+
+
+%\usepackage{tikzit}
+
+%\input{sample.tikzstyles} Add styles doc here
+
+%\input{sample.tikzdefs}
+
+\usepackage[normalem]{ulem}
+
+\usepackage{hyperref}
+
+\usepackage[dvipsnames]{xcolor}
+
+\definecolor{darkgreen}{RGB}{35, 89, 52}
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=darkgreen,
+	filecolor=magenta,      
+	urlcolor=MidnightBlue,
+	citecolor=darkgreen,
+	pdftitle={Linear Logic and Resources Notebook},
+	bookmarks=true
+}
+
+\title{Modeling Choice in Co-Design}
+
+\author{Marius Furter}
+
+\date{\today}
+
+\usepackage[
+backend=bibtex,
+style=alphabetic,
+citestyle=alphabetic]{biblatex}
+\addbibresource{LLCD.bib}
+
+\theoremstyle{definition}
+
+\newtheorem{definition}{Definition}[section]
+
+
+
+\theoremstyle{plain} 
+
+\newtheorem{lemma}{Lemma}[section]
+
+
+
+\theoremstyle{plain} 
+
+\newtheorem{proposition}{Proposition}[section]
+
+
+
+\theoremstyle{plain}
+
+\newtheorem{theorem}{Theorem}[section]
+
+
+\theoremstyle{plain}
+
+\newtheorem{question}{Question}[section]
+
+
+\theoremstyle{remark}
+
+\newtheorem{example}{Example}[section]
+
+\newtheorem*{excont}{Example \continuation}
+\newcommand{\continuation}{??}
+\newenvironment{continueexample}[1]
+{\renewcommand{\continuation}{\ref{#1}}\excont[continued]}
+{\endexcont}
+
+
+\theoremstyle{remark}
+
+\newtheorem{remark}{Remark}[section]
+
+\newcommand{\zuz}[1]{%
+
+	\begin{tikzpicture}[#1]%
+
+	\draw[semithick, line cap = round, line join = round] (-0.3ex,0.35ex) -- (0.5ex,0.35ex);
+
+	\draw[semithick, line cap = round, line join = round] (0.5ex,0.35ex) -- (0.5ex,-0.5ex);
+
+	\draw[semithick, line cap = round, line join = round] (0.5ex,-0.5ex) -- (1.5ex,-0.5ex);
+
+	\draw[semithick, line cap = round, line join = round] (0,0) -- (1ex,0);%
+
+	\draw[semithick, line cap = round, line join = round] (1ex,0) -- (1ex,-0.85ex);
+
+	\draw[semithick, line cap = round, line join = round] (1ex,-0.85ex) -- (1.8ex,-0.85ex);
+
+	\end{tikzpicture}%
+
+} 
+
+
+
+\renewcommand\qedsymbol{\zuz{scale=1.5}}
+
+\newcommand{\mc}[1]{\mathcal{#1}}
+
+\newcommand{\maybe}{\mathsf{Maybe}}
+
+\newcommand{\either}{\mathsf{Either}}
+
+\newcommand{\both}{\mathsf{Both}}
+
+\newcommand{\sub}{\subseteq}
+
+\newcommand{\Hom}{\text{Hom}}
+
+\newcommand{\im}{\text{im}}
+
+\newcommand{\id}{\text{id}}
+
+\newcommand{\low}{\mathsf{L}}
+
+\newcommand{\upper}{\mathsf{U}}
+
+\newcommand{\ac}{\mathsf{A}}
+
+\newcommand{\true}{\mathtt{true}}
+\newcommand{\false}{\mathtt{false}}
+
+\makeatletter
+\def\slashedarrowfill@#1#2#3#4#5{%
+	$\m@th\thickmuskip0mu\medmuskip\thickmuskip\thinmuskip\thickmuskip
+	\relax#5#1\mkern-7mu%
+	\cleaders\hbox{$#5\mkern-2mu#2\mkern-2mu$}\hfill
+	\mathclap{#3}\mathclap{#2}%
+	\cleaders\hbox{$#5\mkern-2mu#2\mkern-2mu$}\hfill
+	\mkern-7mu#4$%
+}
+\def\rightslashedarrowfill@{%
+	\slashedarrowfill@\relbar\relbar\mapstochar\rightarrow}
+\newcommand\xslashedrightarrow[2][]{%
+	\ext@arrow 0055{\rightslashedarrowfill@}{#1}{#2}}
+\makeatother
+
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{A Brief Introduction to Co-Design}
+
+Co-Design investigates \emph{feasibility relations} between \emph{resources} and \emph{functionalities}. We describe these in turn.
+
+\subsection{Resource and Functionality Preorders}
+
+We model the resources and functionalities using preordered sets. The order relation $a \shortrightarrow b$ signifies that we can freely transform $a$ into $b$. Equivalently, $a \shortrightarrow b$ can also mean that $a$ is implicitly already $b$.
+
+\begin{example}(Money as Resources)\label{ex:money}
+	The set $\mathbb{N} := \{0,1,2,\ldots \}$ with the order relation $a \shortrightarrow b \Leftrightarrow a \geq b$ can be used to describe money (of a single currency, say dollars) as a resource. The element $a$ represents having $a$ dollars, while $a \shortrightarrow b$ means that if you have $a$ dollars, you also implicitly have $b$ dollars. For example, $3 \shortrightarrow 1$ signifies that if we have 3 dollars, we also possess the purchasing power 1 dollar. Observe that being able to freely transform $3 \shortrightarrow 1$ presupposes people are willing to accept $3$ dollars in lieu of $1$ dollar. This hypothesis is system relative. For example, a vending machine might only accept bills of low denomination. So in this case one might well not have $50 \shortrightarrow 1$.
+\end{example}
+
+Returning to the general theory, we observe that the preorder axioms precisely describe the relation of free transformations.
+
+\begin{definition}(Preorder)
+	A \emph{preorder} is a set with a binary relation $R \sub A \times A$ satisfying reflexivity (r) and transitivity (t):
+	\begin{itemize}
+		\item[(r)] $(a,a) \in R$ for all $a \in A$,
+		\item[(t)] if $(a,b) \in R$ and $(b,c) \in R$, then $(a,c) \in R$.
+	\end{itemize}
+	Usually we write the pair $(a,b)$ using an infix symbol. In our case, $a \shortrightarrow b$ means $(a,b)$ is part of the relation $R$.
+\end{definition}
+
+Using our infix notation, the two axioms become 
+\begin{itemize}
+	\item[(r)] $a \shortrightarrow a$ for all $a$,
+	\item[(t)] $a \shortrightarrow b$ and $b \shortrightarrow c$ imply $a \shortrightarrow c$.
+\end{itemize}  
+In other words, each resource is freely transformable into itself (do nothing). Further, if we can freely transform $a$ into $b$, and $b$ into $c$, then we can freely transform $a$ into $c$ be doing one transformation after the other. \\
+
+Everything that has been said here applies equally to functionalities. In fact, what we view as resources or functionalities is relative to the process we are considering. When I purchase a candy bar from a vending machine, the dollar I spend is the resource, and the candy bar the functionality. When I eat the candy bar to gain energy, the candy bar has become the resource.
+
+\subsection{Feasibility Relations}
+Given a preorder of resources $\mc{R}$ and a preorder of functionalities $\mc{F}$, a feasibility relation $\Phi: \mc{R} \xslashedrightarrow{} \mc{F}$ between them expresses which functionalities I am able to obtain from which resources. We write $\Phi(r,f) = \mathtt{true}$ to indicate that $f$ is obtainable from $r$.
+
+\begin{example}
+	Consider buying groceries. Our resources $\mc{R}$ will be money as in Example \ref{ex:money}. The possible groceries we can buy are the functionalities $\mc{F}$. The feasibility relation $\Phi: \mc{R} \xslashedrightarrow{} \mc{F}$ will describe what groceries we can purchase given a specific amount of cash. For example, a $\mathtt{carrot}$ might cost $1\$$. Hence, $\Phi(1\$,\mathtt{carrot}) = \mathtt{true}$. On the other hand, $\Phi(0\$, \mathtt{carrot}) = \mathtt{false}$, since we can't get a $\mathtt{carrot}$ without paying anything. Suppose now that a $\mathtt{bag\ of\ carrots}$ costs $5\$$. This means $\Phi(5\$,\mathtt{bag\ of\ carrots}) = \mathtt{true}$. Observe that also $\Phi(5\$,\mathtt{carrot}) = \true$ should hold. Either we can pick up a single carrot in the store and pay for it with $5\$$, or we could buy the whole bag for $5\$$ and this would also give us a single $\mathtt{carrot}$. 
+	
+	This shows that feasibility interacts with the free transformations we have for the resources and functionalities. In our example $5\$ \shortrightarrow 1\$$ and $\Phi(1\$, \mathtt{carrot}) = \true$ implied $\Phi(5\$, \mathtt{carrot}) = \true$. Similarly, $\mathtt{bag\ of\ carrots} \shortrightarrow \mathtt{carrot}$ and $\Phi(5\$,\mathtt{bag\ of\ carrots}) = \mathtt{true}$ implied $\Phi(5\$,\mathtt{carrot}) = \true$.
+\end{example}
+
+The interaction we observed between free transformations and feasibility justifies the formal definition of a feasibility relation.
+
+\begin{definition}[Feasibility Relation]\label{def:feasibility}
+	Given preorders $\mc{R}$ and $\mc{F}$, a \emph{feasibility relation} $\Phi: \mc{R} \xslashedrightarrow{} \mc{F}$ is a relation $\Phi \sub \mc{R} \times \mc{F}$ such that
+	\begin{itemize}
+		\item[(i)] if $r \shortrightarrow s$ in $\mc{R}$ and $(s,f) \in \Phi$, then $(r,f) \in \Phi$,
+		\item[(ii)] if $f \shortrightarrow g$ in $\mc{F}$ and $(r,f) \in \Phi$, then $(r,g) \in \Phi$.
+	\end{itemize}
+	If $(r,f) \in \Phi$ we write $\Phi(r,f) = \true$ of simply say that $\Phi(r,f)$ holds.
+\end{definition}
+
+In other words, a feasibility relation is a relation from $\mc{R}$ to $\mc{F}$ that is downward closed with respect to free transformations in $\mc{R}$ and upward closed with respect to free transformations in $\mc{F}$. We will often draw internal diagrams of feasibility relations as in Figure \ref{fig:internal feas}. We put an arrow between an $r \in \mc{R}$ and $f \in \mc{F}$ iff $\Phi(r,f) = \true$. The arrows coming from $\Phi$ can be thought of the transformations that $\Phi$ enables. Observe that the closure conditions in Definition \ref{def:feasibility} mean that the arrows coming from $\Phi$ are transitively closed with respect to the internal arrows in $\mc{R}$ and $\mc{F}$: If there is a path from an $r \in \mc{R}$ to an $f \in \mc{F}$ following any type of arrow, then we also have a direct arrow between $r$ and $f$ coming from $\Phi$.
+
+\begin{figure}\label{fig:internal feas}
+	\caption{Internal diagram of a feasibility relation.}
+\end{figure}
+
+We could have also defined feasibility relations as special types of monotone maps.
+
+\begin{lemma}
+	There is a one-to-one correspondence between feasibility relations $\Phi: \mc{R} \xslashedrightarrow{} \mc{F}$ and monotone maps $\mc{R}^\text{op} \times \mc{F} \rightarrow \mathsf{Bool}$, where $\mathsf{Bool}$ denotes the preorder generated by $\{\false \rightarrow \true\}$. 
+\end{lemma}
+
+\section{Choice between Resources}
+We will now extend what we've seen so far to encompass choice and uncertainty. What is meant by these terms is best illustrated with an example.
+
+\begin{example}[Menu Options]\label{ex:menu}
+	In a restaurant we might see the following menu options.
+	\begin{itemize}
+		\item Coffee or tea (customer choice)
+		\item Asparagus or beetroot soup (depending on availability)
+	\end{itemize}
+	In the first case, we as customers are given the choice between coffee or tea. In the second, it is chosen for us which soup we will get, depending on what the cooks have available. From our perspective as customers, this represents an uncertainty. In both cases, however, we will end up with exactly one of the options.
+\end{example}
+
+We might refer to the two modes of choice presented in Example \ref{ex:menu} as \emph{internal choice} and \emph{external choice}, respectively. Alternatively, we could call them \emph{choice} and \emph{uncertainty}, or \emph{free} and \emph{forced} choice. Regardless of the names we choose, the terms are relative to which perspective we are taking. If we look through the eyes of the restaurant, the customer choice of coffee or tea is external, while the choice of soup is internal.
+
+\subsection{Choice Connectives}
+To formalize the two modes of choice described above, we introduce two connectives, denoted  $\sqcup$ and $\sqcap$, respectively. Because the distinction between what is internal and external is relative to what perspective we are taking, we will hold off on generally fixing which symbol denotes which mode of choice. Instead, we will always indicate what the interpretation should be in each specific case. \\
+
+For the moment, fix $\sqcap$ as free choice and $\sqcup$ as forced choice. Hence, to  denote a free choice from a set $A$ we write $\bigsqcap_{a \in A} a$, while for a forced choice from a set $B$ we write $\bigsqcup_{b \in B} b$. We will now see how such choices should interact with the free transformations we have in a resource preorder, as well as each other.
+
+\subsubsection{Interaction of Choice with Free Transformations}\label{sec:intr free}
+Let $\mc{R}$ be a preorder of resources. If we have a free choice of any $a \in A$, then we can freely transform that choice into any specific $a \in A$ by making the corresponding choice. For example, if I have a choice between coffee or tea, I implicitly have coffee, and I implicitly have tea. In other words, I can downgrade any choice I get to make to the certainty of having one of the items I get to choose from. Formally, we have 
+\begin{equation}\label{eq:meet 1}
+	\bigsqcap_{a \in A} a \shortrightarrow a, \quad \forall a \in A.
+\end{equation}
+
+Now suppose we can freely obtain all $a$ in a set $A$ from a fixed resource $t$. In that case, having $t$ means implicitly having a free choice between any $a \in A$. For any $a$ you end up choosing, there is a free way to get that $a$ from $t$. Formally,
+\begin{equation}\label{eq:meet 2}
+	\forall a \in A : t \shortrightarrow a  \quad \Rightarrow \quad t \shortrightarrow 	\bigsqcap_{a \in A} a.
+\end{equation}
+
+Dually, if I have any $b \in B$ for certain, I can freely transform it into a forced choice among all $b \in B$. For example, having asparagus soup also implicitly means you have asparagus or beetroot soup (depending on availability). In other words, we can downgrade the certainty of having a specific $b \in B$ to the uncertainty of having some $b \in B$. Formally, this becomes
+\begin{equation}\label{eq:join 1}
+b \shortrightarrow \bigsqcup_{b \in B} b, \quad \forall b \in B.
+\end{equation}
+
+Finally, suppose that for every $b \in B$ there is a free transformation to a fixed resource $t$. In that case, if someone chooses an arbitrary $b \in B$ for you, you can still freely obtain $t$ using the corresponding free transformation. Hence,
+\begin{equation}\label{eq:join 2}
+\forall b \in B : b \shortrightarrow t  \quad \Rightarrow \quad  \bigsqcup_{b \in B} b \shortrightarrow t.
+\end{equation}
+
+
+Mathematically, (\ref{eq:meet 1}) and (\ref{eq:meet 2}) mean that $\sqcap$ is the \emph{meet} over $a \in A$, while (\ref{eq:join 1}) and (\ref{eq:join 2}) show that $\sqcup$ is the \emph{join} over $b \in B$.
+
+\subsubsection{Mutual Interaction of the Two Modes of Choice}\label{sec:intr self}
+We now look at how the two connectives should interact with each other. First we consider the finite case. For simplicity we write 
+$$\bigsqcap_{x \in \{a,b\}} x =: a  \sqcap b,$$
+$$\bigsqcup_{x \in \{a,b\}} x =: a  \sqcup b.$$
+
+Suppose we have a series of choices given by $a \sqcap (b \sqcup c)$. This means we get to freely choose between getting $a$ for certain, or between the uncertainty of getting $b$, or $c$. In this scenario, we can always guarantee $a$ if we want, but we are uncertain whether we will get $b$ or $c$, if we don't choose $a$. Compare this with the series of choices given by $(a \sqcap b) \sqcup (a \sqcap c)$. Here too we can always guarantee the $a$, but are uncertain whether we will get $b$ or $c$, if we don't choose $a$. In fact, in terms of which resources we can guarantee, the two formulations are equivalent from our perspective. Hence, we can assume the following distributive law $$a \sqcap (b \sqcup c) = (a \sqcap b) \sqcup (a \sqcap c).$$
+
+Dually, we can compare $a \sqcup (b \sqcap c)$ with $(a \sqcup b) \sqcap (a \sqcup c)$. In the first expression we are uncertain whether we will get $a$, or a free choice between $b$ and $c$. This means that if we don't get $a$, we can guarantee either $b$ or $c$. This is also the case in the second expression. Hence, we may assume the distributive law $$a \sqcup (b \sqcap c) = (a \sqcup b) \sqcap (a \sqcup c).$$
+
+More generally, these equalities should also hold for the infinite case. The statement of the infinite distributive law is more complicated: For any doubly indexed family of elements $\{b_{j,k} : j \in J, k \in K_j\}$ of $\mc{R}$ we have
+\begin{equation}\label{eq:meet dist}
+	\bigsqcap_{j \in J} \left( \bigsqcup_{k \in K_j} b_{j,k} \right) = \bigsqcup_{f \in F} \left( \bigsqcap_{j \in J} b_{j,f(j)} \right),
+\end{equation}
+where $F$ is the set of all choice functions choosing for each index $j \in J$ some index $f(j) \in K_j$.
+
+Suppose we are presented with a choice of the form $\bigsqcap_{j \in J} \left( \bigsqcup_{k \in K_j} b_{j,k} \right)$. Then we can guarantee $\bigsqcup_{k \in K_j} b_{j,k} $ for any $j \in J$ we choose. That is we can guarantee uncertainty only between the $b_{j,k}$ for one specific $j$ of our choice. Now consider $\bigsqcup_{f \in F} \left( \bigsqcap_{j \in J} b_{j,f(j)} \right)$. Here, some $f \in F$ is chosen for us. We then get to chose freely between the $b_{j,f(j)}$ for that fixed $f$. Hence we still have uncertainty among a set of $b_{j,k}$ for a $j$ of our choice. Moreover, $f$ picks precisely one $k = f(j)$ among all $k \in K_j$, so the set of $b_{j,k}$ for which there is uncertainty remains the same in both cases.
+
+We can also formulate the dual distributive law
+\begin{equation}
+\bigsqcup_{j \in J} \left( \bigsqcap_{k \in K_j} b_{j,k} \right) = \bigsqcap_{f \in F} \left( \bigsqcup_{j \in J} b_{j,f(j)} \right),
+\end{equation}
+which happens to be equivalent to (\ref{eq:meet dist}) provided all both $\bigsqcap_{a \in A}$ and $\bigsqcup_{a \in A}$ exist for any subset $A \sub \mc{R}$.
+
+\subsubsection{Laws for the Choice Connectives}
+We have seen that the choice connectives $\sqcap$ and $\sqcup$ on a resource preorder should behave like meets and joins over arbitrary subsets of $\mc{R}$. Moreover, they should distribute over one another, even in the infinite case. Hence, any structure that we use to model choice should be a completely distributive lattice. Conversely, such a model shouldn't satisfy any other laws that are not implied by our desired laws. This leads us to consider the free distributive lattice on $\mc{R}$ to model choice. 
+
+There are several notions of free distributive lattice one could use, depending on what set of maps one is interested in. We will follow \cite{Morris2004} which shows that the upper sets of lower sets of $\mc{R}$, denoted $\upper(\low(\mc{R}))$ satisfy the following universal property:
+\begin{quote}
+	There is an order embedding $i: \mc{R} \hookrightarrow \upper(\low(\mc{R}))$, such that for any monotone function $f: \mc{R} \rightarrow M$ into a completely distributive lattice $M$, there is a unique complete homomorphisms $u: \upper(\low(\mc{R})) \rightarrow M$ (preserving arbitrary meets and joins) satisfying $u \circ i = f$.
+\end{quote}
+
+In particular, if we put any completely distributive choice structure $M$ on $\mc{R}$, there will be a unique map from $u: \upper(\low(\mc{R})) \rightarrow M$, preserving choices. 
+
+\subsection{The Upper-Lower Model}
+In this section we introduce and interpret the choice structure on a resource preorder $\mc{R}$ given by $\upper(\low(\mc{R}))$. First, we will show how to use the upper-lower construction as a purely formal tool that realizes the desired properties we derived in Sections \ref{sec:intr free} and \ref{sec:intr self}. Then, we will reconstruct the upper-lower model by giving an interpretation to the sets appearing therein. This will include deriving the corresponding laws based on that interpretation. The fact that both approaches agree suggests that we have chosen a good model.
+
+\subsubsection{Formally using the Upper-Lower Model}
+We begin by describing $\upper(\low(\mc{R}))$ in greater detail. First, we define the lattice of lower sets.
+
+\begin{definition}[Lower Sets]
+	Let $(P,\shortrightarrow)$ be a preorder. A subset $L \sub P$ is a lower set, iff for any $l \in L$, $x \shortrightarrow l$ implies $x \in L$. The set of lower sets of $P$, ordered by inclusion is denoted by $\low(P)$. 
+\end{definition}
+
+\begin{lemma}
+	For any preorder $P$, $\low(P)$ is a completely distributive lattice with meets given by set intersection and joins by set union.
+\end{lemma}
+
+\begin{definition}[Lower Closure]
+	Given a subset $A \sub P$, its lower closure is the lower set given by $$\downarrow A := \{x \in P: x \shortrightarrow a \text{ for some a } \in A\}.$$
+\end{definition} 
+
+\begin{lemma}
+	For any preorder $P$, we can embed $i: P \hookrightarrow \low(P)$ by taking lower closures $p \mapsto \downarrow \{p\}$. This map is injective and satisfies $p \shortrightarrow q \Leftrightarrow i(p) \sub i(q).$ 
+\end{lemma}
+
+Dually, we can make the same definitions for upper sets.
+
+\begin{definition}[Upper Sets]
+	Let $(P,\shortrightarrow)$ be a preorder. A subset $U \sub P$ is an upper set, iff for any $u \in U$, $u \shortrightarrow x$ implies $x \in U$. The set of upper sets of $P$, ordered by containment is denoted by $\upper(P)$. 
+\end{definition}
+
+\begin{lemma}
+	For any preorder $P$, $\upper(P)$ is a completely distributive lattice with meets given by set union and joins by set intersection.
+\end{lemma}
+
+\begin{definition}[Lower Closure]
+	Given a subset $A \sub P$, its lower closure is the lower set given by $$\uparrow A := \{x \in P: a \shortrightarrow x \text{ for some a } \in A\}.$$
+\end{definition} 
+
+\begin{lemma}
+	For any preorder $P$, we can embed $i: P \hookrightarrow \upper(P)$ by taking upper closures $p \mapsto \uparrow \{p\}$. This map is injective and satisfies $p \shortrightarrow q \Leftrightarrow i(p) \supseteq i(q).$ 
+\end{lemma}
+
+In particular, for any preorder of resources $\mc{R}$, $\upper(\low(\mc{R}))$ is completely distributive with meets given by set union and joins by set intersection. Moreover, we have an injective map $i: \mc{R} \hookrightarrow \upper(\low(\mc{R}))$ given by $r \mapsto \: \uparrow \downarrow \{r\}$ that satisfies 
+$$ r \shortrightarrow s \Leftrightarrow i(r) \supseteq i(s).$$
+
+We implement our connectives $\sqcap$ and $\sqcup$ in $\upper(\low(\mc{R}))$ by setting $\sqcap$ to be the meet and $\sqcup$ to be the join in $\upper(\low(\mc{R}))$: For a subset $A \sub \upper(\low(\mc{R}))$,
+$$ \bigsqcap_{a \in A} a :=  \bigcup_{a \in A} a,$$
+$$ \bigsqcup_{a \in A} a := \bigcap_{a \in A} a.$$
+
+In particular, if we are interested choice between elements of $\mc{R}$, we first embed those elements into $\upper(\low(\mc{R}))$ and then apply the corresponding operation. That is if $B \sub \mc{R}$,
+$$ \bigsqcap_{r \in B} a :=  \bigcup_{r \in B} i(r),$$
+$$ \bigsqcup_{r \in B} a := \bigcap_{r \in B} i(r).$$
+
+\begin{example}[Menu 2]
+	In a restaurant we are allowed to choose between a vegetarian and a meat option. If we choose the vegetarian option, the restaurant will provide us a curry dish, or a casserole, depending on availability. If we choose the meat option we will get chicken or beef, depending on availability. Using our connectives, we can describe this as
+	$$ (\mathtt{curry} \sqcup \mathtt{casserole}) \sqcap (\mathtt{chicken} \sqcup \mathtt{beef}).$$
+	We model our options as the discrete preorder $\{\mathtt{curry}, \mathtt{casserole}, \mathtt{chicken},
+	 \mathtt{beef}\}$. Using the rules above for describing this choice in the upper-lower model, we represent 
+	 \begin{IEEEeqnarray*}{rCl}
+	 	\mathtt{curry} \sqcup \mathtt{casserole} & = & i(\mathtt{curry}) \cap i(\mathtt{casserole}) \\
+	 	&= & \uparrow\{\{\mathtt{curry}\}\} \cap \uparrow\{\{\mathtt{casserole}\}\} \\
+	 	& =& \uparrow \{\{\mathtt{curry},\mathtt{casserole}\}\}.
+	 \end{IEEEeqnarray*}
+ 	A similar calculation shows $\mathtt{chicken} \sqcup \mathtt{beef} = \uparrow\{\{\mathtt{chicken},\mathtt{beef}\}\}$. Hence,
+ 	\begin{IEEEeqnarray*}{rCl}
+ 		(\mathtt{curry} \sqcup \mathtt{casserole}) \sqcap (\mathtt{chicken} \sqcup \mathtt{beef}) &=& \uparrow \{\{\mathtt{curry},\mathtt{casserole}\}\} \cup \uparrow\{\{\mathtt{chicken},\mathtt{beef}\}\} \\
+ 		&=& \uparrow\{\{\mathtt{curry},\mathtt{casserole}\} , \{\mathtt{chicken},\mathtt{beef}\} \}.
+ 	\end{IEEEeqnarray*}
+\end{example}
+
+\begin{example}[Menu 3]
+	A restaurant offers two menus, depending on the day. As customers we can freely choose any option on the current menu. Suppose the menu items the first menu are $\{\mathtt{curry}, \mathtt{beef}\}$ and those on the second are $\{\mathtt{casserole}, \mathtt{chicken}\}$. In terms of our connectives, this choice becomes
+	$$ (\mathtt{curry} \sqcap \mathtt{beef}) \sqcup (\mathtt{casserole} \sqcap \mathtt{chicken}).$$
+	In the upper-lower model we represent
+	\begin{IEEEeqnarray*}{rCl}
+		\mathtt{curry} \sqcap \mathtt{beef} &=& i(\mathtt{curry}) \cup i(\mathtt{beef}) \\
+		&=& \uparrow \{\{\mathtt{curry}\}\} \cup \uparrow \{\{\mathtt{beef}\}\} \\
+		&=& \uparrow \{\{\mathtt{curry}\}, \{\mathtt{beef}\}\}.
+	\end{IEEEeqnarray*}
+	Similarly, $\mathtt{casserole} \sqcap \mathtt{chicken} = \uparrow \{\{\mathtt{casserole}\}, \{\mathtt{chicken}\}\}$.
+	Hence,  
+	\begin{IEEEeqnarray*}{rCl}
+		(\mathtt{curry} \sqcap \mathtt{beef}) \sqcup (\mathtt{casserole} \sqcap \mathtt{chicken}) &=& 
+		\uparrow \{\{\mathtt{curry}\}, \{\mathtt{beef}\}\} \cap \uparrow \{\{\mathtt{casserole}\}, \{\mathtt{chicken}\}\} \\
+		&= &\uparrow \{ \{\mathtt{curry}, \mathtt{casserole}\}, \{\mathtt{curry,chicken}\}, \\&& \quad \{\mathtt{beef,casserole}\}, \{\mathtt{beef,chicken}\} \}.
+	\end{IEEEeqnarray*}
+\end{example}
+
+The examples above show the need for some rules for calculating unions and intersections in $\upper(\low(\mc{R}))$. 
+
+\begin{tcolorbox}[title = Calculation Rules]
+	\begin{lemma} The following equalities hold for upper closures of singletons:
+		\begin{itemize}
+			\item[(i)] $\uparrow \{a\} \cup \uparrow \{b\} = \uparrow \{a, b\}$
+			\item[(ii)] $\uparrow \{a\} \cap \uparrow \{b\} = \uparrow \{ a \cup b\}$
+		\end{itemize}
+	\end{lemma}
+
+	\begin{lemma} For arbitrary upper closures we have:
+		\begin{itemize}
+		\item[(i)] $\uparrow A \cup \uparrow B = \uparrow \{x : x \in A \text{ or }  x \in B\} = \uparrow (A \cup B)$
+		\item[(ii)] $\bigcup_{i \in I}(\uparrow A_i) = \uparrow (\bigcup_{i \in I}A_i)$
+		\item[(iii)]$\uparrow A \cap \uparrow B = \uparrow \{ a \cup b: a \in A, b \in B \}$
+		\item[(iv)]$\bigcap_{i \in I}(\uparrow A_i)  = \: \uparrow \!\!\! \{\bigcup a_i: a_i \in A_i \text{ for all } i \} =\{\bigcup a_i: a_i \in \: \uparrow \!\! A_i \text{ for all } i \}$
+		\end{itemize}
+	\end{lemma}
+	\begin{proof}
+		It suffices to prove (ii) and (iv). 
+		
+		\paragraph{(ii)} Suppose $a \in \bigcup_{i \in I}(\uparrow A_i)$. Then $a \in \uparrow A_i$ for some $i$. In particular, $a_i \sub a$ for $a_i \in A_i$. Hence $a_i \sub a$ for $a_i \in \bigcup_{i \in I}A_i$, showing $a \in \uparrow (\bigcup_{i \in I}A_i)$. 
+		
+		Conversely, if $a \in \uparrow (\bigcup_{i \in I}A_i)$, then $a_i \sub a$ for some $a_i \in \bigcup_{i \in I}A_i$, that is for some $a_i \in A_i$. Thus $a \in \uparrow A_i$, meaning $a \in \bigcup_{i \in I}(\uparrow A_i)$.
+		
+		\paragraph{(iv)} Suppose $a \in \bigcap_{i \in I}(\uparrow A_i)$. Then for all $i$ there exists $a_i \in A_i$ such that $a_i \sub a$. Thus $\bigcup a_i \sub a$, meaning $a \in \: \uparrow \!\!\! \{\bigcup a_i: a_i \in A_i \text{ for all } i \}$.
+		
+		Conversely, if $a \in \: \uparrow \!\!\! \{\bigcup a_i: a_i \in A_i \text{ for all } i \}$, there are $i$ such that $\bigcup a_i \sub a$, where $a_i \in A_i$. Hence for all $i$, $a_i \sub \bigcup a_i \sub a$, meaning $a \in \bigcap_{i \in I}(\uparrow A_i)$.
+		
+		The final equality assume $a \in \: \uparrow \!\!\! \{\bigcup a_i: a_i \in A_i \text{ for all } i \}$. Then there are $i$ such that $\bigcup a_i \sub a$, where $a_i \in A_i$. This implies $a_i \sub a$ for all $i$, whence $a \in \uparrow A_i$ for all $i$. Hence $a = \bigcup a  \in \{\bigcup a_i: a_i \in \: \uparrow \!\! A_i \text{ for all } i \}$.
+		
+		If $a \in \{\bigcup a_i: a_i \in \: \uparrow \!\! A_i \text{ for all } i \}$, then there are $i$ such that $\bigcup a_i = a$, where $a_i \in \uparrow A_i$. For each $i$, we have $x_i \sub a_i$ for $x_i \in A_i$. Hence $\bigcup x_i \sub \bigcup a_i = a$, showing $a \in \: \uparrow \!\!\! \{\bigcup a_i: a_i \in A_i \text{ for all } i \}$.
+	\end{proof}
+\end{tcolorbox}
+
+\subsubsection{Interpretation-Based Reconstruction}
+
+
+
+\section{Feasibility between Choices}
+
+\section{Choice between Transformations}
+
+\section{Towards Modeling Dependencies}
+
+\printbibliography
+
+\end{document}
