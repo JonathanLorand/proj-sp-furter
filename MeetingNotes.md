@@ -5,7 +5,7 @@ Semester Project Marius Furter - Spring 2021
 
 ## [[2021-05-25]]
 
-
+We talked at length, I made note in my ipad and uploaded them to the github folder.
 
 
 ## [[2021-05-18]]
