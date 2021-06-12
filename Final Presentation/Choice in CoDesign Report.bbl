@@ -1,0 +1,199 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{anyt/global//global/global}
+  \entry{Censi2015}{article}{}
+    \name{author}{1}{}{%
+      {{hash=CA}{%
+         family={Censi},
+         familyi={C\bibinitperiod},
+         given={Andrea},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CA1}
+    \strng{fullhash}{CA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Cen15}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{abstract}{%
+    One of the challenges of modern engineering, and robotics in particular, is
+  designing complex systems, composed of many subsystems, rigorously and with
+  optimality guarantees. This paper introduces a theory of co-design that
+  describes "design problems", defined as tuples of "functionality space",
+  "implementation space", and "resources space", together with a feasibility
+  relation that relates the three spaces. Design problems can be interconnected
+  together to create "co-design problems", which describe possibly recursive
+  co-design constraints among subsystems. A co-design problem induces a family
+  of optimization problems of the type "find the minimal resources needed to
+  implement a given functionality"; the solution is an antichain (Pareto front)
+  of resources. A special class of co-design problems are Monotone Co-Design
+  Problems (MCDPs), for which functionality and resources are complete partial
+  orders and the feasibility relation is monotone and Scott continuous. The
+  induced optimization problems are multi-objective, nonconvex,
+  nondifferentiable, noncontinuous, and not even defined on continuous spaces;
+  yet, there exists a complete solution. The antichain of minimal resources can
+  be characterized as a least fixed point, and it can be computed using
+  Kleene's algorithm. The computation needed to solve a co-design problem can
+  be bounded by a function of a graph property that quantifies the
+  interdependence of the subproblems. These results make us much more
+  optimistic about the problem of designing complex systems in a rigorous way.%
+    }
+    \verb{eprint}
+    \verb 1512.08055
+    \endverb
+    \field{title}{{A Mathematical Theory of Co-Design}}
+    \verb{url}
+    \verb http://arxiv.org/abs/1512.08055
+    \endverb
+    \verb{file}
+    \verb :home/marius/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloa
+    \verb ded/Censi - 2015 - A Mathematical Theory of Co-Design.pdf:pdf
+    \endverb
+    \field{eprinttype}{arXiv}
+    \field{year}{2015}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{Martin2007}{article}{}
+    \name{author}{3}{}{%
+      {{hash=MCE}{%
+         family={Martin},
+         familyi={M\bibinitperiod},
+         given={C.\bibnamedelima E.},
+         giveni={C\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+      {{hash=CSA}{%
+         family={Curtis},
+         familyi={C\bibinitperiod},
+         given={S.\bibnamedelima A.},
+         giveni={S\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=RI}{%
+         family={Rewitzky},
+         familyi={R\bibinitperiod},
+         given={I.},
+         giveni={I\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \keyw{Agent,Angelic nondeterminism,Demonic
+  nondeterminism,Multirelation,Predicate transformer,Resource sharing,Strongest
+  postcondition}
+    \strng{namehash}{MCECSARI1}
+    \strng{fullhash}{MCECSARI1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{MCR07}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{abstract}{%
+    This paper presents an introduction to a calculus of binary multirelations,
+  which can model both angelic and demonic kinds of non-determinism. The
+  isomorphism between up-closed multirelations and monotonic predicate
+  transformers allows a different view of program transformation, and program
+  transformation calculations using multirelations are easier to perform in
+  some circumstances. Multirelations are illustrated by modelling both kinds of
+  nondeterministic behaviour in games and resource-sharing protocols.
+  {\textcopyright} 2006 Elsevier B.V. All rights reserved.%
+    }
+    \verb{doi}
+    \verb 10.1016/j.scico.2006.01.007
+    \endverb
+    \field{issn}{01676423}
+    \field{number}{2}
+    \field{pages}{140\bibrangedash 158}
+    \field{title}{{Modelling angelic and demonic nondeterminism with
+  multirelations}}
+    \field{volume}{65}
+    \verb{file}
+    \verb :home/marius/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloa
+    \verb ded/Martin, Curtis, Rewitzky - 2007 - Modelling angelic and demonic n
+    \verb ondeterminism with multirelations.pdf:pdf
+    \endverb
+    \field{journaltitle}{Science of Computer Programming}
+    \field{year}{2007}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{Morris2004}{article}{}
+    \name{author}{1}{}{%
+      {{hash=MJM}{%
+         family={Morris},
+         familyi={M\bibinitperiod},
+         given={Joseph\bibnamedelima M.},
+         giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer Verlag}%
+    }
+    \keyw{Angelic nondeterminacy,Demonic nondeterminacy,Free completely
+  distributive lattice}
+    \strng{namehash}{MJM1}
+    \strng{fullhash}{MJM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Mor04}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{abstract}{%
+    We show how to introduce demonic and angelic nondeterminacy into the term
+  language of each type in typical programming or specification language. For
+  each type we introduce (binary infix) operators ∏ and ∐ on terms of the
+  type, corresponding to demonic and angelic nondeterminacy, respectively. We
+  generalise these operators to accommodate unbounded nondeterminacy. We
+  axiomatise the operators and derive their important properties. We show that
+  a suitable model for nondeterminacy is the free completely distributive
+  complete lattice over a poset, and we use this to show that our
+  axiomatisation is sound. In the process, we exhibit a strong relationship
+  between nondeterminacy and free lattices that has not hitherto been evident.
+  Although nondeterminacy arises naturally in specification and programming
+  languages, we speculate that it combines fruitfully with function theory to
+  the extent that it can play an important role in facilitating proofs of
+  programs that have no apparent connection with nondeterminacy.
+  {\textcopyright} Springer-Verlag 2004.%
+    }
+    \verb{doi}
+    \verb 10.1007/978-3-540-27764-4_15
+    \endverb
+    \field{isbn}{3540223800}
+    \field{issn}{16113349}
+    \field{pages}{274\bibrangedash 288}
+    \field{title}{{Augmenting types with unbounded demonic and angelic
+  nondeterminacy}}
+    \verb{url}
+    \verb https://link.springer.com/chapter/10.1007/978-3-540-27764-4_15
+    \endverb
+    \field{volume}{3125}
+    \verb{file}
+    \verb :home/marius/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloa
+    \verb ded/Morris - 2004 - Augmenting types with unbounded demonic and angel
+    \verb ic nondeterminacy.pdf:pdf
+    \endverb
+    \field{journaltitle}{Lecture Notes in Computer Science (including subseries
+  Lecture Notes in Artificial Intelligence and Lecture Notes in
+  Bioinformatics)}
+    \field{year}{2004}
+  \endentry
+\enddatalist
+\endinput
