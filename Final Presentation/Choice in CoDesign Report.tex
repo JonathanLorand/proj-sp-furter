@@ -21,6 +21,8 @@
 
 \usepackage{bbm}
 
+\usepackage{bm}
+
 \usepackage[dvipsnames]{xcolor}
 
 \usepackage{tcolorbox}
@@ -58,6 +60,7 @@
 
 \definecolor{darkgreen}{RGB}{35, 89, 52}
 \definecolor{paleorange}{RGB}{255, 236, 207}
+\definecolor{paleteal}{RGB}{223, 245, 243}
 
 \hypersetup{
 	colorlinks=true,
@@ -89,29 +92,29 @@ citestyle=alphabetic]{biblatex}
 
 \theoremstyle{plain} 
 
-\newtheorem{lemma}{Lemma}[section]
+\newtheorem{lemma}[definition]{Lemma}
 
 
 
 \theoremstyle{plain} 
 
-\newtheorem{proposition}{Proposition}[section]
+\newtheorem{proposition}[definition]{Proposition}
 
 
 
 \theoremstyle{plain}
 
-\newtheorem{theorem}{Theorem}[section]
+\newtheorem{theorem}[definition]{Theorem}
 
 
 \theoremstyle{plain}
 
-\newtheorem{question}{Question}[section]
+\newtheorem{question}[definition]{Question}
 
 
 \theoremstyle{remark}
 
-\newtheorem{example}{Example}[section]
+\newtheorem{example}[definition]{Example}
 
 \newtheorem*{excont}{Example \continuation}
 \newcommand{\continuation}{??}
@@ -119,10 +122,14 @@ citestyle=alphabetic]{biblatex}
 {\renewcommand{\continuation}{\ref{#1}}\excont[continued]}
 {\endexcont}
 
+\newcommand\xqed[1]{%
+	\leavevmode\unskip\penalty9999 \hbox{}\nobreak\hfill
+	\quad\hbox{#1}}
+\newcommand\exampleend{\xqed{$\diamond$}}
 
 \theoremstyle{remark}
 
-\newtheorem{remark}{Remark}[section]
+\newtheorem{remark}[definition]{Remark}
 
 \newcommand{\zuz}[1]{%
 
@@ -191,6 +198,13 @@ citestyle=alphabetic]{biblatex}
 	\ext@arrow 0055{\rightslashedarrowfill@}{#1}{#2}}
 \makeatother
 
+\newcommand{\cbigsqcap}[1]{\color{OliveGreen}\bigsqcap_{#1}\color{Black}}
+
+\newcommand{\csqcap}{\color{OliveGreen}\bm{\sqcap}\color{Black}}
+
+\newcommand{\cbigsqcup}[1]{\color{BrickRed}\bigsqcup_{#1}\color{Black}}
+
+\newcommand{\csqcup}{\color{BrickRed}\bm{\sqcup}\color{Black}}
 
 \begin{document}
 
@@ -231,7 +245,7 @@ It can occur that certain resources or functionalities imply others. If motor $A
 We model resources and functionalities using preordered sets, which will be formally introduced shortly. We interpret an element $a$ of the preorder as the guarantee ``I can provide $a$''. We put an arrow $a \shortrightarrow b$ whenever being able to provide $a$ implies being able to provide $b$. This is best illustrated with an example.
 
 \begin{example}(Money as Resources)\label{ex:money}
-	The set $\mathbb{N} := \{0,1,2,\ldots \}$ with the order relation $a \shortrightarrow b \Leftrightarrow a \geq b$ can be used to describe money (of a single currency, say dollars) as a resource. The element $a$ represents being able to provide $a$ dollars, while $a \shortrightarrow b$ means that if you can provide $a$ dollars, you can also provide $b$ dollars. For example, $3 \shortrightarrow 1$ signifies that if we could pay 3 dollars, we also possess the purchasing power of 1 dollar. Observe that being able to transform $3 \shortrightarrow 1$ presupposes that people are willing to accept $3$ dollars in lieu of $1$ dollar. This hypothesis is system relative. For example, a vending machine might only accept bills of low denomination. So in this case one might well not have $50 \shortrightarrow 1$.
+	The set $\mathbb{N} := \{0,1,2,\ldots \}$ with the order relation $a \shortrightarrow b \Leftrightarrow a \geq b$ can be used to describe money (of a single currency, say dollars) as a resource. The element $a$ represents being able to provide $a$ dollars, while $a \shortrightarrow b$ means that if you can provide $a$ dollars, you can also provide $b$ dollars. For example, $3 \shortrightarrow 1$ signifies that if we could pay 3 dollars, we also possess the purchasing power of 1 dollar. Observe that being able to transform $3 \shortrightarrow 1$ presupposes that people are willing to accept $3$ dollars in lieu of $1$ dollar. This hypothesis is system relative. For example, a vending machine might only accept bills of low denomination. So in this case one might well not have $50 \shortrightarrow 1$. \exampleend
 \end{example}
 
 Returning to the general theory, we observe that the preorder axioms precisely describe how we would like the relation $a \shortrightarrow b$ to behave.
@@ -274,14 +288,14 @@ Everything that has been said here applies equally to functionalities. In fact, 
 \subsection{Feasibility Relations}
 Given a preorder of resources $\mc{R}$ and a preorder of functionalities $\mc{F}$, a feasibility relation $\Phi: \mc{R} \xslashedrightarrow{} \mc{F}$ between them expresses which functionalities I am able to obtain from which resources. We write $\Phi(r,f) = \mathtt{true}$ to indicate that $f$ can be obtained from $r$.
 
-\begin{example}\label{ex:groceries}
+\begin{example}[Gorcery Shopping 1]\label{ex:groceries}
 	Consider buying groceries. Our resources $\mc{R}$ will be money as in Example \ref{ex:money}. The possible groceries we can buy are the functionalities $\mc{F}$. The feasibility relation $\Phi: \mc{R} \xslashedrightarrow{} \mc{F}$ will describe what groceries we can purchase given a specific amount of cash. For example, a $\mathtt{carrot}$ might cost $1\$$. Hence, $\Phi(1\$,\mathtt{carrot}) = \mathtt{true}$. On the other hand, $\Phi(0\$, \mathtt{carrot}) = \mathtt{false}$, since we can't get a $\mathtt{carrot}$ without paying anything. Suppose now that a $\mathtt{bag\ of\ carrots}$ costs $3\$$. This means $\Phi(3\$,\mathtt{bag\ of\ carrots}) = \mathtt{true}$. Observe that also $\Phi(3\$,\mathtt{carrot}) = \true$ should hold. Either we can pick up a single carrot in the store and pay for it with $3\$$, or we could buy the whole bag for $3\$$ and this would also give us a single $\mathtt{carrot}$. 
 	
 	This shows that feasibility interacts with the implication arrows we have for the resources and functionalities. In our example,
 	$$3\$ \shortrightarrow 1\$ \text{ and } \Phi(1\$, \mathtt{carrot}) = \true  \text{ implied } \Phi(3\$, \mathtt{carrot}) = \true.$$ 
 	Similarly, 
 	$$\mathtt{bag\ of\ carrots} \shortrightarrow \mathtt{carrot}  \text{ and } \Phi(3\$,\mathtt{bag\ of\ carrots}) = \mathtt{true} $$ 
-	implied that $\Phi(3\$,\mathtt{carrot}) = \true.$
+	implied that $\Phi(3\$,\mathtt{carrot}) = \true.$ \exampleend
 \end{example}
 
 The interaction we observed between arrows and feasibility justifies the formal definition of a feasibility relation.
@@ -298,7 +312,7 @@ The interaction we observed between arrows and feasibility justifies the formal 
 In other words, a feasibility relation is a relation from $\mc{R}$ to $\mc{F}$ that is downward closed with respect to free transformations in $\mc{R}$ and upward closed with respect to free transformations in $\mc{F}$. We will often draw internal diagrams of feasibility relations as in Figure \ref{fig:internal feas}. We put an arrow between an $r \in \mc{R}$ and $f \in \mc{F}$ iff $\Phi(r,f) = \true$. The arrows coming from $\Phi$ can be thought of the transformations that $\Phi$ enables. Observe that the closure conditions in Definition \ref{def:feasibility} mean that the arrows coming from $\Phi$ are transitively closed with respect to the internal arrows in $\mc{R}$ and $\mc{F}$: If there is a path from an $r \in \mc{R}$ to an $f \in \mc{F}$ following any type of arrow, then we also have a direct arrow between $r$ and $f$ coming from $\Phi$.
 
 \begin{continueexample}{ex:groceries}
-	We can now formally implement our example of grocery shopping. Recall that our resource preorder $\mc{R}$ consists of money, while our functionality preorder $\mc{F}$ describes groceries we can purchase. Figure \ref{fig:internal feas} shows part of an internal diagram of a feasibility relation $\Phi: \mc{R} \xslashedrightarrow{} \mc{F}$. The blue arrows indicate the feasible pairs. For example, $$\Phi(3\$,\mathtt{bag\ of\ carrots}) = \true.$$ It is worth contemplating why $\Phi$ satisfies the monotonicity conditions presented in Definition \ref{def:feasibility}.
+	We can now formally implement our example of grocery shopping. Recall that our resource preorder $\mc{R}$ consists of money, while our functionality preorder $\mc{F}$ describes groceries we can purchase. Figure \ref{fig:internal feas} shows part of an internal diagram of a feasibility relation $\Phi: \mc{R} \xslashedrightarrow{} \mc{F}$. The blue arrows indicate the feasible pairs. For example, $$\Phi(3\$,\mathtt{bag\ of\ carrots}) = \true.$$ It is worth contemplating why $\Phi$ satisfies the monotonicity conditions presented in Definition \ref{def:feasibility}. 	\exampleend
 	
 	\begin{figure}
 		\centering
@@ -306,7 +320,7 @@ In other words, a feasibility relation is a relation from $\mc{R}$ to $\mc{F}$ t
 		\caption{Internal diagram of a feasibility relation $\Phi: \mc{R} \xslashedrightarrow{} \mc{F}$.}
 		\label{fig:internal feas}
 	\end{figure}
-	
+
 \end{continueexample}
 
 We could have also defined feasibility relations as special types of monotone maps. For this we need to introduce several concepts.
@@ -339,411 +353,452 @@ We could have also defined feasibility relations as special types of monotone ma
 \end{tcolorbox}
 
 \section{Choice between Resources}
-We will now extend what we've seen so far to encompass choice and uncertainty. What is meant by these terms is best illustrated with an example.
+We now extend what we've seen so far to encompass choice and uncertainty. What is meant by these terms is best illustrated with an example.
 
 \begin{example}[Menu Options]\label{ex:menu}
-	In a restaurant we might see the following menu options.
+	A restaurant might offer the following menu options:
 	\begin{itemize}
 		\item Coffee or tea (customer choice)
-		\item Asparagus or beetroot soup (depending on availability)
+		\item Asparagus or pumpkin soup (depending on availability)
 	\end{itemize}
-	In the first case, we as customers are given the choice between coffee or tea. In the second, it is chosen for us which soup we will get, depending on what the cooks have available. From our perspective as customers, this represents an uncertainty. In both cases, however, we will end up with exactly one of the options.
+	In the first case, we as customers are given the choice between coffee or tea. In the second, it is chosen for us which soup we will get, depending on what the cooks have available. From our perspective as customers, this represents an uncertainty. In both cases, however, we will end up with exactly one of the options. \exampleend
 \end{example}
 
-We might refer to the two modes of choice presented in Example \ref{ex:menu} as \emph{internal choice} and \emph{external choice}, respectively. Alternatively, we could call them \emph{choice} and \emph{uncertainty}, or \emph{free} and \emph{forced} choice. Regardless of the names we choose, the terms are relative to which perspective we are taking. If we look through the eyes of the restaurant, the customer choice of coffee or tea is external, while the choice of soup is internal.
+We might refer to the two modes of choice presented in Example \ref{ex:menu} as \emph{free choice} and \emph{forced choice}, respectively. Alternatively, we could call them \emph{choice} and \emph{uncertainty}, or \emph{internal} and \emph{external} choice. Regardless of the names we choose, the terms are relative to which perspective we are taking. If we look through the eyes of the restaurant, the customer choice of coffee or tea is external, while the choice of soup is internal.
 
 \subsection{Choice Connectives}
-To formalize the two modes of choice described above, we introduce two connectives, denoted  $\sqcup$ and $\sqcap$, respectively. Because the distinction between what is internal and external is relative to what perspective we are taking, we will hold off on generally fixing which symbol denotes which mode of choice. Instead, we will always indicate what the interpretation should be in each specific case. \\
+Suppose we are given some preorder $\mc{P}$ of resources or functionalities. Our goal will be to augment $\mc{P}$ to include all possible free and forced choices among subsets $A \sub \mc{P}$. Let us call this choice-augmented preorder $\mathsf{C}(\mc{P})$. To this end we introduce two connectives to express free and forced choice.
 
-For the moment, fix $\sqcap$ as free choice and $\sqcup$ as forced choice. Hence, to  denote a free choice from a set $A$ we write $\bigsqcap_{a \in A} a$, while for a forced choice from a set $B$ we write $\bigsqcup_{b \in B} b$. We will now see how such choices should interact with the free transformations we have in a resource preorder, as well as each other.
+\begin{definition}[Choice Connectives] Given a set $A$, we denote
+	\begin{itemize}
+		\item the \emph{free choice} among $a \in A$ by $\cbigsqcap{a \in A} a$,
+		\item the \emph{forced choice} among $a \in A$ by $\cbigsqcup{a \in A} a$.
+	\end{itemize}
+	When $A=\{a_1,\ldots,a_n\}$ is finite, we will also write 
+	$$a_1 \csqcap \ldots \csqcap a_n := \cbigsqcap{a \in A} a,$$
+	$$a_1 \csqcup \ldots \csqcup a_n := \cbigsqcup{a \in A} a.$$
+\end{definition}
 
-\subsubsection{Interaction of Choice with Free Transformations}\label{sec:intr free}
-Let $\mc{R}$ be a preorder of resources. If we have a free choice of any $a \in A$, then we can freely transform that choice into any specific $a \in A$ by making the corresponding choice. For example, if I have a choice between coffee or tea, I implicitly have coffee, and I implicitly have tea. In other words, I can downgrade any choice I get to make to the certainty of having one of the items I get to choose from. Formally, we have 
+We would like $\mathsf{C}(\mc{P})$ to contain all elements of $\mc{P}$ along with a single element for each possible choice. Moreover, we would like the preorder structure on $\mathsf{C}(\mc{P})$ to fit our established interpretation: An arrow $a \shortrightarrow b$ in $\mathsf{C}(\mc{P})$ should signify that being able to provide $a$ implies being able to provide $b$. This poses the following questions:
+\begin{itemize}
+	\item[(i)] When are two choices as represented by the connectives distinct?
+	\item[(ii)] When must we add an arrow $a \shortrightarrow b$ if $a$ or $b$ represent choices?
+\end{itemize}
+We will answer these questions in what follows, beginning with (ii).
+
+\subsubsection{Arrows between Choices}\label{sec:intr free}
+In this section we describe when we should add arrows in the choice-augmented preorder $\mathsf{C}(\mc{P})$. We start by considering free choice.
+
+Suppose that we are able to provide a free choice among some set $A \sub \mathsf{C}(\mc{P})$. This means that regardless of which $a \in A$ is picked freely, we must be able to provide that $a$. In other words, being able to provide a free choice among $A$ implies being able to provide any $a \in A$. Formally,
+
+
 \begin{equation}\label{eq:meet 1}
-	\bigsqcap_{a \in A} a \shortrightarrow a, \quad \forall a \in A.
+	\cbigsqcap{a \in A} a \shortrightarrow a, \quad \forall a \in A.
 \end{equation}
 
-Now suppose we can freely obtain all $a$ in a set $A$ from a fixed resource $t$. In that case, having $t$ means implicitly having a free choice between any $a \in A$. For any $a$ you end up choosing, there is a free way to get that $a$ from $t$. Formally,
+Let $A \sub \mathsf{C}(\mc{P})$ and suppose that there is a fixed $t \in \mathsf{C}(\mc{P})$ such that for every $a \in A$, being able to provide $t$ implies being able to provide $a$. Being able to provide a free choice among $A$ means that whatever $a \in A$ is picked freely, we can provide that $a$. By assumption, if we can provide $t$, we are able to provide any $a \in A$, and hence also the free choice among $A$. Formally,
 \begin{equation}\label{eq:meet 2}
-	\forall a \in A : t \shortrightarrow a  \quad \Rightarrow \quad t \shortrightarrow 	\bigsqcap_{a \in A} a.
+	\forall a \in A : t \shortrightarrow a  \quad \Rightarrow \quad t \shortrightarrow 	\cbigsqcap{a \in A} a.
 \end{equation}
 
-Dually, if I have any $b \in B$ for certain, I can freely transform it into a forced choice among all $b \in B$. For example, having asparagus soup also implicitly means you have asparagus or beetroot soup (depending on availability). In other words, we can downgrade the certainty of having a specific $b \in B$ to the uncertainty of having some $b \in B$. Formally, this becomes
+We now turn to forced choice. Being able to provide a forced choice among $B \sub \mathsf{C}(\mc{P})$ means being able to provide some $b \in B$, without having to specify which. Therefore, being able to provide some $b \in B$ implies being able to provide a forced choice among $B$. Formally,
 \begin{equation}\label{eq:join 1}
-b \shortrightarrow \bigsqcup_{b \in B} b, \quad \forall b \in B.
+b \shortrightarrow \cbigsqcup{b \in B} b, \quad \forall b \in B.
 \end{equation}
 
-Finally, suppose that for every $b \in B$ there is a free transformation to a fixed resource $t$. In that case, if someone chooses an arbitrary $b \in B$ for you, you can still freely obtain $t$ using the corresponding free transformation. Hence,
+Finally, suppose that for every $b \in B$, being able to provide $b$ implies being able to provide a fixed $t \in \mathsf{C}(\mc{P})$. Assume we can provide a forced choice among $B$. This means that we are able to provide some $b \in B$. However, regardless of which $b$ we are able to provide, our hypothesis says that this implies we are able to provide $t$. Therefore, being able to provide a forced choice among $B$ implies being able to provide $t$. Formally, 
 \begin{equation}\label{eq:join 2}
-\forall b \in B : b \shortrightarrow t  \quad \Rightarrow \quad  \bigsqcup_{b \in B} b \shortrightarrow t.
+\forall b \in B : b \shortrightarrow t  \quad \Rightarrow \quad  \cbigsqcup{b \in B} b \shortrightarrow t.
 \end{equation}
 
 
-Mathematically, (\ref{eq:meet 1}) and (\ref{eq:meet 2}) mean that $\sqcap$ is the \emph{meet} over $a \in A$, while (\ref{eq:join 1}) and (\ref{eq:join 2}) show that $\sqcup$ is the \emph{join} over $b \in B$.
+We now observe that (\ref{eq:meet 1}) and (\ref{eq:meet 2}) mean that $\csqcap$ is the \emph{meet} over $a \in A$, while (\ref{eq:join 1}) and (\ref{eq:join 2}) show that $\csqcup$ is the \emph{join} over $b \in B$.
 
-\subsubsection{Mutual Interaction of the Two Modes of Choice}\label{sec:intr self}
-We now look at how the two connectives should interact with each other. First we consider the finite case. For simplicity we write 
-$$\bigsqcap_{x \in \{a,b\}} x =: a  \sqcap b,$$
-$$\bigsqcup_{x \in \{a,b\}} x =: a  \sqcup b.$$
+\begin{definition}[Meets and Joins]\label{def:meets joins}
+	Let $(\mc{P},\shortrightarrow)$ be a preorder and $A \sub \mc{P}$. A \emph{meet} of the set $A$ is an element $\bigwedge_{a \in A} a$ in $\mc{P}$ such that
+	\begin{itemize}
+		\item[(i)] $\bigwedge_{a \in A} a$ is a lower bound of $A$, that is $\bigwedge_{a \in A} a  \shortrightarrow a$ for all $a \in A$,
+		\item[(ii)] $\bigwedge_{a \in A} a$ is the greatest lower bound of $A$, that is if $t \shortrightarrow a$ for all $a \in A$, then $t \shortrightarrow \bigwedge_{a \in A} a$.
+	\end{itemize}
+	A \emph{join} of the set $A$ is an element $\bigvee_{a \in A} a$ in $\mc{P}$ such that
+	\begin{itemize}
+		\item[(i)] $\bigvee_{a \in A} a$ is an upper bound of $A$, that is $a  \shortrightarrow \bigvee_{a \in A} a$ for all $a \in A$,
+		\item[(ii)] $\bigvee_{a \in A} a$ is the least upper bound of $A$, that is if $a \shortrightarrow t$ for all $a \in A$, then $\bigvee_{a \in A} a \shortrightarrow t$.
+	\end{itemize}
+	A preorder in which every subset has a meet and a join is called a \emph{complete lattice}.
+\end{definition}
 
-Suppose we have a series of choices given by $a \sqcap (b \sqcup c)$. This means we get to freely choose between getting $a$ for certain, or between the uncertainty of getting $b$, or $c$. In this scenario, we can always guarantee $a$ if we want, but we are uncertain whether we will get $b$ or $c$, if we don't choose $a$. Compare this with the series of choices given by $(a \sqcap b) \sqcup (a \sqcap c)$. Here too we can always guarantee the $a$, but are uncertain whether we will get $b$ or $c$, if we don't choose $a$. In fact, in terms of which resources we can guarantee, the two formulations are equivalent from our perspective. Hence, we can assume the following distributive law $$a \sqcap (b \sqcup c) \cong (a \sqcap b) \sqcup (a \sqcap c).$$
+Our discussion shows that our choice-augmented preorder $\mathsf{C}(P)$ will have meets and joins for any subset $A \sub \mathsf{C}(\mc{P})$. Therefore, $\mathsf{C}(P)$ will be a complete lattice.
 
-Dually, we can compare $a \sqcup (b \sqcap c)$ with $(a \sqcup b) \sqcap (a \sqcup c)$. In the first expression we are uncertain whether we will get $a$, or a free choice between $b$ and $c$. This means that if we don't get $a$, we can guarantee either $b$ or $c$. This is also the case in the second expression. Hence, we may assume the distributive law $$a \sqcup (b \sqcap c) \cong (a \sqcup b) \sqcap (a \sqcup c).$$
+\subsubsection{Equality of Choices}\label{sec:intr self}
+The fact that free and forced choices are meets and joins in $\mathsf{C}(\mc{P})$ already implies many equalities between expressions consisting of the connectives $\csqcap$ and $\csqcup$. In this section we will show that in addition to these we also want the connectives to distribute over one another.
 
-More generally, these equalities should also hold for the infinite case. The statement of the infinite distributive law is more complicated: For any doubly indexed family of elements $\{b_{j,k} : j \in J, k \in K_j\}$ of $\mc{R}$ we have
+Suppose we have a series of choices given by $a \csqcap (b \csqcup c)$. This means we get to freely choose between getting $a$ for certain, or between the uncertainty of getting $b$, or $c$. In this scenario, we can always guarantee $a$ if we want, but we are uncertain whether we will get $b$ or $c$, if we don't choose $a$. Compare this with the series of choices given by $(a \csqcap b) \csqcup (a \csqcap c)$. Here too we can always guarantee $a$, but are uncertain whether we will get $b$ or $c$, if we don't choose $a$. In fact, in terms of which resources we can guarantee, the two formulations are equivalent from our perspective. Hence, we can assume the following distributive law $$a \csqcap (b \csqcup c) = (a \csqcap b) \csqcup (a \csqcap c).$$
+
+Dually, we can compare $a \csqcup (b \csqcap c)$ with $(a \csqcup b) \csqcap (a \csqcup c)$. In the first expression we are uncertain whether we will get $a$, or a free choice between $b$ and $c$. This means that if we don't get $a$, we can guarantee either $b$ or $c$. This is also the case in the second expression. Hence, we may assume the distributive law $$a \csqcup (b \csqcap c) = (a \csqcup b) \csqcap (a \csqcup c).$$
+
+More generally, these laws should also hold for the infinite case. The statement of the infinite distributive law is more complicated: For any doubly indexed family of elements $\{b_{j,k} : j \in J, k \in K_j\}$ of $\mathsf{C}(\mc{P})$ we have
 \begin{equation}\label{eq:meet dist}
-	\bigsqcap_{j \in J} \left( \bigsqcup_{k \in K_j} b_{j,k} \right) \cong \bigsqcup_{f \in F} \left( \bigsqcap_{j \in J} b_{j,f(j)} \right),
+	\cbigsqcap{j \in J} \left( \cbigsqcup{k \in K_j} b_{j,k} \right) = \cbigsqcup{f \in F} \left( \cbigsqcap{j \in J} b_{j,f(j)} \right),
 \end{equation}
 where $F$ is the set of all choice functions choosing for each index $j \in J$ some index $f(j) \in K_j$.
 
-Suppose we are presented with a choice of the form $\bigsqcap_{j \in J} \left( \bigsqcup_{k \in K_j} b_{j,k} \right)$. Then we can guarantee $\bigsqcup_{k \in K_j} b_{j,k} $ for any $j \in J$ we choose. That is we can guarantee uncertainty only between the $b_{j,k}$ for one specific $j$ of our choice. Now consider $\bigsqcup_{f \in F} \left( \bigsqcap_{j \in J} b_{j,f(j)} \right)$. Here, some $f \in F$ is chosen for us. We then get to chose freely between the $b_{j,f(j)}$ for that fixed $f$. Hence we still have uncertainty among a set of $b_{j,k}$ for a $j$ of our choice. Moreover, $f$ picks precisely one $k = f(j)$ among all $k \in K_j$, so the set of $b_{j,k}$ for which there is uncertainty remains the same in both cases.
+This law is justified by the following argument. Suppose we are presented with a choice of the form $\cbigsqcap{j \in J} \left( \cbigsqcup{k \in K_j} b_{j,k} \right)$. Then we can guarantee $\cbigsqcup{k \in K_j} b_{j,k} $ for any $j \in J$ we choose. That is we can guarantee an uncertainty between the $b_{j,k}$ for one specific $j$ of our choice. Now consider $\cbigsqcup{f \in F} \left( \cbigsqcap{j \in J} b_{j,f(j)} \right)$. Here, some $f \in F$ is chosen for us. We then get to chose freely between the $b_{j,f(j)}$ for that fixed $f$. Hence we still have uncertainty among a set of $b_{j,k}$ for a $j$ of our choice. Moreover, $f$ picks precisely one $k = f(j)$ among all $k \in K_j$, so the set of $b_{j,k}$ for which there is uncertainty remains the same in both cases.
 
 We can also formulate the dual distributive law
-\begin{equation}
-\bigsqcup_{j \in J} \left( \bigsqcap_{k \in K_j} b_{j,k} \right) \cong \bigsqcap_{f \in F} \left( \bigsqcup_{j \in J} b_{j,f(j)} \right),
+\begin{equation}\label{eq:join dist}
+\cbigsqcup{j \in J} \left( \cbigsqcap{k \in K_j} b_{j,k} \right) = \cbigsqcap{f \in F} \left( \cbigsqcup{j \in J} b_{j,f(j)} \right),
 \end{equation}
-which happens to be equivalent to (\ref{eq:meet dist}) provided all both $\bigsqcap_{a \in A}$ and $\bigsqcup_{a \in A}$ exist for any subset $A \sub \mc{R}$.
+which happens to be equivalent to (\ref{eq:meet dist}) provided both $\cbigsqcap{a \in A}$ and $\cbigsqcup{a \in A}$ exist for any subset $A \sub \mathsf{C}(\mc{P})$.
 
-\subsubsection{Laws for the Choice Connectives}
-We have seen that the choice connectives $\sqcap$ and $\sqcup$ on a resource preorder should behave like meets and joins over arbitrary subsets of $\mc{R}$. Moreover, they should distribute over one another, even in the infinite case. Hence, any structure that we use to model choice should be a completely distributive lattice. Conversely, such a model shouldn't satisfy any other laws that are not implied by our desired laws. This leads us to consider the free distributive lattice on $\mc{R}$ to model choice. 
+In summary, our discussion shows that in addition to being a complete lattice, $\mathsf{C}(\mc{P})$ should also satisfy the infinite distributive laws (\ref{eq:meet dist}) and (\ref{eq:join dist}). A complete lattice satisfying infinite distributivity is called a \emph{completely distributive lattice}.
 
-There are several notions of free distributive lattice one could use, depending on what set of maps one is interested in. We will follow \cite{Morris2004} which shows that the upper sets of lower sets of $\mc{R}$, denoted $\upper(\low(\mc{R}))$ satisfy the following universal property:
+\begin{tcolorbox}[title=Choice Connectives, colframe=Apricot, colback = paleorange, coltitle = Sepia]
+	We denote the \emph{free choice} among $a \in A$ by $\cbigsqcap{a \in A} a$, and 
+	the \emph{forced choice} among $a \in A$ by $\cbigsqcup{a \in A} a$. The connective $\csqcap{}$ acts like a meet, while $\csqcup{}$ acts like a join. Moreover, both connectives distribute over one another, even in the infinite case.
+\end{tcolorbox}
+
+\subsection{A Universal Model for Choice}
+Given a preorder $\mc{P}$, we want to construct a choice-augmented preorder $\mathsf{C}(\mc{P})$ that includes all possible choices between elements of $\mc{P}$. Our discussion in the previous section showed that $\mathsf{C}(\mc{P})$ should be a completely distributive lattice, where a free choice among a set $A$ is given by the meet over $A$, and a forced choice over a set $B$ is given by the join over $B$. Moreover, we want the new elements in $\mathsf{C}(\mc{P})$ to only fulfill those relations implied by our interpretation of these elements as choices. This leads us to consider the free completely distributive lattice generated by $\mc{P}$.
+
+There are several notions of free completely distributive lattice one could use, depending on what set of maps one is interested in. We will follow \cite{Morris2004}, which shows that the upper sets of lower sets of $\mc{P}$, denoted $\upper(\low(\mc{P}))$, satisfy a universal property that suits our purposes. We will explain this in more detail after making the requisite definitions.
+
+We start by defining special subsets of a preorder which are upwards and downward closed.
+\begin{definition}[Upper and Lower Sets]
+	Let $\mc{P}$ be a preorder. A subset $U \sub \mc{P}$ is called an \emph{upper set}, if it is upward closed: 
+	$$x \in U \text{ and } x \shortrightarrow y  \text{ imply } y \in U.$$
+	A subset $L \sub \mc{P}$ is called a lower set, if it is downward closed:
+	$$x \in L \text{ and } y \shortrightarrow x  \text{ imply } y \in L.$$
+\end{definition}
+
+\begin{definition}[Upper and Lower Closure]
+	Given a subset $A \sub \mc{P}$ of a preorder, we can form its
+	\begin{itemize}
+		\item \emph{upper closure} $\upc{A} := \{p \in \mc{P} : a \shortrightarrow p \text{ for some } a \in A\}$,
+		\item \emph{lower closure} $\lwc{A} := \{p \in \mc{P} : p \shortrightarrow a \text{ for some } a \in A\}$.
+	\end{itemize}
+	The upper closure is an upper set, while the lower closure is a lower set. Moreover, we can consider
+	\begin{itemize}
+		\item upper sets $\upper\mc{P} := \{U \sub \mc{P}: U \text{ an upper set}\}$,
+		\item lower sets $\low\mc{P} := \{L \sub \mc{P}: L \text{ an lower set}\}$.
+	\end{itemize}
+\end{definition}
+
+We will be interested in monotone maps $f: \mc{P} \rightarrow \mc{Q}$ in which the implication ``$p \shortrightarrow q$ implies $f(p) \shortrightarrow f(q)$'' is actually an equivalence.
+\begin{definition}[Order Embedding]
+	Let $\mc{P}$ and $\mc{Q}$ be preorders. A function $f: \mc{P} \rightarrow \mc{Q}$ is called an order embedding provided
+	$$ p \shortrightarrow q \Leftrightarrow f(p) \shortrightarrow f(q) .$$
+	In this case we write $f: \mc{P} \hookrightarrow \mc{Q}$.
+\end{definition}
+
+\begin{lemma}\label{lem:upper lower lattice}
+	Given a preorder $\mc{P}$, its upper sets can be preordered by containment $(\upper\mc{P}, \supseteq)$ and its lower sets can be ordered by inclusion $(\low\mc{P}, \sub)$. Both of these structures are completely distributive lattices. Moreover, we have order embeddings: 
+	$$i_\mathsf{U}: \mc{P} \hookrightarrow (\upper\mc{P}, \supseteq) \qquad \qquad i_\mathsf{L}: \mc{P} \hookrightarrow (\low\mc{P}, \sub)$$
+	$$ p \mapsto \upc{\{p\}} \qquad \qquad \qquad p \mapsto \lwc{\{p\}}$$
+\end{lemma}
+\begin{proof}
+	We will take for granted that the power set $(\mathsf{P}(\mc{P}),\sub)$, ordered by inclusion, is a completely distributive lattice with set intersection as meet and set union as join. This follows from a straightforward check of the definition for meets and joins (Def.~\ref{def:meets joins}) and verification of the infinite distributive laws (\ref{eq:meet dist}) and (\ref{eq:join dist}). We now observe that unions and intersections of upper sets are again upper sets. The same holds for lower sets. Therefore, the completely distributive structure on $(\mathsf{P}(\mc{P}),\sub)$ restricts to completely distributive lattices $(\upper\mc{P}, \sub)$ and $(\low\mc{P}, \sub)$. Finally, since $(\upper\mc{P}, \sub)^\text{op} = (\upper\mc{P}, \supseteq)$ and the defining laws for completely distributive lattices are self-dual, we see that also $(\upper\mc{P}, \supseteq)$ is completely distributive.
+	
+	To prove that $i_\mathsf{U}$ is an order embedding let $p \shortrightarrow q$ in $\mc{P}$. Suppose $x \in \upc{\{q\}}$. Then $q \shortrightarrow x$, whence $p \shortrightarrow x$ by transitivity. Hence, $x \in \upc{\{p\}}$, so $\upc{\{p\}} \supseteq \upc{\{q\}}$. Conversely, if $\upc{\{p\}} \supseteq \upc{\{q\}}$, then in particular $q \in \upc{\{p\}}$, since $q \in \upc{\{q\}}$. Hence $p \shortrightarrow q$, as desired. The proof that $i_\mathsf{L}$ is an order embedding is analogous.
+\end{proof}
+
+We now have the tools to understand the free completely distributive lattice constructed in \cite{Morris2004}. Lemma \ref{lem:upper lower lattice} shows that given a preorder $\mc{P}$, we can obtain a completely distributive lattice $(\low\mc{P}, \sub)$. Since this is again a preorder, we can reapply the lemma and consider the completely distributive lattice $(\upper\low\mc{P}, \supseteq)$. In fact, \cite{Morris2004} shows that $\upper\low\mc{P}$ satisfies the following universal property:
 \begin{quote}
-	There is an order embedding $i: \mc{R} \hookrightarrow \upper(\low(\mc{R}))$, such that for any monotone function $f: \mc{R} \rightarrow M$ into a completely distributive lattice $M$, there is a unique complete homomorphisms $u: \upper(\low(\mc{R})) \rightarrow M$ (preserving arbitrary meets and joins) satisfying $u \circ i = f$.
+	There is an order embedding $i: \mc{P} \hookrightarrow \upper\low\mc{P}$, such that for any monotone function $f: \mc{P} \rightarrow M$ into a completely distributive lattice $M$, there is a unique complete homomorphisms $u: \upper\low\mc{P} \rightarrow M$ (preserving arbitrary meets and joins) satisfying $u \circ i = f$.
 \end{quote}
 
-In particular, if we put any completely distributive choice structure $M$ on $\mc{R}$, there will be a unique map from $u: \upper(\low(\mc{R})) \rightarrow M$, preserving choices. 
+If we augment a preorder $\mc{P}$ to include choice, we should have a monotone map $c: \mc{P} \rightarrow \mathsf{C}(\mc{P})$ which maps each element of $\mc{P}$ to the free (or forced) choice among the singleton $\{p\}$. Therefore, by the universal property above, there will be a unique map from $u: \upper\low\mc{P} \rightarrow \mathsf{C}(\mc{P})$, preserving the elements of $\mc{P}$ and the choices among them. 
+
+To see what this means, consider a free choice over $A \sub \mc{P}$. This will be represented by the meet $\bigwedge_{a \in A} c(a)$ in $\mathsf{C}(\mc{P})$, and by $\bigwedge_{a \in A} i(a)$ in $\upper\low\mc{P}$. Since the unique map $u$ preserves meets, and $u \circ i = c$, we have
+$$u \left ( \bigwedge_{a \in A} i(a) \right) = \bigwedge_{a \in A} u(i(a)) = \bigwedge_{a \in A} c(a).$$
+Hence each free choice represented in $\mathsf{C}(\mc{P})$ is the image of the corresponding choice represented in $\upper\low\mc{P}$. The same holds for forced choices. This shows that the part of $\mathsf{C}(\mc{P})$ we are interested lies in is the image of $\upper\low\mc{P}$ under the unique map $u$. In this sense, $\upper\low\mc{P}$ serves as a universal model for choice on $\mc{P}$, which we will call the \emph{upper-lower model}.
+
+\begin{tcolorbox}[title=Universal Model for Choice, colframe=Apricot, colback = paleorange, coltitle = Sepia]
+	Given a preorder $\mc{P}$ we can form the \emph{upper-lower model} $\upper\low\mc{P}$, given by the upper sets (ordered by containment) of the lower sets (ordered by inclusion) of $\mc{P}$. For any other model $\mathsf{C}(\mc{P})$ of choice on $\mc{P}$, the free and forced choices in $\mathsf{C}(\mc{P})$ lie in the image of $\upper\low\mc{P}$ under a unique map. 
+\end{tcolorbox}
 
 \subsection{The Upper-Lower Model}\label{sec:upper-lower model}
-In this section we introduce and interpret the choice structure on a resource preorder $\mc{R}$ given by $\upper(\low(\mc{R}))$. First, we will show how to use the upper-lower construction as a purely formal tool that realizes the desired properties we derived in Sections \ref{sec:intr free} and \ref{sec:intr self}. Then, we will reconstruct the upper-lower model by giving an interpretation to the sets appearing therein. This will include deriving the corresponding laws based on that interpretation. The fact that both approaches agree suggests that we have chosen a good model.
+Apart from being universal, the upper-lower model lends itself to easy interpretation. This section will describe how. In addition, we present rules which simplify the evaluation of choices. \\
 
-\subsubsection{Formally using the Upper-Lower Model}
-We begin by describing $\upper(\low(\mc{R}))$ in greater detail. We again fix $\sqcap$ as free choice and $\sqcup$ as forced choice. First, we define the lattice of lower sets.
+Given a preorer $\mc{P}$, we consider the upper-lower model $\upper\low\mc{P}$. By Lemma \ref{lem:upper lower lattice} we have an order embedding $i: \mc{P} \hookrightarrow \upper\low\mc{P}$ given by $p \mapsto \upc{\lwc{\{p\}}}$. In addition, we know that meets and joins in $\upper\low\mc{P}$ are given by unions and intersections, respectively. Hence, we implement our connectives $\csqcap$ and $\csqcup$ by setting 
+$$ \cbigsqcap{a \in A} a :=  \bigcup_{a \in A} a,$$
+$$ \cbigsqcup{a \in A} a := \bigcap_{a \in A} a.$$
 
-\begin{definition}[Lower Sets]
-	Let $(P,\shortrightarrow)$ be a preorder. A subset $L \sub P$ is a lower set, iff for any $l \in L$, $x \shortrightarrow l$ implies $x \in L$. The set of lower sets of $P$, ordered by inclusion is denoted by $\low(P)$. 
-\end{definition}
+In particular, if we are interested choice between elements of $\mc{P}$, we first embed those elements into $\upper\low\mc{P}$ and then apply the corresponding operation. That is if $B \sub \mc{P}$,
+$$ \cbigsqcap{p \in B} p :=  \bigcup_{p \in B} i(p),$$
+$$ \cbigsqcup{p \in B} p := \bigcap_{p \in B} i(p).$$
+\begin{remark}
+	Observe that we are overloading the symbols $\csqcap$ and $\csqcup$ to express both choice between elements of $\upper\low\mc{P}$ and $\mc{P}$. The two uses only differ by the embedding $i: \mc{P} \hookrightarrow \upper\low\mc{P}$. It should be clear from context which meaning applies. 
+\end{remark}
 
-\begin{lemma}
-	For any preorder $P$, $\low(P)$ is a completely distributive lattice with meets given by set intersection and joins by set union.
+If $\mc{P}$ is finite, an element of $\upper\low\mc{P}$ has the form
+$$\color{OliveGreen} \bm{\{} \color{Black} \color{BrickRed} \bm{\{} \color{Black} p_{1,1}, \ldots, p_{1,n_1} \color{BrickRed} \bm{\}} \color{Black}, \ldots, \color{BrickRed} \bm{\{} \color{Black} p_{m,1}, \ldots, p_{m,n_m} \color{BrickRed} \bm{\}} \color{Black}  \color{OliveGreen} \bm{\}} \color{Black}$$
+where the green brackets indicate an upper set, while the red brackets indicate lower sets. In the general case, an element of $\upper\low\mc{P}$ has the form
+\begin{equation}\label{eq:ulp element}
+	\color{OliveGreen} \bm{\{} \color{Black} \color{BrickRed} \bm{\{} \color{Black} p_{k,j} \color{BrickRed} \bm{\}}_{k \in K_j} \color{Black}  \color{OliveGreen} \bm{\}}_{j \in J} \color{Black}
+\end{equation}
+where again green indicates an upper set and red indicates lower sets.
+
+We will interpret an the element (\ref{eq:ulp element}) as the choice
+$$\cbigsqcap{j \in J} \left( \: \cbigsqcup{k \in K_j} p_{j,k} \right).$$
+
+To justify this interpretation, we will need the following
+
+\begin{lemma}\label{lem:exchange upc}
+	Let $(\mc{P},\shortrightarrow)$ be a preorder. Then for a collection $\{p_i\} \sub \mc{P}$,
+	$$ \upc{\{p_i\}_{i \in I}} = \bigcup_{i \in I} \upc{\{p_i\}},$$
+	$$ \lwc{\{p_i\}_{i \in I}} = \bigcup_{i \in I} \lwc{\{p_i\}}.$$
 \end{lemma}
+\begin{proof}
+	Suppose $x \in \upc{\{p_i\}_{i \in I}}$. Then $p_i \shortrightarrow x$ for some $i \in I$, whence $x \in \upc{\{p_i\}} \sub \bigcup_{i \in I} \upc{\{p_i\}}$. Conversely, if $x \in \bigcup_{i \in I} \upc{\{p_i\}}$, then $x \in \upc{\{p_i\}}$ for some $i \in I$. This means $p_i \shortrightarrow x$, whence $x \in \upc{\{p_i\}_{i \in I}}$. The second statement follows by applying the first to $\mc{P}^\text{op}$.
+\end{proof}
 
-\begin{definition}[Lower Closure]
-	Given a subset $A \sub P$, its lower closure is the lower set given by $$\downarrow A := \{x \in P: x \shortrightarrow a \text{ for some a } \in A\}.$$
-\end{definition} 
+\begin{lemma}\label{lem:intersection as union}
+	Let $\mc{P}$ be a preorder.
+	\begin{itemize}
+		\item[(i)] If $\{ A_i \}_{i \in I} \sub \upper\low\mc{P}$ is a collection of elements of the upper-lower model, then
+		$$\bigcap_{i \in I} A_i = \{ \bigcup_{i \in I} a_i : a_i \in A_i \text{ for each } i \in I \} .$$
+		\item[(ii)] If $\{a_j\}_{j \in J} \sub \low\mc{P}$ is a collection of lower sets, then
+		$$\bigcap_{j \in J} \upc{\{a_j\}} =\upc{ \{ \bigcup_{j \in J} a_j \}} .$$
+		\item[(iii)] If $\{p_k\}_{k \in K} \sub \mc{P}$ is a collection of elements of $\mc{P}$, then
+		$$\bigcap_{k \in K} \upc{\{ \lwc{\{p_k\}} \}} =\upc{ \{ \lwc{ \{p_k\}_{k \in K} } \}} .$$
+	\end{itemize}	
+\end{lemma} 
+\begin{proof}
+	To show (i), suppose $x \in \bigcap_{i \in I} A_i$. Then $x \in A_i$ for each $i \in I$. Writing $x = \bigcup_{i \in I} x$ shows that $x \in \{ \bigcup_{i \in I} a_i : a_i \in A_i \text{ for each } i \in I \}$. Conversely, consider $x = \bigcup_{i \in I} a_i$ where $a_i \in A_i$ for all $i \in I$. Recall that the $A_i$ are upper sets of $(\low\mc{P},\sub)$. Hence $a_i \in A_i$ and $a_i \sub \bigcup_{i \in I} a_i = x$ imply $x \in A_i$. This holds for every $i \in I$, so $x \in \bigcap_{i \in I} A_i$.
+	
+	For (ii), we note that by (i), 
+	$$\bigcap_{i \in I} \upc{\{a_j\}} = \{ \bigcup_{j \in J} b_j : b_j \in \upc{\{a_j\}}  \text{ for each } j \in J \}.$$
+	Since $b_j \in \upc{\{a_j\}}$ means $b_j \supseteq a_j$, we have
+	$$\bigcap_{i \in I} \upc{\{a_j\}} = \{ \bigcup_{j \in J} b_j : b_j \supseteq a_j \text{ for each } j \in J \}.$$ 
+	Suppose $x = \bigcup_{j \in J} b_j$, where $b_j \supseteq a_j$ for all $j \in J$. Then $\bigcup_{j \in J} b_j \supseteq \bigcup_{j \in J} a_j $, whence $x \in \upc{ \{ \bigcup_{j \in J} a_j \}}$. Conversely, if $x \supseteq \bigcup_{j \in J} a_j$, then $x \supseteq  a_j$ for each $j \in J$. Therefore, $x = \bigcup_{j \in J} x$ is an element of $\{ \bigcup_{j \in J} b_j : b_j \supseteq a_j \text{ for each } j \in J \}$. In summary,
+	$$\bigcap_{i \in I} \upc{\{a_j\}} = \{ \bigcup_{j \in J} b_j : b_j \supseteq a_j \text{ for each } j \in J \} = \upc{ \{ \bigcup_{j \in J} a_j \}}.$$ 
+	
+	For (iii), we apply (ii) and Lemma \ref{lem:exchange upc} to obtain
+	$$ \bigcap_{k \in K} \upc{\{ \lwc{\{p_k\}} \}} =  \upc{ \{ \bigcup_{k \in K} \lwc{\{p_k\}} \}} = \upc{ \{ \lwc{ \{p_k\}_{k \in K} } \}}.$$
+\end{proof}
 
-\begin{lemma}
-	For any preorder $P$, we can embed $i: P \hookrightarrow \low(P)$ by taking lower closures $p \mapsto \downarrow \{p\}$. This map is injective and satisfies $p \shortrightarrow q \Leftrightarrow i(p) \sub i(q).$ 
-\end{lemma}
 
-Dually, we can make the same definitions for upper sets.
+Returning to the interpretation, consider the element
+$$ \color{OliveGreen} \bm{\{} \color{Black} \color{BrickRed} \bm{\{} \color{Black} p_{j,k} \color{BrickRed} \bm{\}}_{k \in K_j} \color{Black}  \color{OliveGreen} \bm{\}}_{j \in J} \color{Black}.$$
+Since the red brackets are a lower set and the green brackets an upper set, we can rewrite
+$$ \color{OliveGreen} \bm{\{} \color{Black} \color{BrickRed} \bm{\{} \color{Black} p_{j,k} \color{BrickRed} \bm{\}}_{k \in K_j} \color{Black}  \color{OliveGreen} \bm{\}}_{j \in J} \color{Black} = \upc{ \color{OliveGreen} \bm{\{} \color{Black} \lwc{\color{BrickRed} \bm{\{} \color{Black} p_{j,k} \color{BrickRed} \bm{\}}_{k \in K_j} \color{Black}}  \color{OliveGreen} \bm{\}}_{j \in J} \color{Black}}.$$
+Using Lemmas \ref{lem:exchange upc} and  \ref{lem:intersection as union} (ii),
+\begin{IEEEeqnarray*}{rCl}
+	 \color{OliveGreen} \bm{\{} \color{Black} \color{BrickRed} \bm{\{} \color{Black} p_{j,k} \color{BrickRed} \bm{\}}_{k \in K_j} \color{Black}  \color{OliveGreen} \bm{\}}_{j \in J} \color{Black} & = & \upc{ \color{OliveGreen} \bm{\{} \color{Black} \lwc{\color{BrickRed} \bm{\{} \color{Black} p_{j,k} \color{BrickRed} \bm{\}}_{k \in K_j} \color{Black}}  \color{OliveGreen} \bm{\}}_{j \in J} \color{Black}} \\
+	 & = & \bigcup_{j \in J} \upc{ \color{OliveGreen} \bm{\{} \color{Black} \bigcup_{k \in K_j} \lwc{\color{BrickRed} \bm{\{} \color{Black} p_{j,k} \color{BrickRed} \bm{\}} \color{Black}}  \color{OliveGreen} \bm{\}} \color{Black}} \\
+	 & = & \bigcup_{j \in J} \bigcap_{k \in K_j} \upc{ \color{OliveGreen} \bm{\{} \color{Black} \lwc{\color{BrickRed} \bm{\{} \color{Black} p_{j,k} \color{BrickRed} \bm{\}} \color{Black}}  \color{OliveGreen} \bm{\}} \color{Black}} \\
+	 & = & \cbigsqcap{j \in J} \left( \: \cbigsqcup{k \in K_j} p_{j,k} \right).
+\end{IEEEeqnarray*}
+This equation confirms our interpretation. \\
 
-\begin{definition}[Upper Sets]
-	Let $(P,\shortrightarrow)$ be a preorder. A subset $U \sub P$ is an upper set, iff for any $u \in U$, $u \shortrightarrow x$ implies $x \in U$. The set of upper sets of $P$, ordered by containment is denoted by $\upper(P)$. 
-\end{definition}
 
-\begin{lemma}
-	For any preorder $P$, $\upper(P)$ is a completely distributive lattice with meets given by set union and joins by set intersection.
-\end{lemma}
+We now know how to interpret elements of $\upper\low\mc{P}$. We will now show how free and forced are represented in the upper lower model. Suppose $\{p_j\}_{j \in J}$ is a collection of elements in $\mc{P}$. Each $p_j$ embeds into $\upper\low\mc{P}$ as $\upc{\{\lwc{\{p_j\}}\}}$. The free choice among $\{p_j\}_{j \in J}$ is represented by 
+\begin{equation}\label{eq:repr free}
+	\cbigsqcap{j \in J} p_j = \bigcup_{j \in J} \upc{\{\lwc{\{p_j\}}\}} = \upc{\{\lwc{\{p_j\}}\}_{j \in J}},
+\end{equation}
+where we applied Lemma \ref{lem:exchange upc}.
 
-\begin{definition}[Lower Closure]
-	Given a subset $A \sub P$, its lower closure is the lower set given by $$\upc{A} := \{x \in P: a \shortrightarrow x \text{ for some a } \in A\}.$$
-\end{definition} 
+On the other hand, the forced choice among these is given by
+\begin{equation}\label{eq:repr forced}
+	\cbigsqcup{j \in J} p_j = \bigcap_{j \in J} \upc{\{\lwc{\{p_j\}}\}} =\upc{\{ \lwc{\{ p_j \}_{j \in J} } \}}, 
+\end{equation}
+where we have used Lemma \ref{lem:intersection as union} (iii). \\
 
-\begin{lemma}
-	For any preorder $P$, we can embed $i: P \hookrightarrow \upper(P)$ by taking upper closures $p \mapsto \uparrow \{p\}$. This map is injective and satisfies $p \shortrightarrow q \Leftrightarrow i(p) \supseteq i(q).$ 
-\end{lemma}
-
-In particular, for any preorder of resources $\mc{R}$, $\upper(\low(\mc{R}))$ is completely distributive with meets given by set union and joins by set intersection. Moreover, we have an injective map $i: \mc{R} \hookrightarrow \upper(\low(\mc{R}))$ given by $r \mapsto \: \uparrow \downarrow \{r\}$ that satisfies 
-$$ r \shortrightarrow s \Leftrightarrow i(r) \supseteq i(s).$$
-
-We implement our connectives $\sqcap$ and $\sqcup$ in $\upper(\low(\mc{R}))$ by setting $\sqcap$ to be the meet and $\sqcup$ to be the join in $\upper(\low(\mc{R}))$: For a subset $A \sub \upper(\low(\mc{R}))$,
-$$ \bigsqcap_{a \in A} a :=  \bigcup_{a \in A} a,$$
-$$ \bigsqcup_{a \in A} a := \bigcap_{a \in A} a.$$
-
-In particular, if we are interested choice between elements of $\mc{R}$, we first embed those elements into $\upper(\low(\mc{R}))$ and then apply the corresponding operation. That is if $B \sub \mc{R}$,
-$$ \bigsqcap_{r \in B} a :=  \bigcup_{r \in B} i(r),$$
-$$ \bigsqcup_{r \in B} a := \bigcap_{r \in B} i(r).$$
-
+Let us see how this works in practice.
 \begin{example}[Menu 2]
 	In a restaurant we are allowed to choose between a vegetarian and a meat option. If we choose the vegetarian option, the restaurant will provide us a curry dish, or a casserole, depending on availability. If we choose the meat option we will get chicken or beef, depending on availability. Using our connectives, we can describe this as
-	$$ (\mathtt{curry} \sqcup \mathtt{casserole}) \sqcap (\mathtt{chicken} \sqcup \mathtt{beef}).$$
-	We model our options as the discrete preorder $\{\mathtt{curry}, \mathtt{casserole}, \mathtt{chicken},
-	 \mathtt{beef}\}$. Using the rules above for describing this choice in the upper-lower model, we represent 
+	$$ (\mathtt{curry} \csqcup \mathtt{casserole}) \csqcap (\mathtt{chicken} \csqcup \mathtt{beef}).$$
+	We model our options as the discrete preorder 
+	$$\mc{P} := \{\mathtt{curry}, \mathtt{casserole}, \mathtt{chicken}, \mathtt{beef}\}.$$ 
+	 Using rule (\ref{eq:repr forced}) describe above, we represent this choice in $\upper\low\mc{P}$ by
 	 \begin{IEEEeqnarray*}{rCl}
-	 	\mathtt{curry} \sqcup \mathtt{casserole} & = & i(\mathtt{curry}) \cap i(\mathtt{casserole}) \\
-	 	&= & \uparrow\{\{\mathtt{curry}\}\} \cap \uparrow\{\{\mathtt{casserole}\}\} \\
+	 	\mathtt{curry} \csqcup \mathtt{casserole} & = & \uparrow \{\lwc{\{\mathtt{curry},\mathtt{casserole}\}}\}\\
 	 	& =& \uparrow \{\{\mathtt{curry},\mathtt{casserole}\}\}.
 	 \end{IEEEeqnarray*}
- 	A similar calculation shows $\mathtt{chicken} \sqcup \mathtt{beef} = \uparrow\{\{\mathtt{chicken},\mathtt{beef}\}\}$. Hence,
+ 	A similar calculation shows $\mathtt{chicken} \csqcup \mathtt{beef} = \uparrow\{\{\mathtt{chicken},\mathtt{beef}\}\}$. Hence,
  	\begin{IEEEeqnarray*}{rCl}
- 		(\mathtt{curry} \sqcup \mathtt{casserole}) \sqcap (\mathtt{chicken} \sqcup \mathtt{beef}) &=& \uparrow \{\{\mathtt{curry},\mathtt{casserole}\}\} \cup \uparrow\{\{\mathtt{chicken},\mathtt{beef}\}\} \\
- 		&=& \uparrow\{\{\mathtt{curry},\mathtt{casserole}\} , \{\mathtt{chicken},\mathtt{beef}\} \}.
+ 		(\mathtt{curry} \csqcup \mathtt{casserole}) &\csqcap& (\mathtt{chicken} \csqcup \mathtt{beef}) \\ &=& \upc{ \{\{\mathtt{curry},\mathtt{casserole}\}\}} \cup \upc{\{\{\mathtt{chicken},\mathtt{beef}\}\}} \\
+ 		&=& \uparrow\{\{\mathtt{curry},\mathtt{casserole}\} , \{\mathtt{chicken},\mathtt{beef}\} \}. \exampleend
  	\end{IEEEeqnarray*}
 \end{example}
 
 \begin{example}[Menu 3]
-	A restaurant offers two menus, depending on the day. As customers we can freely choose any option on the current menu. Suppose the menu items the first menu are $\{\mathtt{curry}, \mathtt{beef}\}$ and those on the second are $\{\mathtt{casserole}, \mathtt{chicken}\}$. In terms of our connectives, this choice becomes
-	$$ (\mathtt{curry} \sqcap \mathtt{beef}) \sqcup (\mathtt{casserole} \sqcap \mathtt{chicken}).$$
-	In the upper-lower model we represent
+	A restaurant offers two menus, depending on the day. As customers, we can freely choose any option on the current menu. Suppose the menu items the first menu are $\{\mathtt{curry}, \mathtt{beef}\}$ and those on the second are $\{\mathtt{casserole}, \mathtt{chicken}\}$. In terms of our connectives, this choice becomes
+	$$ (\mathtt{curry} \csqcap \mathtt{beef}) \csqcup (\mathtt{casserole} \csqcap \mathtt{chicken}).$$
+	Using rule (\ref{eq:repr free}) we represent
 	\begin{IEEEeqnarray*}{rCl}
-		\mathtt{curry} \sqcap \mathtt{beef} &=& i(\mathtt{curry}) \cup i(\mathtt{beef}) \\
-		&=& \uparrow \{\{\mathtt{curry}\}\} \cup \uparrow \{\{\mathtt{beef}\}\} \\
+		\mathtt{curry} \csqcap \mathtt{beef} &=& \uparrow \{\lwc{\{\mathtt{curry}\}}, \lwc{\{\mathtt{beef}\}}\} \\
 		&=& \uparrow \{\{\mathtt{curry}\}, \{\mathtt{beef}\}\}.
 	\end{IEEEeqnarray*}
-	Similarly, $\mathtt{casserole} \sqcap \mathtt{chicken} = \uparrow \{\{\mathtt{casserole}\}, \{\mathtt{chicken}\}\}$.
-	Hence,  
+	Similarly, $\mathtt{casserole} \csqcap \mathtt{chicken} = \uparrow \{\{\mathtt{casserole}\}, \{\mathtt{chicken}\}\}$.
+	Hence, using Lemma \ref{lem:intersection as union} (ii), 
 	\begin{IEEEeqnarray*}{rCl}
-		(\mathtt{curry} \sqcap \mathtt{beef}) \sqcup (\mathtt{casserole} \sqcap \mathtt{chicken}) &=& 
-		\uparrow \{\{\mathtt{curry}\}, \{\mathtt{beef}\}\} \cap \uparrow \{\{\mathtt{casserole}\}, \{\mathtt{chicken}\}\} \\
-		&= &\uparrow \{ \{\mathtt{curry}, \mathtt{casserole}\}, \{\mathtt{curry,chicken}\}, \\&& \quad \{\mathtt{beef,casserole}\}, \{\mathtt{beef,chicken}\} \}.
-	\end{IEEEeqnarray*}
+		(\mathtt{curry} \csqcap \mathtt{beef}) &\csqcup& (\mathtt{casserole} \csqcap \mathtt{chicken}) \\
+		&=& \upc{\{\{\mathtt{curry}\}, \{\mathtt{beef}\}\}} \cap \upc {\{\{\mathtt{casserole}\}, \{\mathtt{chicken}\}\}} \\
+		&= &\uparrow \{ \{\mathtt{curry}, \mathtt{casserole}\}, \{\mathtt{curry,chicken}\}, \\&& \quad \{\mathtt{beef,casserole}\}, \{\mathtt{beef,chicken}\} \}. \exampleend
+	\end{IEEEeqnarray*} 
 \end{example}
 
-The examples above show the need for some rules for calculating unions and intersections in $\upper(\low(\mc{R}))$. 
+As seen in the examples, it is easiest to represent upper and lower sets by upper and lower closures. The following calculation rules describe how to take choices among elements represented in this fashion.
 
-\begin{tcolorbox}[title = Calculation Rules]
-	\begin{lemma}\label{lem:calc} For arbitrary upper closures of $A,B \sub \low(\mc{R})$ we have:
+\begin{tcolorbox}[title = \hypertarget{box:calc rules} {Calculation Rules} for Upper and Lower Closures, colframe=TealBlue, coltitle=Sepia, colback=paleteal] 
+		Let $\mc{P}$ be a preorder and $\{A_j\}_{j \in J}$ and $\{A_k\}_{k \in K}$ be indexed families of subsets of $\mc{P}$. Then the following rules hold for finite choices in $\upper\low\mc{P}$:
 		\begin{itemize}
-		\item[(i)] $\upc{A} \cup \upc{B} = \uparrow \{x : x \in A \text{ or }  x \in B\} = \uparrow (A \cup B)$
-		\item[(ii)] $\bigcup_{i \in I}(\uparrow A_i) = \uparrow (\bigcup_{i \in I}A_i)$
-		\item[(iii)]$\upc{A} \cap \upc{B} = \uparrow \{ a \cup b: a \in A, b \in B \} = \{ a \cup b: a \in \upc{A}, b \in \upc{B} \}$ 
-		\item[(iv)]$\bigcap_{i \in I}(\upc {A_i})  = \: \uparrow \!\!\! \{\bigcup a_i: a_i \in A_i \text{ for all } i \} =\{\bigcup a_i: a_i \in \: \upc{A_i} \text{ for all } i \}$
+			\item[(i)] $\upc{\{ \lwc{A_j} \}_{j \in J}} \csqcap \upc{\{ \lwc{A_k} \}_{k \in K}} = \upc \{ \lwc{A_i} \}_{i \in J \cup K}$
+			\item[(ii)] $\upc{\{ \lwc{A_j} \}_{j \in J}} \csqcup \upc{\{ \lwc{A_k} \}_{k \in K}} = \upc \{ \lwc{(A_j \cup A_k)} \}_{j,k \in J \times K}$
 		\end{itemize}
-	\end{lemma}
-	\begin{proof}
-		It suffices to prove (ii) and (iv). 
-		
-		\paragraph{(ii)} Suppose $a \in \bigcup_{i \in I}(\uparrow A_i)$. Then $a \in \upc{A_i}$ for some $i$. In particular, $a_i \sub a$ for $a_i \in A_i$. Hence $a_i \sub a$ for $a_i \in \bigcup_{i \in I}A_i$, showing $a \in \upc{(\bigcup_{i \in I}A_i)}$. 
-		
-		Conversely, if $a \in \upc{(\bigcup_{i \in I}A_i)}$, then $a_i \sub a$ for some $a_i \in \bigcup_{i \in I}A_i$, that is for some $a_i \in A_i$. Thus $a \in \upc{A_i}$, meaning $a \in \bigcup_{i \in I}(\uparrow A_i)$.
-		
-		\paragraph{(iv)} Suppose $a \in \bigcap_{i \in I}(\uparrow A_i)$. Then for all $i$ there exists $a_i \in A_i$ such that $a_i \sub a$. Thus $\bigcup a_i \sub a$, meaning $a \in \: \uparrow \!\! \{\bigcup a_i: a_i \in A_i \text{ for all } i \}$.
-		
-		Conversely, if $a \in \: \uparrow \!\!\! \{\bigcup a_i: a_i \in A_i \text{ for all } i \}$, there are $i$ such that $\bigcup a_i \sub a$, where $a_i \in A_i$. Hence for all $i$, $a_i \sub \bigcup a_i \sub a$, meaning $a \in \bigcap_{i \in I}(\uparrow A_i)$.
-		
-		The final equality assume $a \in \: \uparrow \!\! \{\bigcup a_i: a_i \in A_i \text{ for all } i \}$. Then there are $i$ such that $\bigcup a_i \sub a$, where $a_i \in A_i$. This implies $a_i \sub a$ for all $i$, whence $a \in \upc{A_i}$ for all $i$. Hence $a = \bigcup a  \in \{\bigcup a_i: a_i \in \upc{A_i} \text{ for all } i \}$.
-		
-		If $a \in \{\bigcup a_i: a_i \in \: \uparrow \!\! A_i \text{ for all } i \}$, then there are $i$ such that $\bigcup a_i = a$, where $a_i \in \upc{A_i}$. For each $i$, we have $x_i \sub a_i$ for $x_i \in A_i$. Hence $\bigcup x_i \sub \bigcup a_i = a$, showing $a \in \upc{\{\bigcup a_i: a_i \in A_i \text{ for all } i \}}$.
-	\end{proof}
-	\begin{lemma} The following equalities hold for $a,b, \in \mc{R}$:
-	\begin{itemize}
-		\item[(i)] $i(a) \cup i(b) = \uparrow \{\downarrow \{a\}, \downarrow \{b\}\}$
-		\item[(ii)] $i(a) \cap i(b) = \uparrow \{ {\downarrow \{a\}} \cup {\downarrow \{b\}}\} = \uparrow \{ \downarrow \{a,b\}\} $
-	\end{itemize}
-	\end{lemma}
-	\begin{proof}
-		Use Lemma \ref{lem:calc} and the fact that ${\downarrow \{a\}} \cup {\downarrow \{b\}} = \downarrow \{a,b\}$.
-	\end{proof}
+		More generally, if $\{ A_{j,k} \}_{j \in J, k \in K_j}$ is a double indexed family of subsets of $\mc{P}$, then the following rules apply for infinite choice in $\upper\low\mc{P}$:
+		\begin{itemize}
+			\item[(iii)] $\cbigsqcap{j \in J} \upc{\{ \lwc{A_{j,k}} \}_{k \in K_j}} = \upc \{ \lwc{A_i} \}_{i \in \bigcup K_j }$
+			\item[(iv)] $\cbigsqcup{j \in J} \upc{\{ \lwc{A_{j,k}} \}_{k \in K_j}} = \upc \{ \lwc{ \bigcup_{j \in J} A_{j,f(j)}} \}_{f \in F}$ \newline where $F$ denotes the set of choice functions $f: J \rightarrow \coprod_{j \in J} K_j$ with $f(j) \in K_j$ for all $j \in J$.
+\end{itemize}
+\end{tcolorbox}
+\begin{proof}
+%	For (i) we observe that by Lemma \ref{lem:exchange upc},
+%	\begin{IEEEeqnarray*}{rCl}
+%		\upc{\{ \lwc{A_j} \}_{j \in J}} \csqcap \upc{\{ \lwc{A_k} \}_{k \in K}} &=& \upc{\{ \lwc{A_j} \}_{j \in J}} \cup \upc{\{ \lwc{A_k} \}_{k \in K}} \\
+%		& = & \upc( \{\lwc{A_j}\}_{j \in J} \cup \{ \lwc{A_k} \}_{k \in K})  \\
+%		& = & \upc \{ \lwc{A_i} \}_{i \in J \cup K}.
+%	\end{IEEEeqnarray*}
+%	
+%	For (ii) we apply Lemmas \ref{lem:intersection as union} and \ref{lem:exchange upc},
+%	\begin{IEEEeqnarray*}{rCl}
+%		\upc{\{ \lwc{A_j} \}_{j \in J}} \csqcup \upc{\{ \lwc{B_k} \}_{k \in K}} &=& \upc{\{ \lwc{A_j} \}_{j \in J}} \cap \upc{\{ \lwc{B_k} \}_{k \in K}} \\
+%		& = &	\upc{ \{ \lwc{A_j} \cup \lwc{B_k} \}_{j,k \in J \times K} } \\
+%		& = &	\upc \{ \lwc{(A_j \cup B_k)} \}_{j,k \in J \times K}
+%	\end{IEEEeqnarray*}
+	Note that (i) and (ii) are special cases of (iii) and (iv). Regarding (ii), this follows because choice functions $\{j,k\} \rightarrow J \cup K$ correspond to elements of the cartesian product $J \times K$.
+	
+	For (iii) we observe that by Lemma \ref{lem:exchange upc},
+	\begin{IEEEeqnarray*}{rCl}
+		\cbigsqcap{j \in J} \upc{\{ \lwc{A_{j,k}} \}_{k \in K_j}} &=& \bigcup_{j \in J} \upc{\{ \lwc{A_{j,k}} \}_{k \in K_j}} \\
+		& = & \upc{ \bigcup_{j \in J} \{ \lwc{A_{j,k}} \}_{k \in K_j}} \\
+		& = & \upc \{ \lwc{A_i} \}_{i \in \bigcup K_j }
+	\end{IEEEeqnarray*}
+
+	For (iv) we apply Lemma \ref{lem:exchange upc}, the infinite distributive law (\ref{eq:join dist}), and Lemma \ref{lem:intersection as union},
+	\begin{IEEEeqnarray*}{rCl}
+		\cbigsqcup{j \in J} \upc{\{ \lwc{A_{j,k}} \}_{k \in K_j}} &=& \bigcap_{j \in J} \upc{\{ \lwc{A_{j,k}} \}_{k \in K_j}} \\
+		& = & \bigcap_{j \in J} \bigcup_{k \in K_j} \upc \{ \lwc A_{j,k} \} \\
+		& = & \bigcup_{f \in F} \bigcap_{j \in J} \upc \{ \lwc A_{j,f(j)}\} \\
+		& = & \bigcup_{f \in F} \upc \{ \bigcup_{j \in J} \lwc{A_{j,f(j)}} \} \\
+		& = & \upc  \{ \bigcup_{j \in J} \lwc{A_{j,f(j)}} \}_{f \in F} \\
+		& = & \upc \{ \lwc{ \bigcup_{j \in J} A_{j,f(j)}} \}_{f \in F}
+	\end{IEEEeqnarray*}	
+\end{proof}
+
+\begin{tcolorbox}[title=Working in the Upper-lower Model, colframe=Apricot, colback = paleorange, coltitle = Sepia]
+Given a preorder $\mc{P}$ we we have an order embedding $i: \mc{P} \hookrightarrow \upper\low\mc{P}$ into its upper-lower model. Free and forced choices are implemented in $\upper\low\mc{P}$ as
+$$ \cbigsqcap{a \in A} a :=  \bigcup_{a \in A} a,$$
+$$ \cbigsqcup{a \in A} a := \bigcap_{a \in A} a.$$
+A general element of $\upper\low\mc{P}$ has the form 
+$
+\color{OliveGreen} \bm{\{} \color{Black} \color{BrickRed} \bm{\{} \color{Black} p_{k,j} \color{BrickRed} \bm{\}}_{k \in K_j} \color{Black}  \color{OliveGreen} \bm{\}}_{j \in J} \color{Black}
+$
+and is interpreted as
+$\cbigsqcap{j \in J} \: \cbigsqcup{k \in K_j} p_{j,k}.$ Choices in $\upper\low\mc{P}$ can be calculated using the rules presented in Lemmas \ref{lem:exchange upc}, \ref{lem:intersection as union}, and the \hyperlink{box:calc rules}{box above}.
 \end{tcolorbox}
 
-\subsubsection{Interpretation-Based Reconstruction}\label{sec:reconstruction}
-In this section we will reconstruct $\upper(\low(\mc{R}))$ based on interpretation. For this we fix $\sqcap$ as free choice and $\sqcup$ as forced choice. Because of distributivity, we can always represent any choice as a free choice over a set of forced choices. 
-
-We start by considering a forced choice of resources from a set $A \sub \mc{R}$. We will argue that $\bigsqcup_{a \in A} a \cong \bigsqcup_{a \in \lwc{A}} a $, in the sense that we have the same information on the outcome of the choice in both cases. Observe that we have the following monotonicity law
-$$a \shortrightarrow b \quad \Leftrightarrow \quad  a \sqcup b \cong b.$$
-If $a \shortrightarrow b$, then since $b \shortrightarrow b$, we have $a \sqcup b \shortrightarrow b$ by law (\ref{eq:join 2}). By law (\ref{eq:join 1}), $b \shortrightarrow a \sqcup b$, so $a \sqcup b \cong b$. Conversely, if $a \sqcup b \cong b$, then $a \shortrightarrow a \sqcup b \cong b$.
-
-More generally,
-$$ \bigsqcup_{a \in A} a \cong b \quad \Leftrightarrow \quad a \shortrightarrow b, \: \forall a \in A.$$
-In particular, for every $a \in A$, we have $ \bigsqcup_{x \in \lwc{\{a\}}} x \cong a$. Now $\lwc{A} = \bigcup_{a \in A} \lwc{a}$. Therefore,
-$$\bigsqcup_{a \in \lwc{A}} a = \bigsqcup_{x \in \bigcup_{a \in A} \lwc{\{a\}}} x = \bigsqcup_{a \in A} \bigsqcup_{x \in \lwc{\{a\}}} x \cong \bigsqcup_{a \in A} a.$$
-
-This shows that for each forced choice, we can choose a representative of that forced choice, where the set that is being chosen from is a lower set. Hence, $\low(\mc{R})$ can be seen as the set of equivalence classes of forced choices between elements of $\mc{R}$. 
-
-By duality we have 
-$$\bigsqcap_{a \in \upc{A}}a \cong  \bigsqcap_{a \in A}a.$$
-This implies that we can represent each free choice (up to isomorphism) by an upper set. Hence, $\upper(P)$ is the set of equivalence classes of free choices between elements of any preorder $P$. In particular, if we set $P := \low(\mc{R})$ we see that we can represent the set of free choices among forced choices among elements of $\mc{R}$ by $\upper(\low(\mc{R}))$.
-
-It remains to show that the natural meets and joins on $\upper(\low(\mc{R}))$ align with the operations given by our interpretation. Let $A \in \upper(\low(\mc{R}))$ represent a free choice over some forced choices $a_i$. That is, $A = \{a_i\}_{i \in I}$ represents $\bigsqcap_{i \in I} a_i$. Similarly, suppose $B \in \upper(\low(\mc{R}))$ is given by $B = \{b_j\}_{j \in J}$, representing $\bigsqcap_{j \in J} b_j$. Because $$ \bigsqcap_{i \in I} a_i \sqcap \bigsqcap_{j \in J} b_j =\bigsqcap_{a \in A} a \sqcap \bigsqcap_{b \in B} b \cong \bigsqcap_{x \in A \cup B} x,$$ we see that $A \cup B$ represents the free choice between $A$ and $B$.
-
-To see how forced choice is represented, we take $A,B \in \upper(\low(\mc{R}))$. Then $A = \{a_i\}_{i \in I}$, where $a_i = \{r_{i,k}\}_{k \in K_i}$. Similarly, $B = \{b_l\}_{l \in L}$, where $b_l = \{r_{l,m}\}_{m \in M_l}$. Hence $A$ represents $\bigsqcap_{i \in I} \bigsqcup_{k \in K_i} r_{i,k}$ and $B$ represents $\bigsqcap_{l \in L} \bigsqcup_{m \in M_l} r_{l,m}$, where we assume that all index sets are disjoint.
-
-Using distributivity
-\begin{IEEEeqnarray*}{rCl}
-	\bigsqcap_{i \in I} \bigsqcup_{k \in K_i} r_{i,k} \sqcup \bigsqcap_{l \in L} \bigsqcup_{m \in M_l} r_{l,m}
-	& \cong & \bigsqcap_{i \in I} \bigsqcap_{l \in L} \left( \bigsqcup_{k \in K_i} r_{i,k} \sqcup \bigsqcup_{m \in M_l}  r_{l,m} \right) \\
-	&\cong& \bigsqcap_{(i,l) \in I \times L} \bigsqcup_{j \in K_i \cup M_l} r_{h(j),j},
-\end{IEEEeqnarray*}
-where $h(j) = \begin{cases}
-i, & \text{ if } j \in K_i \\
-l, & \text{ if } j \in M_l
-\end{cases}$. 
-
-Therefore, the set representing the forced choice between $A$ and $B$ is $\{a \cup b: a\in A, b\in B\}$, which be Lemma \ref{lem:calc} (iii) is precisely equal to $A \cap B$. \\
-
-In summary, we have shown that $\upper(\low(\mc{R}))$ corresponds exactly to the set of equivalence classes of free choices among forced choices among elements of $\mc{R}$. Moreover, the meet $A \cup B$ in $\upper(\low(\mc{R}))$ represents the free choice between the choices represented by $A$ and $B$. The join $A \cap B$ represents the forced choice between the choices represented by $A$ and $B$. Analogous arguments can be made for arbitrary meets and joins.
-
 \section{Feasibility between Choices}
-Having constructed a model for choices between the resources in a preorder $\mc{R}$, we turn to the task of extending feasibility relations to the model. The first task will be to lift a feasibility relation $\Phi: \mc{R} \xslashedrightarrow{} \mc{F}$ to the upper-lower models. We will see that such lifted feasibility relations display a certain kind of optimality in comparison to arbitrary feasibility relations between the upper-lower models.
+Given a preorders of resources $\mc{R}$ and functionalities $\mc{F}$, we are able to model free and forced choices by considering their upper-lower models $\upper\low\mc{R}$ and $\upper\low\mc{F}$. In this section, we will lift feasibility relations $\Phi: \mc{R} \xslashedrightarrow{} \mc{F}$ to the upper-lower models. We will obtain a new feasibility relation $\upper\low\Phi: \upper\low\mc{R} \xslashedrightarrow{} \upper\low\mc{F}$, which extends $\Phi$ to choice. Moreover, we will see that such lifted feasibility relations $\upper\low\Phi$ enjoy special properties that distinguish them from arbitrary feasibility relations between the upper-lower models. Finally, we will consider what functionalities we can obtain from a given choice of resources, and conversely, what resources are required to enable a given choice of functionalities.
 
-\subsection{Lifting Feasibility to Upper-Lower Models}
-We have seen in Section \ref{sec:reconstruction} that the choice of model is essentially determined by the laws we fixed in Sections \ref{sec:intr free} and \ref{sec:intr self}. In a similar spirit, the way we are going to naturally lift feasibility relations is already determined by the choices we have made so far.
+\subsection{Lifting Feasibility to Upper-Lower Models}\label{sec:lifting feasibility}
+Let $\Phi: \mc{R} \xslashedrightarrow{} \mc{F}$ be a feasibility relation between preorders $\mc{R}$ and $\mc{F}$. Lift this to a feasibility relation $\low\Phi: \low\mc{R} \xslashedrightarrow{} \low\mc{F}$ by setting 
+$$\low\Phi(A,B) = \true \iff \forall a \in A \: \exists b \in B: \Phi(a,b)=\true.$$
+This is a feasibility relation since `for all' is preserved by taking subsets and `there exists' by taking supersets. 
 
-Let $\Phi: \mc{R} \xslashedrightarrow{} \mc{F}$ be a feasibility relation between preorders $\mc{R}$ and $\mc{F}$. Lift this to a feasibility relation $\low(\Phi): \low(\mc{R}) \xslashedrightarrow{} \low(\mc{F})$ by setting 
-$$\low(\Phi)(A,B) = \true \iff \forall a \in A \: \exists b \in B: \Phi(a,b)=\true.$$
-This is a feasibility relation since `for all' is preserved by taking subsets and `there exists' by taking supersets. Note that the choice of quantifiers is completely determined by the fact that we are ordering lower sets by inclusion. This choice was in turn fixed by the fact that forced choice is represented by lower sets, and forced choices over set can be weakened to forced choices over a superset. Hence, our lifting is fixed by the fact that forced choice behaves like a join.
+Moving up a level, let $\Psi: \low\mc{R} \xslashedrightarrow{} \low\mc{F}$ be a feasibility relation. Lift this to $\upper\Psi: \upper\low\mc{R} \xslashedrightarrow{} \upper\low\mc{F}$ by setting  
+$$\upper\Psi(A,B) = \true \iff \forall b \in B \: \exists a \in A: \Psi(a,b)=\true.$$
+This is again a feasibility relation because the choice of quantifiers is compatible with the fact that we order the upper sets by containment. 
 
-Moving up a level, let $\Psi: \low(\mc{R}) \xslashedrightarrow{} \low(\mc{F})$ be a feasibility relation. Lift this to $\upper(\Psi): \upper(\low(\mc{R})) \xslashedrightarrow{} \upper(\low(\mc{F}))$ by setting  
-$$\upper(\Psi)(A,B) = \true \iff \forall b \in B \: \exists a \in A: \Psi(a,b)=\true.$$
-This is again a feasibility relation because the choice of quantifiers is compatible with the fact that we order the upper sets by containment. Dual to the above, the way we lift is fixed by the fact that we want free choice to act like a meet.
+Putting both lifts together yields the desired definition.
 
-Putting both lifts together, given $\Phi: \mc{R} \xslashedrightarrow{} \mc{F}$ , we can lift it to $\upper(\low(\Phi)): \upper(\low(\mc{R})) \xslashedrightarrow{} \upper(\low(\mc{F}))$ by iterating the two lifts. Explicitly,
-$$ \upper(\low(\Phi))(A,B) = \true \iff \forall b \in B \: \exists a \in A: \forall x \in a \: \exists y \in b: \Phi(a,b).$$
+\begin{definition}[Lifting Feasibility]\label{def:lift feas}
+	 Given a feasibility relation $\Phi: \mc{R} \xslashedrightarrow{} \mc{F}$, we can lift it to a feasibility relation $\upper\low\Phi: \upper\low\mc{R} \xslashedrightarrow{} \upper\low\mc{F}$ by setting
+	$$ \upper\low\Phi(A,B) = \true \iff \forall b \in B \: \exists a \in A: \forall x \in a \: \exists y \in b: \Phi(a,b) = \true.$$
+\end{definition}
 
-%\subsubsection{Abstract Characterization of the Lifts}
-%We show how the lifts can be obtained by abstract means. Given $\Phi: \mc{R} \xslashedrightarrow{} \mc{F}$, we can obtain a monotone map $\tilde\Phi:\mc{F} \rightarrow \low(\mc{R})$ by sending $$r \mapsto \{r \in \mc{r}: \Phi(r,f)=\true\}.$$
-%We lift this to a monotone map $\low\tilde\Phi:\low(\mc{F}) \rightarrow \low(\mc{R})$ by sending
-%$$L \mapsto \bigcup_{f \in L}\tilde\Phi(f).$$
+\begin{remark}
+	The quantifiers in the above definitions are fixed by the ordering we place on upper sets and lower sets. This ordering is in turn determined by the fact that the upper sets represent free choices and the lower sets forced choices. For example, if $A \sub B$ we want an arrow $\cbigsqcap{b \in B} b \shortrightarrow \cbigsqcap{a \in A} a$, representing a weakening of free choice. This shows the upper sets have to be ordered by containment.
+\end{remark}
 
-%we express $\Phi$ as a monotone map $\mc{R}^\text{op} \times \mc{F} \rightarrow \mathsf{Bool}$. This map may be curried to obtain a monotone map $\mc{R}^\text{op} \rightarrow [\mc F, \mathsf{Bool}]$, where $[\mc{F}, \mathsf{Bool}]$ denotes the set of monotone maps $\mc{F} \rightarrow \mathsf{Bool}$. A monotone map $f \in [\mc{F}, \mathsf{Bool}]$ corresponds bijectively to the lower set $f^{-1}(\false)$. Hence, $[\mc{F}, \mathsf{Bool}] \cong \low(\mc{F})$ as sets. The set $[\mc{F}, \mathsf{Bool}]$ is preordered by setting $f \leq g \Leftrightarrow f(r) \leq g(r), \: \forall r \in \mc{R}^\text{op}$. Hence, if $f \leq g \in [\mc{F}, \mathsf{Bool}]$, then $f^{-1}(\false) \supseteq g^{-1}(\false)$. Thus we have shown $[\mc{F}, \mathsf{Bool}] \cong \low(\mc{F})^\text{op}$ as preorders. Finally, a monotone map $\mc{R}^{op} \rightarrow \low(\mc{F})^\text{op}$ is the same thing as a monotone map $\mc{R} \rightarrow \low(\mc{F})$. As all the correspondences we used were isomo
+\begin{example}[Grocery Shopping 2]
+	Suppose we are grocery shopping. We model our money and groceries by $$\mc{R} := \{2\$ \shortrightarrow 1\$\} \qquad \qquad \mc{F} := \{\mathtt{potato}, \mathtt{eggplant} \}$$
+	Let $\Phi: \mc{R} \xslashedrightarrow{} \mc{F}$ be the feasibility relation describing whether we can buy a given item with a given amount of money. Assume that $\Phi$ is generated by the following assignments:
+	$$\Phi(1\$,\mathtt{potato}) = \true,$$
+	$$\Phi(2\$,\mathtt{eggplant}) = \true.$$
+	By \eqref{eq:repr free} and \eqref{eq:repr forced} we represent the following choices in $\upper\low\mc{F}$:
+	$$\mathtt{carrot} \csqcap \mathtt{eggplant} \rightsquigarrow \{ \{\mathtt{carrot}\},\{\mathtt{eggplant}\} \}$$ 
+	$$\mathtt{carrot} \csqcup \mathtt{eggplant} \rightsquigarrow \{ \{ \mathtt{carrot}, \mathtt{eggplant} \} \}.$$
+	The elements $1\$$ and $2\$$ are represented in $\upper\low\mc{R}$ by
+	$$i(1\$) = \upc\{\lwc\{ 1\$ \} \} = \upc \{ \{1\$, 2\$\} \} = \{A : A \supseteq \{1\$, 2\$ \} \} = \{ \{ 1\$,2\$\} \},$$
+	$$i(2\$) = \upc\{\lwc\{ 2\$ \} \} = \upc \{ \{2\$\} \} = \{A : A \supseteq  \{2\$\} \} = \{ \{1\$, 2\$ \}, \{2\$\}  \}.$$
+	
+	We can now ask whether $\upper\low\Phi(i(1\$), \mathtt{carrot} \csqcup \mathtt{eggplant}) \stackrel{?}{=} \true$. By Definition \ref{def:lift feas} this is the case iff for every $b \in \{ \{ \mathtt{carrot}, \mathtt{eggplant} \} \}$ there is $a \in i(1\$) = \{ \{ 1\$,2\$\} \}$ such that for all $r \in a$ there is $f \in b$ with $\Phi(r,f)$. Since the source and target sets are singletons, this condition is simply asking whether for all $r \in \{ 1\$, 2\$ \}$ there is $f \in \{ \mathtt{carrot}, \mathtt{eggplant} \}$ such that $\Phi(r,f)$. This is indeed the case since $\Phi(1\$,\mathtt{carrot})$ and $\Phi(2\$,\mathtt{carrot})$ both hold. Therefore, indeed $\upper\low\Phi(i(1\$), \mathtt{carrot} \csqcup \mathtt{eggplant}) = \true$. This is saying that for 1\$ the store will be willing to sell you either a \texttt{carrot} or an \texttt{eggplant}, provided they get to decide which you will receive.
+	
+	On the other hand $\upper\low\Phi(i(1\$), \mathtt{carrot} \csqcap \mathtt{eggplant}) = \false$, since for $b = \{\mathtt{egglant}\}$, the only $a \in i(1\$) = \{ \{ 1\$,2\$\} \}$ is $\{1\$, 2\$ \}$ and  $\Phi(1\$,\mathtt{eggplant}) = \false$. This is saying that for 1\$ the store will not sell you the option of choosing between a \texttt{carrot} or an \texttt{eggplant}, since they would loose money if you chose the \texttt{eggplant}. \exampleend
+\end{example}
+
+\begin{tcolorbox}[title=Lifting Feasibility to the Upper-lower Model, colframe=Apricot, colback = paleorange, coltitle = Sepia]
+	Given a feasibility relation $\Phi: \mc{R} \xslashedrightarrow{} \mc{F}$ we can lift it to a feasibility relation between the upper-lower models $\upper\low\Phi: \upper\low\mc{R} \xslashedrightarrow{} \upper\low\mc{F}$ by setting
+	$$ \upper\low\Phi(A,B) = \true \iff \forall b \in B \: \exists a \in A: \forall x \in a \: \exists y \in b: \Phi(a,b) = \true.$$
+	This assignment extends $\Phi$ and captures feasibility between choices.
+\end{tcolorbox}
 
 \subsection{Characterizing Lifted Feasibility Relations}
-
-\subsubsection{Lower Set Level}
-Suppose we have a feasibility relation $\Phi: \mc{R} \xslashedrightarrow{} \mc{F}$ which we lift to $\low(\Phi): \low(\mc{R}) \xslashedrightarrow{} \low(\mc{F})$ by setting 
-$$\low(\Phi)(A,B) = \true \iff \forall a \in A \: \exists b \in B: \Phi(a,b)=\true.$$
-
-\paragraph{Decomposition Property} If $\low(\Phi)(A,B) = \true$, then 
-$$\forall a \in A \: \exists b \in B: \Phi(a,b)=\true.$$
-In particular, for every $a \in A$ there is $b \in B$ such that
-$$\forall x \in \lwc{\{a\}} \: \exists y \in \lwc{\{b\}}: \Phi(x,y)=\true.$$
-This is because for any $x \in \lwc{\{a\}}$ we have $\Phi(x,b)$ by monotonicity, and $b \in \lwc{\{b\}}$. Hence, for every $a \in A$ there is $b \in B$ such that $\low(\Phi)(\lwc{\{a\}},\lwc{\{b\}})$. 
-
-\paragraph{Union Property} Assume $\low(\Phi)(X_i,B) = \true$ for each $X_i$ in a collection $\{X_i\}_{i \in I}$. Then for each $X_i$ we have that $$\forall x \in X_i \: \exists b \in B: \Phi(x,b)=\true.$$ This implies that
-$$\forall x \in \bigcup_{i \in I}X_i \: \exists b \in B: \Phi(x,b)=\true, $$ whence
-$\low(\Phi)(\bigcup_{i \in I}X_i,B) = \true$. \\
-
-Now assume that we have an arbitrary feasibility relation $\Psi: \low(\mc{R}) \xslashedrightarrow{} \low(\mc{F})$ satisfying decomposition property and the union property: 
-\begin{itemize}
-	\item If $\Psi(A,B)=\true$, then for every $a \in A$ there is $b \in B$ such that $\Psi(\lwc{\{a\}},\lwc{\{b\}})=\true$.
-	\item For any collection $\{X_i\}_{i \in I} \sub \low(\mc{R})$,
-	$$\Psi(X_i,B) = \true \:\: \forall i \in I \quad \Rightarrow \quad \Psi(\bigcup_{i \in I} X_i,B) = \true.$$
-\end{itemize}
-
-We can obtain a feasibility relation $\tilde\Psi: \mc{R} \xslashedrightarrow{} \mc{F}$ by setting $$\tilde\Psi(r,f) := \Psi(\lwc{\{r\}},\lwc{\{f\}}).$$ If $s \shortrightarrow r$, then $\lwc{\{s\}} \sub \lwc{\{r\}}$, so in this case $$\tilde\Psi(r,f) \Leftrightarrow \Psi(\lwc{\{r\}},\lwc{\{f\}}) \Rightarrow \Psi(\lwc{\{s\}},\lwc{\{f\}}) \Leftrightarrow \tilde\Psi(r,f).$$
-On the other hand if $f \shortrightarrow g$, then $\lwc{\{f\}} \sub \lwc{\{g\}}$, hence again
-$$\tilde\Psi(r,f) \Leftrightarrow \Psi(\lwc{\{r\}},\lwc{\{f\}}) \Rightarrow \Psi(\lwc{\{r\}},\lwc{\{g\}}) \Leftrightarrow \tilde\Psi(r,g).$$
-
-We show that $\low(\tilde\Psi) = \Psi$. This requires proving that $\low(\tilde\Psi)(A,B) = \true \Leftrightarrow  \Psi(A,B) = \true$. Suppose $\low(\tilde\Psi)(A,B) = \true$. This means that 
-$$\forall a \in A \: \exists b \in B: \Psi(\lwc{\{a\}},\lwc{\{b\}})=\true .$$
-In particular, by monotonicity,
-$$\forall a \in A \: \Psi(\lwc{\{a\}},B)=\true.$$ 
-By the union property in the source, $\Psi(\bigcup_{a \in A}\lwc{\{a\}},B)=\true$. It remains to observe that $\bigcup_{a \in A} \lwc{\{a\}} = \lwc{\bigcup_{a \in A} a} = \lwc{A}= A$, since $A$ is a lower set. Hence, $\Psi(A,B) =\true$.
-
-Conversely, suppose $\Psi(A,B) = \true$. Then for each $a \in A$ there is $b \in B$ satisfying $\Psi(\lwc{\{a\}},\lwc{\{b\}}) =\true$. In symbols,
-$$\forall a \in A \: \exists b \in B: \Psi(\lwc{\{a\}},\lwc{\{b\}})=\true .$$
-But this is precisely the condition showing that $\low(\tilde\Psi)(A,B)=\true$. Therefore $\Psi$ is induced by $\tilde\Psi$.
-
-The above proves the following characterization of induced feasibility relations on the lower set level.
-\begin{proposition}[Induction Criterion for Lower Sets]\label{prop:induction lower}
-	Let $\Psi: \low(\mc{R}) \xslashedrightarrow{} \low(\mc{F})$ be a feasibility relation. Then $\Phi = \low(\tilde\Phi)$ for some $\tilde\Phi: \mc{R} \xslashedrightarrow{} \mc{F}$ if and only if $\Phi$ satisfies the following: 	
-\begin{itemize}
-	\item If $\Psi(A,B)=\true$, then for every $a \in A$ there is $b \in B$ such that $\Psi(\lwc{\{a\}},\lwc{\{b\}})=\true$.
-	\item For any collection $\{X_i\}_{i \in I} \sub \low(\mc{R})$,
-	$$\Psi(X_i,B) = \true \:\: \forall i \in I \quad \Rightarrow \quad \Psi(\bigcup_{i \in I} X_i,B) = \true.$$
-\end{itemize}	
-\end{proposition} 
-
-\subsubsection{Upper Set Level}
-We want to derive a similar criterion for upper sets. Let  $\Psi: \upper(\mc{R}) \xslashedrightarrow{} \upper(\mc{F})$ be a feasibility relation. Observe that $\upper(\mc{R}) = \low(\mc{R}^\text{op})^\text{op}$. Hence we can view $\Psi$ as being a feasibility relation $\low(\mc{R}^\text{op})^\text{op} \xslashedrightarrow{} \low(\mc{F}^\text{op})^\text{op}$, which corresponds bijectively to a feasibility relation $\check\Psi: \low(\mc{F}^\text{op}) \xslashedrightarrow{} \low(\mc{R}^\text{op})$. By the induction criterion (Proposition \ref{prop:induction lower}) we know that $\check\Psi$ is $\low(\tilde\Psi)$ for $\tilde\Psi: \mc{F}^\text{op} \xslashedrightarrow{} \mc{R}^\text{op}$ iff we satisfy the decomposition and union properties:
-\begin{itemize}
-	\item If $\check\Psi(A,B)=\true$, then for every $a \in A$ there is $b \in B$ such that $\check\Psi(\lwc{\{a\}},\lwc{\{b\}})=\true$.
-	\item For any collection $\{X_i\}_{i \in I}$, where $X_i \in \low(\mc{F^\text{op}})$,
-	$$\check\Psi(X_i,B) = \true \:\: \forall i \in I \quad \Rightarrow \quad \check\Psi(\bigcup_{i \in I} X_i,B) = \true.$$
-\end{itemize}
-
-Since $\check\Psi(A,B) = \Psi(B,A)$, and lower closures become upper closures under taking opposites, this means that $\check\Psi$ is induced iff
-\begin{itemize}
-	\item If $\Psi(B,A)=\true$, then for every $a \in A$ there is $b \in B$ such that $\Psi(\upc{\{b\}},\upc{\{a\}})=\true$.
-	\item For any collection $\{X_i\}_{i \in I}$, where $X_i \in \upper(\mc{F})$,
-	$$\Psi(B,X_i) = \true \:\: \forall i \in I \quad \Rightarrow \quad \Psi(B,\bigcup_{i \in I} X_i) = \true.$$
-\end{itemize}
-Because all the correspondences we used to get from $\Psi: \upper(\mc{R}) \xslashedrightarrow{} \upper(\mc{F})$ to $\check\Psi: \low(\mc{F}^\text{op}) \xslashedrightarrow{} \low(\mc{R}^\text{op})$ are invertible, this means that the original $\Psi$ is induced by $\tilde\Psi: \mc{F}^\text{op} \xslashedrightarrow{} \mc{R}^\text{op}$ iff the above conditions are fulfilled. We conclude by observing that $\tilde\Psi: \mc{F}^\text{op} \xslashedrightarrow{} \mc{R}^\text{op}$ corresponds bijectively to a feasibility relation $\mc{R} \xslashedrightarrow{} \mc{F}$. Therefore,
-
-\begin{proposition}[Induction Criterion for Upper Sets]\label{prop:induction upper}
-	Let $\Psi: \upper(\mc{R}) \xslashedrightarrow{} \upper(\mc{F})$ be a feasibility relation. Then $\Phi = \low(\tilde\Phi)$ for some $\tilde\Phi: \mc{R} \xslashedrightarrow{} \mc{F}$ if and only if $\Phi$ satisfies the following: 
-	\begin{itemize}
-		\item If $\Psi(A,B)=\true$, then for every $b \in B$ there is $a \in A$ such that $\Psi(\upc{\{a\}},\upc{\{b\}})=\true$.
-		\item For any collection $\{X_i\}_{i \in I} \sub \upper(\mc{F})$,
-		$$\Psi(A,X_i) = \true \:\: \forall i \in I \quad \Rightarrow \quad \Psi(A,\bigcup_{i \in I} X_i) = \true.$$
-	\end{itemize}
-\end{proposition} 
-
-\subsubsection{Upper-Lower Induction}
-%We now combine the previous results to obtain a characterization of which feasibility relations $\Psi: \upper(\low(\mc{R})) \xslashedrightarrow{} \upper(\low(\mc{F}))$ have the form $\upper(\low(\Phi))$ for $\Phi: \mc{R} \xslashedrightarrow{} \mc{F}$. By Proposition \ref{prop:induction upper} we know that $\Psi = \upper(\tilde\Psi)$ iff $\Psi$ satisfies the decomposition and union properties:
-%	\begin{itemize}
-%	\item If $\Psi(A,B)=\true$, then for every $b \in B$ there is $a \in A$ such that $\Psi(\upc{\{a\}},\upc{\{b\}})=\true$.
-%	\item For any collection $\{X_i\}_{i \in I}$, where $X_i \sub \upper(\mc{F})$,
-%	$$\Psi(A,X_i) = \true \:\: \forall i \in I \quad \Rightarrow \quad \Psi(A,\bigcup_{i \in I} X_i) = \true.$$
-%	\end{itemize}
-%Moreover, by Proposition \ref{prop:induction lower}, $\tilde\Psi$ is induced by $\Phi$ iff it satisfies
-%\begin{itemize}
-%	\item If $\tilde\Psi(A,B)=\true$, then for every $a \in A$ there is $b \in B$ such that $\tilde\Psi(\lwc{\{a\}},\lwc{\{b\}})=\true$.
-%	\item For any collection $\{X_i\}_{i \in I}$, where $X_i \sub \low(\mc{R})$,
-%	$$\tilde\Psi(X_i,B) = \true \:\: \forall i \in I \quad \Rightarrow \quad \tilde\Psi(\bigcup_{i \in I} X_i,B) = \true.$$
-%\end{itemize}	
-%Recall that $\tilde\Psi(a,b) = \Psi(\upc{\{a\}}, \upc{\{b\}})$. Hence we can translate the above conditions on $\tilde\Psi$ to conditions on $\Psi$:
-%\begin{itemize}
-% 	\item If $\Psi(\upc{\{A\}},\upc{\{B\}})=\true$, then for every $a \in A$ there is $b \in B$ such that $\Psi(\upc{\lwc{\{a\}}},\upc{\lwc{\{b\}}})=\true$.
-% 	\item For any collection $\{X_i\}_{i \in I}$, where $X_i \sub \low(\mc{R})$,
-% 	$$\Psi(\upc{\{X_i\}},\upc{\{B\}}) = \true \:\: \forall i \in I \quad \Rightarrow \quad \Psi(\upc{\{\bigcup_{i \in I} X_i\}},\upc{\{B\}}) = \true.$$
-%\end{itemize}
-%
-%Summarizing, we see that $\Psi = \upper(\low(\Phi))$ for $\Phi(r,f) = \Psi(\upc{\lwc{\{r\}}},\upc{\lwc{\{f\}}})$ if and only if it satisfies
-%	\begin{itemize}
-%	\item[(i)] If $\Psi(A,B)=\true$, then for every $b \in B$ there is $a \in A$ such that $\Psi(\upc{\{a\}},\upc{\{b\}})=\true$.
-%	\item[(ii)] If $\Psi(\upc{\{A\}},\upc{\{B\}})=\true$, then for every $a \in A$ there is $b \in B$ such that $\Psi(\upc{\lwc{\{a\}}},\upc{\lwc{\{b\}}})=\true$.
-%	\item[(iii)] For any collection $\{X_i\}_{i \in I}$, where $X_i \sub \upper(\mc{F})$,
-%	$$\Psi(A,X_i) = \true \:\: \forall i \in I \quad \Rightarrow \quad \Psi(A,\bigcup_{i \in I} X_i) = \true.$$
-%	\item[(iv)] For any collection $\{X_i\}_{i \in I}$, where $X_i \sub \low(\mc{R})$,
-%	$$\Psi(\upc{\{X_i\}},\upc{\{B\}}) = \true \:\: \forall i \in I \quad \Rightarrow \quad \Psi(\upc{\{\bigcup_{i \in I} X_i\}},\upc{\{B\}}) = \true.$$
-%	\end{itemize}
-%
-%The first two conditions are equivalent to the single condition:
-%$$
-%\Psi(A,B)=\true \Rightarrow \forall b \in B \: \exists a \in A : \forall r \in a \: \exists y \in b: \Psi(\upc{\lwc{\{r\}}},\upc{\lwc{\{f\}}})=\true
-%$$
-%To see this, observe that if $\Psi(A,B)$, then by (i) we have that for every $b \in B$ there is $a \in A$ such that $\Psi(\upc{\{a\}},\upc{\{b\}})=\true$. By (ii) this means that for every $b \in B$ there is $a \in A$ such that for every $r \in a$ there is $f \in b$ satisfying $\Psi(\upc{\lwc{\{r\}}},\upc{\lwc{\{f\}}})=\true$. This is exactly the new condition.
-%
-%Conversely, assuming the new single condition, suppose that $\Psi(A,B)$. Then for all $b \in B$ there is $a \in A$ such that for every $r \in a$ there is $f \in b$ satisfying $\Psi(\upc{\lwc{\{r\}}},\upc{\lwc{\{f\}}})=\true$. For any $f \in b$, $\lwc{\{f\}} \sub b$ implies that $\upc{\lwc{\{f\}}} \supseteq \upc{\{b\}} = \true$. Hence, by monotonicity, for all $b \in B$ there is $a \in A$ such that for every $r \in a$ we have $\Psi(\upc{\lwc{\{r\}}}, \upc{\{b\}})$. Since $\lwc{\{r\}} \sub a$ implies $\upc{\{a\}} \supseteq \upc{\lwc{\{r\}}}$, we conclude that for all $b \in B$ there is $a \in A$ such that $\Psi(\upc{\{a\}}, \upc{\{b\}}) = \true$. Therefore the new condition implies (i).
-%
-%To see that it also implies (ii) suppose $\Psi(\upc{\{a\}},\upc{\{b\}})=\true$. Then for all $y \in \upc{\{b\}}$ there is $x \in \upc{\{a\}}$ such that for every $r \in x$ there is $f \in y$ satisfying $\Psi(\upc{\lwc{\{r\}}},\upc{\lwc{\{f\}}})=\true$. In particular, for $b = y \in \upc{\{b\}}$ there is $x \in \upc{\{a\}}$ such that for every $r \in x$ there is $f \in b$ satisfying $\Psi(\upc{\lwc{\{r\}}},\upc{\lwc{\{f\}}})=\true$. Note that $x \in \upc{\{a\}}$ means that $a \sub x$. Therefore, for every $r \in a$ there is $f \in b$ satisfying $\Psi(\upc{\lwc{\{r\}}},\upc{\lwc{\{f\}}})=\true$, which is exactly condition (ii). \\
-
 We prove the following characterization directly.
 
 \begin{theorem}\label{thm:induction}
-	A feasibility relation $\Psi: \upper(\low(\mc{R})) \xslashedrightarrow{} \upper(\low(\mc{F}))$ has the form $\upper(\low(\tilde\Psi))$ for $\tilde\Psi: \mc{R} \xslashedrightarrow{} \mc{F}$ if and only if the following three conditions are fulfilled:
+	A feasibility relation $\Psi: \upper\low\mc{R} \xslashedrightarrow{} \upper\low\mc{F}$ has the form $\upper\low\tilde\Psi$ for $\tilde\Psi: \mc{R} \xslashedrightarrow{} \mc{F}$ if and only if the following three conditions are fulfilled:
 	\begin{itemize}
 	\item[(i)] If $\Psi(A,B)=\true$, then
-	$$\forall b \in B \: \exists a \in A : \forall r \in a \: \exists y \in b: \Psi(\upc{\lwc{\{r\}}},\upc{\lwc{\{f\}}})=\true.$$
-	\item[(ii)] For any collection $\{X_i\}_{i \in I} \sub \upper(\mc{F})$,
-	$$\Psi(A,X_i) = \true \:\: \forall i \in I \quad \Rightarrow \quad \Psi(A,\bigcup_{i \in I} X_i) = \true.$$
-	\item[(iii)] For any collection $\{X_i\}_{i \in I} \sub \upper(\mc{R})$,
-	$$\Psi(X_i,B) = \true \:\: \forall i \in I \quad \Rightarrow \quad \Psi(\bigcap_{i \in I}X_i,B) = \true.$$
+	$$\forall b \in B \: \exists a \in A : \forall r \in a \: \exists f \in b: \Psi(\upc\{\lwc{\{r\}}\},\upc\{\lwc{\{f\}}\})=\true.$$
+	\item[(ii)] For any collection $\{X_i\}_{i \in I} \sub \upper\low\mc{F}$,
+	$$\Psi(A,X_i) = \true \:\: \forall i \in I \quad \Leftrightarrow \quad \Psi(A,\bigcup_{i \in I} X_i) = \true.$$
+	\item[(iii)] For any collection $\{X_i\}_{i \in I} \sub \upper\low\mc{R}$,
+	$$\Psi(X_i,B) = \true \:\: \forall i \in I \quad \Leftrightarrow \quad \Psi(\bigcap_{i \in I}X_i,B) = \true.$$
 	\end{itemize}
-	In that case, $\tilde\Psi$ is obtained by setting $\tilde\Psi(r,f) = \Psi(\upc{\lwc{\{r\}}},\upc{\lwc{\{f\}}})$.
+	In that case, $\tilde\Psi$ is obtained by setting $\tilde\Psi(r,f) = \Psi(\upc\{\lwc{\{r\}}\},\upc\{\lwc{\{f\}}\})$.
 \end{theorem}
 \begin{proof}
-	First, we show that given a feasibility relation $\Phi: \mc{R} \xslashedrightarrow{} \mc{F}$, the induced feasibility relation $\upper(\low(\Phi)):  \upper(\low(\mc{R})) \xslashedrightarrow{} \upper(\low(\mc{F}))$ satisfies (i)-(iii).
+	First, we show that given a feasibility relation $\Phi: \mc{R} \xslashedrightarrow{} \mc{F}$, the induced feasibility relation $\upper\low\Phi:  \upper\low\mc{R} \xslashedrightarrow{} \upper\low\mc{F}$ satisfies (i)-(iii).
 	
-	\paragraph{(i)}
-
-	\paragraph{(ii)}
+	\paragraph{(i)} Suppose $\Psi(r,f) = \true$. Let $x \in \lwc{\{r\}}$. Then by monotonicity of $\Psi$, we have $\Psi(x,f) = \true$. Therefore, for all $x = r \in \lwc{\{r\}}$, there exists $y \in \lwc{\{f\}}$ such that $\Psi(x,y)$. Hence, $\low\Psi(\lwc{\{r\}}, \lwc{\{f\}}) = \true$ (see Section \ref{sec:lifting feasibility}).
 	
-	\paragraph{(iii)}
+	Next, assume $\low\Psi(\lwc{\{r\}}, \lwc{\{f\}}) = \true$ and let $y \in \upc\{\lwc\{f\} \}$. Then by monotonicity of $\low\Psi$, we have $\low\Psi(\lwc{\{r\}},y)$. Therefore, for all $y \in \upc\{\lwc\{f\} \}$, there exists $x =  \lwc{\{r\}} \in \upc\{\lwc\{r\} \}$ such that $\low\Psi(x,y)$. Hence by the definition in Section \ref{sec:lifting feasibility}, $\upper\low\Psi( \upc\{\lwc\{r\} \} ,\upc\{\lwc\{f\} \}) = \true$, as desired.
 	
-	Next, assume we have a feasibility relation $\Psi: \upper(\low(\mc{R})) \xslashedrightarrow{} \upper(\low(\mc{F}))$ satisfying (i)-(iii). We show that $\Psi = \upper(\low(\tilde\Psi))$, where $\tilde\Psi(r,f) = \Psi(\upc{\lwc{\{r\}}},\upc{\lwc{\{f\}}})$.
+	\paragraph{(ii)} Let $\{X_i\}_{i \in I} \sub \upper\low\mc{F}$. Since $\bigcup_{i \in I} X_i \supseteq X_i$, we have that $\Psi(A, \bigcup_{i \in I} X_i) = \true $ implies $\Psi(A,  X_i) = \true $ for all $i \in I$ by monotonicity. Conversely, suppose $\Psi(A,  X_i) = \true $ for all $i \in I$. Then for each $i \in I$ we have by definition
+	$$\forall x \in X_i \: \exists a \in A : \forall r \in a \: \exists f \in x : \Psi(r,f).$$
+	This implies that
+	$$\forall x \in \bigcup_{i \in I} X_i \: \exists a \in A : \forall r \in a \: \exists f \in x : \Psi(r,f).$$
+	Therefore, $\Psi(A, \bigcup_{i \in I} X_i) = \true $.
 	
-	Suppose that $\Psi(A,B) = \true$. Then by (i) we know that $$\forall b \in B \: \exists a \in A : \forall r \in a \: \exists y \in b: \Psi(\upc{\lwc{\{r\}}},\upc{\lwc{\{f\}}})=\true.$$ But this implies, by definition, that $\upper(\low(\tilde\Psi))(A,B) = \true$.
+	\paragraph{(iii)} Let $\{X_i\}_{i \in I} \sub \upper\low\mc{R}$. Since $X_i \supseteq \bigcup_{i \in I} X_i$, by monotonicity $\Psi(\bigcap_{i \in I}X_i,B) = \true$ implies $\Psi(X_i,B) = \true$ for all $i \in I$. Conversely, suppose $\Psi(X_i,B) = \true$ for all $i \in I$. Then, for each $i \in I$, we have by definition
+	$$\forall b \in B \: \exists x_{i,b} \in X_i : \forall r \in x_{i,b} \: \exists f \in b : \Psi(r,f).$$
+	By Lemma \ref{lem:intersection as union}, 
+	$$\bigcap_{i \in I} X_i = \{ \bigcup_{i \in I} y_i :  y_i \in X_i \text{ for each } i \in I \}.$$
+	In particular,  $\bigcup_{i \in I} x_{i,b} \in \bigcap_{i \in I} X_i$. Now suppose $b \in B$ and consider $\bigcup_{i \in I} x_{i,b}$. If $r \in \bigcup_{i \in I} x_{i,b}$, then $r \in x_{i,b}$ for some $i$. Hence there is $f \in b$ such that $\Psi(r,f)$. This shows that
+	$$\forall b \in B \: \exists a = \bigcup_{i \in I} x_{i,b} \in \bigcap_{i \in I} X_i : \forall r \in a \: \exists f \in b : \Psi(r,f).$$
+	Therefore, $\Psi(\bigcap_{i \in I}X_i,B) = \true$. \\
 	
-	Conversely, suppose $\upper(\low(\tilde\Psi))(A,B) = \true$. Then we know that
-	$$\forall b \in B \: \exists a \in A : \forall r \in a \: \exists y \in b: \Psi(\upc{\lwc{\{r\}}},\upc{\lwc{\{f\}}})=\true.$$
+	Next, assume we have a feasibility relation $\Psi: \upper\low\mc{R} \xslashedrightarrow{} \upper\low\mc{F}$ satisfying (i)-(iii). We show that $\Psi = \upper\low\tilde\Psi$, where $\tilde\Psi(r,f) = \Psi(\upc\{\lwc{\{r\}}\},\upc\{\lwc{\{f\}}\})$.
 	
+	Suppose that $\Psi(A,B) = \true$. By (i) we know that $$\forall b \in B \: \exists a \in A : \forall r \in a \: \exists f \in b: \Psi(\upc\{\lwc{\{r\}}\},\upc\{\lwc{\{f\}}\}).$$ This implies, by definition, that $\upper\low\tilde\Psi(A,B) = \true$.
+	
+	Conversely, suppose $\upper\low\tilde\Psi(A,B) = \true$. Then we know that
+	$$\forall b \in B \: \exists a \in A : \forall r \in a \: \exists f \in b: \Psi(\upc\{\lwc{\{r\}}\},\upc\{\lwc{\{f\}}\}).$$
+	Let $b \in B$. Because $b$ is a lower set, we have $\lwc{\{f\}} \sub b$ for any $f \in b$. This implies that $\upc\{ \lwc{\{f\}} \} \supseteq \upc\{b\}$. Since $f$ was arbitrary, we have by monotonicity,
+	$$\forall b \in B \: \exists a \in A : \forall r \in a : \Psi(\upc\{\lwc{\{r\}}\},\upc\{b\}).$$
+	By property (iii), $\Psi(\upc\{\lwc{\{r\}}\},\upc\{b\})$ for all $r \in a$ implies $\Psi(\bigcap_{r \in a}\upc\{\lwc{\{r\}}\},\upc\{b\})$. Hence, we have  
+	$$\forall b \in B \: \exists a \in A : \Psi(\bigcap_{r \in a}\upc\{\lwc{\{r\}}\},\upc\{b\}).$$
+	Using Lemma \ref{lem:intersection as union} (iii), and the fact that $a$ is a lower set, we note that $$\bigcap_{r \in a}\upc\{\lwc{\{r\}}\} = \upc{ \{ \bigcup_{r \in a}\lwc{ \{r\} } \}} = \upc \{ a \}.$$
+	Hence, $\forall b \in B \: \exists a \in A : \Psi(\upc\{a\},\upc\{b\}).$
+	Since $A$ is an upper set, $A \supseteq \upc\{a\}$ for any $a \in A$, whence by monotonicity, $\forall b \in B : \Psi(A,\upc\{b\})$. Applying property (ii) finally yields $\Psi(A,\bigcup_{b \in B}\upc\{b\}) = \Psi(A,B) = \true$. We have thus shown that $\Psi(A,B) = \true$ if and only if $\upper\low\tilde\Psi(A,B) = \true$, so the two feasibility relations coincide.	
 \end{proof}
 
 \begin{proposition}\label{prop:union intersection}
-	Suppose $\Psi: \upper(\low(\mc{R})) \xslashedrightarrow{} \upper(\low(\mc{F}))$ is induced as in Theorem \ref{thm:induction}. Then the following equivalences hold for principal upper sets 
+	Suppose $\Psi: \upper\low\mc{R} \xslashedrightarrow{} \upper\low\mc{F}$ is induced as in Theorem \ref{thm:induction}. Then the following equivalences hold for principal upper sets 
 	\begin{itemize}
 		\item[(i)] $\Psi(\bigcup_{i \in I} X_i, \upc{\{z\}}) \Leftrightarrow \Psi(X_i,\upc{\{z\}})$ for some $i \in I$.
 		\item[(ii)] $\Psi(\upc{\{\lwc{\{s\}}\}}, \bigcap_{i \in I}X_i) \Leftrightarrow \Psi(\upc{\{\lwc{\{s\}}\}},X_i)$ for some $i \in I$.
@@ -773,81 +828,54 @@ We prove the following characterization directly.
 	Therefore $\cup b_i \in \{ \cup x_i : x_i \in X_i \}$ is an element of the intersection for which there exists $r \in \lwc{\{s\}}$, (namely $s$) such that for all $f \in \cup b_i$ we have $\tilde\Psi(s,f) = \false$. This contradicts our assumption that $\Psi(\upc{\{\lwc{\{s\}}\}}, \bigcap_{i \in I}X_i) = \true$.
 \end{proof}
 
-\subsection{Formulas for Queries on Induced Feasibility}
-Let $\Psi: \upper(\low(\mc{R})) \xslashedrightarrow{} \upper(\low(\mc{F}))$ be an induced feasibility relation, that is $\Psi = \upper(\low(\tilde\Psi))$ for $\tilde\Psi(r,f) = \Psi(\upc{\lwc{\{r\}}},\upc{\lwc{\{f\}}})$. We define the following sets called queries. 
+\subsection{Queries on Induced Feasibility}
+Let $\Psi: \upper\low\mc{R} \xslashedrightarrow{} \upper\low\mc{F}$ be an induced feasibility relation, that is $\Psi = \upper\low\tilde\Psi$ for $\tilde\Psi(r,f) = \Psi(\upc\{\lwc{\{r\}}\},\upc\{\lwc{\{f\}}\})$. We define the following sets called queries. 
 
 \begin{definition}[Querying Resources]
-	For a fixed $A \in \upper(\low(\mc{R}))$ define 
-	$$r(A) := \{f \in \mc{F} : \Psi(A,i(f)) \}.$$
+	For a fixed $A \in \upper\low\mc{R}$ define 
+	$$\mathfrak{f}(A) := \{f \in \mc{F} : \Psi(A,i(f)) \}.$$
 	The result is an upper set in $\mc{F}$.
 \end{definition}
 
 \begin{definition}[Querying Functionalities]
-	For a fixed $B \in \upper(\low(\mc{F}))$ define 
-	$$f(B) := \{r \in \mc{R} : \Psi(i(r),B) \}.$$
+	For a fixed $B \in \upper\low\mc{F}$ define 
+	$$\mathfrak{r}(B) := \{r \in \mc{R} : \Psi(i(r),B) \}.$$
 	The result is a lower set in $\mc{R}$.
 \end{definition}
 
-Using the characterization in Theorem \ref{thm:induction}, we can immediately obtain formulas for queries between choices. Recall from Section \ref{sec:upper-lower model} that for $A \sub \upper(\low(\mc{R}))$ we define
-$$ \bigsqcap_{a \in A} a :=  \bigcup_{a \in A} a,$$
-$$ \bigsqcup_{a \in A} a := \bigcap_{a \in A} a.$$
+\begin{example}
+	
+\end{example}
 
-
-\begin{proposition} For 
+\begin{proposition} For subsets $A \sub \upper\low\mc{R}$ and $B \sub \upper\low\mc{F}$ we have the following:
 	\begin{itemize}
-		\item[(i)] $r(\bigsqcap_{a \in A} a) = r(\bigcup_{a \in A} a) = \bigcup_{a \in A}r(a)$
-		\item[(ii)] $r(\bigsqcup_{a \in A} a) = r(\bigcap_{a \in A} a) = \bigcap_{a \in A}r(a)$
-		\item[(iii)] $f(\bigsqcap_{b \in B} b) = f(\bigcup_{b \in B} b) = \bigcap_{b \in B}f(b)$
-		\item[(iv)] $f(\bigsqcup_{b \in B} b) = f(\bigcap_{b \in B} b) = \bigcup_{b \in B}f(b)$
+		\item[(i)] $\mathfrak{f}(\cbigsqcap{a \in A} a) = \mathfrak{f}(\bigcup_{a \in A} a) = \bigcup_{a \in A}\mathfrak{f}(a)$
+		\item[(ii)] $\mathfrak{f}(\cbigsqcup{a \in A} a) = \mathfrak{f}(\bigcap_{a \in A} a) = \bigcap_{a \in A}\mathfrak{f}(a)$
+		\item[(iii)] $\mathfrak{r}(\cbigsqcap{b \in B} b) = \mathfrak{r}(\bigcup_{b \in B} b) = \bigcap_{b \in B}\mathfrak{r}(b)$
+		\item[(iv)] $\mathfrak{r}(\cbigsqcup{b \in B} b) = \mathfrak{r}(\bigcap_{b \in B} b) = \bigcup_{b \in B}\mathfrak{r}(b)$
 	\end{itemize}
 \end{proposition}
 \begin{proof}We prove each in turn.
-	
-	\paragraph{(i)} Follows from \ref{prop:union intersection} (i)
-	
-	\paragraph{(ii)} By definition $B \in r(\bigcap_{a \in A} a) \Leftrightarrow \Psi(\bigcap_{a \in A} a, B)$. By monotonicity and Theorem \ref{thm:induction} (iii) we know $\Psi(\bigcap_{a \in A} a, B) \Leftrightarrow \Psi(a,B), \forall a \in A$. In summary, $B \in r(\bigcap_{a \in A} a) \Leftrightarrow B \in r(a), \forall a \in A \Leftrightarrow B \in \bigcap_{a \in A}r(A)$.
-	
-	\paragraph{(iii)} Obeserve that by monotonicity and Theorem \ref{thm:induction} (ii) we have $\Psi(A,\bigcup_{b \in B}) \Leftrightarrow \Psi(A,b), \forall b \in B$. Hence $A \in f(\bigcup_{b \in B}) \Leftrightarrow \Psi(A,\bigcup_{b \in B}) \Leftrightarrow \Psi(A,b), \forall b \in B, \Leftrightarrow A \in f(b), \forall b \in B \Leftrightarrow A \in \bigcap_{b \in B} f(b)$.
-	
-	\paragraph{(iv)} Follows from \ref{prop:union intersection} (ii)
+	\begin{itemize}
+		\item[(i)] This follows from Proposition \ref{prop:union intersection} (i): We have $\Psi(\bigcup_{a \in A} a, i(f))$ if and only if $\Psi(a, i(f))$ for some $a \in A$. Hence, $f \in \mathfrak{f}(A)$ if and only if $f \in \bigcup_{a \in A} \mathfrak{f}(a)$.
+		
+		\item[(ii)] By monotonicity and Theorem \ref{thm:induction} (iii) we know $\Psi(\bigcap_{a \in A} a, i(f))$ if and only if $\Psi(a,i(f))$ for all $a \in A$. Hence, $f \in \mathfrak{f}(\bigcap_{a \in A} a) $ if and only if $f \in \mathfrak{f}(a)$ for all $a \in A$. Therefore, $\mathfrak{f}(\bigcap_{a \in A} a) = \bigcap_{a \in A}\mathfrak{f}(a)$.
+		
+		\item[(iii)] By monotonicity and Theorem \ref{thm:induction} (ii) we know $\Psi(i(r),\bigcup_{b \in B} b)$ if and only if $\Psi(i(r),b)$ for all $b \in B$. Hence, $r \in \mathfrak{r}(\bigcup_{b \in B}b)$ if and only if $r \in \mathfrak{r}(b)$ for all $b \in B$. Therefore, $\mathfrak{r}(\bigcup_{b \in B} b) = \bigcap_{b \in B}\mathfrak{r}(b)$.
+		
+		\item[(iv)] This follows from Proposition \ref{prop:union intersection} (ii): We have $\Psi(i(r), \bigcap_{b \in B} b)$ if and only if $\Psi(i(r), b)$ for some $b \in B$. Hence, $r \in \mathfrak{r}(B)$ if and only if $r \in \bigcup_{b \in B} \mathfrak{r}(b)$.
+	\end{itemize}
 \end{proof}
 
-\subsection{General Interpretation for Feasibility between Upper-Lower Models} 
+\section{Future Directions}
 
-\subsubsection{Induced Feasibility}
+\subsection{Choice between Feasibility}
 
+\subsection{Additional Connectives}
 
-
-\section{Choice between Transformations}
-
-\section{Towards Modeling Dependencies}
+\subsection{Towards Modeling Dependencies}
 
 \appendix
-\section{Laws for Choice}
-
-\textcolor{blue}{Derive some general laws for distributivity ect... Especially those used is section on interpretation based reconstruction}
-
-\begin{lemma}
-	$$\bigsqcap_{a \in A} a \sqcap \bigsqcap_{b \in B} b \cong \bigsqcap_{x \in A \cup B} x$$
-\end{lemma}
-
-and its dual.
-
-\begin{lemma} The folowing holds for sets $\{r_i\}_{i \in I}$ and $\{r_l\}_{l \in L}$:
-	$$\bigsqcap_{i \in I} r_{i} \sqcup   \bigsqcap_{l \in L} r_{l} = \bigsqcap_{i \in I} \bigsqcap_{l \in L}  (r_{i} \sqcup  r_{l})$$
-\end{lemma}
-\begin{proof}
-	Write $$\bigsqcap_{i \in I} r_{i} \sqcup  \bigsqcap_{l \in L} r_{l} = \bigsqcup_{X \in \{I,L\}} \bigsqcap_{j \in X} r_{X,j}.$$
-	Let $F$ be the set of choice functions $f$ from $\{I,L\}$ to $I \cup L$, such that $f(I) \in I$ and $f(L) \in L$. Observe that $F \cong I \times L$. Hence,
-	\begin{IEEEeqnarray*}{rCl}
-		\bigsqcup_{X \in \{I,L\}} \bigsqcap_{j \in X} r_{X,j} &=& \bigsqcap_{f \in F} \bigsqcup_{X \in \{I,L\}} r_{X,f(X)} \\
-		&=& \bigsqcap_{f \in F} r_{I,f(I)} \sqcup r_{L,f(L)} \\
-		&=& \bigsqcap_{(i,l) \in I \times L} r_{I,i} \sqcup r_{L,l} \\
-		&=& \bigsqcap_{i \in I} \bigsqcap_{l \in L}  (r_{i} \sqcup  r_{l}).
-	\end{IEEEeqnarray*}
-\end{proof}
-
-and its dual.
 
 
 \printbibliography

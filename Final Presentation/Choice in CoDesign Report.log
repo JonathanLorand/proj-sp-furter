@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.5.17)  12 JUN 2021 21:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.5.17)  17 JUN 2021 10:29
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -224,6 +224,15 @@ LaTeX Font Info:    Overwriting math alphabet `\mathbbm' in version `bold'
 (Font)                  U/bbm/m/n --> U/bbm/bx/n on input line 33.
 LaTeX Font Info:    Overwriting math alphabet `\mathbbmss' in version `bold'
 (Font)                  U/bbmss/m/n --> U/bbmss/bx/n on input line 35.
+)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/tools/bm.sty
+Package: bm 2019/07/24 v1.2d Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup8
+\symboldletters=\mathgroup9
+\symboldsymbols=\mathgroup10
+\symboldstmry=\mathgroup11
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
+LaTeX Info: Redefining \bm on input line 209.
 )
 (/usr/local/texlive/2021/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
@@ -778,11 +787,11 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip61
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 70.
+Package hyperref Info: Option `colorlinks' set `true' on input line 73.
 
 
 Package hyperref Warning: Option `bookmarks' has already been used,
-(hyperref)                setting the option has no effect on input line 70.
+(hyperref)                setting the option has no effect on input line 73.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/biblatex/biblatex.sty
 Package: biblatex 2020/12/31 v3.16 programmable bibliographies (PK/MW)
@@ -1016,58 +1025,52 @@ Package biblatex Info: ... file 'biblatex.cfg' found.
 File: biblatex.cfg 
 ))
 \c@definition=\count441
-\c@lemma=\count442
-\c@proposition=\count443
-\c@theorem=\count444
-\c@question=\count445
-\c@example=\count446
-\c@remark=\count447
 
 
 Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (biblatex)                Loading 'csquotes' recommended.
 
-\@quotelevel=\count448
-\@quotereset=\count449
+\@quotelevel=\count442
+\@quotereset=\count443
 (/usr/local/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2021-05-07 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count450
+\l__color_backend_stack_int=\count444
 \l__pdf_internal_box=\box78
 )
 (./Choice in CoDesign Report.aux)
 \openout1 = `"Choice in CoDesign Report.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 195.
-LaTeX Font Info:    ... okay on input line 195.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 195.
-LaTeX Font Info:    ... okay on input line 195.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 195.
-LaTeX Font Info:    ... okay on input line 195.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 195.
-LaTeX Font Info:    ... okay on input line 195.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 195.
-LaTeX Font Info:    ... okay on input line 195.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 195.
-LaTeX Font Info:    ... okay on input line 195.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 195.
-LaTeX Font Info:    ... okay on input line 195.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 195.
-LaTeX Font Info:    ... okay on input line 195.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 195.
-LaTeX Font Info:    ... okay on input line 195.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 209.
+LaTeX Font Info:    ... okay on input line 209.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 209.
+LaTeX Font Info:    ... okay on input line 209.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 209.
+LaTeX Font Info:    ... okay on input line 209.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 209.
+LaTeX Font Info:    ... okay on input line 209.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 209.
+LaTeX Font Info:    ... okay on input line 209.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 209.
+LaTeX Font Info:    ... okay on input line 209.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 209.
+LaTeX Font Info:    ... okay on input line 209.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 209.
+LaTeX Font Info:    ... okay on input line 209.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 209.
+LaTeX Font Info:    ... okay on input line 209.
 
 (/usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count451
+\scratchcounter=\count445
 \scratchdimen=\dimen311
 \scratchbox=\box79
-\nofMPsegments=\count452
-\nofMParguments=\count453
+\nofMPsegments=\count446
+\nofMParguments=\count447
 \everyMPshowfont=\toks45
-\MPscratchCnt=\count454
+\MPscratchCnt=\count448
 \MPscratchDim=\dimen312
-\MPnumerator=\count455
-\makeMPintoPDFobject=\count456
+\MPnumerator=\count449
+\makeMPintoPDFobject=\count450
 \everyMPtoPDFconversion=\toks46
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1086,7 +1089,7 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 195.
+Package hyperref Info: Link coloring ON on input line 209.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -1098,11 +1101,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count457
+\c@section@level=\count451
 )
-LaTeX Info: Redefining \ref on input line 195.
-LaTeX Info: Redefining \pageref on input line 195.
-LaTeX Info: Redefining \nameref on input line 195.
+LaTeX Info: Redefining \ref on input line 209.
+LaTeX Info: Redefining \pageref on input line 209.
+LaTeX Info: Redefining \nameref on input line 209.
  (./Choice in CoDesign Report.out) (./Choice in CoDesign Report.out)
 \@outlinefile=\write7
 \openout7 = `"Choice in CoDesign Report.out"'.
@@ -1153,29 +1156,34 @@ Package biblatex Warning: BibTeX reported the following issues
 (biblatex)                - Invalid format of field 'month'.
 
 )
-Package biblatex Info: Reference section=0 on input line 195.
-Package biblatex Info: Reference segment=0 on input line 195.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 198
+Package biblatex Info: Reference section=0 on input line 209.
+Package biblatex Info: Reference segment=0 on input line 209.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 212
 .
  (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 198
+LaTeX Font Info:    Trying to load font information for U+msb on input line 212
 .
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+stmry on input line 1
-98.
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 2
+12.
 
 (/home/marius/texmf/tex/latex/stmaryrd/Ustmry.fd)
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 19
-8.
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 21
+2.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
-) [1
+)
+
+LaTeX Font Warning: Font shape `U/stmry/b/n' undefined
+(Font)              using `U/stmry/m/n' instead on input line 212.
+
+[1
 
 {/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 (./Choice in CoDesign Report.toc)
@@ -1183,111 +1191,132 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 \openout8 = `"Choice in CoDesign Report.toc"'.
 
  [2] [3]
-Underfull \hbox (badness 10000) in paragraph at lines 223--224
+Underfull \hbox (badness 10000) in paragraph at lines 237--238
 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 253--254
+Underfull \hbox (badness 10000) in paragraph at lines 267--268
 
  []
 
 [5]
-LaTeX Font Info:    Trying to load font information for U+eus on input line 275
+LaTeX Font Info:    Trying to load font information for U+eus on input line 289
 .
  (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/ueus.fd
 File: ueus.fd 2013/01/14 v3.01 Euler Script
 ) [6]
 [7]
-<images/ex_groceries.jpg, id=201, 2394.9475pt x 1496.59125pt>
+<images/ex_groceries.jpg, id=170, 2394.9475pt x 1496.59125pt>
 File: images/ex_groceries.jpg Graphic file (type jpg)
 <use images/ex_groceries.jpg>
-Package pdftex.def Info: images/ex_groceries.jpg  used on input line 305.
+Package pdftex.def Info: images/ex_groceries.jpg  used on input line 319.
 (pdftex.def)             Requested size: 350.0pt x 218.70146pt.
- [8 <./images/ex_groceries.jpg>] [9]
-Underfull \hbox (badness 10000) in paragraph at lines 356--357
+ [8 <./images/ex_groceries.jpg>] [9] [10]
+Overfull \hbox (4.26952pt too wide) in paragraph at lines 390--391
+\OT1/cmr/m/n/12 In this sec-tion we de-scribe when we should add ar-rows in the
+ choice-augmented
+ []
+
+[11] [12] [13] [14] [15] [16]
+Underfull \hbox (badness 10000) in paragraph at lines 521--522
 
  []
 
-[10] [11] [12] [13] [14]
-Overfull \hbox (27.02942pt too wide) in paragraph at lines 470--473
-\OT1/cmr/m/n/12 We model our op-tions as the dis-crete pre-order $\OMS/cmsy/m/n
-/12 f[]\OML/cmm/m/it/12 ; []; []; []\OMS/cmsy/m/n/12 g$\OT1/cmr/m/n/12 .
- []
-
-
-Overfull \hbox (81.36057pt too wide) in alignment at lines 479--482
- [] [] [] [][]
- []
-
-
-Overfull \hbox (105.36063pt too wide) in alignment at lines 496--500
- [] [] [] [][]
- []
-
-[15] [16] [17] [18]
-Overfull \hbox (21.5282pt too wide) in paragraph at lines 560--561
-\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 r[]\OMS/cmsy/m/n/12 g[]$\OT1/cmr/m/n/12 . He
-nce $\OML/cmm/m/it/12 A$ \OT1/cmr/m/n/12 rep-re-sents $[][] [][] \OML/cmm/m/it/
-12 r[]$ \OT1/cmr/m/n/12 and $\OML/cmm/m/it/12 B$ \OT1/cmr/m/n/12 rep-re-sents $
-[][] [][] \OML/cmm/m/it/12 r[]$\OT1/cmr/m/n/12 ,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 573--574
+[17] [18] [19]
+Underfull \hbox (badness 10000) in paragraph at lines 592--594
 
  []
 
-[19] [20]
-Underfull \hbox (badness 10000) in paragraph at lines 614--616
+
+Underfull \hbox (badness 10000) in paragraph at lines 605--607
 
  []
 
-[21] [22] [23]
-Overfull \hbox (17.85828pt too wide) in paragraph at lines 736--737
-\OT1/cmr/m/n/12 is-fy-ing (i)-(iii). We show that $	 = \OT1/cmss/m/n/12 U\OT1/c
-mr/m/n/12 (\OT1/cmss/m/n/12 L\OT1/cmr/m/n/12 ([]))$, where $[](\OML/cmm/m/it/12
- r; f\OT1/cmr/m/n/12 ) = 	([]\OML/cmm/m/it/12 ; []\OT1/cmr/m/n/12 )$. 
- []
-
-[24] [25] [26]
-Overfull \hbox (23.67992pt too wide) in paragraph at lines 810--811
- []\OT1/cmr/bx/n/12 (iii)[] \OT1/cmr/m/n/12 Obe-serve that by mono-tonic-ity an
-d The-o-rem [][]4.1[][] (ii) we have $	(\OML/cmm/m/it/12 A; [][]\OT1/cmr/m/n/12
- ) \OMS/cmsy/m/n/12 ,
+[20] [21] [22] [23] [24]
+Overfull \hbox (3.61847pt too wide) in paragraph at lines 740--741
+\OMS/cmsy/m/n/12 f[]g$\OT1/cmr/m/n/12 , the only $\OML/cmm/m/it/12 a \OMS/cmsy/
+m/n/12 2 \OML/cmm/m/it/12 i\OT1/cmr/m/n/12 (1$) = \OMS/cmsy/m/n/12 ff\OT1/cmr/m
+/n/12 1$\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 2$\OMS/cmsy/m/n/12 gg$ \OT1/cmr/m/n/
+12 is $\OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 1$\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 2
+$\OMS/cmsy/m/n/12 g$ \OT1/cmr/m/n/12 and $^^H(1$\OML/cmm/m/it/12 ; []\OT1/cmr/m
+/n/12 ) =
  []
 
 
-Overfull \hbox (19.97284pt too wide) in paragraph at lines 815--815
-[]\OT1/cmr/bx/n/14.4 General In-ter-pre-ta-tion for Fea-si-bil-ity be-tween Upp
-er-
+Overfull \hbox (9.2321pt too wide) detected at line 745
+\OT1/cmss/m/n/12 UL\OT1/cmr/m/n/12 ^^H(\OML/cmm/m/it/12 A; B\OT1/cmr/m/n/12 ) =
+ []  \OMS/cmsy/m/n/12 ([])  8\OML/cmm/m/it/12 b \OMS/cmsy/m/n/12 2 \OML/cmm/m/i
+t/12 B \OMS/cmsy/m/n/12 9\OML/cmm/m/it/12 a \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12
+ A \OT1/cmr/m/n/12 : \OMS/cmsy/m/n/12 8\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 2 \O
+ML/cmm/m/it/12 a \OMS/cmsy/m/n/12 9\OML/cmm/m/it/12 y \OMS/cmsy/m/n/12 2 \OML/c
+mm/m/it/12 b \OT1/cmr/m/n/12 : ^^H(\OML/cmm/m/it/12 a; b\OT1/cmr/m/n/12 ) = []\
+OML/cmm/m/it/12 :
+ []
+
+[25] [26]
+Overfull \hbox (20.92482pt too wide) in paragraph at lines 777--778
+ []\OT1/cmr/bx/n/12 (iii)[] \OT1/cmr/m/n/12 Let $\OMS/cmsy/m/n/12 f\OML/cmm/m/i
+t/12 X[]\OMS/cmsy/m/n/12 g[] ^^R \OT1/cmss/m/n/12 UL\U/eus/m/n/12 R$\OT1/cmr/m/
+n/12 . Since $\OML/cmm/m/it/12 X[] \OMS/cmsy/m/n/12 ^^S [][] \OML/cmm/m/it/12 X
+[]$\OT1/cmr/m/n/12 , by mono-tonic-ity $	([][] \OML/cmm/m/it/12 X[]; B\OT1/cmr/
+m/n/12 ) =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 782--784
+
+ []
+
+
+Overfull \hbox (27.12361pt too wide) in paragraph at lines 792--794
+\OT1/cmr/m/n/12 By prop-erty (iii), $	([][]\OMS/cmsy/m/n/12 g\OML/cmm/m/it/12 ;
+ []b\OMS/cmsy/m/n/12 g\OT1/cmr/m/n/12 )$ for all $\OML/cmm/m/it/12 r \OMS/cmsy/
+m/n/12 2 \OML/cmm/m/it/12 a$ \OT1/cmr/m/n/12 im-plies $	([][] [][]\OMS/cmsy/m/n
+/12 g\OML/cmm/m/it/12 ; []b\OMS/cmsy/m/n/12 g\OT1/cmr/m/n/12 )$.
  []
 
 [27]
-Overfull \hbox (1.46388pt too wide) in paragraph at lines 854--854
+
+LaTeX Warning: Reference `lem:calc' on page 28 undefined on input line 816.
+
+[28]
+LaTeX Font Info:    Trying to load font information for U+euf on input line 836
+.
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+) [29]
+Overfull \hbox (1.46388pt too wide) in paragraph at lines 882--882
 []\OT1/cmr/m/n/12 Andrea Censi. ``A Math-e-mat-i-cal The-ory of Co-Design''. In
 : (2015).
  []
 
-[28] (./Choice in CoDesign Report.aux)
+[30] [31] (./Choice in CoDesign Report.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `"Choice in CoDesign Report".out' has not cha
 nged.
-(rerunfilecheck)             Checksum: 09E21DE99963494C7AB33E2C492523BB;5370.
+(rerunfilecheck)             Checksum: D95032DFBC1E202944D385D94B9D9A68;3633.
 Package logreq Info: Writing requests to '"Choice in CoDesign Report".run.xml'.
 
 \openout1 = `"Choice in CoDesign Report.run.xml"'.
 
  ) 
 Here is how much of TeX's memory you used:
- 32566 strings out of 478846
- 629526 string characters out of 5855774
- 1136997 words of memory out of 5000000
- 49559 multiletter control sequences out of 15000+600000
- 418359 words of font info for 89 fonts, out of 8000000 for 9000
+ 32670 strings out of 478846
+ 630857 string characters out of 5855774
+ 1132239 words of memory out of 5000000
+ 49652 multiletter control sequences out of 15000+600000
+ 423983 words of font info for 108 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,16n,104p,1866b,1743s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 99i,16n,104p,1866b,1754s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
-}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
+}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb
+></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 </usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
 /usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><
 /usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></
@@ -1298,22 +1327,25 @@ usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></us
 r/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
 local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/lo
 cal/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/loca
-l/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/t
-exlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/te
-xlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/tex
-live/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texli
-ve/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive
-/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/
-2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/20
-21/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/202
-1/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb></usr/local/texlive/2
-021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texli
-ve/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></home/marius/texmf
-/fonts/type1/public/stmaryrd/stmary10.pfb>
-Output written on "Choice in CoDesign Report.pdf" (28 pages, 562139 bytes).
+l/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/t
+exlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texl
+ive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texli
+ve/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive
+/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/
+2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/20
+21/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/202
+1/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2021/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2021/t
+exmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/local/texlive/2021
+/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb></usr/local/texlive/20
+21/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texliv
+e/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/te
+xlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></home/marius/te
+xmf/fonts/type1/public/stmaryrd/stmary10.pfb>
+Output written on "Choice in CoDesign Report.pdf" (31 pages, 595547 bytes).
 PDF statistics:
- 481 PDF objects out of 1000 (max. 8388607)
- 422 compressed objects within 5 object streams
- 110 named destinations out of 1000 (max. 500000)
- 226 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 490 PDF objects out of 1000 (max. 8388607)
+ 424 compressed objects within 5 object streams
+ 102 named destinations out of 1000 (max. 500000)
+ 178 words of extra memory for PDF output out of 10000 (max. 10000000)
 
