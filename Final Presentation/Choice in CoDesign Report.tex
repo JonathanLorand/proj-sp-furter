@@ -3,6 +3,9 @@
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 
+\newcommand\hmmax{0}
+\newcommand\bmmax{0}
+
 \usepackage{amsmath}
 
 \usepackage{mathtools}
@@ -211,16 +214,16 @@ citestyle=alphabetic]{biblatex}
 \maketitle
 
 \begin{abstract}
-	Write this
+	This report describes a method for modeling free and forced choice within Co-Design. In a free choice among a set, one has control over which option is selected, while in a forced choice one does not. Given a preorder $\mc{P}$ describing resources or functionalities, a free choice among a subset of $\mc{P}$ acts like a meet. Dually, a forced choice acts like a join. Moreover, the two types of choice distribute over one another. Based on this, we construct a universal model for choice on a preorder using the free completely distributive lattice $\upper\low\mc{P}$. Feasibility relations are then extended to these models. Along the way, we illustrate how to work within $\upper\low\mc{P}$ and provide results that simplify calculations.
 \end{abstract}
 \newpage
 \tableofcontents
 \newpage
 
 \section{Introduction}
-Living life involves making choices. Before a choice is made, a set of unrealized options lies dormant. Making a choice involves collapsing this set to a single outcome. This collapse may occur in several ways. On the one extreme, we may be in full control of which option is realized: We are able to freely choose a desired outcome. On the other extreme, we may be powerless to steer the collapse: A choice is forced upon us.
+Living life involves making choices. Before a choice is made, a set of unrealized options lies dormant. Making a choice involves collapsing this set to a single outcome. This collapse may occur in several ways. On the one extreme, we may be in full control of which option is realized: We can freely choose the desired outcome. On the other extreme, we may be powerless to steer the collapse: A choice is forced upon us.
 
-Choice is relevant in any discipline that involves a multiplicity of potential outcomes. In computer science, for example, choice is used to describe program specifications \cite{Martin2007,Morris2004}. Here the choice is between possible outputs of non-deterministic code. Free choice corresponds to the code behaving in the programmers best interest, while forced choice describes an uncertainty of outcome. These two modes are personified by an angel choosing on behalf of the programmer in the first case, while a demon chooses in the latter.
+Choice is relevant in any discipline that involves a multiplicity of potential outcomes. In computer science, for example, choice is used to describe program specifications \cite{Martin2007,Morris2004}. Here, the choice is between possible outputs of non-deterministic code. Free choice corresponds to the code behaving in the programmer's best interest, while forced choice describes uncertainty of outcome. These two modes are personified by an angel choosing on behalf of the programmer in the first case, while a demon chooses in the latter.
 
 Choice also arises whenever one requires coordination between agents. Alice might only be able to guarantee a range of outcomes to Bob. This is weaker than guaranteeing a specific outcome. On the other hand, Alice may be able to offer Bob a free choice between a set of outcomes. This is stronger than offering a single outcome. We see that allowing for free and forced choices expands the space of possible interactions between Alice and Bob.
 
@@ -228,24 +231,19 @@ In engineering too, choices abound. A team can freely choose a specific motor fr
 
 Questions of coordination between teams are addressed in the Co-Design framework \cite{Censi2015}. However, the original framework does not include a way to express free and forced choices. Here we aim to extend the framework in a way that does. 
 
-\subsection{Goals}
-This report aims to succinctly describe how to model free and forced choice within the Co-Design framework. Additionally, it will highlight avenues for future exploration. Ideally, it could serve as a starting point for anyone seeking to make further contributions to this topic.
-
-\subsection{Structure}
-
 \section{A Brief Introduction to Co-Design}
 We begin by providing a short introduction to the Co-Design framework established in \cite{Censi2015}. This will also serve to fix the conventions we will be using throughout. \\
 
-In Co-Design we consider resources that can be used to achieve functionalities. For example, we might consider different types of motor as resources, with the power output they provide as functionalities. If a resource $r$ can be used to provide functionality $f$ we say that the pair $(r,f)$ is feasible. Continuing our example, if motor $A$ is capable of ouputting \mbox{2 kW} then we would mark $(A,\text{2 kW})$ as feasible.
+In Co-Design, we consider resources that can be used to achieve functionalities. For example, we might consider different types of motors as resources, and the power output they provide as functionalities. If a resource $r$ can be used to provide functionality $f$ we say that the pair $(r,f)$ is feasible. Continuing our example, if motor $A$ is capable of outputting \mbox{2 kW} then we would mark $(A,\text{2 kW})$ as feasible.
 
-It can occur that certain resources or functionalities imply others. If motor $A$ can provide \mbox{2 kW}, it should also be able to provide \mbox{1 kW}. We will indicate this by writing $2 \text{ kW} \rightarrow 1 \text{ kW}$. Hence, our sets of resources and functionalities posses additional structure: They are preorders. Consequently, we want our notion of feasibility to take this structure into account. This leads to the concept of \emph{feasibility relation}. We will make these ideas precise in what follows.
+Certain resources or functionalities may imply others. If motor $A$ can provide \mbox{2 kW}, it should also be able to provide \mbox{1 kW}. We will indicate this by writing $2 \text{ kW} \rightarrow 1 \text{ kW}$. Hence, our sets of resources and functionalities possess additional structure: They are preorders. Consequently, we want our notion of feasibility to take this structure into account. This leads to the concept of \emph{feasibility relation}. We will make these ideas precise in what follows.
 
 \subsection{Resource and Functionality Preorders}
 
 We model resources and functionalities using preordered sets, which will be formally introduced shortly. We interpret an element $a$ of the preorder as the guarantee ``I can provide $a$''. We put an arrow $a \shortrightarrow b$ whenever being able to provide $a$ implies being able to provide $b$. This is best illustrated with an example.
 
 \begin{example}(Money as Resources)\label{ex:money}
-	The set $\mathbb{N} := \{0,1,2,\ldots \}$ with the order relation $a \shortrightarrow b \Leftrightarrow a \geq b$ can be used to describe money (of a single currency, say dollars) as a resource. The element $a$ represents being able to provide $a$ dollars, while $a \shortrightarrow b$ means that if you can provide $a$ dollars, you can also provide $b$ dollars. For example, $3 \shortrightarrow 1$ signifies that if we could pay 3 dollars, we also possess the purchasing power of 1 dollar. Observe that being able to transform $3 \shortrightarrow 1$ presupposes that people are willing to accept $3$ dollars in lieu of $1$ dollar. This hypothesis is system relative. For example, a vending machine might only accept bills of low denomination. So in this case one might well not have $50 \shortrightarrow 1$. \exampleend
+	The set $\mathbb{N} := \{0,1,2,\ldots \}$ with the order relation $a \shortrightarrow b \Leftrightarrow a \geq b$ can be used to describe money (of a single currency, say dollars) as a resource. The element $a$ represents being able to provide $a$ dollars, while $a \shortrightarrow b$ means that if you can provide $a$ dollars, you can also provide $b$ dollars. For example, $3 \shortrightarrow 1$ signifies that if we could pay 3 dollars, we also possess the purchasing power of 1 dollar. Observe that being able to transform $3 \shortrightarrow 1$ presupposes that people are willing to accept $3$ dollars in place of $1$ dollar. This hypothesis is system relative. For example, a vending machine might only accept bills of low denomination. So in this case one might well not have $50 \shortrightarrow 1$. \exampleend
 \end{example}
 
 Returning to the general theory, we observe that the preorder axioms precisely describe how we would like the relation $a \shortrightarrow b$ to behave.
@@ -264,7 +262,7 @@ Using our infix notation, the two axioms become
 	\item[(r)] $a \shortrightarrow a$ for all $a$,
 	\item[(t)] $a \shortrightarrow b$ and $b \shortrightarrow c$ imply $a \shortrightarrow c$.
 \end{itemize}  
-In other words, for each resource $a$, being able to provide $a$ implies being able to provide $b$. Further, if being able to provide $a$ implies being able to provide $b$, and being able to provide $b$ implies being able to provide $c$, then being able to provide $a$ should imply being able to provide $c$. \\
+In other words, for each resource $a$, being able to provide $a$ implies being able to provide $a$. Further, if being able to provide $a$ implies being able to provide $b$, and being able to provide $b$ implies being able to provide $c$, then being able to provide $a$ should imply being able to provide $c$. \\
 
 Everything that has been said here applies equally to functionalities. In fact, what we view as resources and functionalities is relative to the process we are considering. When I purchase a candy bar from a vending machine, the dollar I spend is the resource, and the candy bar the functionality. When I eat the candy bar to gain energy, the candy bar has become the resource.
 
@@ -277,7 +275,7 @@ Everything that has been said here applies equally to functionalities. In fact, 
 \end{remark}
 
 \begin{tcolorbox}[title= Functionality Interpretation]
-	 Following the logic of Co-Design, a resource is determined by the functionality it can provide. From this perspective, we could alternatively set $a \shortrightarrow b$ whenever $a$ provides at least the same level of functionality as $b$ does. In this case, in terms of the functionality on offer, being able to provide $a$ does implies being able to provide $b$. Conversely, if being able to provide $a$ implies being able to provide $b$, then $a$ must offer at least the same level of functionality as $b$. This shows that the two interpretations align.
+	 Following the logic of Co-Design, a resource is determined by the functionality it can provide. From this perspective, we could alternatively set $a \shortrightarrow b$ whenever $a$ provides at least the same level of functionality as $b$ does. In this case, in terms of the functionality on offer, being able to provide $a$ does imply being able to provide $b$. Conversely, if being able to provide $a$ implies being able to provide $b$, then $a$ must offer at least the same level of functionality as $b$. This shows that the two interpretations align.
 \end{tcolorbox}
 
 \begin{tcolorbox}[title= Transformation Interpretation]
@@ -289,7 +287,7 @@ Everything that has been said here applies equally to functionalities. In fact, 
 Given a preorder of resources $\mc{R}$ and a preorder of functionalities $\mc{F}$, a feasibility relation $\Phi: \mc{R} \xslashedrightarrow{} \mc{F}$ between them expresses which functionalities I am able to obtain from which resources. We write $\Phi(r,f) = \mathtt{true}$ to indicate that $f$ can be obtained from $r$. In the language of the previous section, being able to provide $r$ implies being able to provide $f$.
 
 \begin{example}[Gorcery Shopping 1]\label{ex:groceries}
-	Consider buying groceries. Our resources $\mc{R}$ will be money as in Example \ref{ex:money}. The possible groceries we can buy are the functionalities $\mc{F}$. The feasibility relation $\Phi: \mc{R} \xslashedrightarrow{} \mc{F}$ will describe what groceries we can purchase given a specific amount of cash. For example, a $\mathtt{carrot}$ might cost $1\$$. Hence, $\Phi(1\$,\mathtt{carrot}) = \mathtt{true}$. On the other hand, $\Phi(0\$, \mathtt{carrot}) = \mathtt{false}$, since we can't get a $\mathtt{carrot}$ without paying anything. Suppose now that a $\mathtt{bag\ of\ carrots}$ costs $3\$$. This means $\Phi(3\$,\mathtt{bag\ of\ carrots}) = \mathtt{true}$. Observe that also $\Phi(3\$,\mathtt{carrot}) = \true$ should hold. Either we can pick up a single carrot in the store and pay for it with $3\$$, or we could buy the whole bag for $3\$$ and this would also give us a single $\mathtt{carrot}$. 
+	Consider buying groceries. Our resources $\mc{R}$ will be money as in Example \ref{ex:money}. The possible groceries we can buy are the functionalities $\mc{F}$. The feasibility relation $\Phi: \mc{R} \xslashedrightarrow{} \mc{F}$ will describe what groceries we can purchase given a specific amount of cash. For example, a $\mathtt{carrot}$ might cost $1\$$. Hence, $\Phi(1\$,\mathtt{carrot}) = \mathtt{true}$. On the other hand, $\Phi(0\$, \mathtt{carrot}) = \mathtt{false}$, since we can't get a $\mathtt{carrot}$ without paying anything. Suppose now that a $\mathtt{bag\ of\ carrots}$ costs $3\$$. This means $\Phi(3\$,\mathtt{bag\ of\ carrots}) = \mathtt{true}$. Observe that also $\Phi(3\$,\mathtt{carrot}) = \true$ should hold: Either we can pick up a single carrot in the store and pay for it with $3\$$, or we could buy the whole bag for $3\$$ and this would also give us a single $\mathtt{carrot}$. 
 	
 	This shows that feasibility interacts with the implication arrows we have for the resources and functionalities. In our example,
 	$$3\$ \shortrightarrow 1\$ \text{ and } \Phi(1\$, \mathtt{carrot}) = \true  \text{ implied } \Phi(3\$, \mathtt{carrot}) = \true.$$ 
@@ -309,10 +307,10 @@ The interaction we observed between arrows and feasibility justifies the formal 
 	If $(r,f) \in \Phi$ we write $\Phi(r,f) = \true$ and say that $\Phi(r,f)$ holds.
 \end{definition}
 
-In other words, a feasibility relation is a relation from $\mc{R}$ to $\mc{F}$ that is downward closed with respect to free transformations in $\mc{R}$ and upward closed with respect to free transformations in $\mc{F}$. We will often draw internal diagrams of feasibility relations as in Figure \ref{fig:internal feas}. We put an arrow between an $r \in \mc{R}$ and $f \in \mc{F}$ iff $\Phi(r,f) = \true$. The arrows coming from $\Phi$ can be thought of the transformations that $\Phi$ enables. Observe that the closure conditions in Definition \ref{def:feasibility} mean that the arrows coming from $\Phi$ are transitively closed with respect to the internal arrows in $\mc{R}$ and $\mc{F}$: If there is a path from an $r \in \mc{R}$ to an $f \in \mc{F}$ following any type of arrow, then we also have a direct arrow between $r$ and $f$ coming from $\Phi$.
+In other words, a feasibility relation is a relation from $\mc{R}$ to $\mc{F}$ that is downward closed with respect to free transformations in $\mc{R}$ and upward closed with respect to free transformations in $\mc{F}$. We will often draw internal diagrams of feasibility relations as in Figure \ref{fig:internal feas}. We put an arrow between an $r \in \mc{R}$ and $f \in \mc{F}$ iff $\Phi(r,f) = \true$. The arrows coming from $\Phi$ can be thought of as the transformations that $\Phi$ enables. Observe that the closure conditions in Definition \ref{def:feasibility} mean that the arrows coming from $\Phi$ are transitively closed with respect to the internal arrows in $\mc{R}$ and $\mc{F}$: If there is a path from an $r \in \mc{R}$ to an $f \in \mc{F}$ following any type of arrow, then we also have a direct arrow between $r$ and $f$ coming from $\Phi$.
 
 \begin{continueexample}{ex:groceries}
-	We can now formally implement our example of grocery shopping. Recall that our resource preorder $\mc{R}$ consists of money, while our functionality preorder $\mc{F}$ describes groceries we can purchase. Figure \ref{fig:internal feas} shows part of an internal diagram of a feasibility relation $\Phi: \mc{R} \xslashedrightarrow{} \mc{F}$. The blue arrows indicate the feasible pairs. For example, $$\Phi(3\$,\mathtt{bag\ of\ carrots}) = \true.$$ It is worth contemplating why $\Phi$ satisfies the monotonicity conditions presented in Definition \ref{def:feasibility}. 	\exampleend
+	We can now formally implement our example of grocery shopping. Recall that our resource preorder $\mc{R}$ consists of money, while our functionality preorder $\mc{F}$ describes groceries we can purchase. Figure \ref{fig:internal feas} shows part of an internal diagram of a feasibility relation $\Phi: \mc{R} \xslashedrightarrow{} \mc{F}$. The blue arrows indicate the feasible pairs. For example, $$\Phi(3\$,\mathtt{bag\ of\ carrots}) = \true.$$ It is worth contemplating how $\Phi$ satisfies the monotonicity conditions presented in Definition \ref{def:feasibility}. 	\exampleend
 	
 	\begin{figure}
 		\centering
@@ -322,6 +320,13 @@ In other words, a feasibility relation is a relation from $\mc{R}$ to $\mc{F}$ t
 	\end{figure}
 
 \end{continueexample}
+
+For any preorders $\mc{R}$ and $\mc{F}$, $\Psi = \mc{R} \times \mc{F}$ is a feasibility relation. In particular, every relation $R \sub \mc{R} \times \mc{F}$ is contained within a feasibility relation. This allows us to write a feasibility relation in terms of a generating relation, which is more economical.
+\begin{definition}[Feasibility Generated by Relation]
+	Given a relation $R \sub \mc{R} \times \mc{F}$, the \emph{feasibility relation generated by $R$} is the smallest feasibility relation containing $R$. It is given by $$\bigcap_{\Phi \supseteq R} \Phi ,$$
+	where $\Phi$ runs over all feasibility realtions $\Phi: \mc{R} \xslashedrightarrow{} \mc{F}$.
+\end{definition}
+
 
 We could have also defined feasibility relations as special types of monotone maps. For this we need to introduce several concepts.
 
@@ -334,7 +339,7 @@ We could have also defined feasibility relations as special types of monotone ma
 \end{definition}
 
 \begin{definition}[Product of Preorders]
-	Let $\mc{P}$ and $\mc{Q}$ be preorders. Their \emph{product} $\mc{P} \times \mc{Q}$ consists of all pairs $(p,q)$ where $p \in \mc{P}$ and $q \in \mc{Q}$ where we set $(p,q) \shortrightarrow (p',q')$ if and only if $p \shortrightarrow p'$ in $\mc{P}$ and $q \shortrightarrow q'$ in $\mc{Q}$.
+	Let $\mc{P}$ and $\mc{Q}$ be preorders. Their \emph{product} $\mc{P} \times \mc{Q}$ consists of all pairs $(p,q)$ for $p \in \mc{P}$ and $q \in \mc{Q}$, where we set $(p,q) \shortrightarrow (p',q')$ if and only if $p \shortrightarrow p'$ in $\mc{P}$ and $q \shortrightarrow q'$ in $\mc{Q}$.
 \end{definition}
 
 \begin{definition}[Monotone Map]
@@ -364,10 +369,10 @@ We now extend what we've seen so far to encompass choice and uncertainty. What i
 	In the first case, we as customers are given the choice between coffee or tea. In the second, it is chosen for us which soup we will get, depending on what the cooks have available. From our perspective as customers, this represents an uncertainty. In both cases, however, we will end up with exactly one of the options. \exampleend
 \end{example}
 
-We might refer to the two modes of choice presented in Example \ref{ex:menu} as \emph{free choice} and \emph{forced choice}, respectively. Alternatively, we could call them \emph{choice} and \emph{uncertainty}, or \emph{internal} and \emph{external} choice. Regardless of the names we choose, the terms are relative to which perspective we are taking. If we look through the eyes of the restaurant, the customer choice of coffee or tea is external, while the choice of soup is internal.
+We refer to the two modes of choice presented in Example \ref{ex:menu} as \emph{free choice} and \emph{forced choice}, respectively. Alternatively, we could call them \emph{choice} and \emph{uncertainty}, or \emph{internal} and \emph{external} choice. Regardless of the names we choose, the terms are relative to which perspective we are taking. If we look through the eyes of the restaurant, the customer choice of coffee or tea is external, while the choice of soup is internal.
 
 \subsection{Choice Connectives}
-Suppose we are given some preorder $\mc{P}$ of resources or functionalities. Our goal will be to augment $\mc{P}$ to include all possible free and forced choices among subsets $A \sub \mc{P}$. Let us call this choice-augmented preorder $\mathsf{C}(\mc{P})$. To this end we introduce two connectives to express free and forced choice.
+Suppose we are given some preorder $\mc{P}$ of resources or functionalities. Our goal will be to augment $\mc{P}$ to include all possible free and forced choices among subsets $A \sub \mc{P}$. Let us call this choice-augmented preorder $\mathsf{C}(\mc{P})$. To this end, we introduce two connectives to express free and forced choice.
 
 \begin{definition}[Choice Connectives] Given a set $A$, we denote
 	\begin{itemize}
@@ -387,16 +392,16 @@ We would like $\mathsf{C}(\mc{P})$ to contain all elements of $\mc{P}$ along wit
 We will answer these questions in what follows, beginning with (ii).
 
 \subsubsection{Arrows between Choices}\label{sec:intr free}
-In this section we describe when we should add arrows in the choice-augmented preorder $\mathsf{C}(\mc{P})$. We start by considering free choice.
+In this section, we describe when we should add arrows in the choice-augmented preorder $\mathsf{C}(\mc{P})$. We start by considering free choice.
 
-Suppose that we are able to provide a free choice among some set $A \sub \mathsf{C}(\mc{P})$. This means that regardless of which $a \in A$ is picked freely, we must be able to provide that $a$. In other words, being able to provide a free choice among $A$ implies being able to provide any $a \in A$. Formally,
+Suppose that we can provide a free choice among some set $A \sub \mathsf{C}(\mc{P})$. This means that regardless of which $a \in A$ is picked freely, we must be able to provide that $a$. In other words, being able to provide a free choice among $A$ implies being able to provide any $a \in A$. Formally,
 
 
 \begin{equation}\label{eq:meet 1}
 	\cbigsqcap{a \in A} a \shortrightarrow a, \quad \forall a \in A.
 \end{equation}
 
-Let $A \sub \mathsf{C}(\mc{P})$ and suppose that there is a fixed $t \in \mathsf{C}(\mc{P})$ such that for every $a \in A$, being able to provide $t$ implies being able to provide $a$. Being able to provide a free choice among $A$ means that whatever $a \in A$ is picked freely, we can provide that $a$. By assumption, if we can provide $t$, we are able to provide any $a \in A$, and hence also the free choice among $A$. Formally,
+Let $A \sub \mathsf{C}(\mc{P})$ and suppose that there is a fixed $t \in \mathsf{C}(\mc{P})$ such that for every $a \in A$, being able to provide $t$ implies being able to provide $a$. Being able to provide a free choice among $A$ means that whatever $a \in A$ is picked freely, we can provide that $a$. By assumption, if we can provide $t$, we can provide any $a \in A$, and hence also the free choice among $A$. Formally,
 \begin{equation}\label{eq:meet 2}
 	\forall a \in A : t \shortrightarrow a  \quad \Rightarrow \quad t \shortrightarrow 	\cbigsqcap{a \in A} a.
 \end{equation}
@@ -406,7 +411,7 @@ We now turn to forced choice. Being able to provide a forced choice among $B \su
 b \shortrightarrow \cbigsqcup{b \in B} b, \quad \forall b \in B.
 \end{equation}
 
-Finally, suppose that for every $b \in B$, being able to provide $b$ implies being able to provide a fixed $t \in \mathsf{C}(\mc{P})$. Assume we can provide a forced choice among $B$. This means that we are able to provide some $b \in B$. However, regardless of which $b$ we are able to provide, our hypothesis says that this implies we are able to provide $t$. Therefore, being able to provide a forced choice among $B$ implies being able to provide $t$. Formally, 
+Finally, suppose that for every $b \in B$, being able to provide $b$ implies being able to provide a fixed $t \in \mathsf{C}(\mc{P})$. Assume we can provide a forced choice among $B$. This means that we can provide some $b \in B$. However, regardless of which $b$ we can provide, our hypothesis says that this implies we can provide $t$. Therefore, being able to provide a forced choice among $B$ implies being able to provide $t$. Formally, 
 \begin{equation}\label{eq:join 2}
 \forall b \in B : b \shortrightarrow t  \quad \Rightarrow \quad  \cbigsqcup{b \in B} b \shortrightarrow t.
 \end{equation}
@@ -431,7 +436,7 @@ We now observe that (\ref{eq:meet 1}) and (\ref{eq:meet 2}) mean that $\csqcap$ 
 Our discussion shows that our choice-augmented preorder $\mathsf{C}(P)$ will have meets and joins for any subset $A \sub \mathsf{C}(\mc{P})$. Therefore, $\mathsf{C}(P)$ will be a complete lattice.
 
 \subsubsection{Equality of Choices}\label{sec:intr self}
-The fact that free and forced choices are meets and joins in $\mathsf{C}(\mc{P})$ already implies many equalities between expressions consisting of the connectives $\csqcap$ and $\csqcup$. In this section we will show that in addition to these we also want the connectives to distribute over one another.
+The fact that free and forced choices are meets and joins in $\mathsf{C}(\mc{P})$ already implies many equalities between expressions consisting of the connectives $\csqcap$ and $\csqcup$. In this section, we will show that in addition to these we also want the connectives to distribute over one another.
 
 Suppose we have a series of choices given by $a \csqcap (b \csqcup c)$. This means we get to freely choose between getting $a$ for certain, or between the uncertainty of getting $b$, or $c$. In this scenario, we can always guarantee $a$ if we want, but we are uncertain whether we will get $b$ or $c$, if we don't choose $a$. Compare this with the series of choices given by $(a \csqcap b) \csqcup (a \csqcap c)$. Here too we can always guarantee $a$, but are uncertain whether we will get $b$ or $c$, if we don't choose $a$. In fact, in terms of which resources we can guarantee, the two formulations are equivalent from our perspective. Hence, we can assume the following distributive law $$a \csqcap (b \csqcup c) = (a \csqcap b) \csqcup (a \csqcap c).$$
 
@@ -443,7 +448,7 @@ More generally, these laws should also hold for the infinite case. The statement
 \end{equation}
 where $F$ is the set of all choice functions choosing for each index $j \in J$ some index $f(j) \in K_j$.
 
-This law is justified by the following argument. Suppose we are presented with a choice of the form $\cbigsqcap{j \in J} \left( \cbigsqcup{k \in K_j} b_{j,k} \right)$. Then we can guarantee $\cbigsqcup{k \in K_j} b_{j,k} $ for any $j \in J$ we choose. That is we can guarantee an uncertainty between the $b_{j,k}$ for one specific $j$ of our choice. Now consider $\cbigsqcup{f \in F} \left( \cbigsqcap{j \in J} b_{j,f(j)} \right)$. Here, some $f \in F$ is chosen for us. We then get to chose freely between the $b_{j,f(j)}$ for that fixed $f$. Hence we still have uncertainty among a set of $b_{j,k}$ for a $j$ of our choice. Moreover, $f$ picks precisely one $k = f(j)$ among all $k \in K_j$, so the set of $b_{j,k}$ for which there is uncertainty remains the same in both cases.
+This law is justified by the following argument. Suppose we are presented with a choice of the form $\cbigsqcap{j \in J} \left( \cbigsqcup{k \in K_j} b_{j,k} \right)$. Then we can guarantee $\cbigsqcup{k \in K_j} b_{j,k} $ for any $j \in J$ we choose. That is, we can guarantee an uncertainty between the $b_{j,k}$ for one specific $j$ of our choice. Now consider $\cbigsqcup{f \in F} \left( \cbigsqcap{j \in J} b_{j,f(j)} \right)$. Here, some $f \in F$ is chosen for us. We then get to chose freely between the $b_{j,f(j)}$ for that fixed $f$. Hence we still have uncertainty among a set of $b_{j,k}$ for a $j$ of our choice. Moreover, $f$ picks precisely one $k = f(j)$ among all $k \in K_j$, so the set of $b_{j,k}$ for which there is uncertainty remains the same in both cases.
 
 We can also formulate the dual distributive law
 \begin{equation}\label{eq:join dist}
@@ -461,13 +466,13 @@ In summary, our discussion shows that in addition to being a complete lattice, $
 \subsection{A Universal Model for Choice}
 Given a preorder $\mc{P}$, we want to construct a choice-augmented preorder $\mathsf{C}(\mc{P})$ that includes all possible choices between elements of $\mc{P}$. Our discussion in the previous section showed that $\mathsf{C}(\mc{P})$ should be a completely distributive lattice, where a free choice among a set $A$ is given by the meet over $A$, and a forced choice over a set $B$ is given by the join over $B$. Moreover, we want the new elements in $\mathsf{C}(\mc{P})$ to only fulfill those relations implied by our interpretation of these elements as choices. This leads us to consider the free completely distributive lattice generated by $\mc{P}$.
 
-There are several notions of free completely distributive lattice one could use, depending on what set of maps one is interested in. We will follow \cite{Morris2004}, which shows that the upper sets of lower sets of $\mc{P}$, denoted $\upper(\low(\mc{P}))$, satisfy a universal property that suits our purposes. We will explain this in more detail after making the requisite definitions.
+There are several notions of free completely distributive lattice one could use, depending on what set of maps one is interested in. We will follow \cite{Morris2004}, which shows that the upper sets of lower sets of $\mc{P}$, denoted $\upper\low\mc{P}$, satisfy a universal property that suits our purposes. We will explain this in more detail after making the requisite definitions.
 
 We start by defining special subsets of a preorder which are upwards and downward closed.
 \begin{definition}[Upper and Lower Sets]
 	Let $\mc{P}$ be a preorder. A subset $U \sub \mc{P}$ is called an \emph{upper set}, if it is upward closed: 
 	$$x \in U \text{ and } x \shortrightarrow y  \text{ imply } y \in U.$$
-	A subset $L \sub \mc{P}$ is called a lower set, if it is downward closed:
+	A subset $L \sub \mc{P}$ is called a \emph{lower set}, if it is downward closed:
 	$$x \in L \text{ and } y \shortrightarrow x  \text{ imply } y \in L.$$
 \end{definition}
 
@@ -497,14 +502,14 @@ We will be interested in monotone maps $f: \mc{P} \rightarrow \mc{Q}$ in which t
 	$$ p \mapsto \upc{\{p\}} \qquad \qquad \qquad p \mapsto \lwc{\{p\}}$$
 \end{lemma}
 \begin{proof}
-	We will take for granted that the power set $(\mathsf{P}(\mc{P}),\sub)$, ordered by inclusion, is a completely distributive lattice with set intersection as meet and set union as join. This follows from a straightforward check of the definition for meets and joins (Def.~\ref{def:meets joins}) and verification of the infinite distributive laws (\ref{eq:meet dist}) and (\ref{eq:join dist}). We now observe that unions and intersections of upper sets are again upper sets. The same holds for lower sets. Therefore, the completely distributive structure on $(\mathsf{P}(\mc{P}),\sub)$ restricts to completely distributive lattices $(\upper\mc{P}, \sub)$ and $(\low\mc{P}, \sub)$. Finally, since $(\upper\mc{P}, \sub)^\text{op} = (\upper\mc{P}, \supseteq)$ and the defining laws for completely distributive lattices are self-dual, we see that also $(\upper\mc{P}, \supseteq)$ is completely distributive.
+	We will take for granted that the power set $(\mathsf{P}(\mc{P}),\sub)$, ordered by inclusion, is a completely distributive lattice with set intersection as meet and set union as join. This follows from a straightforward check of the definition for meets and joins (Def.~\ref{def:meets joins}) and verification of the infinite distributive laws (\ref{eq:meet dist}) and (\ref{eq:join dist}). We now observe that unions and intersections of upper sets are again upper sets. The same holds for lower sets. Therefore, the completely distributive structure on $(\mathsf{P}(\mc{P}),\sub)$ restricts to completely distributive lattices $(\upper\mc{P}, \sub)$ and $(\low\mc{P}, \sub)$. Finally, since $(\upper\mc{P}, \sub)^\text{op} = (\upper\mc{P}, \supseteq)$, and the defining laws for completely distributive lattices are self-dual, we see that also $(\upper\mc{P}, \supseteq)$ is completely distributive.
 	
 	To prove that $i_\mathsf{U}$ is an order embedding let $p \shortrightarrow q$ in $\mc{P}$. Suppose $x \in \upc{\{q\}}$. Then $q \shortrightarrow x$, whence $p \shortrightarrow x$ by transitivity. Hence, $x \in \upc{\{p\}}$, so $\upc{\{p\}} \supseteq \upc{\{q\}}$. Conversely, if $\upc{\{p\}} \supseteq \upc{\{q\}}$, then in particular $q \in \upc{\{p\}}$, since $q \in \upc{\{q\}}$. Hence $p \shortrightarrow q$, as desired. The proof that $i_\mathsf{L}$ is an order embedding is analogous.
 \end{proof}
 
 We now have the tools to understand the free completely distributive lattice constructed in \cite{Morris2004}. Lemma \ref{lem:upper lower lattice} shows that given a preorder $\mc{P}$, we can obtain a completely distributive lattice $(\low\mc{P}, \sub)$. Since this is again a preorder, we can reapply the lemma and consider the completely distributive lattice $(\upper\low\mc{P}, \supseteq)$. In fact, \cite{Morris2004} shows that $\upper\low\mc{P}$ satisfies the following universal property:
 \begin{quote}
-	There is an order embedding $i: \mc{P} \hookrightarrow \upper\low\mc{P}$, such that for any monotone function $f: \mc{P} \rightarrow M$ into a completely distributive lattice $M$, there is a unique complete homomorphisms $u: \upper\low\mc{P} \rightarrow M$ (preserving arbitrary meets and joins) satisfying $u \circ i = f$.
+	There is an order embedding $i: \mc{P} \hookrightarrow \upper\low\mc{P}$, such that for any monotone function $f: \mc{P} \rightarrow M$ into a completely distributive lattice $M$, there is a unique complete homomorphisms \mbox{$u: \upper\low\mc{P} \rightarrow M$} (preserving arbitrary meets and joins) satisfying $u \circ i = f$.
 \end{quote}
 
 If we augment a preorder $\mc{P}$ to include choice, we should have a monotone map $c: \mc{P} \rightarrow \mathsf{C}(\mc{P})$ which maps each element of $\mc{P}$ to the free (or forced) choice among the singleton $\{p\}$. Therefore, by the universal property above, there will be a unique map from $u: \upper\low\mc{P} \rightarrow \mathsf{C}(\mc{P})$, preserving the elements of $\mc{P}$ and the choices among them. 
@@ -581,7 +586,7 @@ To justify this interpretation, we will need the following
 
 Returning to the interpretation, consider the element
 $$ \color{OliveGreen} \bm{\{} \color{Black} \color{BrickRed} \bm{\{} \color{Black} p_{j,k} \color{BrickRed} \bm{\}}_{k \in K_j} \color{Black}  \color{OliveGreen} \bm{\}}_{j \in J} \color{Black}.$$
-Since the red brackets are a lower set and the green brackets an upper set, we can rewrite
+Since the red brackets are a lower set and the green brackets upper sets, we can rewrite
 $$ \color{OliveGreen} \bm{\{} \color{Black} \color{BrickRed} \bm{\{} \color{Black} p_{j,k} \color{BrickRed} \bm{\}}_{k \in K_j} \color{Black}  \color{OliveGreen} \bm{\}}_{j \in J} \color{Black} = \upc{ \color{OliveGreen} \bm{\{} \color{Black} \lwc{\color{BrickRed} \bm{\{} \color{Black} p_{j,k} \color{BrickRed} \bm{\}}_{k \in K_j} \color{Black}}  \color{OliveGreen} \bm{\}}_{j \in J} \color{Black}}.$$
 Using Lemmas \ref{lem:exchange upc} and  \ref{lem:intersection as union} (ii),
 \begin{IEEEeqnarray*}{rCl}
@@ -593,7 +598,7 @@ Using Lemmas \ref{lem:exchange upc} and  \ref{lem:intersection as union} (ii),
 This equation confirms our interpretation. \\
 
 
-We now know how to interpret elements of $\upper\low\mc{P}$. We will now show how free and forced are represented in the upper lower model. Suppose $\{p_j\}_{j \in J}$ is a collection of elements in $\mc{P}$. Each $p_j$ embeds into $\upper\low\mc{P}$ as $\upc{\{\lwc{\{p_j\}}\}}$. The free choice among $\{p_j\}_{j \in J}$ is represented by 
+Now that we know how to interpret elements of $\upper\low\mc{P}$, we will now show how free and forced are represented in the upper lower model. Suppose $\{p_j\}_{j \in J}$ is a collection of elements in $\mc{P}$. Each $p_j$ embeds into $\upper\low\mc{P}$ as $\upc{\{\lwc{\{p_j\}}\}}$. The free choice among $\{p_j\}_{j \in J}$ is represented by 
 \begin{equation}\label{eq:repr free}
 	\cbigsqcap{j \in J} p_j = \bigcup_{j \in J} \upc{\{\lwc{\{p_j\}}\}} = \upc{\{\lwc{\{p_j\}}\}_{j \in J}},
 \end{equation}
@@ -639,9 +644,8 @@ Let us see how this works in practice.
 		&= &\uparrow \{ \{\mathtt{curry}, \mathtt{casserole}\}, \{\mathtt{curry,chicken}\}, \\&& \quad \{\mathtt{beef,casserole}\}, \{\mathtt{beef,chicken}\} \}. \exampleend
 	\end{IEEEeqnarray*} 
 \end{example}
-
-As seen in the examples, it is easiest to represent upper and lower sets by upper and lower closures. The following calculation rules describe how to take choices among elements represented in this fashion.
-
+\newpage
+As seen in the examples, it is easiest to represent upper and lower sets by upper and lower closures. The following calculation rules describe how to write choices among elements represented in this fashion.
 \begin{tcolorbox}[title = \hypertarget{box:calc rules} {Calculation Rules} for Upper and Lower Closures, colframe=TealBlue, coltitle=Sepia, colback=paleteal] 
 		Let $\mc{P}$ be a preorder and $\{A_j\}_{j \in J}$ and $\{A_k\}_{k \in K}$ be indexed families of subsets of $\mc{P}$. Then the following rules hold for finite choices in $\upper\low\mc{P}$:
 		\begin{itemize}
@@ -671,25 +675,25 @@ As seen in the examples, it is easiest to represent upper and lower sets by uppe
 	Note that (i) and (ii) are special cases of (iii) and (iv). Regarding (ii), this follows because choice functions $\{j,k\} \rightarrow J \cup K$ correspond to elements of the cartesian product $J \times K$.
 	
 	For (iii) we observe that by Lemma \ref{lem:exchange upc},
-	\begin{IEEEeqnarray*}{rCl}
-		\cbigsqcap{j \in J} \upc{\{ \lwc{A_{j,k}} \}_{k \in K_j}} &=& \bigcup_{j \in J} \upc{\{ \lwc{A_{j,k}} \}_{k \in K_j}} \\
-		& = & \upc{ \bigcup_{j \in J} \{ \lwc{A_{j,k}} \}_{k \in K_j}} \\
-		& = & \upc \{ \lwc{A_i} \}_{i \in \bigcup K_j }
+	\begin{IEEEeqnarray*}{rCll}
+		\cbigsqcap{j \in J} \upc{\{ \lwc{A_{j,k}} \}_{k \in K_j}} &=& \bigcup_{j \in J} \upc{\{ \lwc{A_{j,k}} \}_{k \in K_j}} & \qquad \text{(Definition)}\\
+		& = & \upc{ \bigcup_{j \in J} \{ \lwc{A_{j,k}} \}_{k \in K_j}} & \qquad \text{(Lemma \ref{lem:exchange upc})} \\
+		& = & \upc \{ \lwc{A_i} \}_{i \in \bigcup K_j } &
 	\end{IEEEeqnarray*}
 
-	For (iv) we apply Lemma \ref{lem:exchange upc}, the infinite distributive law (\ref{eq:join dist}), and Lemma \ref{lem:intersection as union},
-	\begin{IEEEeqnarray*}{rCl}
-		\cbigsqcup{j \in J} \upc{\{ \lwc{A_{j,k}} \}_{k \in K_j}} &=& \bigcap_{j \in J} \upc{\{ \lwc{A_{j,k}} \}_{k \in K_j}} \\
-		& = & \bigcap_{j \in J} \bigcup_{k \in K_j} \upc \{ \lwc A_{j,k} \} \\
-		& = & \bigcup_{f \in F} \bigcap_{j \in J} \upc \{ \lwc A_{j,f(j)}\} \\
-		& = & \bigcup_{f \in F} \upc \{ \bigcup_{j \in J} \lwc{A_{j,f(j)}} \} \\
-		& = & \upc  \{ \bigcup_{j \in J} \lwc{A_{j,f(j)}} \}_{f \in F} \\
-		& = & \upc \{ \lwc{ \bigcup_{j \in J} A_{j,f(j)}} \}_{f \in F}
+	For (iv) we apply Lemma \ref{lem:exchange upc}, the infinite distributive law (\ref{eq:join dist}), and \mbox{Lemma \ref{lem:intersection as union}},
+	\begin{IEEEeqnarray*}{rCll}
+		\cbigsqcup{j \in J} \upc{\{ \lwc{A_{j,k}} \}_{k \in K_j}} &=& \bigcap_{j \in J} \upc{\{ \lwc{A_{j,k}} \}_{k \in K_j}} & \qquad \text{(Definition)} \\
+		& = & \bigcap_{j \in J} \bigcup_{k \in K_j} \upc \{ \lwc A_{j,k} \} & \qquad \text{(Lemma \ref{lem:exchange upc})}\\
+		& = & \bigcup_{f \in F} \bigcap_{j \in J} \upc \{ \lwc A_{j,f(j)}\} & \qquad \text{(Distributivity)}\\
+		& = & \bigcup_{f \in F} \upc \{ \bigcup_{j \in J} \lwc{A_{j,f(j)}} \} & \qquad \text{(Lemma \ref{lem:intersection as union})}\\
+		& = & \upc  \{ \bigcup_{j \in J} \lwc{A_{j,f(j)}} \}_{f \in F} & \qquad \text{(Lemma \ref{lem:exchange upc})} \\
+		& = & \upc \{ \lwc{ \bigcup_{j \in J} A_{j,f(j)}} \}_{f \in F} &  \qquad \text{(Lemma \ref{lem:exchange upc})}
 	\end{IEEEeqnarray*}	
 \end{proof}
 
-\begin{tcolorbox}[title=Working in the Upper-lower Model, colframe=Apricot, colback = paleorange, coltitle = Sepia]
-Given a preorder $\mc{P}$ we we have an order embedding $i: \mc{P} \hookrightarrow \upper\low\mc{P}$ into its upper-lower model. Free and forced choices are implemented in $\upper\low\mc{P}$ as
+\begin{tcolorbox}[title=Working in the Upper-Lower Model, colframe=Apricot, colback = paleorange, coltitle = Sepia]
+Given a preorder $\mc{P}$ we have an order embedding $i: \mc{P} \hookrightarrow \upper\low\mc{P}$ into its upper-lower model given by $p \mapsto \upc\{\lwc\{p\}\}$. Free and forced choices are implemented in $\upper\low\mc{P}$ as
 $$ \cbigsqcap{a \in A} a :=  \bigcup_{a \in A} a,$$
 $$ \cbigsqcup{a \in A} a := \bigcap_{a \in A} a.$$
 A general element of $\upper\low\mc{P}$ has the form 
@@ -700,11 +704,12 @@ and is interpreted as
 $\cbigsqcap{j \in J} \: \cbigsqcup{k \in K_j} p_{j,k}.$ Choices in $\upper\low\mc{P}$ can be calculated using the rules presented in Lemmas \ref{lem:exchange upc}, \ref{lem:intersection as union}, and the \hyperlink{box:calc rules}{box above}.
 \end{tcolorbox}
 
+\newpage
 \section{Feasibility between Choices}
-Given a preorders of resources $\mc{R}$ and functionalities $\mc{F}$, we are able to model free and forced choices by considering their upper-lower models $\upper\low\mc{R}$ and $\upper\low\mc{F}$. In this section, we will lift feasibility relations $\Phi: \mc{R} \xslashedrightarrow{} \mc{F}$ to the upper-lower models. We will obtain a new feasibility relation $\upper\low\Phi: \upper\low\mc{R} \xslashedrightarrow{} \upper\low\mc{F}$, which extends $\Phi$ to choice. Moreover, we will see that such lifted feasibility relations $\upper\low\Phi$ enjoy special properties that distinguish them from arbitrary feasibility relations between the upper-lower models. Finally, we will consider what functionalities we can obtain from a given choice of resources, and conversely, what resources are required to enable a given choice of functionalities.
+Given preorders of resources $\mc{R}$ and functionalities $\mc{F}$, we can model free and forced choices by considering their upper-lower models $\upper\low\mc{R}$ and $\upper\low\mc{F}$. In this section, we will lift feasibility relations $\Phi: \mc{R} \xslashedrightarrow{} \mc{F}$ to the upper-lower models. This yields a new feasibility relation $\upper\low\Phi: \upper\low\mc{R} \xslashedrightarrow{} \upper\low\mc{F}$, which extends $\Phi$ to choice. Moreover, we will see that such lifted feasibility relations $\upper\low\Phi$ enjoy special properties that distinguish them from arbitrary feasibility relations between the upper-lower models. Finally, we will consider what functionalities we can obtain from a given choice of resources, and conversely, what resources are required to enable a given choice of functionalities.
 
 \subsection{Lifting Feasibility to Upper-Lower Models}\label{sec:lifting feasibility}
-Let $\Phi: \mc{R} \xslashedrightarrow{} \mc{F}$ be a feasibility relation between preorders $\mc{R}$ and $\mc{F}$. Lift this to a feasibility relation $\low\Phi: \low\mc{R} \xslashedrightarrow{} \low\mc{F}$ by setting 
+Let $\Phi: \mc{R} \xslashedrightarrow{} \mc{F}$ be a feasibility relation between preorders $\mc{R}$ and $\mc{F}$. Lift this to $\low\Phi: \low\mc{R} \xslashedrightarrow{} \low\mc{F}$ by setting 
 $$\low\Phi(A,B) = \true \iff \forall a \in A \: \exists b \in B: \Phi(a,b)=\true.$$
 This is a feasibility relation since `for all' is preserved by taking subsets and `there exists' by taking supersets. 
 
@@ -715,15 +720,15 @@ This is again a feasibility relation because the choice of quantifiers is compat
 Putting both lifts together yields the desired definition.
 
 \begin{definition}[Lifting Feasibility]\label{def:lift feas}
-	 Given a feasibility relation $\Phi: \mc{R} \xslashedrightarrow{} \mc{F}$, we can lift it to a feasibility relation $\upper\low\Phi: \upper\low\mc{R} \xslashedrightarrow{} \upper\low\mc{F}$ by setting
-	$$ \upper\low\Phi(A,B) = \true \iff \forall b \in B \: \exists a \in A: \forall x \in a \: \exists y \in b: \Phi(a,b) = \true.$$
+	 Given a feasibility relation $\Phi: \mc{R} \xslashedrightarrow{} \mc{F}$, we can \emph{lift} it to a feasibility relation $\upper\low\Phi: \upper\low\mc{R} \xslashedrightarrow{} \upper\low\mc{F}$ by setting
+	$$ \upper\low\Phi(A,B) = \true \iff \forall b \in B \: \exists a \in A: \forall r \in a \: \exists f \in b: \Phi(r,f) = \true.$$
 \end{definition}
 
 \begin{remark}
 	The quantifiers in the above definitions are fixed by the ordering we place on upper sets and lower sets. This ordering is in turn determined by the fact that the upper sets represent free choices and the lower sets forced choices. For example, if $A \sub B$ we want an arrow $\cbigsqcap{b \in B} b \shortrightarrow \cbigsqcap{a \in A} a$, representing a weakening of free choice. This shows the upper sets have to be ordered by containment.
 \end{remark}
 
-\begin{example}[Grocery Shopping 2]
+\begin{example}[Grocery Shopping 2]\label{ex:groceries 2}
 	Suppose we are grocery shopping. We model our money and groceries by $$\mc{R} := \{2\$ \shortrightarrow 1\$\} \qquad \qquad \mc{F} := \{\mathtt{potato}, \mathtt{eggplant} \}$$
 	Let $\Phi: \mc{R} \xslashedrightarrow{} \mc{F}$ be the feasibility relation describing whether we can buy a given item with a given amount of money. Assume that $\Phi$ is generated by the following assignments:
 	$$\Phi(1\$,\mathtt{potato}) = \true,$$
@@ -740,13 +745,13 @@ Putting both lifts together yields the desired definition.
 	On the other hand $\upper\low\Phi(i(1\$), \mathtt{carrot} \csqcap \mathtt{eggplant}) = \false$, since for $b = \{\mathtt{egglant}\}$, the only $a \in i(1\$) = \{ \{ 1\$,2\$\} \}$ is $\{1\$, 2\$ \}$ and  $\Phi(1\$,\mathtt{eggplant}) = \false$. This is saying that for 1\$ the store will not sell you the option of choosing between a \texttt{carrot} or an \texttt{eggplant}, since they would loose money if you chose the \texttt{eggplant}. \exampleend
 \end{example}
 
-\begin{tcolorbox}[title=Lifting Feasibility to the Upper-lower Model, colframe=Apricot, colback = paleorange, coltitle = Sepia]
+\begin{tcolorbox}[title=Lifting Feasibility to the Upper-Lower Model, colframe=Apricot, colback = paleorange, coltitle = Sepia]
 	Given a feasibility relation $\Phi: \mc{R} \xslashedrightarrow{} \mc{F}$ we can lift it to a feasibility relation between the upper-lower models $\upper\low\Phi: \upper\low\mc{R} \xslashedrightarrow{} \upper\low\mc{F}$ by setting
-	$$ \upper\low\Phi(A,B) = \true \Leftrightarrow \forall b \in B \: \exists a \in A: \forall x \in a \: \exists y \in b: \Phi(a,b) = \true.$$
+	$$ \upper\low\Phi(A,B) = \true \Leftrightarrow \forall b \in B \: \exists a \in A: \forall r \in a \: \exists f \in b: \Phi(r,f) = \true.$$
 	This assignment extends $\Phi$ and captures feasibility between choices.
 \end{tcolorbox}
 
-\subsection{Feasibility between Upper-lower Models}
+\subsection{Feasibility between Upper-Lower Models}\label{sec:feas upper-lower}
 Consider an arbitrary feasibility relation $\Psi: \upper\low\mc{R} \xslashedrightarrow{} \upper\low\mc{F}$. Since both upper-lower models are again preorders, we can interpret $\Psi$ as we would any other feasibility relation: $\Psi(A,B) = \true$ means that being able to provide $A$ implies being able to provide $B$. What is special in the case of upper-lower models is that their elements may be interpreted as choices among subsets of the underlying preorder.
 
 The method described in Section \ref{sec:lifting feasibility} starts with a feasibility relation $\Phi: \mc{R} \xslashedrightarrow{} \mc{F}$ and lifts it to a feasibility relation $\upper\low\Phi: \upper\low\mc{R} \xslashedrightarrow{} \upper\low\mc{F}$. This lifting extends feasibility to choices in ``the best way possible'' given the feasibility among the underlying preorders. The sense in which lifted feasibility relations are optimal is explored further in Sections \ref{sec:characterizing feas} and \ref{sec:dependencies}.
@@ -772,12 +777,12 @@ On the other hand, one can directly describe a feasibility relation that already
 	This shows that $\Psi$ is not a lift. At the same time it illustrates that our general feasibility relation $\Psi$ is sub-optimal in the sense that the restaurant is charging extra for giving us a choice, although it need not do so based on the underlying feasible pairs. \exampleend
 \end{continueexample}
 
-\begin{tcolorbox}[title=Feasibility between Upper-lower Models, colframe=Apricot, colback = paleorange, coltitle = Sepia]
+\begin{tcolorbox}[title=Feasibility between Upper-Lower Models, colframe=Apricot, colback = paleorange, coltitle = Sepia]
 	A feasibility relation $\Psi: \upper\low\mc{R} \xslashedrightarrow{} \upper\low\mc{F}$, whether lifted or not, may be interpreted as any other feasibility relation: $\Psi(A,B)$ means that being able to provide $A$ implies being able to provide $B$. Since we are working within upper-lower models, $A$ and $B$ are interpreted as choices between subsets of $\mc{R}$ or $\mc{F}$, respectively.
 \end{tcolorbox}
 
 \subsection{Characterizing Lifted Feasibility Relations}\label{sec:characterizing feas}
-The lifted feasibility relations described in the previous section enjoy special properties as compared to an arbitrary feasibility relation between upper-lower models. In fact, these properties can be used to characterize whether such a feasibility relation is lifted or not. 
+The lifted feasibility relations described in Section \ref{sec:lifting feasibility} enjoy special properties as compared to an arbitrary feasibility relation between upper-lower models. These properties can be used to characterize whether such a feasibility relation is lifted or not. 
 
 \begin{theorem}\label{thm:induction}
 	A feasibility relation $\Psi: \upper\low\mc{R} \xslashedrightarrow{} \upper\low\mc{F}$ has the form $\upper\low\tilde\Psi$ for $\tilde\Psi: \mc{R} \xslashedrightarrow{} \mc{F}$ if and only if the following three conditions are fulfilled:
@@ -796,20 +801,22 @@ We will attempt to explain what these conditions mean before giving the lengthy 
 
 Condition (i) expresses the fact that feasibility between each pair $(A,B)$ in the upper-lower models is obtained via the lifting definition from $\tilde\Psi$. Conditions (ii) and (iii) express a certain optimality of a lifted $\Psi$ with respect to forced choice in the source and free choice in the target. For example, (ii) says that if providing $a \in A$ is sufficient to guarantee some $x_i \in X_i$ for all $i$, then providing $a \in A$ should also be sufficient to guarantee some $x \in \bigcup_{i \in I} X_i$. This seems tautological when thinking about feasibility between choices as stemming from feasibility between elements. However, a general feasibility relation $\upper\low\mc{R} \xslashedrightarrow{} \upper\low\mc{F}$ need not fulfil this condition and can be seen as expressing a type of sub-optimality that can occur in reality. More on this in Section \ref{sec:dependencies}. Similar remarks apply to condition (iii).
 
+\newpage
+
 \begin{proof}[Proof of Theorem \ref{thm:induction}]
 	First, we show that given a feasibility relation $\Phi: \mc{R} \xslashedrightarrow{} \mc{F}$, the induced feasibility relation $\upper\low\Phi:  \upper\low\mc{R} \xslashedrightarrow{} \upper\low\mc{F}$ satisfies (i)-(iii).
 	
-	\paragraph{(i)} Suppose $\Psi(r,f) = \true$. Let $x \in \lwc{\{r\}}$. Then by monotonicity of $\Psi$, we have $\Psi(x,f) = \true$. Therefore, for all $x = r \in \lwc{\{r\}}$, there exists $y \in \lwc{\{f\}}$ such that $\Psi(x,y)$. Hence, $\low\Psi(\lwc{\{r\}}, \lwc{\{f\}}) = \true$ (see Section \ref{sec:lifting feasibility}).
+	\paragraph{(i)} Suppose $\Psi(r,f) = \true$. Let $x \in \lwc{\{r\}}$. Then by monotonicity of $\Psi$, we have $\Psi(x,f) = \true$. Therefore, for all $x = r \in \lwc{\{r\}}$, there exists $y := f \in \lwc{\{f\}}$ such that $\Psi(x,y)$. Hence, $\low\Psi(\lwc{\{r\}}, \lwc{\{f\}}) = \true$ (see Section \ref{sec:lifting feasibility}).
 	
-	Next, assume $\low\Psi(\lwc{\{r\}}, \lwc{\{f\}}) = \true$ and let $y \in \upc\{\lwc\{f\} \}$. Then by monotonicity of $\low\Psi$, we have $\low\Psi(\lwc{\{r\}},y)$. Therefore, for all $y \in \upc\{\lwc\{f\} \}$, there exists $x =  \lwc{\{r\}} \in \upc\{\lwc\{r\} \}$ such that $\low\Psi(x,y)$. Hence by the definition in Section \ref{sec:lifting feasibility}, $\upper\low\Psi( \upc\{\lwc\{r\} \} ,\upc\{\lwc\{f\} \}) = \true$, as desired.
+	Next, assume $\low\Psi(\lwc{\{r\}}, \lwc{\{f\}}) = \true$ and let $y \in \upc\{\lwc\{f\} \}$. Then by monotonicity of $\low\Psi$, we have $\low\Psi(\lwc{\{r\}},y)$. Therefore, for all $y \in \upc\{\lwc\{f\} \}$, there exists $x :=  \lwc{\{r\}} \in \upc\{\lwc\{r\} \}$ such that $\low\Psi(x,y)$. Hence by the definition in Section \ref{sec:lifting feasibility}, $\upper\low\Psi( \upc\{\lwc\{r\} \} ,\upc\{\lwc\{f\} \}) = \true$, as desired.
 	
 	\paragraph{(ii)} Let $\{X_i\}_{i \in I} \sub \upper\low\mc{F}$. Since $\bigcup_{i \in I} X_i \supseteq X_i$, we have that $\Psi(A, \bigcup_{i \in I} X_i) = \true $ implies $\Psi(A,  X_i) = \true $ for all $i \in I$ by monotonicity. Conversely, suppose $\Psi(A,  X_i) = \true $ for all $i \in I$. Then for each $i \in I$ we have by definition
-	$$\forall x \in X_i \: \exists a \in A : \forall r \in a \: \exists f \in x : \Psi(r,f).$$
+	$$\forall x_i \in X_i \: \exists a \in A : \forall r \in a \: \exists f \in x_i : \Psi(r,f).$$
 	This implies that
 	$$\forall x \in \bigcup_{i \in I} X_i \: \exists a \in A : \forall r \in a \: \exists f \in x : \Psi(r,f).$$
 	Therefore, $\Psi(A, \bigcup_{i \in I} X_i) = \true $.
 	
-	\paragraph{(iii)} Let $\{X_i\}_{i \in I} \sub \upper\low\mc{R}$. Since $X_i \supseteq \bigcup_{i \in I} X_i$, by monotonicity $\Psi(\bigcap_{i \in I}X_i,B) = \true$ implies $\Psi(X_i,B) = \true$ for all $i \in I$. Conversely, suppose $\Psi(X_i,B) = \true$ for all $i \in I$. Then, for each $i \in I$, we have by definition
+	\paragraph{(iii)} Let $\{X_i\}_{i \in I} \sub \upper\low\mc{R}$. Since $X_i \supseteq \bigcap_{i \in I} X_i$, by monotonicity $\Psi(\bigcap_{i \in I}X_i,B) = \true$ implies $\Psi(X_i,B) = \true$ for all $i \in I$. Conversely, suppose $\Psi(X_i,B) = \true$ for all $i \in I$. Then, for each $i \in I$, we have by definition
 	$$\forall b \in B \: \exists x_{i,b} \in X_i : \forall r \in x_{i,b} \: \exists f \in b : \Psi(r,f).$$
 	By Lemma \ref{lem:intersection as union}, 
 	$$\bigcap_{i \in I} X_i = \{ \bigcup_{i \in I} y_i :  y_i \in X_i \text{ for each } i \in I \}.$$
@@ -832,9 +839,10 @@ Condition (i) expresses the fact that feasibility between each pair $(A,B)$ in t
 	Since $A$ is an upper set, $A \supseteq \upc\{a\}$ for any $a \in A$, whence by monotonicity, $\forall b \in B : \Psi(A,\upc\{b\})$. Applying property (ii) finally yields $\Psi(A,\bigcup_{b \in B}\upc\{b\}) = \Psi(A,B) = \true$. We have thus shown that $\Psi(A,B) = \true$ if and only if $\upper\low\tilde\Psi(A,B) = \true$, so the two feasibility relations coincide.	
 \end{proof}
 
+\newpage
 The previous theorem begs the question whether lifted feasibility fulfils similar relations concerning unions in the source and intersections in the target. This is addressed in the following
 \begin{proposition}\label{prop:union intersection}
-	Suppose $\Psi: \upper\low\mc{R} \xslashedrightarrow{} \upper\low\mc{F}$ is induced as in Theorem \ref{thm:induction}. Then the following equivalences hold for principal upper sets 
+	Suppose $\Psi: \upper\low\mc{R} \xslashedrightarrow{} \upper\low\mc{F}$ is induced as in Theorem \ref{thm:induction}. Then the following equivalences hold: 
 	\begin{itemize}
 		\item[(i)] $\Psi(\bigcup_{i \in I} X_i, \upc{\{z\}}) \Leftrightarrow \Psi(X_i,\upc{\{z\}})$ for some $i \in I$.
 		\item[(ii)] $\Psi(\upc{\{\lwc{\{s\}}\}}, \bigcap_{i \in I}X_i) \Leftrightarrow \Psi(\upc{\{\lwc{\{s\}}\}},X_i)$ for some $i \in I$.
@@ -843,25 +851,26 @@ The previous theorem begs the question whether lifted feasibility fulfils simila
 \begin{proof}
 	Note that for both (i) and (ii) the right-hand sides imply the left by monotonicity. 
 	
-	For (i) suppose  $\Psi(\bigcup_{i \in I} X_i, \upc{\{z\}})$ holds. Then we know that
+	\paragraph{(i)} Suppose  $\Psi(\bigcup_{i \in I} X_i, \upc{\{z\}})$ holds. Then we know that
 	$$\forall b \in \upc{\{z\}} \: \exists a \in \bigcup_{i \in I} X_i: \forall r \in a \: \exists f \in b: \tilde\Psi(r,f).$$
 	In particular, for $z$ we have an $a \in \bigcup_{i \in I} X_i: \forall r \in a \: \exists f \in z: \tilde\Psi(r,f).$ This $a$ will lie in some $X_i$, so we have an $a \in X_i: \forall r \in a \: \exists f \in z: \tilde\Psi(r,f).$ It remains to show that this choice of $a$ also works for any $b \in \upc{\{z\}}$. Let $b \in \upc{\{z\}}$. Then $z \sub b$. Hence, for the $a \in X_i$ we have that for all $r \in a$ there is $f \in z \sub b$ such that $\tilde\Psi(r,f)$. This shows that for some $X_i$,
 	$$\forall b \in \upc{\{z\}} \: \exists a \in X_i: \forall r \in a \: \exists f \in b: \tilde\Psi(r,f),$$
 	meaning that $\Psi(X_i,\upc{\{z\}})$ for some $i \in I$.
 	
-	For (ii) suppose $\Psi(\upc{\{\lwc{\{s\}}\}}, \bigcap_{i \in I}X_i) = \true$. Recall from Lemma \ref{lem:calc} that $\bigcap_{i \in I}X_i = \{\cup x_i : x_i  \in X_i \}$. Hence,
-	$$\forall b \in \{ \cup x_i : x_i \in X_i \}\: \exists a \in \upc{\{\lwc{\{s\}}\}}: \forall r \in a \: \exists f \in b: \tilde\Psi(r,f).$$
-	Fix some $\cup x_i$. Then there is $a \supseteq \lwc{\{s\}}$ such that for all $r \in a$ there is $f \in \cup x_i$ satisfying $ \tilde\Psi(r,f)$. In particular, the same holds if we restrict $a$ to $\lwc{\{s\}}$. Hence,
-	$$\forall b \in \{ \cup x_i : x_i \in X_i \}\: \forall r \in \lwc{\{s\}} \: \exists f \in b: \tilde\Psi(r,f).$$
-	Since 
+	\paragraph{(ii)} Suppose $\Psi(\upc{\{\lwc{\{s\}}\}}, \bigcap_{i \in I}X_i) = \true$. Recall from Lemma \ref{lem:intersection as union} that $\bigcap_{i \in I}X_i = \{\bigcup_{i \in I} x_i : x_i  \in X_i \}$. Hence,
+	$$\forall b \in \{ \bigcup_{i \in I} x_i : x_i \in X_i \}\: \exists a \in \upc{\{\lwc{\{s\}}\}}: \forall r \in a \: \exists f \in b: \tilde\Psi(r,f).$$
+	Fix some $\bigcup_{i \in I} x_i$. Then there is $a \supseteq \lwc{\{s\}}$ such that for all $r \in a$ there is $f \in \bigcup_{i \in I} x_i$ satisfying $ \tilde\Psi(r,f)$. In particular, the same holds if we restrict $a$ to $\lwc{\{s\}}$. Hence,
+	\begin{equation}\label{eq:contradiction}
+		\forall b \in \{ \bigcup_{i \in I} x_i : x_i \in X_i \}\: \forall r \in \lwc{\{s\}} \: \exists f \in b: \tilde\Psi(r,f).
+	\end{equation}
 	
-	Suppose that $\Psi(\upc{\{\lwc{\{s\}}\}},X_i) = \false$ for all $i$. That is, for all $i \in I$,
+	Now suppose for the sake of contradiction that $\Psi(\upc{\{\lwc{\{s\}}\}},X_i) = \false$ for all $i$. That is, for all $i \in I$,
 	$$\exists b_i \in X_i \: \forall a \in \upc{\{\lwc{\{s\}}\}}: \exists r \in a \: \forall f \in b_i: \tilde\Psi(r,f) = \false.$$
-	In particular for any such $b_i$ we have that
+	In particular, setting $a := \lwc\{s\}$ we have that for each $b_i$,
 	$$\exists r \in \lwc{\{s\}} \: \forall f \in b_i: \tilde\Psi(r,f) = \false.$$
 	By monotonicity, this means in particular that $\forall f \in b_i: \tilde\Psi(s,f) = \false,$
-	from which it follows that $\tilde\Psi(s,f) = \false$ for all $f \in \cup b_i$.
-	Therefore $\cup b_i \in \{ \cup x_i : x_i \in X_i \}$ is an element of the intersection for which there exists $r \in \lwc{\{s\}}$, (namely $s$) such that for all $f \in \cup b_i$ we have $\tilde\Psi(s,f) = \false$. This contradicts our assumption that $\Psi(\upc{\{\lwc{\{s\}}\}}, \bigcap_{i \in I}X_i) = \true$.
+	from which it follows that $\tilde\Psi(s,f) = \false$ for all $f \in \bigcup_{i \in I} b_i$.
+	Therefore $\bigcup_{i \in I} b_i \in \{ \bigcup_{i \in I} x_i : x_i \in X_i \}$ is an element of the intersection for which there exists $r \in \lwc{\{s\}}$, (namely $s$) such that for all $f \in \bigcup_{i \in I} b_i$ we have $\tilde\Psi(s,f) = \false$. This contradicts the statement in \eqref{eq:contradiction}.
 \end{proof}
 
 \begin{tcolorbox}[title=Characterizing Lifted Feasibility Relations, colframe=Apricot, colback = paleorange, coltitle = Sepia]
@@ -892,7 +901,11 @@ Fix a feasibility relation $\Psi: \upper\low\mc{R} \xslashedrightarrow{} \upper\
 \end{definition}
 
 \begin{example}
-	
+	Let $\mc{R} := (\mathbb{N}, \geq)$ and $\mc{F} := \{\mathtt{carrot}, \mathtt{eggplant}\}$, as in Example \ref{ex:groceries 2}. Consider the feasibility relation $\Psi: \upper\low\mc{R} \xslashedrightarrow{} \upper\low\mc{F}$ generated by 
+	$$\Psi(1\$, \mathtt{carrot}) = \true ,$$
+	$$\Psi(2\$, \mathtt{eggplant}) = \true. $$
+	Then $\mathfrak{f}_\Psi(1\$) = \{ \mathtt{carrot} \}$ and $\mathfrak{f}_\Psi(2\$) = \{ \mathtt{carrot}, \mathtt{eggplant} \}$.
+	\exampleend
 \end{example}
 
 \begin{proposition} Consider a lifted feasibility relation $\upper\low\Phi: \upper\low\mc{R} \xslashedrightarrow{} \upper\low\mc{F}$. For subsets $A \sub \upper\low\mc{R}$ and $B \sub \upper\low\mc{F}$ we have the following:
@@ -921,16 +934,43 @@ Fix a feasibility relation $\Psi: \upper\low\mc{R} \xslashedrightarrow{} \upper\
 \end{tcolorbox}
 
 \section{Future Directions}
+In this section, we will sketch some avenues for future exploration.
 
 \subsection{Choice between Feasibility}
+We have described how to model free and forced choices between resources and functionalities. However, Co-Design also deals with feasibility relations. Hence, we can ask how we would model free and forced choices between these. For example, there may be two rival grocery stores $\Phi$ and $\Psi$ for which we may describe corresponding feasibility relations $\Phi,\Psi: \mc{R} \xslashedrightarrow{} \mc{F}$. A free choice $\Phi \csqcap \Psi$ would mean that we have access to the store of our choice. Intuitively, we should have $\Phi \csqcap \Phi := \Phi \cup \Psi$.
 
+Here are some thought on how to proceed. First, we observe that the set of feasibility relations $\Phi: \mc{R} \xslashedrightarrow{} \mc{F}$, denoted $\mathsf{Feas}(\mc{R},\mc{F})$, is itself a preorder where $\Phi \shortrightarrow \Psi$ iff $\Phi \sub \Psi$. Therefore, we can consider $\upper\low\mathsf{Feas}(\mc{R},\mc{F})$ as we would for any other preorder. This already allows us to think about free and forced choice among feasibility relations.
+
+A next step might be to decompose a given feasibility relation into a choice. We typically assume we can choose freely which feasible pair we use to realize some transformation: If both $\Phi(5\$,\mathtt{soup})$ and $\Phi(5\$,\mathtt{salad})$, we assume that if we provide $5\$$ we can choose whether we use it to purchase soup or salad. Therefore, it may be reasonable to interpret a feasibility relation $\Phi$ as $\cbigsqcap{(r,f) \in \Phi} (r,f)$. This poses the problem that the individual feasible pairs are not in general feasibility relations. However, we note that since a feasibility relations correspond to upper sets of $\mc{R}^\text{op} \times \mc{F}$, we can instead write $\Phi = \cbigsqcap{(r,f) \in \Phi} \upc \{(r,f)\}$.
+
+By the decomposition strategy described above, it is sufficient to consider $\upper\low\mathsf{Princ}(\mc{R}^\text{op} \times \mc{F})$, where $\mathsf{Princ}(\mc{R}^\text{op} \times \mc{F})$ is the set of principal upper sets $\upc\{(r,f)\}$ of $\mc{R}^\text{op} \times \mc{F}$. In this picture, 
+$$\Phi \csqcap \Psi = \cbigsqcap{(r,f) \in \Phi} \upc \{(r,f)\} \csqcap \cbigsqcap{(r,f) \in \Psi} \upc \{(r,f)\} = \cbigsqcap{(r,f) \in \Phi \cup \Psi} \upc \{(r,f)\},$$
+which corresponds to the intuition above. On the other hand,
+$$ \Phi \csqcup \Psi = \cbigsqcap{(r,f) \in \Phi} \upc \{(r,f)\} \csqcup \cbigsqcap{(r,f) \in \Psi} \upc \{(r,f)\} = \cbigsqcap{(p,q) \in \Phi \times \Psi} \upc\{p\} \csqcup \upc\{q\} ,$$
+where we have abbreviated $(r,f) =: p$ for legibility.
+
+The above shows that a free choice between feasibility relations is again a feasibility relation. However, the forced choice can't again be represented as a feasibility relation. One option is to just continue working within $\upper\low\mathsf{Princ}(\mc{R}^\text{op} \times \mc{F})$, where such forced choices can be represented. Alternatively, one could attempt to ``flatten'' the forced choice $\Phi \csqcup \Psi$ into a new feasibility relation $\upper\low\mc{R} \xslashedrightarrow{} \upper\low\mc{F}$ by transferring the forced choice to elements of $\mc{R}$ and $\mc{F}$, respectively. For example, if $\Phi(r,f)=\true$ and $\Psi(r,g) = \true$ then a flattened forced choice should fulfil $\Phi \csqcup \Psi(r,f \csqcup g) = \true$, but not in general $\Phi \csqcup \Psi(r,f) = \true$  or $\Phi \csqcup \Psi(r,g) = \true$. Intuitively, not being able to choose whether you purchase soup or salad using 5\$ is the same as being able to purchase a forced choice between soup or salad using 5\$.
+
+In summary, it seems that thinking about choice between feasibility relations will amount to a special case of choice on a preorder. In particular, feasibility relations can be decomposed into principal upper sets of $\mc{R}^\text{op} \times \mc{F}$ allowing us to use $\upper\low\mathsf{Princ}(\mc{R}^\text{op} \times \mc{F})$ to model choices between them. Moreover, moving to upper-lower models on the source and target of feasibility relations could allow for certain flattening operations, where an element of $\upper\low\mathsf{Princ}(\mc{R}^\text{op} \times \mc{F})$ could be converted to an element of $\mathsf{Feas}(\upper\low\mc{R}, \upper\low\mc{F})$.
 
 \subsection{Additional Connectives}
+Sometimes the preorder $\mc{P}$ may have additional structure. In these cases, we can ask whether this structure can be lifted to its upper-lower model $\upper\low\mc{P}$. 
 
+An example of an operation that would be of interest is the addition operator $+$, where $a+b$ means that we are able to independently provide $a$ and $b$. This operation has a unit $0$, representing being able to provide `nothing'. Moreover, being able to provide $a$ implies being able to provide `nothing' for any $a$, so $a \shortrightarrow 0$ for all $a \in \mc{P}$. Next, we would want $a + b \shortrightarrow a$ for all $a \in \mc{P}$, since being able to provide $a$ and $b$ independently in particular implies being able to provide $a$. Finally, $a \shortrightarrow a'$ and $b \shortrightarrow b'$ imply $a+a' \shortrightarrow b+b'$ by applying transformations in parallel.
 
-\subsection{Towards Modeling Dependencies}\label{sec:dependencies}
-b
+We illustrate how one would lift an operation like $+$. First we determine how the operator should interact with free and forced choices. In our case, we would want
+$$ {\cbigsqcap{a \in A} a} + {\cbigsqcap{b \in B} b} = \cbigsqcap{(a,b) \in A \times B} a+b,$$
+$$ {\cbigsqcup{a \in A} a} + {\cbigsqcup{b \in B} b} = \cbigsqcup{(a,b) \in A \times B} a+b.$$
+For $U,V \in \upper\low\mc{P}$, this suggests setting
+$$ U + V := \upc \{ u+v : u \in U, v \in V \} := \upc \{ \lwc \{x+y : x \in u, y \in v\}: u \in U, v \in V \}.$$
+It then remains to verify which properties of $+$ transfer to the upper-lower level.
 
+\subsection{Exploring General Feasibility between Upper-Lower Models}\label{sec:dependencies}
+We have seen that lifted feasibility relations are optimal in a sense explored in Section \ref{sec:characterizing feas} and Example \ref{ex:double order}. One would expect that in the real world this optimality would often be violated. A free choice might be more expensive than the maximum cost of the individual options, or a forced choice cheaper than the minimum cost of the options. For example, booking a flight on standby is cheaper than a ticket for any given travel date. These considerations show that we should investigate general feasibility relations between upper-lower models $\upper\low\mc{R} \xslashedrightarrow{} \upper\low\mc{F}$, as illustrated in Section \ref{sec:feas upper-lower}. 
+
+One way to obtain such general feasibility relations is to explore alternative forms of lifting a feasibility relation $\Phi: \mc{R} \xslashedrightarrow{} \mc{F}$ to the upper-lower models. For example, if $\mc{R}$ represents money, we could introduce a surcharge of $1\$$ whenever a free choice occurs in between elements of $\mc{F}$. The magnitude of this surcharge will reflect how much overhead is involved in allowing for a choice.
+
+Finally, one could think about introducing a measure for how far a general feasibility relation is from being a lift. This would allow for a quantification of the surplus cost charged for choice. This could be achieved formally by assigning weights to the arrows in the upper-lower models.  
 \appendix
 
 
