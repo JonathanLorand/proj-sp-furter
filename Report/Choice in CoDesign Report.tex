@@ -79,7 +79,7 @@
 
 \author{Marius Furter}
 
-\date{\today}
+\date{July 20, 2021}
 
 \usepackage[
 backend=bibtex,
@@ -214,8 +214,12 @@ citestyle=alphabetic]{biblatex}
 \maketitle
 
 \begin{abstract}
-	This report describes a method for modeling free and forced choice within Co-Design. In a free choice among a set, one has control over which option is selected, while in a forced choice one does not. Given a preorder $\mc{P}$ describing resources or functionalities, a free choice among a subset of $\mc{P}$ acts like a meet. Dually, a forced choice acts like a join. Moreover, the two types of choice distribute over one another. Based on this, we construct a universal model for choice on a preorder using the free completely distributive lattice $\upper\low\mc{P}$. Feasibility relations are then extended to these models. Along the way, we illustrate how to work within $\upper\low\mc{P}$ and provide results that simplify calculations.
+	This report describes a method for modeling free and forced choice within Co-Design. In a free choice among a set, one has control over which option is selected, while in a forced choice one does not. Given a preorder $\mc{P}$ describing resources or functionalities, a free choice among a subset of $\mc{P}$ acts like a meet. Dually, a forced choice acts like a join. Moreover, the two types of choice distribute over one another. Based on this, we construct a universal model for choice on a preorder using the free completely distributive lattice $\upper\low\mc{P}$. Feasibility relations are then extended to these models. Along the way, we illustrate how to work within $\upper\low\mc{P}$ and provide results that simplify calculations. The definitions presented here have been implemented in Haskell.
 \end{abstract}
+
+\vspace{3.5cm}
+\subsubsection*{\centering Acknowledgements and Code Resources}
+I'd like to sincerely thank Jonathan Lorand who supervised this project and dedicated many hours to listening to my ideas. I'm also grateful to Gioele Zardini who gave valuable inputs throughout. Finally, I want to thank Prof.~Alberto Cattaneo for implementing the theory in Haskell. The code can be found on GitHub: \href{https://github.com/MariusFurter/Choice-in-CoDesign}{MariusFurter/Choice-in-CoDesign}.
 \newpage
 \tableofcontents
 \newpage
